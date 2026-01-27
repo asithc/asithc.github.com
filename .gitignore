@@ -1,0 +1,22 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore backup files
+*~
+*.bak
+*.swp
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore temporary files
+.tmp/
+temp/
