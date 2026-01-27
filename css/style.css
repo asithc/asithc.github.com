@@ -77,21 +77,29 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #FFF3CD 0%, #FFE69C 100%);
-    border-bottom: 1px solid var(--warning-border);
+    gap: 12px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #FFB800 0%, #FFA000 100%);
+    border-bottom: 2px solid #E69500;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(255, 168, 0, 0.2);
 }
 
 .site-banner .banner-icon {
-    font-size: 16px;
+    font-size: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .site-banner .banner-text {
     font-size: 14px;
-    font-weight: 500;
-    color: var(--warning-text);
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 0.3px;
 }
 
 button {
