@@ -1,16 +1,16 @@
-# Portfolio Website - Marco.fyi Clone
+# Portfolio Website - Asith Wijenayake
 
-A pixel-perfect replica of marco.fyi portfolio website with smooth animations, interactive elements, and a clean, modern design. Built with pure HTML, CSS, and JavaScript - no frameworks required!
+A personal portfolio website showcasing Asith Wijenayake's work, skills, and journey as a UX designer and product creator. Features smooth animations, interactive elements, and a clean, modern design. Built with pure HTML, CSS, and JavaScript - no frameworks required!
 
 ## ✨ Features
 
+- **About Me**: Learn about Asith's background, career journey, and what drives his work
+- **Work Portfolio**: Showcase of UX design projects including DGL, OneCup, Marketplace, and more
 - **Smooth Animations**: Fade-in effects, scroll animations, and interactive hover states
 - **Responsive Design**: Works beautifully on desktop, tablet, and mobile devices
-- **Interactive Contact Form**: iMessage-style chat interface for contact inquiries
-- **Work Portfolio Grid**: Showcase your projects with custom preview cards
-- **Widget System**: Twitter, Apple Music, Podcast, and photo widgets
-- **Auto-Rotating Photo Carousel**: iOS Photos widget with auto-rotation every 8 seconds
-- **Easy to Customize**: Clean, well-commented code that's easy to modify
+- **Interactive Contact Form**: iMessage-style chat interface for reaching out
+- **Project Case Studies**: Detailed insights into design process, tools, and outcomes
+- **Widget System**: Personal widgets showing interests, music, and updates
 
 ## 🖼️ Replacing Photo Carousel Images
 
@@ -102,9 +102,9 @@ portfolio/
 3. Add or remove work items from the grid
 
 #### Contact Page (contact.html)
-1. Update email address in `hi@marco.fyi` references
-2. Modify Twitter handle and social links
-3. Customize iMessage conversation flow
+1. Interactive iMessage-style contact interface
+2. Social links and direct communication options
+3. Smooth conversation flow animations
 
 ### Styling
 
@@ -271,20 +271,16 @@ Popular options:
 - Ensure images are in correct folders
 - Check image file names and extensions
 
-## 📄 License
+## 📄 About This Project
 
-This is a personal portfolio template. Feel free to use it for your own portfolio, but please customize the content to make it your own!
+This is the personal portfolio website of Asith Wijenayake, a UX designer and product creator. The site showcases his work, skills, and career journey over the past years.
 
-## 🙏 Credits
+## 📧 Contact
 
-Original design inspiration: [marco.fyi](https://www.marco.fyi/)
-
-## 📧 Support
-
-If you have questions or need help customizing your portfolio, feel free to open an issue or reach out!
+Interested in collaborating or learning more about Asith's work? Feel free to reach out through the contact page!
 
 ---
 
-**Made with ❤️ for developers and designers**
+**Asith Wijenayake - UX Designer & Product Creator**
 
-Happy coding! 🚀
+Building thoughtful digital experiences. 🚀
