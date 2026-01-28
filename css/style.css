@@ -74,15 +74,21 @@ a {
 
 /* Under Construction Banner */
 .site-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    padding: 16px 24px;
+    padding: 12px 24px;
     background: linear-gradient(135deg, #FFB800 0%, #FFA000 100%);
     border-bottom: 2px solid #E69500;
     text-align: center;
     box-shadow: 0 2px 8px rgba(255, 168, 0, 0.2);
+    z-index: 1001;
+    height: 48px;
 }
 
 .site-banner .banner-icon {
@@ -112,7 +118,7 @@ button {
 /* Navigation - "Around the World" the site goes 🌍 */
 .nav {
     position: fixed;
-    top: 32px;
+    top: 64px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -129,6 +135,8 @@ button {
     -webkit-backdrop-filter: blur(40px) saturate(180%);
     border: 1.5px solid #E0E0E0;
     --transition-duration: 0.4s;
+    height: auto;
+    max-height: 60px;
 }
 
 .nav::before {
@@ -1683,12 +1691,12 @@ button {
 }
 .about-page .resume-widget {
     grid-column: 3 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .about-page .linkedin-widget {
     grid-column: 4 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 .about-item {
     margin-bottom: 20px;
