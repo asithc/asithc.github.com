@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog WeatherGuru — Asith</title>
+    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    
+    <!-- Clear PWA Cache and Unregister Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) caches.delete(name);
+                });
+            }
+        }
+    </script>
+</head>
+<body class="project-detail-page">
+    <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../work.html" class="nav-link active">Work</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="project-back-nav">
+        <a href="../work.html" class="back-button"><span>←</span> <span>Back to Work</span></a>
+    </div>
+
+    <main class="project-detail-container">
+        <div class="project-header">
+            <div class="project-header-content">
+                <h1 class="project-title">Dialog WeatherGuru</h1>
+                <p class="project-subtitle">Weather Intelligence Platform</p>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <div class="project-meta-section">
+                    <h3 class="meta-label">STATUS</h3>
+                    <p class="meta-value">Not Live</p>
+                </div>
+                <div class="project-meta-section">
+                    <h3 class="meta-label">MY ROLE</h3>
+                    <p class="meta-value">Product Designer</p>
+                    <p class="meta-value">UX Researcher</p>
+                    <p class="meta-value">UI Developer</p>
+                </div>
+
+                <div class="project-meta-section">
+                    <h3 class="meta-label">TOOLS</h3>
+                    <p class="meta-value">Figma</p>
+                    <p class="meta-value">HTML/CSS</p>
+                    <p class="meta-value">JavaScript</p>
+                </div>
+
+                <div class="project-meta-section">
+                    <h3 class="meta-label">TIMELINE</h3>
+                    <p class="meta-value">2020</p>
+                </div>
+            </aside>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h3 class="section-label">DESCRIPTION</h3>
+                    <p class="section-text">A comprehensive weather intelligence platform providing accurate forecasts, alerts, and weather insights for Dialog users across Sri Lanka.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3 class="section-label">CONTEXT</h3>
+                    <p class="section-text">Developed as part of Dialog's digital services portfolio to provide users with reliable weather information and forecasts. The platform combines meteorological data with user-friendly design to deliver essential weather updates.</p>
+                    <p class="section-text">The interface was designed to be intuitive and accessible, allowing users to quickly access weather information relevant to their location and needs.</p>
+                </div>
+
+                <div class="project-cta">
+                    <a href="#" class="case-study-link">Read Case Study</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Images -->
+        <div class="project-images">
+            <div class="project-image-grid">
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=70" alt="WeatherGuru Screenshot 1" loading="lazy">
+                </div>
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=71" alt="WeatherGuru Screenshot 2" loading="lazy">
+                </div>
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=72" alt="WeatherGuru Screenshot 3" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="project-navigation">
+            <a href="t20-worldcup.html" class="project-nav-btn project-nav-prev"><span>←</span>
+                <div class="project-nav-content">
+                    <span class="project-nav-label">Previous</span>
+                    <span class="project-nav-title">T20 World Cup</span>
+                </div>
+            </a>
+            <a href="click2pay.html" class="project-nav-btn project-nav-next">
+                <div class="project-nav-content">
+                    <span class="project-nav-label">Next</span>
+                    <span class="project-nav-title">Click2Pay</span>
+                </div><span>→</span></a>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rsvp.lk — Asith</title>
+    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    
+    <!-- Clear PWA Cache and Unregister Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) caches.delete(name);
+                });
+            }
+        }
+    </script>
+</head>
+<body class="project-detail-page">
+    <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../work.html" class="nav-link active">Work</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="project-back-nav">
+        <a href="../work.html" class="back-button"><span>←</span> <span>Back to Work</span></a>
+    </div>
+
+    <main class="project-detail-container">
+        <div class="project-header">
+            <div class="project-header-content">
+                <h1 class="project-title">rsvp.lk</h1>
+                <p class="project-subtitle">Event Management Platform</p>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <div class="project-meta-section">
+                    <h3 class="meta-label">STATUS</h3>
+                    <p class="meta-value">Not Live</p>
+                </div>
+                <div class="project-meta-section">
+                    <h3 class="meta-label">MY ROLE</h3>
+                    <p class="meta-value">Product Designer</p>
+                    <p class="meta-value">UX Designer</p>
+                    <p class="meta-value">Front-end Developer</p>
+                </div>
+
+                <div class="project-meta-section">
+                    <h3 class="meta-label">TOOLS</h3>
+                    <p class="meta-value">Figma</p>
+                    <p class="meta-value">HTML/CSS</p>
+                    <p class="meta-value">JavaScript</p>
+                </div>
+
+                <div class="project-meta-section">
+                    <h3 class="meta-label">TIMELINE</h3>
+                    <p class="meta-value">2019</p>
+                </div>
+            </aside>
+
+            <div class="project-content">
+                <div class="project-section">
+                    <h3 class="section-label">DESCRIPTION</h3>
+                    <p class="section-text">A comprehensive event management and RSVP platform designed to streamline event planning and guest management in Sri Lanka.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3 class="section-label">CONTEXT</h3>
+                    <p class="section-text">Created to address the growing need for digital event management solutions. The platform enables hosts to create, manage, and track event invitations while guests can easily RSVP and manage their event attendance.</p>
+                    <p class="section-text">The design focuses on simplicity and efficiency, making event coordination seamless for both organizers and attendees.</p>
+                </div>
+
+                <div class="project-cta">
+                    <a href="#" class="case-study-link">Read Case Study</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Images -->
+        <div class="project-images">
+            <div class="project-image-grid">
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=90" alt="rsvp.lk Screenshot 1" loading="lazy">
+                </div>
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=91" alt="rsvp.lk Screenshot 2" loading="lazy">
+                </div>
+                <div class="project-image-item fade-in">
+                    <img src="https://picsum.photos/1200/750?random=92" alt="rsvp.lk Screenshot 3" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="project-navigation">
+            <a href="click2pay.html" class="project-nav-btn project-nav-prev"><span>←</span>
+                <div class="project-nav-content">
+                    <span class="project-nav-label">Previous</span>
+                    <span class="project-nav-title">Click2Pay</span>
+                </div>
+            </a>
+            <a href="vdomeet.html" class="project-nav-btn project-nav-next">
+                <div class="project-nav-content">
+                    <span class="project-nav-label">Next</span>
+                    <span class="project-nav-title">VDOmeet</span>
+                </div><span>→</span></a>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
