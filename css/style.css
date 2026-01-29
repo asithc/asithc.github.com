@@ -121,7 +121,8 @@ button {
     top: 64px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: inline-flex;
+    align-items: center;
     gap: 4px;
     background: rgba(255, 255, 255, 0.6);
     padding: 6.4px;
@@ -135,8 +136,8 @@ button {
     -webkit-backdrop-filter: blur(40px) saturate(180%);
     border: 1.5px solid #E0E0E0;
     --transition-duration: 0.4s;
-    height: auto;
-    max-height: 60px;
+    height: 56px;
+    overflow: hidden;
 }
 
 .nav::before {
@@ -147,7 +148,7 @@ button {
     transition: all var(--transition-duration, 0.4s) cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 1;
     top: 6.4px;
-    bottom: 6.4px;
+    height: calc(100% - 12.8px);
     left: var(--active-left, 6.4px);
     width: var(--active-width, 0);
     opacity: 0;
@@ -3219,6 +3220,8 @@ button {
         max-width: 420px;
         padding: 6px;
         gap: 2px;
+        height: 56px;
+        overflow: hidden;
     }
     
     .nav-link {

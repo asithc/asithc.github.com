@@ -29,7 +29,28 @@
     <!-- AI Crawlers -->
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4.0">
+    
+    <!-- Clear PWA Cache and Unregister Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister().then(function() {
+                        console.log('Service worker unregistered');
+                    });
+                }
+            });
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) {
+                        caches.delete(name);
+                        console.log('Cache deleted:', name);
+                    }
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Under Construction Banner -->
