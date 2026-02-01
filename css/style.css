@@ -3177,10 +3177,22 @@ button {
 /* Responsive Design - "Digital Love" for all devices 📱💻 */
 @media (max-width: 1024px) {
     .home-container,
+    .about-container,
     .container-split,
     .contact-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+
+    .home-container,
+    .about-container {
+        grid-auto-rows: auto;
+    }
+
+    .home-container > *,
+    .about-container > * {
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
     
     .home-left,
@@ -3613,6 +3625,29 @@ html {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.5;
+}
+
+.work-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.work-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.work-tag:hover {
+    background: rgba(0, 0, 0, 0.08);
 }
 
 .work-link-btn {
@@ -4107,7 +4142,33 @@ html {
 
 @media (max-width: 768px) {
     .work-card {
-        padding: var(--spacing-md);
+        padding: 0;
+    }
+    
+    .work-card-header {
+        padding: 20px 20px 16px 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+    
+    .work-card-info {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+    
+    .work-link-btn {
+        flex-shrink: 0 !important;
+        align-self: flex-start !important;
+        position: static !important;
+        margin: 0 !important;
+    }
+    
+    .work-card-header::after {
+        left: 20px;
+        right: 20px;
     }
     
     .work-card-title {
@@ -4116,6 +4177,16 @@ html {
     
     .work-card-description {
         font-size: 14px;
+    }
+    
+    .work-card-tags {
+        margin-top: 10px;
+        gap: 6px;
+    }
+    
+    .work-tag {
+        font-size: 11px;
+        padding: 3px 10px;
     }
     
     .work-card-preview {
@@ -4136,5 +4207,222 @@ html {
     
     .project-back-nav {
         padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-banner {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 6px;
+    }
+
+    .site-banner .banner-text {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .home-container,
+    .about-container,
+    .work-grid-container,
+    .project-detail-container,
+    .contact-container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    .project-back-nav {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    .work-card-header {
+        padding: 24px 24px var(--spacing-md) 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .work-card-header::after {
+        left: 24px;
+        right: 24px;
+    }
+
+    .work-link-btn {
+        align-self: flex-end;
+    }
+
+    .project-sidebar {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .project-meta-section {
+        min-width: 100%;
+    }
+
+    .project-meta-section .meta-link {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        flex-wrap: wrap;
+    }
+
+    .project-collage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collage-item.span-2x1,
+    .collage-item.span-2x2,
+    .collage-item.span-3x2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .widget-row {
+        grid-template-columns: 1fr;
+    }
+
+    .audible-widget {
+        grid-template-columns: 1fr;
+    }
+
+    .book-cover-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .audiobook-content {
+        padding: var(--spacing-lg);
+    }
+
+    .app-icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-manifesto {
+        padding: var(--spacing-lg);
+    }
+
+    .about-item-title {
+        font-size: 11px;
+    }
+
+    .about-item-content {
+        font-size: 16px;
+    }
+
+    .contact-card {
+        padding: var(--spacing-md);
+    }
+
+    .card-header {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    .card-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: var(--font-size-lg);
+    }
+
+    .card-icon,
+    .twitter-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .resume-text,
+    .linkedin-text {
+        font-size: 24px;
+    }
+
+    .lakeside-logo {
+        font-size: 4rem;
+    }
+
+    .careers-text {
+        font-size: var(--font-size-2xl);
+    }
+
+    .moments-text {
+        font-size: var(--font-size-xl);
+    }
+
+    .moments-text .large {
+        font-size: var(--font-size-3xl);
+    }
+
+    .imessage-container {
+        height: auto;
+        min-height: 520px;
+    }
+
+    .message-bubble {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        width: calc(100% - 24px);
+        bottom: 16px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .manifesto-text {
+        font-size: 1.75rem;
+    }
+
+    .manifesto-item {
+        font-size: 1rem;
+    }
+
+    .work-card-title {
+        font-size: 18px;
+    }
+
+    .project-title {
+        font-size: 32px;
+    }
+
+    .section-text {
+        font-size: 15px;
+    }
+
+    .case-study-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .project-nav-btn {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .home-container,
+    .about-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .home-container > *,
+    .about-page .about-container > * {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        width: 100%;
     }
 }

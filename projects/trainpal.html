@@ -4,24 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrainPal — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=4.2">
     
-    <!-- Clear PWA Cache and Unregister Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for (let registration of registrations) {
-                    registration.unregister();
-                }
-            });
-            if ('caches' in window) {
-                caches.keys().then(function(names) {
-                    for (let name of names) caches.delete(name);
-                });
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="project-detail-page">
     <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
@@ -38,7 +23,7 @@
         <div class="project-header">
             <div class="project-header-content">
                 <h1 class="project-title">TrainPal</h1>
-                <p class="project-subtitle">Train Booking Platform</p>
+                <p class="project-subtitle">Train Booking & Multimodal Commute Platform</p>
             </div>
         </div>
 
@@ -46,38 +31,40 @@
             <aside class="project-sidebar">
                 <div class="project-meta-section">
                     <h3 class="meta-label">STATUS</h3>
-                    <p class="meta-value">Not Live</p>
+                    <p class="meta-value">Abandoned</p>
                 </div>
                 <div class="project-meta-section">
                     <h3 class="meta-label">MY ROLE</h3>
-                    <p class="meta-value">Web Designer</p>
-                    <p class="meta-value">Front-end Developer</p>
+                    <p class="meta-value">Product Designer</p>
                     <p class="meta-value">Creative Direction</p>
+                    <p class="meta-value">Product vision and end-to-end user journeys</p>
+                    <p class="meta-value">Designed the itinerary engine UX</p>
                 </div>
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TOOLS</h3>
-                    <p class="meta-value">Figma</p>
-                    <p class="meta-value">HTML/CSS</p>
-                    <p class="meta-value">JavaScript</p>
+                    <p class="meta-value">SketchApp</p>
+                    <p class="meta-value">draw.io</p>
+                    <p class="meta-value">Origami</p>
                 </div>
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TIMELINE</h3>
-                    <p class="meta-value">2021</p>
+                    <p class="meta-value">2018 - 2019</p>
                 </div>
             </aside>
 
             <div class="project-content">
                 <div class="project-section">
                     <h3 class="section-label">DESCRIPTION</h3>
-                    <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="section-text">TrainPal was a community - driven initiative to design Sri Lanka’s first end-to-end commuter transport platform, connecting train travel with last-mile mobility, ticketing, and real-time commuter intelligence. The product aimed to help users plan, book, and manage daily journeys from exact pickup point to final destination - free for public use.</p>
                 </div>
 
                 <div class="project-section">
                     <h3 class="section-label">CONTEXT</h3>
-                    <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    <p class="section-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <p class="section-text">Sri Lanka’s public transport ecosystem operates across disconnected systems—railways, buses, taxis, and ride-hailing services—with no unified experience layer. Commuters rely on fragmented information, informal knowledge, and guesswork, especially when combining trains with last-mile travel.</p>
+                    <p class="section-text">TrainPal explored a Sri Lanka–first mobility model, integrating train schedules, platform data, ride-hailing APIs, and community-generated crowd insights into a single planning experience. The project was initiated as a GDG Sri Lanka community program funded by Google, with a multidisciplinary volunteer team.</p>
+                    <p class="section-text">Despite completing design, validation, and early development groundwork, the project was discontinued due to funding and continuity constraints before public launch.</p>
                 </div>
 
                 <div class="project-cta">

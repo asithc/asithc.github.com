@@ -4,24 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DGL — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=4.2">
     
-    <!-- Clear PWA Cache and Unregister Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for (let registration of registrations) {
-                    registration.unregister();
-                }
-            });
-            if ('caches' in window) {
-                caches.keys().then(function(names) {
-                    for (let name of names) caches.delete(name);
-                });
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="project-detail-page">
     <!-- Navigation -->
     <nav class="nav">
@@ -151,10 +136,10 @@
                     <span class="project-nav-title">Trancity</span>
                 </div>
             </a>
-            <a href="t20-worldcup.html" class="project-nav-btn project-nav-next">
+            <a href="IFSzero.html" class="project-nav-btn project-nav-next">
                 <div class="project-nav-content">
                     <span class="project-nav-label">Next</span>
-                    <span class="project-nav-title">T20 World Cup</span>
+                    <span class="project-nav-title">IFSZero</span>
                 </div><span>→</span></a>
         </div>
     </main>

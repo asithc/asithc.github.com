@@ -466,7 +466,7 @@ const initScrollProgress = () => {
         top: 0;
         left: 0;
         height: 3px;
-        background: #FF3399;
+        background: #000000;
         width: 0%;
         z-index: 9999;
         transition: width 0.1s ease;
@@ -1224,7 +1224,7 @@ const initPDFPreview = () => {
         e.preventDefault();
         
         // Set PDF source (update this path to your actual PDF file)
-        pdfViewer.src = 'files/Resume-Asith Wijenayake-Lead-UX-Designer-18Jan-no-reff.pdf';
+        pdfViewer.src = 'files/Resume-Asith Wijenayake-Lead-UX-Designer-27Jan.pdf';
         
         // Show modal
         pdfModal.classList.add('active');

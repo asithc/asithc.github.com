@@ -4,24 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WizPOS — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=4.2">
     
-    <!-- Clear PWA Cache and Unregister Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for (let registration of registrations) {
-                    registration.unregister();
-                }
-            });
-            if ('caches' in window) {
-                caches.keys().then(function(names) {
-                    for (let name of names) caches.delete(name);
-                });
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="project-detail-page">
     <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
@@ -37,47 +22,64 @@
     <main class="project-detail-container">
         <div class="project-header">
             <div class="project-header-content">
-                <h1 class="project-title">WizPOS</h1>
-                <p class="project-subtitle">Point of Sale System</p>
+                <h1 class="project-title">WizPOS&trade;</h1>
+                <p class="project-subtitle">A next-generation POS built for people who move fast.</p>
             </div>
         </div>
 
         <div class="project-layout">
             <aside class="project-sidebar">
-                <div class="project-meta-section">
+                 <div class="project-meta-section">
                     <h3 class="meta-label">STATUS</h3>
-                    <p class="meta-value">Not Live</p>
+                    <span class="status-badge is-live">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        Live
+                    </span>
+                    
                 </div>
                 <div class="project-meta-section">
                     <h3 class="meta-label">MY ROLE</h3>
-                    <p class="meta-value">Design Systems Lead</p>
-                    <p class="meta-value">Visual Design</p>
-                    <p class="meta-value">Documentation</p>
+                    <p class="meta-value">UX strategy and experience redesign</p>
+                    <p class="meta-value">POS-focused usability and interaction design</p>
+                    <p class="meta-value">Visual design and layout systems</p>
+                    <p class="meta-value">HTML/CSS-based UI theming</p>
+                    <p class="meta-value">Supporting React developers in building reusable UI components</p>
+                    <p class="meta-value">Documentation and handover for long-term scalability</p>
+                    
                 </div>
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TOOLS</h3>
                     <p class="meta-value">Figma</p>
-                    <p class="meta-value">Storybook</p>
-                    <p class="meta-value">Notion</p>
+                    <p class="meta-value">SketchApp</p>
+                    <p class="meta-value">FullStory</p>
+                </div>
+
+                <div class="project-meta-section">
+                    <h3 class="meta-label">TECHNOLOGIES</h3>
+                    <p class="meta-value">HTML</p>
+                    <p class="meta-value">CSS</p>
+                    <p class="meta-value">ReactJS</p>
                 </div>
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TIMELINE</h3>
-                    <p class="meta-value">2023</p>
+                    <p class="meta-value">2021 - 2022</p>
                 </div>
             </aside>
 
             <div class="project-content">
                 <div class="project-section">
                     <h3 class="section-label">DESCRIPTION</h3>
-                    <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="section-text">A cloud-based Point of Sale (POS) system designed to support high-volume retail operations, with a focus on speed, reliability, and scalability for international markets.</p>
                 </div>
 
                 <div class="project-section">
                     <h3 class="section-label">CONTEXT</h3>
-                    <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    <p class="section-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <p class="section-text">WizPOS&trade; was developed in Sri Lanka in partnership with eWiz Solutions and an independent engineering team from one of the world’s largest food supply organizations.</p>
+                    <p class="section-text">The core system was largely complete from a functional standpoint when I joined. However, the product lacked a cohesive visual language, POS ergonomics, and market-ready usability required for international deployment.</p>
+                    <p class="section-text">By the time I joined the project, the system was already functionally mature. Core POS workflows, backend logic, and a React-based frontend were in place. However, the product was not yet ready for real-world retail usage or market adoption due to significant gaps in usability, visual consistency, and POS ergonomics.</p>
+                    <p class="section-text">My role was to bridge that gap-transforming a technically complete system into a usable, market - ready POS product.</p>
                 </div>
 
                 <div class="project-cta">

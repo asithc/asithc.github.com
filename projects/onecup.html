@@ -4,24 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneCup — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=4.2">
     
-    <!-- Clear PWA Cache and Unregister Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for (let registration of registrations) {
-                    registration.unregister();
-                }
-            });
-            if ('caches' in window) {
-                caches.keys().then(function(names) {
-                    for (let name of names) caches.delete(name);
-                });
-            }
-        }
-    </script>
-</head>
+    </head>
 <body class="project-detail-page">
     <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
@@ -119,10 +104,10 @@
         </div>
 
         <div class="project-navigation">
-            <a href="dgl.html" class="project-nav-btn project-nav-prev"><span>←</span>
+            <a href="IFSzero.html" class="project-nav-btn project-nav-prev"><span>←</span>
                 <div class="project-nav-content">
                     <span class="project-nav-label">Previous</span>
-                    <span class="project-nav-title">DGL</span>
+                    <span class="project-nav-title">IFSZero</span>
                 </div>
             </a>
             <a href="marketplace.html" class="project-nav-btn project-nav-next">

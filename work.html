@@ -29,29 +29,9 @@
     <!-- AI Crawlers -->
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
     
-    <link rel="stylesheet" href="css/style.css?v=4.0">
+    <link rel="stylesheet" href="css/style.css?v=4.2">
     
-    <!-- Clear PWA Cache and Unregister Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for (let registration of registrations) {
-                    registration.unregister().then(function() {
-                        console.log('Service worker unregistered');
-                    });
-                }
-            });
-            if ('caches' in window) {
-                caches.keys().then(function(names) {
-                    for (let name of names) {
-                        caches.delete(name);
-                        console.log('Cache deleted:', name);
-                    }
-                });
-            }
-        }
-    </script>
-</head>
+    </head>
 <body>
     <!-- Under Construction Banner -->
     <div class="site-banner">
@@ -76,13 +56,18 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">HopOn&trade;</h2>
                         <p class="work-card-description">Turn empty seats into shared journeys. A carpooling app for everyday drivers.</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">Mobility</span>
+                            <span class="work-tag">Freelance</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=1" alt="Trancity" loading="lazy">
+                    <img src="/images/Projects/HopOn/HopOn-feature.png" alt="Trancity" loading="lazy">
                 </div>
             </a>
 
@@ -92,29 +77,61 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">DGL&trade;<span class="work-card-title-light"> Digital Gaming League</span></h2>
                         <p class="work-card-description">National Gaming & Esports Community Platform</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">Enterprise</span>
+                            <span class="work-tag">Dialog</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=2" alt="DGL" loading="lazy">
+                    <img src="/images/Projects/DGL/DGL-feature.png" alt="DGL" loading="lazy">
                 </div>
             </a>
 
-            <!-- Availability -->
+            <!-- Click2Pay -->
+            <a href="projects/IFSzero.html" class="work-card">
+                <div class="work-card-header">
+                    <div class="work-card-info">
+                        <h2 class="work-card-title">IFSZero&trade;</h2>
+                        <p class="work-card-description">Designing a zero-to-one Sustainability & Emissions platform inside IFS Cloud&trade;</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2B</span>
+                            <span class="work-tag">Enterprise UX</span>
+                            <span class="work-tag">SaaS</span>
+                            <span class="work-tag">IFS</span>
+                        </div>
+                    </div>
+                    <button class="ex-link-btn work-link-btn" aria-label="View project">
+                    <span>↗</span>
+                </button>
+                </div>
+                <div class="work-card-preview">
+                    <img src="https://picsum.photos/800/500?random=9" alt="IFSZero" loading="lazy">
+                </div>
+            </a>
+
+            <!-- OneCup -->
             <a href="projects/onecup.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
                         <h2 class="work-card-title">OneCup&trade;</h2>
                         <p class="work-card-description">Pay-It-Forward Pickup Platform for Local Cafés</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">Social Impact</span>
+                            <span class="work-tag">Freelance</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=3" alt="Availability" loading="lazy">
+                    <img src="/images/Projects/OneCup/OneCup-feature.png" alt="Availability" loading="lazy">
                 </div>
             </a>
 
@@ -124,13 +141,18 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">Marketplace&trade;<span class="work-card-title-light"> by Dialog Enterprise</span></h2>
                         <p class="work-card-description">One-stop digital business solutions marketplace</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2B</span>
+                            <span class="work-tag">Enterprise</span>
+                            <span class="work-tag">Dialog</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=4" alt="Marketplace" loading="lazy">
+                    <img src="/images/Projects/Marketplace/MarketPlace-feature.png" alt="Marketplace" loading="lazy">
                 </div>
             </a>
 
@@ -138,15 +160,20 @@
             <a href="projects/wizpos.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">WizPOS</h2>
-                        <p class="work-card-description">Modern point of sale system for retail businesses</p>
+                        <h2 class="work-card-title">WizPOS&trade;</h2>
+                        <p class="work-card-description">A next-generation POS built for people who move fast.</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2B</span>
+                            <span class="work-tag">SaaS</span>
+                            <span class="work-tag">Freelance</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=5" alt="WizPOS" loading="lazy">
+                    <img src="/images/Projects/WIZPos/WizPOS-feature.png" alt="WizPOS" loading="lazy">
                 </div>
             </a>
 
@@ -155,32 +182,23 @@
                 <div class="work-card-header">
                     <div class="work-card-info">
                         <h2 class="work-card-title">TrainPal</h2>
-                        <p class="work-card-description">Train booking platform for seamless travel</p>
+                        <p class="work-card-description">Train Booking & Multimodal Commute Platform</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">Mobility</span>
+                            <span class="work-tag">Freelance</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=6" alt="TrainPal" loading="lazy">
+                    <img src="/images/Projects/TrainPal/TrainPal-feature.png" alt="TrainPal" loading="lazy">
                 </div>
             </a>
 
-            <!-- T20 World Cup -->
-            <a href="projects/t20-worldcup.html" class="work-card">
-                <div class="work-card-header">
-                    <div class="work-card-info">
-                        <h2 class="work-card-title">T20 World Cup Wishing Portal</h2>
-                        <p class="work-card-description">Interactive fan engagement platform for cricket enthusiasts</p>
-                    </div>
-                    <button class="ex-link-btn work-link-btn" aria-label="View project">
-                    <span>↗</span>
-                </button>
-                </div>
-                <div class="work-card-preview">
-                    <img src="https://picsum.photos/800/500?random=7" alt="T20 World Cup Portal" loading="lazy">
-                </div>
-            </a>
+           
 
             <!-- Dialog WeatherGuru -->
             <a href="projects/dialog-weatherguru.html" class="work-card">
@@ -188,6 +206,11 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">Dialog WeatherGuru</h2>
                         <p class="work-card-description">Weather intelligence platform with forecasts and alerts</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">AI</span>
+                            <span class="work-tag">Dialog</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
@@ -204,6 +227,11 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">Click2Pay</h2>
                         <p class="work-card-description">Seamless digital payment solution for online transactions</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">FinTech</span>
+                            <span class="work-tag">Dialog</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
@@ -220,6 +248,11 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">rsvp.lk</h2>
                         <p class="work-card-description">Event management and RSVP platform for Sri Lanka</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2C</span>
+                            <span class="work-tag">SaaS</span>
+                            <span class="work-tag">Freelance</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
@@ -236,6 +269,11 @@
                     <div class="work-card-info">
                         <h2 class="work-card-title">VDOmeet by Dialog</h2>
                         <p class="work-card-description">Secure video conferencing platform for virtual meetings</p>
+                        <div class="work-card-tags">
+                            <span class="work-tag">B2B</span>
+                            <span class="work-tag">Enterprise</span>
+                            <span class="work-tag">Dialog</span>
+                        </div>
                     </div>
                     <button class="ex-link-btn work-link-btn" aria-label="View project">
                     <span>↗</span>
