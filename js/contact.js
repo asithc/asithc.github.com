@@ -3,6 +3,7 @@
 const chatState = {
     currentStep: 'initial',
     userData: {
+        name: '',
         topic: '',
         whatsapp: '',
         email: ''
@@ -54,11 +55,15 @@ const isValidEmail = (email) => {
     return emailRegex.test(email);
 };
 
-// Validate WhatsApp number
+// Validate WhatsApp number (10 digits min, or with country code +XX)
 const isValidPhone = (phone) => {
     const cleaned = phone.replace(/[\s\-\(\)\.]/g, '');
-    const phoneRegex = /^\+?[0-9]{8,15}$/;
-    return phoneRegex.test(cleaned);
+    // With country code: +1234567890123 (+ followed by 10-15 digits)
+    // Without country code: 10 digits exactly
+    if (cleaned.startsWith('+')) {
+        return /^\+[0-9]{10,15}$/.test(cleaned);
+    }
+    return /^[0-9]{10}$/.test(cleaned);
 };
 
 // Scroll to bottom
@@ -159,8 +164,8 @@ const handleMessage = async (text) => {
         return;
     }
     
-    // Check for gibberish (except when collecting phone/email)
-    if (isGibberish(userText) && chatState.currentStep !== 'ask_email' && chatState.currentStep !== 'ask_whatsapp') {
+    // Check for gibberish (except when collecting name/phone/email)
+    if (isGibberish(userText) && chatState.currentStep !== 'ask_email' && chatState.currentStep !== 'ask_whatsapp' && chatState.currentStep !== 'ask_name') {
         chatState.gibberishCount++;
         if (chatState.gibberishCount <= 2) {
             await botReply("its funny i cant understand any of those. i'm not sure i should laugh or cry. ;3", 1500);
@@ -172,14 +177,36 @@ const handleMessage = async (text) => {
         return;
     }
     
+    // Check for yes/no responses
+    const isYes = /^(yes|yeah|yep|sure|ok|okay|yea|yup|definitely|absolutely|of course|why not|let's do it|let's go|y)$/i.test(userText.trim());
+    const isNo = /^(no|nope|nah|not really|no thanks|maybe later|n)$/i.test(userText.trim());
+    
     // Process based on current step
     switch (chatState.currentStep) {
         case 'initial':
-            // First message from user - greet and ask what they need
+            if (isNo) {
+                chatState.currentStep = 'declined';
+                await botReply("no worries! 👋", 800);
+                await botReply("see you around then! feel free to come back anytime ✨", 1200);
+                completeChat();
+            } else {
+                chatState.currentStep = 'ask_name';
+                await botReply("ok awesome! 🎉", 800);
+                await botReply("can i know your name please?", 1000);
+            }
+            break;
+            
+        case 'ask_name':
+            chatState.userData.name = userText;
+            chatState.currentStep = 'ask_topic';
+            await botReply(`nice to meet you, ${userText}! 👋`, 800);
+            await botReply("so what did you want to talk about?", 1000);
+            break;
+            
+        case 'ask_topic':
             chatState.userData.topic = userText;
             chatState.currentStep = 'ask_whatsapp';
-            await botReply("hey! 👋", 800);
-            await botReply("nice! sounds interesting 🤔", 1000);
+            await botReply("sounds interesting! 🤔", 800);
             await botReply("what's your whatsapp number so i can reach you? 📱 (or type 'skip')", 1200);
             break;
             
@@ -220,6 +247,10 @@ const handleMessage = async (text) => {
             
         case 'complete':
             await botReply("we're all set! i already have your info 😊 just wait for my message!", 1200);
+            break;
+            
+        case 'declined':
+            await botReply("changed your mind? just refresh the page and we can start over! 😊", 1200);
             break;
     }
     
