@@ -239,6 +239,11 @@ button {
     grid-row: span 1;
 }
 
+.dock-card {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
 .app-icons-card {
     grid-column: span 1;
     grid-row: span 1;
@@ -252,6 +257,22 @@ button {
 .photo-card {
     grid-column: span 1;
     grid-row: span 2;
+}
+
+.logo-3d-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    background: var(--surface-primary);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 !important;
+}
+
+.logo-3d-card model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
 }
 
 .calendar-card {
@@ -456,6 +477,248 @@ button {
 /* Notion Card */
 .notion-card {
     grid-column: span 2;
+}
+
+/* Dock Widget - macOS Style */
+.dock-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding: 12px 0 0 0;
+    min-height: 240px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.dock-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.dock-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0 12px 12px 12px;
+}
+
+/* Popup Panel - Permanent display at top */
+.dock-popup {
+    width: 100%;
+    min-height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px;
+    border: 1px solid rgba(180, 180, 180, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Arrow pointer from popup to selected app */
+.dock-popup-arrow {
+    position: absolute;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border-right: 1px solid rgba(180, 180, 180, 0.5);
+    border-bottom: 1px solid rgba(180, 180, 180, 0.5);
+    transform: rotate(45deg);
+    transition: left 0.2s ease;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.dock-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Top row - icon and title */
+.popup-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+    width: 100%;
+}
+
+/* Bottom row - link */
+.popup-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 2px;
+}
+
+.popup-placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+.popup-link {
+    font-size: 16px;
+    color: #0066cc;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.popup-link:hover {
+    text-decoration: underline;
+    color: #0055aa;
+}
+
+.popup-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.popup-icon[data-profile="behance"] {
+    background: linear-gradient(145deg, #0057ff, #1769ff);
+    color: white;
+}
+
+.popup-icon[data-profile="dribbble"] {
+    background: linear-gradient(145deg, #ea4c89, #f082ac);
+    color: white;
+}
+
+.popup-icon[data-profile="linkedin"] {
+    background: linear-gradient(145deg, #0077b5, #0088cc);
+    color: white;
+}
+
+.popup-icon[data-profile="twitter"] {
+    background: linear-gradient(145deg, #1a1a1a, #333333);
+    color: white;
+}
+
+/* Dock Tray */
+.dock-tray {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0;
+    padding: 12px 12px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 22px;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.dock-app {
+    position: relative;
+    width: 20%;
+    aspect-ratio: 1;
+    max-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center center;
+    padding: 6px;
+    border-radius: 14px;
+}
+
+.dock-app:hover {
+    transform: scale(1.1);
+}
+
+.dock-app:active {
+    transform: scale(0.95);
+}
+
+/* Selected state with border */
+.dock-app.selected {
+    border: 2px solid #000000;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.dock-app.selected .dock-app-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.dock-app-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.dock-app-icon {
+    width: 50%;
+    height: 50%;
+    color: white;
+}
+
+/* App backgrounds with brand colors */
+.dock-app[data-profile="behance"] .dock-app-inner {
+    background: linear-gradient(145deg, #0057ff, #1769ff);
+    box-shadow: 0 3px 10px rgba(0, 87, 255, 0.3);
+}
+
+.dock-app[data-profile="dribbble"] .dock-app-inner {
+    background: linear-gradient(145deg, #ea4c89, #f082ac);
+    box-shadow: 0 3px 10px rgba(234, 76, 137, 0.3);
+}
+
+.dock-app[data-profile="linkedin"] .dock-app-inner {
+    background: linear-gradient(145deg, #0077b5, #0088cc);
+    box-shadow: 0 3px 10px rgba(0, 119, 181, 0.3);
+}
+
+.dock-app[data-profile="twitter"] .dock-app-inner {
+    background: linear-gradient(145deg, #1a1a1a, #333333);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dock-app[data-profile="instagram"] .dock-app-inner {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 3px 10px rgba(214, 36, 159, 0.4);
+}
+
+.dock-app[data-profile="polarsteps"] .dock-app-inner {
+    background: linear-gradient(145deg, #FF0066, #FF3385);
+    box-shadow: 0 3px 10px rgba(255, 0, 102, 0.4);
 }
 
 /* Notion Widget */
@@ -1137,6 +1400,12 @@ button {
     display: block;
 }
 
+.whatsapp-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .whatsapp-profile-name {
     font-size: 14px;
     font-weight: 600;
@@ -1144,8 +1413,19 @@ button {
     transition: color 0.5s ease;
 }
 
+.whatsapp-profile-label {
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    transition: color 0.5s ease;
+}
+
 .whatsapp-card:hover .whatsapp-profile-name {
     color: #FFFFFF;
+}
+
+.whatsapp-card:hover .whatsapp-profile-label {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .whatsapp-card:hover .whatsapp-profile-avatar {
@@ -1184,9 +1464,11 @@ button {
     color: var(--text-primary);
     transition: color 0.5s ease;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-align: left;
+    font-weight: 500;
 }
 
 .whatsapp-mention {
@@ -3277,11 +3559,67 @@ button {
     
     .bento-item {
         padding: var(--spacing-md);
+        aspect-ratio: 1;
+        min-height: unset;
+    }
+    
+    .logo-3d-card {
+        aspect-ratio: 1;
+        padding: 0;
     }
     
     .notion-card,
-    .app-icons-card {
+    .app-icons-card,
+    .dock-card {
         grid-column: span 1;
+    }
+    
+    .dock-card {
+        padding: 10px 0 0 0;
+        gap: 8px;
+    }
+    
+    .whatsapp-card {
+        min-height: unset;
+    }
+    
+    .dock-container {
+        gap: 8px;
+        padding: 0 10px 10px 10px;
+    }
+    
+    .dock-popup {
+        min-height: 60px;
+        padding: 10px 12px;
+        border-radius: 10px;
+    }
+    
+    .popup-title {
+        font-size: 14px;
+    }
+    
+    .popup-link {
+        font-size: 12px;
+    }
+    
+    .popup-icon {
+        width: 20px;
+        height: 20px;
+        padding: 3px;
+    }
+    
+    .dock-tray {
+        padding: 10px 0;
+    }
+    
+    .dock-app {
+        width: 18%;
+        max-width: 50px;
+        padding: 3px;
+    }
+    
+    .dock-app-inner {
+        border-radius: 10px;
     }
     
     .phone-card {
@@ -3941,6 +4279,377 @@ html {
     display: none;
 }
 
+/* Pin Protected Case Study Button */
+.case-study-link.pin-protected::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'%3E%3C/rect%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+}
+
+.case-study-link.pin-protected:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'%3E%3C/rect%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Disabled case study button (no content available yet) */
+.case-study-link.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #f5f5f5;
+    color: #999;
+    border-color: #e0e0e0;
+}
+
+/* Pin Protect Modal Overlay */
+.pin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.pin-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Pin Modal */
+.pin-modal {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 90%;
+    padding: 32px;
+    position: relative;
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.pin-modal-overlay.active .pin-modal {
+    transform: scale(1) translateY(0);
+}
+
+.pin-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: all 0.2s ease;
+}
+
+.pin-modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Modal Header */
+.pin-modal-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.pin-modal-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(145deg, #f5f5f5, #e8e8e8);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: #333;
+}
+
+.pin-modal-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 8px 0;
+}
+
+.pin-modal-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Modal Body */
+.pin-modal-body {
+    margin-bottom: 24px;
+}
+
+.pin-modal-instruction {
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Pin Input Container */
+.pin-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.pin-input-container.shake {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+
+.pin-input {
+    width: 48px;
+    height: 56px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fafafa;
+}
+
+.pin-input:focus {
+    border-color: #111;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.pin-input:not(:placeholder-shown) {
+    background: #fff;
+}
+
+/* Error Message */
+.pin-error {
+    text-align: center;
+    color: #e53935;
+    font-size: 13px;
+    min-height: 20px;
+    margin: 0 0 12px 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.pin-error.show {
+    opacity: 1;
+}
+
+/* Submit Button */
+.pin-submit-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pin-submit-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.pin-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Modal Footer */
+.pin-modal-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.pin-contact {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.pin-contact a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pin-contact a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   CASE STUDY SECTION (Revealed)
+   ================================ */
+.case-study-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.case-study-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-study-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+}
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.case-study-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.case-study-intro {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.case-study-block {
+    margin-bottom: 48px;
+}
+
+.case-study-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.case-study-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.case-study-list {
+    margin: 20px 0;
+    padding-left: 24px;
+}
+
+.case-study-list li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.case-study-list.numbered {
+    list-style-type: decimal;
+}
+
+.case-study-list li strong {
+    color: #000;
+}
+
+.case-study-images {
+    margin: 48px 0;
+}
+
+.case-study-image {
+    margin-bottom: 32px;
+}
+
+.case-study-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .case-study-content {
+        padding: 60px 20px 40px;
+    }
+    
+    .case-study-title {
+        font-size: 26px;
+    }
+    
+    .case-study-heading {
+        font-size: 20px;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .pin-modal {
+        padding: 24px;
+    }
+    
+    .pin-input {
+        width: 40px;
+        height: 48px;
+        font-size: 20px;
+    }
+    
+    .pin-input-container {
+        gap: 6px;
+    }
+    
+    .pin-modal-title {
+        font-size: 18px;
+    }
+}
+
 /* Project collage grid */
 .project-collage {
     margin: var(--spacing-2xl) 0;
@@ -4034,6 +4743,26 @@ html {
     height: auto;
     display: block;
     object-fit: cover;
+}
+
+/* Placeholder for work-in-progress images */
+.project-image-placeholder {
+    width: 100%;
+    aspect-ratio: 1200 / 750;
+    background: #f0f0f0;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.project-image-placeholder span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #888;
+    line-height: 1.4;
 }
 
 .placeholder-image {

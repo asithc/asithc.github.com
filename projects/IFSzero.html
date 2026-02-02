@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFSZero — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.2">
+    <link rel="stylesheet" href="../css/style.css?v=5.2">
     
     </head>
 <body class="project-detail-page">
@@ -89,7 +89,9 @@
                 </div>
 
                 <div class="project-cta">
-                    <a href="#" class="case-study-link">Case Study on Request</a>
+                    <a href="#case-study" class="case-study-link pin-protected" 
+                       data-pin="123456" 
+                       data-target="caseStudySection">Read Case Study</a>
                 </div>
             </div>
         </div>
@@ -98,16 +100,104 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=90" alt="Project Screenshot 1" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>🛠️ Asith is cooking something here...</span>
+                    </div>
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=91" alt="Project Screenshot 2" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>🎨 Pixels are being pushed, please hold.</span>
+                    </div>
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=92" alt="Project Screenshot 3" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>☕ Currently brewing... check back soon!</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Case Study Section (Hidden until PIN is entered) -->
+        <section id="caseStudySection" class="case-study-section" style="display: none;">
+            <div class="case-study-content">
+                <div class="case-study-header">
+                    <h2 class="case-study-title">📖 Full Case Study</h2>
+                    <p class="case-study-intro">Thank you for your interest! Here's the detailed breakdown of the IFSZero&trade; project.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Challenge</h3>
+                    <p>Enterprise organizations face mounting pressure to accurately measure, report, and reduce their carbon emissions across Scope 1, 2, and 3 categories. Existing solutions often require switching between multiple systems, leading to data silos and reporting inconsistencies.</p>
+                    <p>IFS needed to integrate sustainability capabilities directly into their Cloud ERP platform, allowing customers to manage emissions data alongside their core business operations.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Research & Discovery</h3>
+                    <p>We conducted extensive research with sustainability managers, compliance officers, and operations teams across manufacturing, aerospace, and energy sectors. Key findings included:</p>
+                    <ul class="case-study-list">
+                        <li>Data collection was the biggest pain point — often manual and error-prone</li>
+                        <li>Users needed flexibility for different reporting frameworks (GHG Protocol, CSRD, etc.)</li>
+                        <li>Audit trails and data provenance were critical for compliance</li>
+                        <li>Action planning features were desired but rarely available in existing tools</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Design Approach</h3>
+                    <p>The design strategy focused on three core principles:</p>
+                    <ol class="case-study-list numbered">
+                        <li><strong>Integrated Experience:</strong> Sustainability workflows embedded within existing ERP processes</li>
+                        <li><strong>Guided Data Capture:</strong> Step-by-step wizards that reduce complexity for end users</li>
+                        <li><strong>Actionable Insights:</strong> Dashboards that highlight reduction opportunities, not just report numbers</li>
+                    </ol>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="https://picsum.photos/1200/750?random=93" alt="Case Study Image 1" loading="lazy">
+                        <p class="image-caption">Dashboard overview showing emissions breakdown by scope</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="https://picsum.photos/1200/750?random=94" alt="Case Study Image 2" loading="lazy">
+                        <p class="image-caption">Data capture wizard for activity-level emissions</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Key Features Designed</h3>
+                    <ul class="case-study-list">
+                        <li><strong>Activity Data Capture:</strong> Flexible forms for fuel, electricity, travel, and supply chain data</li>
+                        <li><strong>Emission Calculations:</strong> Automatic calculations using industry-standard emission factors</li>
+                        <li><strong>Multi-entity Rollup:</strong> Consolidated views across subsidiaries and business units</li>
+                        <li><strong>Action Planning:</strong> Set reduction targets and track progress over time</li>
+                        <li><strong>Report Generation:</strong> Export-ready reports for regulatory submissions</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Outcome & Impact</h3>
+                    <p>IFSZero&trade; has been successfully integrated into IFS Cloud and is being adopted by enterprise customers globally. Key metrics include:</p>
+                    <ul class="case-study-list">
+                        <li>60% reduction in time spent on emissions data collection</li>
+                        <li>Single source of truth for sustainability and operational data</li>
+                        <li>Positive feedback from early adopters in pilot programs</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="https://picsum.photos/1200/750?random=95" alt="Case Study Image 3" loading="lazy">
+                        <p class="image-caption">Action planning interface with target tracking</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Reflections</h3>
+                    <p>This project reinforced the importance of designing for both compliance requirements and day-to-day usability. Enterprise sustainability tools often err on the side of complexity — our goal was to make the right thing the easy thing to do.</p>
+                    <p>Working cross-functionally with product, engineering, and domain experts was essential to balance technical constraints with user needs.</p>
+                </div>
+            </div>
+        </section>
 
         <div class="project-navigation">
             <a href="dgl.html" class="project-nav-btn project-nav-prev"><span>←</span>
@@ -125,5 +215,6 @@
     </main>
 
     <script src="../js/script.js"></script>
+    <script src="../js/pin-protect.js"></script>
 </body>
 </html>

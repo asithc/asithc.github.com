@@ -71,7 +71,10 @@
     }
     </script>
     
-    <link rel="stylesheet" href="css/style.css?v=4.2">
+    <link rel="stylesheet" href="css/style.css?v=5.2">
+    
+    <!-- Model Viewer for 3D GLB -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     
     <!-- Clear PWA Cache and Unregister Service Worker -->
     <script>
@@ -140,21 +143,60 @@
                 </div>
             </div>
 
-            <!-- Notion Widget -->
-            <div class="bento-item notion-card fade-in delay-1">
-                    <div class="notion-header">
-                        <svg class="notion-icon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M4 2h8v12H4V2z"/>
-                        </svg>
-                        <span>NOTION</span>
+            <!-- Dock Widget -->
+            <div class="bento-item dock-card fade-in delay-1">
+                <div class="dock-container">
+                    <!-- Popup Panel -->
+                    <div class="dock-popup" id="dockPopup">
+                        <div class="dock-popup-content" id="dockPopupContent">
+                            <span class="popup-placeholder">Select an app below</span>
+                        </div>
                     </div>
-                    <div class="notion-compact">
-                        <div class="notion-item-compact">📝 Trancity Notes</div>
-                        <div class="notion-item-compact">📅 1-on-1 Meeting Notes</div>
-                        <div class="notion-item-compact">📊 Project Timeline</div>
-                        <div class="notion-item-compact">✅ Tasks</div>
+                    <!-- Dock Tray -->
+                    <div class="dock-tray">
+                        <div class="dock-app selected" data-profile="behance" data-title="Behance" data-url="https://www.behance.net/asithwijenayake" data-link="behance.net/asithwijenayake">
+                            <div class="dock-app-inner">
+                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
+                                    <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dock-app" data-profile="dribbble" data-title="Dribbble" data-url="https://dribbble.com/asithwijenayake" data-link="dribbble.com/asithwijenayake">
+                            <div class="dock-app-inner">
+                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
+                                    <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.81zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dock-app" data-profile="twitter" data-title="X (Twitter)" data-url="https://twitter.com/asithc" data-link="x.com/asithwijenayake">
+                            <div class="dock-app-inner">
+                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dock-app" data-profile="instagram" data-title="Instagram" data-url="https://www.instagram.com/asitc" data-link="instagram.com/asithwijenayake">
+                            <div class="dock-app-inner">
+                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="white">
+                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dock-app" data-profile="polarsteps" data-title="Polarsteps" data-url="https://www.polarsteps.com/Asith" data-link="polarsteps.com/AsithWijenayake">
+                            <div class="dock-app-inner">
+                                <svg viewBox="0 0 48 48" class="dock-app-icon" fill="white">
+                                    <path d="M24 4L6 24l18 20 18-20L24 4zm0 6.5L36.5 24 24 37.5 11.5 24 24 10.5z"/>
+                                    <path d="M24 16L16 24l8 8 8-8-8-8zm0 4l4 4-4 4-4-4 4-4z"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- Click Sound -->
+                <audio id="dockClickSound" preload="auto">
+                    <source src="sounds/click.mp3" type="audio/mpeg">
+                </audio>
+            </div>
 
               
 
@@ -165,7 +207,10 @@
                         <div class="whatsapp-profile-avatar">
                             <img src="images/IMG_4644.jpg" alt="Asith WhatsApp profile" />
                         </div>
-                        <div class="whatsapp-profile-name">Asith</div>
+                        <div class="whatsapp-profile-info">
+                            <div class="whatsapp-profile-name">Asith</div>
+                            <div class="whatsapp-profile-label">WhatsApp Status</div>
+                        </div>
                     </div>
                     <!-- WhatsApp Logo Top Right -->
                     <div class="whatsapp-logo">
@@ -175,7 +220,7 @@
                     </div>
                     <div class="whatsapp-content">
                         <div class="whatsapp-status-text">
-                            "What. asith says "
+                            "UX. You Keep using that word, I don't think it means what you think it means <span class="whatsapp-mention"> @uxmemes</span> "
                         </div>
                     </div>
                 </div>
@@ -303,9 +348,119 @@
                         </button>
                     </div>
                 </div>
+
+                <!-- 3D Logo Card -->
+                <div class="bento-item logo-3d-card fade-in delay-5">
+                    <model-viewer 
+                        src="images/logo_dark.glb" 
+                        alt="Asith's 3D Logo"
+                        auto-rotate
+                        camera-controls
+                        disable-zoom
+                        interaction-prompt="none"
+                        shadow-intensity="0"
+                        exposure="1"
+                        camera-orbit="0deg 75deg 2.5m"
+                        style="width: 100%; height: 100%; background: transparent;">
+                    </model-viewer>
+                </div>
         </div>
     </main>
 
     <script src="js/script.js"></script>
+    
+    <!-- Dock Widget Interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dockApps = document.querySelectorAll('.dock-app');
+            const dockPopup = document.getElementById('dockPopup');
+            const dockPopupContent = document.getElementById('dockPopupContent');
+            const clickSound = document.getElementById('dockClickSound');
+            
+            // Create arrow element
+            const arrow = document.createElement('div');
+            arrow.className = 'dock-popup-arrow';
+            dockPopup.appendChild(arrow);
+            
+            // Initialize with LinkedIn selected
+            const linkedInApp = document.querySelector('.dock-app[data-profile="linkedin"]');
+            if (linkedInApp) {
+                const profile = linkedInApp.dataset.profile;
+                const title = linkedInApp.dataset.title;
+                const url = linkedInApp.dataset.url;
+                const link = linkedInApp.dataset.link;
+                const iconSvg = linkedInApp.querySelector('.dock-app-icon').outerHTML;
+                
+                // Set initial popup content
+                dockPopupContent.innerHTML = `
+                    <div class="popup-top-row">
+                        <div class="popup-icon" data-profile="${profile}">
+                            ${iconSvg}
+                        </div>
+                        <span class="popup-title">${title}</span>
+                    </div>
+                    <div class="popup-bottom-row">
+                        <a href="${url}" target="_blank" class="popup-link">${link}</a>
+                    </div>
+                `;
+                
+                // Position arrow to LinkedIn
+                const popupRect = dockPopup.getBoundingClientRect();
+                const appRect = linkedInApp.getBoundingClientRect();
+                const appCenter = appRect.left + (appRect.width / 2);
+                const arrowLeft = appCenter - popupRect.left;
+                arrow.style.left = arrowLeft + 'px';
+                arrow.style.marginLeft = '-8px';
+                arrow.style.display = 'block';
+            }
+            
+            dockApps.forEach(app => {
+                app.addEventListener('click', function() {
+                    // Play click sound
+                    if (clickSound) {
+                        clickSound.currentTime = 0;
+                        clickSound.play().catch(e => console.log('Audio play failed:', e));
+                    }
+                    
+                    // Remove selected from all apps
+                    dockApps.forEach(a => a.classList.remove('selected'));
+                    
+                    // Add selected to clicked app
+                    this.classList.add('selected');
+                    
+                    // Position arrow to point at selected app
+                    const popupRect = dockPopup.getBoundingClientRect();
+                    const appRect = this.getBoundingClientRect();
+                    const appCenter = appRect.left + (appRect.width / 2);
+                    const arrowLeft = appCenter - popupRect.left;
+                    arrow.style.left = arrowLeft + 'px';
+                    arrow.style.marginLeft = '-8px';
+                    arrow.style.display = 'block';
+                    
+                    // Get app data
+                    const profile = this.dataset.profile;
+                    const title = this.dataset.title;
+                    const url = this.dataset.url;
+                    const link = this.dataset.link;
+                    
+                    // Get the SVG icon from the clicked app
+                    const iconSvg = this.querySelector('.dock-app-icon').outerHTML;
+                    
+                    // Update popup content with two rows
+                    dockPopupContent.innerHTML = `
+                        <div class="popup-top-row">
+                            <div class="popup-icon" data-profile="${profile}">
+                                ${iconSvg}
+                            </div>
+                            <span class="popup-title">${title}</span>
+                        </div>
+                        <div class="popup-bottom-row">
+                            <a href="${url}" target="_blank" class="popup-link">${link}</a>
+                        </div>
+                    `;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

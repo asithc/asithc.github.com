@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrainPal — Asith</title>
-    <link rel="stylesheet" href="../css/style.css?v=4.2">
+    <link rel="stylesheet" href="../css/style.css?v=5.2">
     
     </head>
 <body class="project-detail-page">
@@ -84,7 +84,10 @@
                 </div>
 
                 <div class="project-cta">
-                    <a href="#" class="case-study-link">Read Case Study</a>
+                    <!-- To enable: add class "pin-protected", set data-pin, and fill case study section below -->
+                    <a href="#case-study" class="case-study-link disabled" 
+                       data-pin="123456" 
+                       data-target="caseStudySection">Read Case Study</a>
                 </div>
             </div>
         </div>
@@ -93,16 +96,64 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=50" alt="Project Screenshot 1" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>🛠️ Asith is cooking something here...</span>
+                    </div>
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=51" alt="Project Screenshot 2" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>🎨 Pixels are being pushed, please hold.</span>
+                    </div>
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="https://picsum.photos/1200/750?random=52" alt="Project Screenshot 3" loading="lazy">
+                    <div class="project-image-placeholder">
+                        <span>☕ Currently brewing... check back soon!</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Case Study Section (Hidden until PIN is entered) -->
+        <section id="caseStudySection" class="case-study-section" style="display: none;">
+            <div class="case-study-content">
+                <div class="case-study-header">
+                    <h2 class="case-study-title">📖 Full Case Study</h2>
+                    <p class="case-study-intro">Detailed breakdown of this project.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Challenge</h3>
+                    <p>Add your case study content here...</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Research & Discovery</h3>
+                    <p>Add your case study content here...</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Design Approach</h3>
+                    <p>Add your case study content here...</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy">
+                        <p class="image-caption">Add image caption here</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Outcome & Impact</h3>
+                    <p>Add your case study content here...</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Reflections</h3>
+                    <p>Add your case study content here...</p>
+                </div>
+            </div>
+        </section>
 
         <div class="project-navigation">
             <a href="wizpos.html" class="project-nav-btn project-nav-prev"><span>←</span>
@@ -120,5 +171,6 @@
     </main>
 
     <script src="../js/script.js"></script>
+    <script src="../js/pin-protect.js"></script>
 </body>
 </html>
