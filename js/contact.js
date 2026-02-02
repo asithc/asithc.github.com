@@ -229,12 +229,19 @@ const handleMessage = async (text) => {
 // Complete chat
 const completeChat = () => {
     const input = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendButton');
     console.log('Contact submitted:', chatState.userData);
     
     setTimeout(() => {
         if (input) {
-            input.placeholder = 'Chat complete! ✨';
+            input.placeholder = 'Your message has been sent! ✅';
             input.disabled = true;
+            input.style.opacity = '0.6';
+        }
+        if (sendBtn) {
+            sendBtn.classList.add('complete');
+            sendBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="white"/></svg>';
+            sendBtn.disabled = true;
         }
     }, 2000);
 };
@@ -251,6 +258,9 @@ const initContactChat = () => {
     }
     
     console.log('Contact chat initialized');
+    
+    // Add initial welcome message
+    addMessage("Want to work together? Don't hesitate to drop your contact details here! 💬", 'received');
     
     // Handle send
     const handleSend = () => {

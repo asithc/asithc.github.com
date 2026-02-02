@@ -3207,7 +3207,7 @@ button {
     display: flex;
     flex-direction: column;
     height: 500px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); */
 }
 
 .imessage-header-new {
@@ -3369,6 +3369,16 @@ button {
 
 .send-btn-new:hover {
     transform: scale(1.1);
+}
+
+/* Send button complete state */
+.send-btn-new.complete {
+    background: #34C759;
+    cursor: default;
+}
+
+.send-btn-new.complete:hover {
+    transform: none;
 }
 
 /* Contact Widgets */
