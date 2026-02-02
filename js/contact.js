@@ -260,16 +260,24 @@ const handleMessage = async (text) => {
 // Google Sheets API URL
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzwlhTOiXwMqo9labTW3TIi6JgxxP8zKT52vlM6LakwBryWBjfZqIGxb2G68sNULIA/exec';
 
-// Send data to Google Sheets
+// Send data to Google Sheets with security measures
 const sendToGoogleSheets = async (data) => {
     try {
+        // Add security fields
+        const secureData = {
+            ...data,
+            origin: window.location.origin,
+            website: '', // Honeypot field - should always be empty
+            timestamp: Date.now()
+        };
+        
         const response = await fetch(GOOGLE_SHEETS_URL, {
             method: 'POST',
             mode: 'no-cors', // Required for Apps Script
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(secureData)
         });
         console.log('Data sent to Google Sheets');
         return true;
