@@ -3185,6 +3185,247 @@ button {
     min-height: 100vh;
 }
 
+/* New Contact Page Layout */
+.contact-container-new {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.chat-section {
+    width: 100%;
+}
+
+/* New iMessage Container */
+.imessage-container-new {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.imessage-header-new {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--bg-secondary);
+}
+
+.chat-header-new {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.chat-avatar-new {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat-info h3 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.online-status {
+    font-size: var(--font-size-xs);
+    color: #34C759;
+}
+
+.imessage-body-new {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* New Message Styles */
+.message-new {
+    display: flex;
+    gap: var(--spacing-sm);
+    max-width: 85%;
+}
+
+.message-new.received {
+    align-self: flex-start;
+    flex-direction: row;
+}
+
+.message-new.sent {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-avatar-new {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.message-bubble-new {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 18px;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
+
+.message-new.received .message-bubble-new {
+    background: #E9E9EB;
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+}
+
+.message-new.sent .message-bubble-new {
+    background: #007AFF;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+/* Typing Indicator */
+.message-bubble-new.typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.message-bubble-new.typing .dot {
+    width: 8px;
+    height: 8px;
+    background: #8E8E93;
+    border-radius: 50%;
+    animation: typingDot 1.4s infinite ease-in-out both;
+}
+
+.message-bubble-new.typing .dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.message-bubble-new.typing .dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typingDot {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.imessage-footer-new {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--bg-secondary);
+}
+
+.input-container-new {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: white;
+    border-radius: 24px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.input-container-new input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: var(--spacing-sm);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    background: transparent;
+}
+
+.send-btn-new {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    background: transparent;
+    border: none;
+}
+
+.send-btn-new:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Widgets */
+.contact-widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.contact-widget {
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-widget:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.email-widget {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+}
+
+.x-widget {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: white;
+}
+
+.widget-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-label {
+    font-size: var(--font-size-sm);
+    opacity: 0.7;
+    margin-top: auto;
+}
+
+.widget-value {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+}
+
+/* Keep old styles for backward compatibility */
 .contact-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -3655,6 +3896,32 @@ button {
         height: 600px;
     }
     
+    /* New Contact Page Mobile */
+    .contact-container-new {
+        padding: var(--spacing-lg);
+    }
+    
+    .imessage-container-new {
+        height: 450px;
+    }
+    
+    .contact-widgets {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contact-widget {
+        padding: var(--spacing-md);
+    }
+    
+    .widget-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .widget-value {
+        font-size: var(--font-size-sm);
+    }
+
     .contact-container {
         padding-bottom: var(--spacing-2xl);
     }
