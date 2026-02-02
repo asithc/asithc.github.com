@@ -257,8 +257,8 @@ const handleMessage = async (text) => {
     chatState.isProcessing = false;
 };
 
-// Google Sheets API URL - Replace with your deployed Apps Script URL
-const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+// Google Sheets API URL
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzwlhTOiXwMqo9labTW3TIi6JgxxP8zKT52vlM6LakwBryWBjfZqIGxb2G68sNULIA/exec';
 
 // Send data to Google Sheets
 const sendToGoogleSheets = async (data) => {
