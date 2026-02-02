@@ -65,6 +65,9 @@ body {
     font-size: var(--font-size-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
 }
 
 a {
@@ -454,9 +457,18 @@ button {
 }
 
 .footnote {
-    font-size: var(--font-size-base);
-    color: #999999;
+    font-size: 14px;
+    color: #6B6B6B;
     margin-top: var(--spacing-xl);
+}
+
+.footnote a,
+.footnote .link {
+    color: #6B6B6B;
+}
+
+.red-asterisk {
+    color: #FF3B30;
 }
 
 /* Bento Grid Items - "Harder, Better, Faster, Stronger" layout 💪 */
