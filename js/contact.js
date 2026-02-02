@@ -257,10 +257,35 @@ const handleMessage = async (text) => {
     chatState.isProcessing = false;
 };
 
+// Google Sheets API URL - Replace with your deployed Apps Script URL
+const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+// Send data to Google Sheets
+const sendToGoogleSheets = async (data) => {
+    try {
+        const response = await fetch(GOOGLE_SHEETS_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Required for Apps Script
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        console.log('Data sent to Google Sheets');
+        return true;
+    } catch (error) {
+        console.error('Failed to send to Google Sheets:', error);
+        return false;
+    }
+};
+
 // Complete chat
-const completeChat = () => {
+const completeChat = async () => {
     const input = document.getElementById('messageInput');
     const sendBtn = document.getElementById('sendButton');
+    
+    // Send data to Google Sheets
+    await sendToGoogleSheets(chatState.userData);
     console.log('Contact submitted:', chatState.userData);
     
     setTimeout(() => {
