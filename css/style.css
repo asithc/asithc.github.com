@@ -4010,6 +4010,19 @@ html {
     display: block;
 }
 
+.work-card.disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.work-card.disabled:hover {
+    transform: none;
+}
+
+.work-card.disabled .work-card-preview {
+    background: var(--bg-secondary);
+}
+
 /* Project Detail Page Styles */
 .project-detail-page {
     background: var(--bg-primary);
