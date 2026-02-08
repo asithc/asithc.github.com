@@ -3211,7 +3211,7 @@ button {
 }
 
 .imessage-header-new {
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     background: var(--bg-secondary);
 }
@@ -3219,25 +3219,27 @@ button {
 .chat-header-new {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 .chat-avatar-new {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .chat-info h3 {
-    font-size: var(--font-size-base);
+    font-size: 15px;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
+    color: var(--text-primary);
 }
 
 .online-status {
-    font-size: var(--font-size-xs);
-    color: #34C759;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    font-weight: 400;
 }
 
 .imessage-body-new {
@@ -3246,7 +3248,7 @@ button {
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 /* New Message Styles */
@@ -3254,6 +3256,7 @@ button {
     display: flex;
     gap: var(--spacing-sm);
     max-width: 85%;
+    align-items: flex-end;
 }
 
 .message-new.received {
@@ -3266,31 +3269,93 @@ button {
     flex-direction: row-reverse;
 }
 
+.message-name-label {
+    position: absolute;
+    top: -20px;
+    left: 65px;
+    font-size: var( --font-size-sm);
+    font-weight: 500;
+    color: #8E8E93;
+}
+
+.message-new.received {
+    position: relative;
+}
+
 .message-avatar-new {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
 }
 
-.message-bubble-new {
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: 18px;
-    font-size: var(--font-size-base);
-    line-height: 1.5;
+.message-avatar-spacer {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
 }
 
+.message-bubble-new {
+    position: relative;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: var(--font-size-base);
+    line-height: 1.4;
+    max-width: 255px;
+    word-wrap: break-word;
+}
+
+/* Tail pseudo-elements setup */
+.message-bubble-new:before,
+.message-bubble-new:after {
+    position: absolute;
+    bottom: 0;
+    height: 18px;
+    content: '';
+}
+
+.message-bubble-new:before {
+    width: 20px;
+}
+
+.message-bubble-new:after {
+    width: 16px;
+    background-color: var(--bg-secondary);
+}
+
+/* Received message styles */
 .message-new.received .message-bubble-new {
     background: #E9E9EB;
     color: var(--text-primary);
-    border-bottom-left-radius: 4px;
 }
 
+.message-new.received .message-bubble-new:before {
+    left: -7px;
+    background-color: #E9E9EB;
+    border-bottom-right-radius: 16px 14px;
+}
+
+.message-new.received .message-bubble-new:after {
+    left: -16px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Sent message styles */
 .message-new.sent .message-bubble-new {
     background: #007AFF;
-    color: white;
-    border-bottom-right-radius: 4px;
+    color: var(--bg-secondary);
+}
+
+.message-new.sent .message-bubble-new:before {
+    right: -7px;
+    background-color: #007AFF;
+    border-bottom-left-radius: 16px 14px;
+}
+
+.message-new.sent .message-bubble-new:after {
+    right: -16px;
+    border-bottom-left-radius: 10px;
 }
 
 /* Typing Indicator */
@@ -3313,7 +3378,7 @@ button {
     animation-delay: -0.32s;
 }
 
-.message-bubble-new.typing .dot:nth-child(2) {
+.message-bubble-new.typing .dot:nth-child(2) {.imessage-footer-new
     animation-delay: -0.16s;
 }
 
@@ -3330,7 +3395,6 @@ button {
 
 .imessage-footer-new {
     padding: var(--spacing-md) var(--spacing-lg);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
     background: var(--bg-secondary);
 }
 
@@ -3342,6 +3406,11 @@ button {
     border-radius: 50px;
     padding: var(--spacing-xs) var(--spacing-sm);
     border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.input-container-new:focus-within {
+    border-color: #007AFF;
 }
 
 .input-container-new input {
@@ -3361,20 +3430,40 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    cursor: default;
+    transition: transform 0.2s ease, opacity 0.2s ease;
     background: transparent;
     border: none;
+    pointer-events: none;
+    flex-shrink: 0;
+    padding: 0;
+    color: #8E8E93;
 }
 
-.send-btn-new:hover {
+.send-btn-new.active {
+    pointer-events: auto;
+    cursor: pointer;
+    color: #007AFF;
+}
+
+.send-btn-new.active:hover {
     transform: scale(1.1);
+}
+
+.send-btn-new svg path {
+    transition: fill 0.2s ease;
+}
+
+.send-btn-new svg circle {
+    transition: fill 0.2s ease;
 }
 
 /* Send button complete state */
 .send-btn-new.complete {
-    background: #34C759;
+    background: none;
     cursor: default;
+    pointer-events: none;
+    color: #34C759;
 }
 
 .send-btn-new.complete:hover {
