@@ -276,7 +276,19 @@ const handleMessage = async (text) => {
         return;
     }
 
-    // 3. Check for work/project/contact intent — trigger contact collection flow
+    // 3. Check for project/collab keywords or single word project-related responses
+    const hasProjectKeyword = /\b(project|collab|collaboration|work|hire|opportunity)\b/i.test(userText);
+    const isSingleWord = userText.split(/\s+/).length === 1;
+    
+    if ((hasProjectKeyword || (isSingleWord && hasWorkIntent(userText))) && chatState.currentStep === 'initial') {
+        chatState.currentStep = 'ask_topic';
+        await botReply("That's awesome! Thanks for reaching out! 🙌", false, true);
+        await botReply("I'd love to hear more about this. What's the main topic or idea? 💡", true, false);
+        chatState.isProcessing = false;
+        return;
+    }
+
+    // 4. Check for work/project/contact intent — trigger contact collection flow
     if (hasWorkIntent(userText) && chatState.currentStep === 'initial') {
         chatState.currentStep = 'ask_name';
         await botReply("That's great to hear! 🎉", false, true);
@@ -285,7 +297,7 @@ const handleMessage = async (text) => {
         return;
     }
 
-    // 4. Check for vulgar language
+    // 5. Check for vulgar language
     if (containsVulgar(userText)) {
         chatState.vulgarCount++;
 
@@ -302,7 +314,7 @@ const handleMessage = async (text) => {
         return;
     }
 
-    // 5. Check for gibberish (except when collecting name/phone/email)
+    // 6. Check for gibberish (except when collecting name/phone/email)
     if (isGibberish(userText) && chatState.currentStep !== 'ask_email' && chatState.currentStep !== 'ask_whatsapp' && chatState.currentStep !== 'ask_name') {
         chatState.gibberishCount++;
         if (chatState.gibberishCount === 1) {
@@ -319,11 +331,11 @@ const handleMessage = async (text) => {
         return;
     }
 
-    // 6. Check for yes/no responses
+    // 7. Check for yes/no responses
     const isYes = /^(yes|yeah|yep|sure|ok|okay|yea|yup|definitely|absolutely|of course|why not|let's do it|let's go|y)$/i.test(userText.trim());
     const isNo = /^(no|nope|nah|not really|no thanks|maybe later|n)$/i.test(userText.trim());
 
-    // 7. Main conversation flow
+    // 8. Main conversation flow
     switch (chatState.currentStep) {
         case 'initial':
             if (isNo) {
