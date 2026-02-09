@@ -3670,6 +3670,10 @@ button {
     .imessage-footer-new {
         padding: var(--spacing-xs) var(--spacing-sm);
     }
+
+    .contact-widgets {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Tablet Portrait (optional, for better experience) */
@@ -3695,50 +3699,152 @@ button {
 }
 
 .contact-widget {
-    aspect-ratio: 1;
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
     padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .contact-widget:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.email-widget {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
+/* Widget Header */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
 }
 
-.x-widget {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    color: white;
+.widget-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.widget-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+.widget-header-info.x-header-info {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.widget-header-info.x-header-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.widget-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.widget-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.widget-handle {
+    font-size: 13px;
+    color: #007AFF;
+    line-height: 1.3;
+}
+
+.widget-app-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
-.widget-label {
-    font-size: var(--font-size-sm);
-    opacity: 0.7;
-    margin-top: auto;
+.widget-app-icon.email-icon {
+    background: #1C1C1E;
 }
 
-.widget-value {
-    font-size: var(--font-size-base);
+.widget-app-icon.x-icon {
+    color: #1DA1F2;
+}
+
+/* Email Preview */
+.email-preview {
+    flex: 1;
+    border-left: 3px solid rgba(0, 0, 0, 0.08);
+    padding-left: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--spacing-md);
+}
+
+.preview-line {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.preview-label {
+    color: var(--text-tertiary);
+    font-weight: 500;
+    min-width: 24px;
+}
+
+.preview-value {
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+.preview-value.preview-muted {
+    color: var(--text-tertiary);
+}
+
+/* X/Twitter Bio */
+.widget-bio {
+    flex: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.widget-bio p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* CTA Button */
+.widget-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    font-size: 14px;
     font-weight: 600;
+    color: var(--text-primary);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-widget:hover .widget-cta {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.18);
 }
 
 /* Keep old styles for backward compatibility */
@@ -4227,15 +4333,35 @@ button {
     
     .contact-widget {
         padding: var(--spacing-md);
+        border-radius: 16px;
     }
-    
-    .widget-icon {
-        width: 40px;
-        height: 40px;
+
+    .widget-name {
+        font-size: 14px;
     }
-    
-    .widget-value {
-        font-size: var(--font-size-sm);
+
+    .widget-handle {
+        font-size: 12px;
+    }
+
+    .widget-app-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .widget-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .widget-bio p {
+        font-size: 13px;
+    }
+
+    .widget-cta {
+        font-size: 13px;
+        padding: 8px 0;
     }
 
     .contact-container {
