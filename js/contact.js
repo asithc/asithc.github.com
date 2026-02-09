@@ -74,8 +74,29 @@ const hasWorkIntent = (text) => {
 
 // Validate email
 const isValidEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    // More comprehensive email validation that accepts most real-world formats
+    const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const trimmedEmail = email.trim();
+    
+    // Basic sanity checks
+    if (!trimmedEmail || trimmedEmail.length < 5 || trimmedEmail.length > 254) {
+        return false;
+    }
+    
+    // Check for @ symbol count (should be exactly 1)
+    const atCount = (trimmedEmail.match(/@/g) || []).length;
+    if (atCount !== 1) return false;
+    
+    // Check for consecutive dots
+    if (trimmedEmail.includes('..')) return false;
+    
+    // Check for dot at start or end, or @ at start or end
+    if (trimmedEmail.startsWith('.') || trimmedEmail.endsWith('.') || 
+        trimmedEmail.startsWith('@') || trimmedEmail.endsWith('@')) {
+        return false;
+    }
+    
+    return emailRegex.test(trimmedEmail);
 };
 
 // Validate WhatsApp number (10 digits min, or with country code +XX)
@@ -210,7 +231,7 @@ const handleMessage = async (text) => {
     if (chatState.currentStep === 'initial') {
         // Check if they provided an email
         if (isValidEmail(userText)) {
-            chatState.userData.email = userText;
+            chatState.userData.email = userText.trim();
             chatState.currentStep = 'ask_name';
             await botReply("Great! I got your email 📧", false, true);
             await botReply("What's your name?", true, false);
@@ -232,8 +253,10 @@ const handleMessage = async (text) => {
         const nameLike = /^[a-z\s]{2,50}$/i.test(userText);
         const wordCount = userText.split(/\s+/).length;
         const isCommonPhrase = /^(just saying hi|saying hi|saying hello|i want|i need|looking for|work together|lets work|help me)/i.test(userText);
+        const mentionsOwner = /\basith\b/i.test(userText);
+        const isGreetingLike = /^(hi|hello|hey|hiya|hola|yo|heya|sup|how|what|who|where|when|why)/i.test(userText);
         
-        if (nameLike && wordCount >= 1 && wordCount <= 4 && !isCommonPhrase && userText.length >= 2 && userText.length <= 50) {
+        if (nameLike && wordCount >= 1 && wordCount <= 4 && !isCommonPhrase && !mentionsOwner && !isGreetingLike && userText.length >= 2 && userText.length <= 50) {
             chatState.userData.name = userText;
             chatState.currentStep = 'ask_topic';
             await botReply("Nice to meet you, " + userText + "! 👋", false, true);
@@ -288,11 +311,11 @@ const handleMessage = async (text) => {
         return;
     }
 
-    // 4. Check for work/project/contact intent — trigger contact collection flow
+    // 4. Check for work/project/contact intent - trigger contact collection flow
     if (hasWorkIntent(userText) && chatState.currentStep === 'initial') {
         chatState.currentStep = 'ask_name';
         await botReply("That's great to hear! 🎉", false, true);
-        await botReply("Let's get you connected with Asith. First - what's your name?", true, false);
+        await botReply("I'd love to know more. What's your name?", true, false);
         chatState.isProcessing = false;
         return;
     }
@@ -303,9 +326,9 @@ const handleMessage = async (text) => {
 
         if (!chatState.forwardedToMom) {
             chatState.forwardedToMom = true;
-            await botReply("Oh wow... hold on, I'm forwarding this to your mom real quick 📱", false, true);
+            await botReply("Oh wow... hold on, forwarding this to your mom real quick 📱", false, true);
             await botReply("Done! She said hi, by the way 👋😊", false, false);
-            await botReply("Anyway, jokes aside - I'd love to actually help. What's on your mind?", true, false);
+            await botReply("Anyway, jokes aside - how can I help you?", true, false);
         } else {
             await botReply("Your mom already knows about this one too 😅", false, true);
             await botReply("Let's try something more productive?", true, false);
@@ -318,14 +341,14 @@ const handleMessage = async (text) => {
     if (isGibberish(userText) && chatState.currentStep !== 'ask_email' && chatState.currentStep !== 'ask_whatsapp' && chatState.currentStep !== 'ask_name') {
         chatState.gibberishCount++;
         if (chatState.gibberishCount === 1) {
-            await botReply("Hmm, I'm not sure I caught that 🤔", false, true);
-            await botReply("Could you try rephrasing? I'm all ears!", true, false);
+            await botReply("Hmm, I'm not sure I follow 🤔", false, true);
+            await botReply("Could you try rephrasing that?", true, false);
         } else if (chatState.gibberishCount === 2) {
-            await botReply("Okay real talk - Asith was pretty busy while building me and skipped some important neural wiring 🧠", false, true);
-            await botReply("Could you keep it simple? Or just drop your contact info and Asith will get back to you personally! 💬", true, false);
+            await botReply("Sorry, I'm still not getting it 😅", false, true);
+            await botReply("Try keeping it simple, or just drop your contact info and I'll reach out!", true, false);
         } else {
-            await botReply("I still can't figure that out 😭 My brain is fried.", false, true);
-            await botReply("Tell you what - just drop your email below and Asith will reach out directly! Or try the email and X links below 👇", true, false);
+            await botReply("I'm having trouble understanding that one 😅", false, true);
+            await botReply("Tell you what - just drop your email and I'll get back to you directly! Or try the links below 👇", true, false);
         }
         chatState.isProcessing = false;
         return;
@@ -346,7 +369,7 @@ const handleMessage = async (text) => {
             } else if (isYes || hasWorkIntent(userText)) {
                 chatState.currentStep = 'ask_name';
                 await botReply("That's great to hear! 🎉", false, true);
-                await botReply("Let's get you connected with Asith. First - what's your name?", true, false);
+                await botReply("I'd love to know more. What's your name?", true, false);
             } else {
                 // They typed something else - assume they want to proceed
                 chatState.currentStep = 'ask_name';
@@ -403,7 +426,7 @@ const handleMessage = async (text) => {
 
         case 'ask_email':
             if (isValidEmail(userText)) {
-                chatState.userData.email = userText;
+                chatState.userData.email = userText.trim();
                 
                 // Smart flow: check if we already have WhatsApp
                 if (!chatState.userData.whatsapp) {
@@ -522,9 +545,9 @@ const initContactChat = () => {
     console.log('Contact chat initialized');
 
     // Show initial welcome messages with natural delay
-    addMessage("Hi there! 👋", 'received', false, true);
+    addMessage("Hey! 👋", 'received', false, true);
     setTimeout(() => {
-        addMessage("Want to work together? Feel free to drop your contact details here! 💬", 'received', true, false);
+        addMessage("Looking to work together? Drop your details and I'll get back to you! 💬", 'received', true, false);
     }, 1200 + Math.random() * 600);
 
     // Handle send
