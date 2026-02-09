@@ -417,19 +417,20 @@ const handleMessage = async (text) => {
 
         if (chatState.sinhalaVulgarCount === 1) {
             await botReply("Aiyo machan... 😅", false, true);
-            await botReply("Mokakda me wena? Professional portfolio site ekak meka 😄", false, false);
+            await botReply("Mokakda me wennne? Professional portfolio site ekak meka 😄", false, false);
             await botReply("Try again? 😊", true, false);
         } else if (chatState.sinhalaVulgarCount === 2) {
             await botReply("Oyyy... again? 🤦‍♂️", false, true);
-            await botReply("Mama oya words wala Google Sheets ekak update karala wage oya amma ta email ekak yawanawa... 📧", false, false);
+            await botReply("Mama oya words tika Google Sheets ekak update karala oyage ammata email yawanawada... 📧", false, false);
+            await botReply("daaa??? 😏", true, false);
             await botReply("Still want to try your luck? 😏", true, false);
         } else if (chatState.sinhalaVulgarCount === 3) {
             await botReply("Okkoma screenshot gannawa bn... 📸", false, true);
-            await botReply("Oya company eke HR ta copy karagena yawamu wage inawa 😂", false, false);
-            await botReply("Oka joking... but seriously, can we talk like normal people? 🙃", true, false);
+            await botReply("Oyage company eke HR wa copy karala dannada email ekak 😂", false, false);
+            await botReply("Well, I know you joking... but seriously, can we talk like normal people? 🙃", true, false);
         } else if (chatState.sinhalaVulgarCount === 4) {
             await botReply("You know what? Respect for the persistence 😆", false, true);
-            await botReply("But mama hari tired une... Let's just move on? 😅", false, false);
+            await botReply("But mama hari tired bng... Let's just move on? 😅", false, false);
             await botReply("What are you actually here for? UX work? Mentorship? Portfolio review?", true, false);
             // Reset to allow normal conversation but stay in initial
         } else {
