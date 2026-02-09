@@ -3250,6 +3250,25 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.imessage-body-new::-webkit-scrollbar {
+    width: 4px;
+}
+
+.imessage-body-new::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.imessage-body-new::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.imessage-body-new::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
 }
 
 /* New Message Styles */

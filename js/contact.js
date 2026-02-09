@@ -438,27 +438,29 @@ const handleMessage = async (text) => {
             return;
         }
 
-        // Name-like input (not a greeting, not a phrase, not "asith")
+        // Work/project/hire/mentorship intent (check BEFORE name detection)
+        const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|gig|design|ux|ui|product|review|feedback|consultation|help)$/i.test(lowerText);
+
+        if (isWorkKeyword || hasWorkIntent(userText)) {
+            chatState.currentStep = 'ask_name';
+            await botReply("Awesome, thanks for reaching out! 🙌", false, true);
+            await botReply("Before we dive in - what's your name?", true, false);
+            chatState.isProcessing = false;
+            return;
+        }
+
+        // Name-like input (not a greeting, not a phrase, not "asith", not a keyword)
         const nameLike = /^[a-z\s]{2,50}$/i.test(userText);
         const wordCount = userText.split(/\s+/).length;
         const isCommonPhrase = /^(just saying|saying|i want|i need|looking for|work together|lets work|help me)/i.test(userText);
         const mentionsOwner = /\basith\b/i.test(userText);
         const startsWithGreeting = /^(hi|hello|hey|hiya|hola|yo|heya|sup|how|what|who|where|when|why)/i.test(userText);
 
-        if (nameLike && wordCount >= 1 && wordCount <= 4 && !isCommonPhrase && !mentionsOwner && !startsWithGreeting && !hasWorkIntent(userText) && userText.length >= 2) {
+        if (nameLike && wordCount >= 1 && wordCount <= 4 && !isCommonPhrase && !mentionsOwner && !startsWithGreeting && userText.length >= 2) {
             chatState.userData.name = userText;
             chatState.currentStep = 'ask_topic';
             await botReply("Nice to meet you, " + userText + "! 👋", false, true);
             await botReply("What brings you here today? Looking for UX/product design help, mentorship, or something else?", true, false);
-            chatState.isProcessing = false;
-            return;
-        }
-
-        // Work/project/hire/mentorship intent
-        if (hasWorkIntent(userText)) {
-            chatState.currentStep = 'ask_topic';
-            await botReply("Awesome, thanks for reaching out! 🙌", false, true);
-            await botReply("Tell me a bit more - what kind of work are you looking for? (UX design, product design, mentorship, consultation, etc.)", true, false);
             chatState.isProcessing = false;
             return;
         }
