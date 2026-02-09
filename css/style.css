@@ -3212,7 +3212,7 @@ button {
 }
 
 .imessage-header-new {
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: 10px var(--spacing-lg);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     background: var(--bg-secondary);
 }
@@ -3230,10 +3230,17 @@ button {
     object-fit: cover;
 }
 
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.2;
+}
+
 .chat-info h3 {
     font-size: 15px;
     font-weight: 600;
-    margin-bottom: 1px;
+    margin: 0;
     color: var(--text-primary);
 }
 
@@ -3241,6 +3248,7 @@ button {
     font-size: 12px;
     color: var(--text-tertiary);
     font-weight: 400;
+    margin-top: 2px;
 }
 
 .imessage-body-new {
