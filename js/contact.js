@@ -438,6 +438,26 @@ const handleMessage = async (text) => {
             return;
         }
 
+        // Testing the bot
+        const isTesting = /^(test|testing|test\s*test|just\s*testing|trying\s*this|試し|试试|trying\s*it\s*out|checking|check)$/i.test(lowerText);
+        
+        if (isTesting) {
+            const jokes = [
+                "Test successful! ✅ The bot is indeed alive and kinda funny 😄",
+                "Beep boop 🤖 Test mode activated... just kidding, I'm Asith (well, a bot version) 😅",
+                "Testing, testing, 1-2-3... Mic check passed! 🎤",
+                "You've unlocked the secret test response! Achievement: Quality Assurance 🏆",
+                "Test? I thought this was a Wendy's... oh wait, it's my portfolio 😄",
+                "Test confirmed. Bot is working. Coffee levels: adequate ☕️",
+            ];
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+            
+            await botReply(randomJoke, false, true);
+            await botReply("So, are you actually looking for something or just kicking the tires? 😊", true, false);
+            chatState.isProcessing = false;
+            return;
+        }
+
         // Work/project/hire/mentorship intent (check BEFORE name detection)
         const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|gig|design|ux|ui|product|review|feedback|consultation|help)$/i.test(lowerText);
 
