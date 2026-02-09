@@ -12,12 +12,19 @@ const chatState = {
     forwardedToMom: false,
     gibberishCount: 0,
     vulgarCount: 0,
+    sinhalaVulgarCount: 0,
     isProcessing: false
 };
 
 // --- Vulgar language detection ---
 const vulgarWords = ['fuck', 'shit', 'bitch', 'damn', 'crap', 'bastard', 'idiot', 'stupid', 'dumb', 'hate'];
+const sinhalaVulgarWords = ['pakaya', 'huththa', 'huththo', 'wesi', 'wesawa', 'wesawi', 'ponnaya', 'kariya'];
+
 const containsVulgar = (text) => vulgarWords.some(w => text.toLowerCase().includes(w));
+const containsSinhalaVulgar = (text) => {
+    const lower = text.toLowerCase();
+    return sinhalaVulgarWords.some(w => lower.includes(w));
+};
 
 // --- Gibberish detection (Set for O(1) lookup) ---
 const commonWords = new Set([
@@ -399,6 +406,36 @@ const handleMessage = async (text) => {
         } else {
             await botReply("Your mom already knows about this one too 😅", false, true);
             await botReply("Let's try something more productive?", true, false);
+        }
+        chatState.isProcessing = false;
+        return;
+    }
+
+    // D) Sinhala vulgar language - extended trolling sequence
+    if (containsSinhalaVulgar(userText)) {
+        chatState.sinhalaVulgarCount++;
+
+        if (chatState.sinhalaVulgarCount === 1) {
+            await botReply("Aiyo machan... 😅", false, true);
+            await botReply("Mokakda me wena? Professional portfolio site ekak meka 😄", false, false);
+            await botReply("Try again? 😊", true, false);
+        } else if (chatState.sinhalaVulgarCount === 2) {
+            await botReply("Oyyy... again? 🤦‍♂️", false, true);
+            await botReply("Mama oya words wala Google Sheets ekak update karala wage oya amma ta email ekak yawanawa... 📧", false, false);
+            await botReply("Still want to try your luck? 😏", true, false);
+        } else if (chatState.sinhalaVulgarCount === 3) {
+            await botReply("Okkoma screenshot gannawa bn... 📸", false, true);
+            await botReply("Oya company eke HR ta copy karagena yawamu wage inawa 😂", false, false);
+            await botReply("Oka joking... but seriously, can we talk like normal people? 🙃", true, false);
+        } else if (chatState.sinhalaVulgarCount === 4) {
+            await botReply("You know what? Respect for the persistence 😆", false, true);
+            await botReply("But mama hari tired une... Let's just move on? 😅", false, false);
+            await botReply("What are you actually here for? UX work? Mentorship? Portfolio review?", true, false);
+            // Reset to allow normal conversation but stay in initial
+        } else {
+            // After 5+ times, just ignore and ask again
+            await botReply("... 😑", false, true);
+            await botReply("Okay, I'll just assume you need design help. What brings you here?", true, false);
         }
         chatState.isProcessing = false;
         return;
