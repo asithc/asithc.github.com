@@ -458,6 +458,22 @@ const handleMessage = async (text) => {
             return;
         }
 
+        // Yes/No responses (check BEFORE name detection to avoid "yes"/"no" being treated as names)
+        if (isNo) {
+            chatState.currentStep = 'declined';
+            await botReply("No worries! 👋", false, true);
+            await botReply("Feel free to come back anytime. See you around! ✨", true, false);
+            completeChat();
+            chatState.isProcessing = false;
+            return;
+        } else if (isYes) {
+            chatState.currentStep = 'ask_topic';
+            await botReply("Awesome! 🎉", false, true);
+            await botReply("So what brings you here? UX/product design work, mentorship, portfolio review, or something else?", true, false);
+            chatState.isProcessing = false;
+            return;
+        }
+
         // Work/project/hire/mentorship intent (check BEFORE name detection)
         const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|gig|design|ux|ui|product|review|feedback|consultation|help)$/i.test(lowerText);
 
@@ -485,33 +501,22 @@ const handleMessage = async (text) => {
             return;
         }
 
-        // Yes/No to initial welcome
-        if (isNo) {
-            chatState.currentStep = 'declined';
-            await botReply("No worries! 👋", false, true);
-            await botReply("Feel free to come back anytime. See you around! ✨", true, false);
-            completeChat();
-        } else if (isYes) {
-            chatState.currentStep = 'ask_topic';
-            await botReply("Great! 🎉", false, true);
-            await botReply("What are you looking for? UX/product design work, mentorship, portfolio review, or something else?", true, false);
-        } else {
-            // Gibberish check for initial state
-            if (isGibberish(userText)) {
-                chatState.gibberishCount++;
-                if (chatState.gibberishCount <= 2) {
-                    await botReply("Hmm, I'm not sure I follow 🤔", false, true);
-                    await botReply("Are you looking for design work, mentorship, or just checking things out?", true, false);
-                } else {
-                    await botReply("Tell you what - just drop your email and I'll get back to you directly! 📧", true, true);
-                    chatState.currentStep = 'ask_email';
-                }
+        // Fallback for anything else in initial state
+        // Gibberish check
+        if (isGibberish(userText)) {
+            chatState.gibberishCount++;
+            if (chatState.gibberishCount <= 2) {
+                await botReply("Hmm, I'm not sure I follow 🤔", false, true);
+                await botReply("Are you looking for design work, mentorship, or just checking things out?", true, false);
             } else {
-                // Assume they want to proceed with whatever they said
-                chatState.currentStep = 'ask_topic';
-                await botReply("Cool! 🙌", false, true);
-                await botReply("Tell me a bit more - what kind of help are you looking for?", true, false);
+                await botReply("Tell you what - just drop your email and I'll get back to you directly! 📧", true, true);
+                chatState.currentStep = 'ask_email';
             }
+        } else {
+            // Assume they want to proceed with whatever they said
+            chatState.currentStep = 'ask_topic';
+            await botReply("Cool! 🙌", false, true);
+            await botReply("Tell me a bit more - what kind of help are you looking for?", true, false);
         }
         chatState.isProcessing = false;
         return;
