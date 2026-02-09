@@ -3251,7 +3251,7 @@ button {
     flex-direction: column;
     gap: var(--spacing-sm);
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.15) var(--bg-secondary);
 }
 
 .imessage-body-new::-webkit-scrollbar {
@@ -3259,7 +3259,7 @@ button {
 }
 
 .imessage-body-new::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--bg-secondary);
 }
 
 .imessage-body-new::-webkit-scrollbar-thumb {
