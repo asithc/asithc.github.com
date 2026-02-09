@@ -1478,6 +1478,7 @@ button {
     transition: color 0.5s ease;
     display: -webkit-box;
     -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: left;
@@ -3406,7 +3407,7 @@ button {
     animation-delay: -0.32s;
 }
 
-.message-bubble-new.typing .dot:nth-child(2) {.imessage-footer-new
+.message-bubble-new.typing .dot:nth-child(2) {
     animation-delay: -0.16s;
 }
 
