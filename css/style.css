@@ -642,7 +642,7 @@ button {
 }
 
 .popup-icon[data-profile="polarsteps"] {
-    background: linear-gradient(145deg, #FF0066, #FF3385);
+    /* background: linear-gradient(145deg, #FF0066, #FF3385); */
     color: white;
 }
 
@@ -675,6 +675,8 @@ button {
     transform-origin: center center;
     padding: 6px;
     border-radius: 14px;
+    border: 2px solid transparent;
+    background: transparent;
 }
 
 .dock-app:hover {
@@ -687,9 +689,9 @@ button {
 
 /* Selected state with border */
 .dock-app.selected {
-    border: 2px solid #000000;
+    border: 2px solid #000000 !important;
     padding: 4px;
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.08) !important;
 }
 
 .dock-app.selected .dock-app-inner {
