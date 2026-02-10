@@ -568,7 +568,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 5px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(200, 200, 200, 0.4);
     width: 100%;
@@ -612,7 +612,7 @@ button {
     width: 24px;
     height: 24px;
     border-radius: 6px;
-    padding: 4px;
+    padding: 2px;
     flex-shrink: 0;
 }
 
@@ -698,7 +698,16 @@ button {
 }
 
 .dock-app-icon {
+    width: 90%;
+    height: 90%;
     color: white;
+}
+
+/* Full size icons for Instagram and Polarsteps */
+.dock-app[data-profile="instagram"] .dock-app-icon,
+.dock-app[data-profile="polarsteps"] .dock-app-icon {
+    width: 100%;
+    height: 100%;
 }
 
 /* App backgrounds with brand colors */
