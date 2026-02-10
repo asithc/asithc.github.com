@@ -658,7 +658,7 @@ button {
     -webkit-backdrop-filter: blur(20px);
     border-radius: 22px;
     border: 1px solid rgba(200, 200, 200, 0.5);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
@@ -731,7 +731,7 @@ button {
 /* App backgrounds with brand colors */
 .dock-app[data-profile="behance"] .dock-app-inner {
     background: linear-gradient(145deg, #0057ff, #1769ff);
-    box-shadow: 0 3px 10px rgba(0, 87, 255, 0.3);
+    /* box-shadow: 0 3px 10px rgba(0, 87, 255, 0.3); */
 }
 
 .dock-app[data-profile="dribbble"] .dock-app-inner {
@@ -745,22 +745,22 @@ button {
 
 .dock-app[data-profile="linkedin"] .dock-app-inner {
     background: linear-gradient(145deg, #0077b5, #0088cc);
-    box-shadow: 0 3px 10px rgba(0, 119, 181, 0.3);
+    /* box-shadow: 0 3px 10px rgba(0, 119, 181, 0.3); */
 }
 
 .dock-app[data-profile="twitter"] .dock-app-inner {
     background: linear-gradient(145deg, #1a1a1a, #333333);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); */
 }
 
 .dock-app[data-profile="instagram"] .dock-app-inner {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    box-shadow: 0 3px 10px rgba(214, 36, 159, 0.4);
+    /* box-shadow: 0 3px 10px rgba(214, 36, 159, 0.4); */
 }
 
 .dock-app[data-profile="polarsteps"] .dock-app-inner {
     background: linear-gradient(145deg, #FF0066, #FF3385);
-    box-shadow: 0 3px 10px rgba(255, 0, 102, 0.4);
+    /* box-shadow: 0 3px 10px rgba(255, 0, 102, 0.4); */
 }
 
 /* Notion Widget */
@@ -1426,7 +1426,7 @@ button {
     height: 36px;
     border-radius: 50%;
     background: #EDEDED;
-    border: 2px solid #25D366;
+    border: 2px solid var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2039,7 +2039,7 @@ button {
 .about-item-content {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     margin-bottom: 20px;
 }
 
@@ -5294,8 +5294,9 @@ html {
 
 .project-collage-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: max(1rem, var(--spacing-md));
 }
 
 .collage-item {
