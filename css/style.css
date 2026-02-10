@@ -698,8 +698,8 @@ button {
 }
 
 .dock-app-icon {
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
     color: white;
 }
 
@@ -717,8 +717,12 @@ button {
 }
 
 .dock-app[data-profile="dribbble"] .dock-app-inner {
-    background: linear-gradient(145deg, #ea4c89, #f082ac);
+    background: #FFABE7;
     box-shadow: 0 3px 10px rgba(234, 76, 137, 0.3);
+}
+
+.dock-app[data-profile="dribbble"] .dock-app-icon {
+    color: #DDB8F0;
 }
 
 .dock-app[data-profile="linkedin"] .dock-app-inner {
