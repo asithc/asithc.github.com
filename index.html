@@ -419,14 +419,19 @@
             arrow.className = 'dock-popup-arrow';
             dockPopup.appendChild(arrow);
             
-            // Initialize with LinkedIn selected
-            const linkedInApp = document.querySelector('.dock-app[data-profile="linkedin"]');
-            if (linkedInApp) {
-                const profile = linkedInApp.dataset.profile;
-                const title = linkedInApp.dataset.title;
-                const url = linkedInApp.dataset.url;
-                const link = linkedInApp.dataset.link;
-                const iconSvg = linkedInApp.querySelector('.dock-app-icon').outerHTML;
+            // Initialize with a random app selected
+            const randomIndex = Math.floor(Math.random() * dockApps.length);
+            const randomApp = dockApps[randomIndex];
+            
+            if (randomApp) {
+                // Add selected class to random app
+                randomApp.classList.add('selected');
+                
+                const profile = randomApp.dataset.profile;
+                const title = randomApp.dataset.title;
+                const url = randomApp.dataset.url;
+                const link = randomApp.dataset.link;
+                const iconSvg = randomApp.querySelector('.dock-app-icon').outerHTML;
                 
                 // Set initial popup content
                 dockPopupContent.innerHTML = `
@@ -441,9 +446,9 @@
                     </div>
                 `;
                 
-                // Position arrow to LinkedIn
+                // Position arrow to random app
                 const popupRect = dockPopup.getBoundingClientRect();
-                const appRect = linkedInApp.getBoundingClientRect();
+                const appRect = randomApp.getBoundingClientRect();
                 const appCenter = appRect.left + (appRect.width / 2);
                 const arrowLeft = appCenter - popupRect.left;
                 arrow.style.left = arrowLeft + 'px';
