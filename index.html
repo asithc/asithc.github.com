@@ -457,15 +457,22 @@
             }
             
             dockApps.forEach(app => {
-                app.addEventListener('click', function() {
+                app.addEventListener('click', function(e) {
+                    // Prevent any default behavior
+                    e.preventDefault();
+                    
                     // Play click sound
                     if (clickSound) {
                         clickSound.currentTime = 0;
                         clickSound.play().catch(e => console.log('Audio play failed:', e));
                     }
                     
-                    // Remove selected from all apps
-                    dockApps.forEach(a => a.classList.remove('selected'));
+                    // Force remove selected from all apps first
+                    dockApps.forEach(a => {
+                        a.classList.remove('selected');
+                        // Force reflow to ensure class removal is applied
+                        void a.offsetWidth;
+                    });
                     
                     // Add selected to clicked app
                     this.classList.add('selected');
