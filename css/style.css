@@ -622,8 +622,8 @@ button {
 }
 
 .popup-icon[data-profile="dribbble"] {
-    background: linear-gradient(145deg, #ea4c89, #f082ac);
-    color: white;
+    background: #FFABE7;
+    color: #BB4F9A;
 }
 
 .popup-icon[data-profile="linkedin"] {
@@ -633,6 +633,16 @@ button {
 
 .popup-icon[data-profile="twitter"] {
     background: linear-gradient(145deg, #1a1a1a, #333333);
+    color: white;
+}
+
+.popup-icon[data-profile="instagram"] {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+}
+
+.popup-icon[data-profile="polarsteps"] {
+    background: linear-gradient(145deg, #FF0066, #FF3385);
     color: white;
 }
 
