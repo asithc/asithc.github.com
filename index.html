@@ -86,6 +86,11 @@
     
     <link rel="stylesheet" href="css/style.css?v=5.7">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <!-- Model Viewer for 3D GLB -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     
@@ -167,7 +172,7 @@
                     </div>
                     <!-- Dock Tray -->
                     <div class="dock-tray">
-                        <div class="dock-app selected" data-profile="behance" data-title="Behance" data-url="https://www.behance.net/asithc" data-link="behance.net/asithc">
+                        <div class="dock-app" data-profile="behance" data-title="Behance" data-url="https://www.behance.net/asithc" data-link="behance.net/asithc">
                             <div class="dock-app-inner">
                                 <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
                                     <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
@@ -235,7 +240,23 @@
                 </audio>
             </div>
 
-              
+            <!-- Open to Work Widget -->
+            <div class="bento-item open-to-work-card fade-in delay-2">
+                <div class="otw-status">
+                    <svg class="otw-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                    <span class="otw-label">Open to Work</span>
+                </div>
+                <div class="otw-content">
+                    <h3 class="otw-title">Asith Looking for new opportunities</h3>
+                    <p class="otw-description">I'm actively seeking UX Design roles where I can help build meaningful products.</p>
+                </div>
+                <a href="contact.html" class="otw-cta">
+                    <span class="otw-cta-text">Let's talk ↗</span>
+                </a>
+            </div>
 
                 <!-- WhatsApp Status Card -->
                 <div class="bento-item whatsapp-card widget fade-in delay-3">
@@ -304,88 +325,127 @@
                     </div>
                     
                     <!-- Image Slides -->
-                    <!-- TO REPLACE IMAGES: Update the data-src attribute with your own image path (supports .jpg, .png, .jpeg, .webp) -->
                     <div class="photo-slides">
-                        <!-- Random Photos (4 variants) -->
-                        <div class="photo-slide active" data-category="random" data-index="0" data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop" alt="Random photo 1" class="photo-image">
+                        <!-- Random Photos (8 images) -->
+                        <div class="photo-slide active" data-category="random" data-index="0" data-src="images/gallery/random-1.webp">
+                            <img src="images/gallery/random-1.webp" alt="Random photo 1" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="random" data-index="1" data-src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=800&fit=crop" alt="Random photo 2" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="1" data-src="images/gallery/random-2.webp">
+                            <img src="images/gallery/random-2.webp" alt="Random photo 2" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="random" data-index="2" data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=800&fit=crop" alt="Random photo 3" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="2" data-src="images/gallery/random-3.webp">
+                            <img src="images/gallery/random-3.webp" alt="Random photo 3" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="random" data-index="3" data-src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=800&fit=crop" alt="Random photo 4" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="3" data-src="images/gallery/random-4.webp">
+                            <img src="images/gallery/random-4.webp" alt="Random photo 4" class="photo-image">
                         </div>
-                        
-                        <!-- Home Photos (4 variants) -->
-                        <div class="photo-slide" data-category="home" data-index="0" data-src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&h=800&fit=crop" alt="Home photo 1" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="4" data-src="images/gallery/random-5.webp">
+                            <img src="images/gallery/random-5.webp" alt="Random photo 5" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="home" data-index="1" data-src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=800&fit=crop" alt="Home photo 2" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="5" data-src="images/gallery/random-6.webp">
+                            <img src="images/gallery/random-6.webp" alt="Random photo 6" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="home" data-index="2" data-src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=800&fit=crop" alt="Home photo 3" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="6" data-src="images/gallery/random-7.webp">
+                            <img src="images/gallery/random-7.webp" alt="Random photo 7" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="home" data-index="3" data-src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=800&fit=crop" alt="Home photo 4" class="photo-image">
+                        <div class="photo-slide" data-category="random" data-index="7" data-src="images/gallery/random-8.webp">
+                            <img src="images/gallery/random-8.webp" alt="Random photo 8" class="photo-image">
                         </div>
                         
-                        <!-- Personal Life (4 variants) -->
-                        <div class="photo-slide" data-category="personal" data-index="0" data-src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=800&fit=crop" alt="Personal photo 1" class="photo-image">
+                        <!-- Home Photos (4 images) -->
+                        <div class="photo-slide" data-category="home" data-index="0" data-src="images/gallery/home-1.webp">
+                            <img src="images/gallery/home-1.webp" alt="Home photo 1" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="personal" data-index="1" data-src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=800&fit=crop" alt="Personal photo 2" class="photo-image">
+                        <div class="photo-slide" data-category="home" data-index="1" data-src="images/gallery/home-2.webp">
+                            <img src="images/gallery/home-2.webp" alt="Home photo 2" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="personal" data-index="2" data-src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=800&fit=crop" alt="Personal photo 3" class="photo-image">
+                        <div class="photo-slide" data-category="home" data-index="2" data-src="images/gallery/home-3.webp">
+                            <img src="images/gallery/home-3.webp" alt="Home photo 3" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="personal" data-index="3" data-src="https://images.unsplash.com/photo-1530268729831-4b0b9e170218?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1530268729831-4b0b9e170218?w=800&h=800&fit=crop" alt="Personal photo 4" class="photo-image">
+                        <div class="photo-slide" data-category="home" data-index="3" data-src="images/gallery/home-4.webp">
+                            <img src="images/gallery/home-4.webp" alt="Home photo 4" class="photo-image">
                         </div>
                         
-                        <!-- Adventures (4 variants) -->
-                        <div class="photo-slide" data-category="adventure" data-index="0" data-src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=800&fit=crop" alt="Adventure photo 1" class="photo-image">
+                        <!-- Personal Life (6 images) -->
+                        <div class="photo-slide" data-category="personal" data-index="0" data-src="images/gallery/personal-1.webp">
+                            <img src="images/gallery/personal-1.webp" alt="Personal photo 1" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="adventure" data-index="1" data-src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=800&fit=crop" alt="Adventure photo 2" class="photo-image">
+                        <div class="photo-slide" data-category="personal" data-index="1" data-src="images/gallery/personal-2.webp">
+                            <img src="images/gallery/personal-2.webp" alt="Personal photo 2" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="adventure" data-index="2" data-src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&h=800&fit=crop" alt="Adventure photo 3" class="photo-image">
+                        <div class="photo-slide" data-category="personal" data-index="2" data-src="images/gallery/personal-3.webp">
+                            <img src="images/gallery/personal-3.webp" alt="Personal photo 3" class="photo-image">
                         </div>
-                        <div class="photo-slide" data-category="adventure" data-index="3" data-src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=800&fit=crop">
-                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=800&fit=crop" alt="Adventure photo 4" class="photo-image">
+                        <div class="photo-slide" data-category="personal" data-index="3" data-src="images/gallery/personal-4.webp">
+                            <img src="images/gallery/personal-4.webp" alt="Personal photo 4" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="personal" data-index="4" data-src="images/gallery/personal-5.webp">
+                            <img src="images/gallery/personal-5.webp" alt="Personal photo 5" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="personal" data-index="5" data-src="images/gallery/personal-6.jpg">
+                            <img src="images/gallery/personal-6.jpg" alt="Personal photo 6" class="photo-image">
+                        </div>
+                        
+                        <!-- Adventures (10 images) -->
+                        <div class="photo-slide" data-category="adventure" data-index="0" data-src="images/gallery/adventure-1.webp">
+                            <img src="images/gallery/adventure-1.webp" alt="Adventure photo 1" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="1" data-src="images/gallery/adventure-2.webp">
+                            <img src="images/gallery/adventure-2.webp" alt="Adventure photo 2" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="2" data-src="images/gallery/adventure-3.webp">
+                            <img src="images/gallery/adventure-3.webp" alt="Adventure photo 3" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="3" data-src="images/gallery/adventure-4.webp">
+                            <img src="images/gallery/adventure-4.webp" alt="Adventure photo 4" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="4" data-src="images/gallery/adventure-5.webp">
+                            <img src="images/gallery/adventure-5.webp" alt="Adventure photo 5" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="5" data-src="images/gallery/adventure-6.webp">
+                            <img src="images/gallery/adventure-6.webp" alt="Adventure photo 6" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="6" data-src="images/gallery/adventure-7.webp">
+                            <img src="images/gallery/adventure-7.webp" alt="Adventure photo 7" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="7" data-src="images/gallery/adventure-8.webp">
+                            <img src="images/gallery/adventure-8.webp" alt="Adventure photo 8" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="8" data-src="images/gallery/adventure-9.webp">
+                            <img src="images/gallery/adventure-9.webp" alt="Adventure photo 9" class="photo-image">
+                        </div>
+                        <div class="photo-slide" data-category="adventure" data-index="9" data-src="images/gallery/adventure-10.webp">
+                            <img src="images/gallery/adventure-10.webp" alt="Adventure photo 10" class="photo-image">
                         </div>
                     </div>
                     
                     <!-- iOS Style Bottom Navigator -->
                     <div class="photo-navigator">
                         <button class="nav-icon" data-category="random" title="Random Photos">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="7" height="7" rx="1"/>
-                                <rect x="14" y="3" width="7" height="7" rx="1"/>
-                                <rect x="3" y="14" width="7" height="7" rx="1"/>
-                                <rect x="14" y="14" width="7" height="7" rx="1"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 3 21 3 21 8"/>
+                                <line x1="4" y1="20" x2="21" y2="3"/>
+                                <polyline points="21 16 21 21 16 21"/>
+                                <line x1="15" y1="15" x2="21" y2="21"/>
+                                <line x1="4" y1="4" x2="9" y2="9"/>
                             </svg>
                         </button>
                         <button class="nav-icon active" data-category="home" title="Where I'm From">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2L2 8l10 6 10-6-10-6zm0 13.5l-8-4.5v6l8 4.5 8-4.5v-6l-8 4.5z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
                             </svg>
                         </button>
                         <button class="nav-icon" data-category="personal" title="Personal Life">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
                             </svg>
                         </button>
                         <button class="nav-icon" data-category="adventure" title="Adventures">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
                             </svg>
                         </button>
                     </div>
@@ -425,6 +485,11 @@
             dockPopup.appendChild(arrow);
             
             // Initialize with a random app selected
+            // First, remove any pre-existing selected classes
+            dockApps.forEach(a => {
+                a.classList.remove('selected');
+            });
+            
             const randomIndex = Math.floor(Math.random() * dockApps.length);
             const randomApp = dockApps[randomIndex];
             
