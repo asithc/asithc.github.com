@@ -261,8 +261,8 @@ button {
 }
 
 .photo-card {
-    grid-column: span 1;
-    grid-row: span 2;
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
 }
 
 .logo-3d-card {
@@ -691,9 +691,9 @@ button {
 
 /* Selected state with border */
 .dock-app.selected {
-    border: 2px solid #000000 !important;
-    padding: 4px;
-    background: rgba(0, 0, 0, 0.08) !important;
+    border: 2.5px solid #000000 !important;
+    padding: 3.5px;
+    background: rgba(0, 0, 0, 0.20) !important;
 }
 
 .dock-app.selected .dock-app-inner {
@@ -879,6 +879,101 @@ button {
 .otw-cta:hover {
     background: var(--text-primary);
     color: var(--bg-primary);
+}
+
+/* Home Project Cards */
+.project-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    overflow: hidden;
+    position: relative;
+    min-height: 240px;
+}
+
+.project-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+    position: relative;
+}
+
+.project-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    background: var(--bg-primary);
+    border-radius: 100px;
+    width: fit-content;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.project-title .tm {
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 2px;
+    vertical-align: super;
+}
+
+.project-card-third {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.project-description {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.project-thumbnail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    overflow: hidden;
+    z-index: 1;
+    transition: z-index 0s;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.project-card:hover .project-thumbnail {
+    z-index: 3;
+    overflow: visible;
+}
+
+.project-card:hover .project-thumbnail img {
+    transform: scale(1.1) translateY(-8%);
 }
 
 /* Notion Widget */
@@ -4812,7 +4907,7 @@ html {
 }
 
 .project-title {
-    font-size: 56px;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
     color: var(--text-primary);
@@ -4896,12 +4991,12 @@ html {
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: #2f80ed;
+    color: var(--accent-blue);
     text-decoration: none;
     padding: 6px 12px;
     border-radius: 999px;
-    border: 1px solid #bcbcbc;
-    background: #e9e9e9;
+    border: 1px solid var(--accent-blue);
+    background: rgba(0, 122, 255, 0.08);
     width: fit-content;
     transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
@@ -4912,9 +5007,9 @@ html {
 }
 
 .project-meta-section .meta-link:hover {
-    color: #1a6ed8;
-    border-color: #a8a8a8;
-    background: #f1f1f1;
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    background: rgba(0, 122, 255, 0.15);
 }
 
 .project-content {
