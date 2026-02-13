@@ -5,8 +5,11 @@ const chatState = {
     userData: {
         name: '',
         topic: '',
+        title: '',
         whatsapp: '',
-        email: ''
+        email: '',
+        conversationStartTime: null,
+        connectionSource: 'Contact Page'
     },
     hiCount: 0,
     forwardedToMom: false,
@@ -133,7 +136,7 @@ const isValidEmail = (email) => {
     return /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(trimmed);
 };
 
-// --- Intent detection (work/project/hire/mentor) ---
+// --- Intent detection (work/project/hire/mentor/job/career) ---
 const hasWorkIntent = (text) => {
     return [
         /let'?s\s+(work|collaborate|connect|build|talk|chat)/i,
@@ -150,14 +153,19 @@ const hasWorkIntent = (text) => {
         /i('?m|\s+am)\s+(looking|interested|reaching)/i,
         /\b(mentor|mentorship|guidance|portfolio\s*review|design\s*review)\b/i,
         /\b(ux|ui|product)\s*(design|designer|redesign|audit|consultation)\b/i,
+        /\b(job|career|opportunity|position|role|opening|vacancy)\b/i,
+        /\b(offer|offering|have\s+a\s+position|recruiting|recruitment)\b/i,
+        /\b(join\s+(our|my|the)|company|team|organization)\b/i,
+        /\b(employment|employ|full[\s-]?time|part[\s-]?time|contract|permanent)\b/i,
     ].some(p => p.test(text));
 };
 
 // --- Topic categorization for contextual Asith-like responses ---
 const categorizeTopic = (text) => {
     const lower = text.toLowerCase();
+    if (/\b(job|career|opportunity|position|role|opening|vacancy|offer|offering|recruiting|recruitment|employment|employ)\b/.test(lower)) return 'career_opportunity';
     if (/\b(mentor|mentorship|guidance|guide|learn|teach|advice|career|grow|growth)\b/.test(lower)) return 'mentorship';
-    if (/\b(hire|hiring|freelance|contract|full[\s-]?time|part[\s-]?time|gig|position|role|vacancy|opening)\b/.test(lower)) return 'hiring';
+    if (/\b(hire|hiring|freelance|contract|full[\s-]?time|part[\s-]?time|gig)\b/.test(lower)) return 'hiring';
     if (/\b(ux|ui|user\s*experience|user\s*interface|wireframe|prototype|figma|design\s*system|usability|research|heuristic|interaction)\b/.test(lower)) return 'ux_design';
     if (/\b(product|product\s*design|saas|startup|mvp|feature|roadmap|strategy)\b/.test(lower)) return 'product_design';
     if (/\b(brand|branding|logo|identity|visual|graphic)\b/.test(lower)) return 'branding';
@@ -167,8 +175,37 @@ const categorizeTopic = (text) => {
     return 'general';
 };
 
+// Extract job title/role from text
+const extractTitle = (text) => {
+    const lower = text.toLowerCase();
+    
+    // Common title patterns
+    const titlePatterns = [
+        /\b(senior|lead|principal|staff|head\s+of)\s+(ux|ui|product|design)/i,
+        /\b(ux|ui|product)\s+(designer|design|lead|manager|director)/i,
+        /\b(design\s+manager|design\s+director|design\s+lead)/i,
+        /\b(recruiter|hr\s+manager|talent\s+acquisition|hiring\s+manager)/i,
+        /\b(ceo|cto|coo|founder|co[\s-]?founder)/i,
+        /\b(manager|director|vp|vice\s+president)/i,
+    ];
+    
+    for (const pattern of titlePatterns) {
+        const match = text.match(pattern);
+        if (match) return match[0];
+    }
+    
+    // If mentioning a role/position
+    if (/\b(position|role|job)\s+(?:for|as)\s+([a-z\s]+)/i.test(lower)) {
+        const match = text.match(/\b(?:position|role|job)\s+(?:for|as)\s+([a-z\s]{3,30})/i);
+        if (match) return match[1].trim();
+    }
+    
+    return '';
+};
+
 const getTopicResponse = (category) => {
     const responses = {
+        career_opportunity: "Thanks for thinking of me for this opportunity! I'm definitely interested in hearing more about the role 🎯",
         mentorship: "Love that you're reaching out about mentorship! I'm always happy to help people grow in the design space 🌱",
         hiring: "Sounds like an exciting opportunity! I'd love to hear more about the role and what you're looking for 🎯",
         ux_design: "Right up my alley! UX is what I live and breathe. I'd love to dig into the details 🎨",
@@ -512,8 +549,8 @@ const handleMessage = async (text) => {
             return;
         }
 
-        // Work/project/hire/mentorship intent (check BEFORE name detection)
-        const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|gig|design|ux|ui|product|review|feedback|consultation|help)$/i.test(lowerText);
+        // Work/project/hire/mentorship/job/career intent (check BEFORE name detection)
+        const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|career|gig|design|ux|ui|product|review|feedback|consultation|help|position|role|opening|offer)$/i.test(lowerText);
 
         if (isWorkKeyword || hasWorkIntent(userText)) {
             chatState.currentStep = 'ask_name';
@@ -594,6 +631,10 @@ const handleMessage = async (text) => {
     if (chatState.currentStep === 'ask_topic') {
         chatState.userData.topic = userText;
         const category = categorizeTopic(userText);
+        const extractedTitle = extractTitle(userText);
+        if (extractedTitle) {
+            chatState.userData.title = extractedTitle;
+        }
         const topicResponse = getTopicResponse(category);
         const nextStep = advanceToNextStep();
         chatState.currentStep = nextStep;
@@ -668,17 +709,37 @@ const handleMessage = async (text) => {
     chatState.isProcessing = false;
 };
 
-// Google Sheets API URL
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzwlhTOiXwMqo9labTW3TIi6JgxxP8zKT52vlM6LakwBryWBjfZqIGxb2G68sNULIA/exec';
+// Google Sheets API URL (update this with your deployed script URL)
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbySW5IrauskchS8HOSWPxe-FiJ1wxg-Vsx_uIhOiQ_P-3KKLv2Fo_udGoim0zMul-CQ/exec';
 
-// Send data to Google Sheets with security measures
+// Send data to Google Sheets and trigger email notifications
 const sendToGoogleSheets = async (data) => {
     try {
+        const conversationEnd = new Date();
+        const startTime = data.conversationStartTime ? new Date(data.conversationStartTime) : conversationEnd;
+        
         const secureData = {
-            ...data,
+            name: data.name || 'Not provided',
+            email: data.email || 'Not provided',
+            whatsapp: data.whatsapp || 'Not provided',
+            topic: data.topic || 'Not provided',
+            title: data.title || 'Not specified',
+            connectionSource: data.connectionSource || 'Contact Page',
+            conversationStartTime: startTime.toLocaleString('en-US', { 
+                timeZone: 'Asia/Colombo',
+                dateStyle: 'medium',
+                timeStyle: 'medium'
+            }),
+            conversationEndTime: conversationEnd.toLocaleString('en-US', { 
+                timeZone: 'Asia/Colombo',
+                dateStyle: 'medium',
+                timeStyle: 'medium'
+            }),
             origin: window.location.origin,
             website: '', // Honeypot field — should always be empty
-            timestamp: Date.now()
+            timestamp: Date.now(),
+            sendEmail: true,
+            emailRecipients: ['asithwijenayake@gmail.com', 'hello@asith.cc']
         };
 
         const response = await fetch(GOOGLE_SHEETS_URL, {
@@ -689,7 +750,7 @@ const sendToGoogleSheets = async (data) => {
             },
             body: JSON.stringify(secureData)
         });
-        console.log('Data sent to Google Sheets');
+        console.log('Data sent to Google Sheets and email notifications triggered');
         return true;
     } catch (error) {
         console.error('Failed to send to Google Sheets:', error);
@@ -733,11 +794,14 @@ const initContactChat = () => {
     }
 
     console.log('Contact chat initialized');
+    
+    // Set conversation start time
+    chatState.userData.conversationStartTime = new Date().toISOString();
 
     // Show initial welcome messages with natural delay
     addMessage("Hey! 👋", 'received', false, true);
     setTimeout(() => {
-        addMessage("Looking for UX/product design help, mentorship, or want to work together? Drop your details and I'll get back to you! 💬", 'received', true, false);
+        addMessage("Looking for UX/product design help, have a job opportunity, interested in mentorship, or want to collaborate? Drop your details and I'll get back to you! 💬", 'received', true, false);
     }, 1200 + Math.random() * 600);
 
     // Handle send

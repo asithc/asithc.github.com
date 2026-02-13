@@ -505,6 +505,30 @@
 
     <script src="js/script.js"></script>
     
+    <!-- Project Image Loading Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectImages = document.querySelectorAll('.project-thumbnail img');
+            
+            projectImages.forEach(img => {
+                // When image loads successfully
+                img.addEventListener('load', function() {
+                    this.parentElement.setAttribute('data-loaded', 'true');
+                });
+                
+                // When image fails to load
+                img.addEventListener('error', function() {
+                    this.parentElement.setAttribute('data-error', 'true');
+                });
+                
+                // If image is already loaded (cached)
+                if (img.complete && img.naturalHeight !== 0) {
+                    img.parentElement.setAttribute('data-loaded', 'true');
+                }
+            });
+        });
+    </script>
+    
     <!-- Dock Widget Interaction -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {

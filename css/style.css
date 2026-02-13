@@ -906,8 +906,8 @@ button {
 
 .project-tag {
     display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 9px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-secondary);
@@ -950,16 +950,58 @@ button {
     left: 0;
     right: 0;
     height: 55%;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
     transition: z-index 0s;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-thumbnail::before {
+    content: 'Loading image...';
+    position: absolute;
+    font-size: 12px;
+    color: var(--text-secondary);
+    z-index: 2;
+    font-weight: 500;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-thumbnail[data-loaded="true"]::before {
+    opacity: 0;
+}
+
+.project-thumbnail[data-error="true"]::before {
+    content: 'Image unavailable';
+    opacity: 1;
+    z-index: 2;
 }
 
 .project-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.project-thumbnail[data-loaded="true"] img {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-thumbnail img:not([src]),
+.project-thumbnail img[src=""] {
+    display: none;
 }
 
 .project-card:hover {
@@ -972,7 +1014,7 @@ button {
     overflow: visible;
 }
 
-.project-card:hover .project-thumbnail img {
+.project-card:hover .project-thumbnail[data-loaded="true"] img {
     transform: scale(1.1) translateY(-8%);
 }
 
