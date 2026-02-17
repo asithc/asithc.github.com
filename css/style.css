@@ -955,13 +955,28 @@ button {
     transition: z-index 0s;
     background: var(--bg-secondary);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+}
+
+.project-thumbnail::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpolyline points='21 15 16 10 5 21'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .project-thumbnail::before {
     content: 'Loading image...';
-    position: absolute;
+    position: relative;
     font-size: 12px;
     color: var(--text-secondary);
     z-index: 2;
@@ -971,8 +986,14 @@ button {
     pointer-events: none;
 }
 
+.project-thumbnail[data-loaded="true"]::after,
 .project-thumbnail[data-loaded="true"]::before {
     opacity: 0;
+}
+
+.project-thumbnail[data-error="true"]::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='8.5' y1='8.5' x2='15.5' y2='15.5'/%3E%3Cline x1='15.5' y1='8.5' x2='8.5' y2='15.5'/%3E%3C/svg%3E");
+    opacity: 1;
 }
 
 .project-thumbnail[data-error="true"]::before {
@@ -1681,12 +1702,13 @@ button {
     height: 36px;
     border-radius: 50%;
     background: #EDEDED;
-    border: 2px solid var(--text-secondary);
+    border: 2px solid #25D366;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     box-sizing: border-box;
+    padding: 1.5px;
     transition: border-color 0.4s ease;
 }
 
@@ -1695,6 +1717,7 @@ button {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 50%;
 }
 
 .whatsapp-profile-info {
@@ -4951,7 +4974,7 @@ html {
 .project-title {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+    /* margin-bottom: var(--spacing-xs); */
     color: var(--text-primary);
 }
 
@@ -4997,35 +5020,144 @@ html {
 .status-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
+    gap: 10px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text-primary);
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+    width: fit-content;
 }
 
 .status-badge .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: #27c267;
-    box-shadow: 0 0 0 0 rgba(39, 194, 103, 0.45);
-    animation: statusPulse 1.6s ease-out infinite;
+    background: #34C759;
+    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.45);
+    animation: statusPulse 2s ease-out infinite;
 }
 
 .status-badge.is-live {
-    color: #27c267;
+    color: #34C759;
+}
+
+/* Thanos'd status (replaces Abandoned/Discontinued) */
+.thanos-status-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.status-badge.is-thanosd {
+    color: #B8860B;
+    border-color: rgba(184, 134, 11, 0.25);
+    background: rgba(184, 134, 11, 0.06);
+    transition: opacity 1.8s ease-out, filter 1.8s ease-out, transform 1.2s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.status-badge.is-thanosd.dusting {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.92);
+    pointer-events: none;
+}
+
+.terminated-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -10px;
+    z-index: 1;
+}
+
+.terminated-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.terminated-text.fading-out {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.status-badge.is-thanosd .status-dot {
+    display: none;
+}
+
+.status-badge.is-thanosd .thanos-gauntlet {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+.status-badge.is-thanosd .thanos-gauntlet:hover {
+    transform: scale(1.15);
+}
+
+.status-badge.is-thanosd .thanos-gauntlet.snapping {
+    animation: gauntletSnap 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* Not Live / Offline status */
+.status-badge.is-offline {
+    color: var(--text-secondary);
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.status-badge.is-offline .status-dot {
+    background: var(--text-secondary);
+    opacity: 0.4;
+    animation: none;
 }
 
 @keyframes statusPulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(39, 194, 103, 0.45);
+        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.45);
     }
     70% {
-        box-shadow: 0 0 0 8px rgba(39, 194, 103, 0);
+        box-shadow: 0 0 0 8px rgba(52, 199, 89, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(39, 194, 103, 0);
+        box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
     }
+}
+
+@keyframes thanosSnapDot {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.6); }
+    25% { transform: scale(1.8); box-shadow: 0 0 12px 6px rgba(255, 215, 0, 0.6); }
+    45% { transform: scale(0.5); box-shadow: 0 0 30px 15px rgba(255, 165, 0, 0.9); filter: brightness(3); }
+    65% { transform: scale(2.2); box-shadow: 0 0 40px 20px rgba(255, 215, 0, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 4px 2px rgba(218, 165, 32, 0.15); }
+}
+
+@keyframes gauntletSnap {
+    0%  { transform: rotate(0deg) scale(1); filter: none; }
+    15% { transform: rotate(-15deg) scale(1.2); filter: brightness(1.4) drop-shadow(0 0 6px rgba(255, 215, 0, 0.6)); }
+    25% { transform: rotate(8deg) scale(1.5); filter: brightness(2) drop-shadow(0 0 12px rgba(255, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(65, 105, 225, 0.5)); }
+    35% { transform: rotate(-8deg) scale(1.6); filter: brightness(3) drop-shadow(0 0 20px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 15px rgba(138, 43, 226, 0.7)) drop-shadow(0 0 10px rgba(0, 255, 0, 0.5)); }
+    50% { transform: rotate(5deg) scale(0.9); filter: brightness(4) drop-shadow(0 0 25px rgba(255, 255, 255, 1)) drop-shadow(0 0 40px rgba(255, 165, 0, 0.8)); }
+    65% { transform: rotate(-3deg) scale(1.1); filter: brightness(1.8) drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)); }
+    80% { transform: rotate(1deg) scale(1.05); filter: brightness(1.2); }
+    100% { transform: rotate(0deg) scale(1); filter: none; }
 }
 
 .project-meta-section .meta-link {
