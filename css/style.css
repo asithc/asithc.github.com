@@ -57,6 +57,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-primary);
     background-color: var(--bg-primary);
@@ -68,6 +72,28 @@ body {
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+
+    /* Firefox scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+}
+
+/* WebKit scrollbar (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.9);
 }
 
 a {
@@ -3010,6 +3036,11 @@ button {
     box-shadow: 0 8px 24px var(--shadow);
 }
 
+.whatsapp-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .spotify-player-widget:hover {
     transform: none;
     box-shadow: none;
@@ -3372,7 +3403,7 @@ button {
     gap: 7px;
     padding: 7px 16px;
     background: rgba(0, 0, 0, 0.10);
-    border: 1px solid rgba(0, 0, 0, 0.10);
+    /* border: 1px solid rgba(0, 0, 0, 0.10); */
     border-radius: 100px;
     pointer-events: none;
     z-index: 10;
