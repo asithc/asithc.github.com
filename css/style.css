@@ -235,6 +235,11 @@ button {
     padding: var(--spacing-2xl) var(--spacing-lg);
 }
 
+/* Mobile hero logo - hidden by default, shown on portrait mobile/tablet */
+.mobile-hero-logo {
+    display: none;
+}
+
 /* Hero Section - "Get Lucky" with these designs 🎲 */
 .hero-section {
     min-height: 100vh;
@@ -1729,7 +1734,7 @@ button {
 /* WhatsApp logo */
 .whatsapp-logo {
     position: absolute;
-    top: 16px;
+    top: 31px;
     right: 16px;
     width: 32px;
     height: 32px;
@@ -7865,6 +7870,21 @@ html {
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
+    .mobile-hero-logo {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .mobile-hero-logo img {
+        height: 45px;
+        width: auto;
+    }
+
+    .hero-section {
+        padding-top: 16px;
+    }
+
     .home-container,
     .about-container {
         grid-template-columns: 1fr;
