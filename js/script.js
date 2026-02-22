@@ -282,6 +282,248 @@ const initWhatsAppMentions = () => {
     });
 };
 
+// WhatsApp Status Viewer - auto-rotating statuses with progress bars
+const initWhatsAppStatusViewer = () => {
+    document.querySelectorAll('.wa-status-viewer').forEach(viewer => initSingleWhatsAppViewer(viewer));
+};
+
+const initSingleWhatsAppViewer = (viewer) => {
+    if (!viewer) return;
+
+    const progressContainer = viewer.querySelector('.wa-progress-container');
+    const slides = viewer.querySelectorAll('.wa-slide');
+    const timeLabel = viewer.querySelector('.whatsapp-profile-label');
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+    let timer = null;
+    let isPaused = false;
+    let fillStartTime = 0;
+    let fillElapsed = 0;
+
+    // Build progress bars
+    progressContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'wa-progress-bar';
+        bar.innerHTML = '<div class="wa-progress-fill"></div>';
+        bar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(i);
+        });
+        progressContainer.appendChild(bar);
+    });
+
+    const bars = progressContainer.querySelectorAll('.wa-progress-fill');
+
+    function getDuration(index) {
+        const slide = slides[index];
+        const dataDur = parseInt(slide.dataset.duration);
+        if (dataDur) return dataDur;
+        return 6000;
+    }
+
+    function updateTimeLabel() {
+        const times = ['Just now', 'Today, 10:23 AM', 'Today, 2:15 PM', 'Yesterday, 8:11 PM', 'Yesterday, 6:45 PM', 'Today, 11:30 AM'];
+        timeLabel.textContent = times[currentIndex % times.length];
+    }
+
+    function startFill(index, elapsed = 0) {
+        const duration = getDuration(index);
+        const fill = bars[index];
+        const remaining = duration - elapsed;
+
+        // Set width to current progress instantly
+        const startPercent = (elapsed / duration) * 100;
+        fill.style.width = startPercent + '%';
+        fill.classList.remove('filling');
+
+        // Force reflow
+        void fill.offsetWidth;
+
+        // Animate to 100%
+        fill.classList.add('filling');
+        fill.style.transitionDuration = remaining + 'ms';
+        fill.style.width = '100%';
+
+        fillStartTime = performance.now();
+        fillElapsed = elapsed;
+
+        timer = setTimeout(() => {
+            nextSlide();
+        }, remaining);
+    }
+
+    function stopFill() {
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+        const fill = bars[currentIndex];
+        // Capture current progress
+        const elapsed = fillElapsed + (performance.now() - fillStartTime);
+        const duration = getDuration(currentIndex);
+        const pct = Math.min((elapsed / duration) * 100, 100);
+
+        fill.classList.remove('filling');
+        fill.style.transitionDuration = '0ms';
+        fill.style.width = pct + '%';
+        fillElapsed = elapsed;
+    }
+
+    function showSlide(index, direction = 'next') {
+        const prevIndex = currentIndex;
+
+        // Deactivate previous
+        slides[prevIndex].classList.remove('active');
+        slides[prevIndex].classList.add('exiting');
+
+        // Pause any video on previous slide
+        const prevVideo = slides[prevIndex].querySelector('video');
+        if (prevVideo) {
+            prevVideo.pause();
+            prevVideo.currentTime = 0;
+        }
+
+        setTimeout(() => {
+            slides[prevIndex].classList.remove('exiting');
+        }, 450);
+
+        // Mark bars
+        bars.forEach((b, i) => {
+            if (i < index) {
+                b.classList.add('done');
+                b.classList.remove('filling');
+                b.style.width = '100%';
+            } else {
+                b.classList.remove('done', 'filling');
+                b.style.width = '0%';
+            }
+        });
+
+        currentIndex = index;
+
+        // Activate new slide
+        slides[currentIndex].classList.add('active');
+
+        // Play video if present
+        const video = slides[currentIndex].querySelector('video');
+        if (video) {
+            video.currentTime = 0;
+            video.muted = true;
+            // Reset mute button
+            const muteBtn = slides[currentIndex].querySelector('.wa-mute-toggle');
+            if (muteBtn) muteBtn.classList.remove('unmuted');
+            video.play().catch(() => {});
+        }
+
+        updateTimeLabel();
+        fillElapsed = 0;
+        startFill(currentIndex);
+    }
+
+    function nextSlide() {
+        const next = (currentIndex + 1) % slides.length;
+        showSlide(next);
+    }
+
+    function goToSlide(index) {
+        if (index === currentIndex) return;
+        stopFill();
+        showSlide(index);
+    }
+
+    // Click left/right halves to navigate
+    viewer.addEventListener('click', (e) => {
+        const rect = viewer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        stopFill();
+        if (x < rect.width * 0.3) {
+            // Go back
+            const prev = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+            showSlide(prev, 'prev');
+        } else {
+            nextSlide();
+        }
+    });
+
+    // Pause on hover
+    viewer.addEventListener('mouseenter', () => {
+        isPaused = true;
+        stopFill();
+    });
+
+    viewer.addEventListener('mouseleave', () => {
+        isPaused = false;
+        startFill(currentIndex, fillElapsed);
+    });
+
+    // Touch hold to pause (mobile)
+    let touchTimer = null;
+    viewer.addEventListener('touchstart', (e) => {
+        touchTimer = setTimeout(() => {
+            isPaused = true;
+            stopFill();
+        }, 200);
+    }, { passive: true });
+
+    viewer.addEventListener('touchend', () => {
+        if (touchTimer) clearTimeout(touchTimer);
+        if (isPaused) {
+            isPaused = false;
+            startFill(currentIndex, fillElapsed);
+        }
+    });
+
+    // Mute toggle buttons
+    viewer.querySelectorAll('.wa-mute-toggle').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const slide = btn.closest('.wa-slide');
+            const video = slide.querySelector('video');
+            if (!video) return;
+            video.muted = !video.muted;
+            btn.classList.toggle('unmuted', !video.muted);
+        });
+    });
+
+    // Video loading placeholder handling
+    viewer.querySelectorAll('.wa-slide[data-type="video"]').forEach(slide => {
+        const video = slide.querySelector('video');
+        const placeholder = slide.querySelector('.wa-video-placeholder');
+        if (!video || !placeholder) return;
+
+        // Lazy-load video after page fully loads
+        const loadVideo = () => {
+            const src = video.dataset.src;
+            if (!src) return;
+            video.src = src;
+            video.load();
+        };
+
+        video.addEventListener('canplay', () => {
+            placeholder.classList.add('hidden');
+            // Auto-play if this slide is currently active
+            if (slide.classList.contains('active')) {
+                video.muted = true;
+                video.play().catch(() => {});
+            }
+        }, { once: true });
+
+        // Start loading after page is fully loaded
+        if (document.readyState === 'complete') {
+            setTimeout(loadVideo, 500);
+        } else {
+            window.addEventListener('load', () => setTimeout(loadVideo, 500), { once: true });
+        }
+    });
+
+    // Initialize first slide
+    slides[0].classList.add('active');
+    updateTimeLabel();
+    startFill(0);
+};
+
 // Masonry-like layout for About page grid
 const resizeAboutGridItems = () => {
     const container = document.querySelector('.about-container');
@@ -1192,6 +1434,7 @@ const init = () => {
     initWhatsAppHoverTone();
     initPlaystationHoverSound();
     initWhatsAppMentions();
+    initWhatsAppStatusViewer();
     initAboutMasonry();
     initGamesStack();
     

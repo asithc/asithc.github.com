@@ -75,7 +75,7 @@
                     <h3 class="meta-label">STATUS</h3>
                     <div class="thanos-status-wrapper">
                         <span class="status-badge is-thanosd">
-                            <img class="thanos-gauntlet" src="../images/thanos-gauntlet.svg" alt="Infinity Gauntlet" title="Snap!">
+                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!">
                             Thanos'd
                         </span>
                         <span class="terminated-text">Terminated</span>
@@ -114,15 +114,14 @@
 
                 <div class="project-section">
                     <h3 class="section-label">CONTEXT</h3>
-                    <p class="section-text">In early 2020, Sri Lanka was experiencing a strong tourism surge, with increasing demand for intercity travel. While platforms like Uber and PickMe addressed short, on-demand trips effectively, they were poorly suited for longer, planned journeys. Travelers either had to rent entire vehicles at high cost or rely on rigid public transport options with limited comfort and visibility.</p>
+                    <p class="section-text">In mid 2019, Sri Lanka was experiencing a strong tourism surge, with increasing demand for intercity travel. While platforms like Uber and PickMe addressed short, on-demand trips effectively, they were poorly suited for longer, planned journeys. Travelers either had to rent entire vehicles at high cost or rely on rigid public transport options with limited comfort and visibility.</p>
                     <p class="section-text">HopOn&trade; was conceived to bridge this gap by treating travel as a published plan rather than an instant request. The system enables drivers who are already traveling long distances to share unused capacity, reducing individual travel costs, while riders gain access to flexible, affordable options without committing to full vehicle hires. </p>
                     <p class="section-text">Special emphasis was placed on trust, safety, and clarity through public pickup points, identity verification, transparent pricing, and structured communication - making shared travel feel predictable and socially acceptable. The project progressed through full UX design and early development but was ultimately paused due to the COVID-19 pandemic, which fundamentally changed travel behavior and safety expectations around shared rides.</p>
                 </div>
 
                 <div class="project-cta">
-                    <!-- To enable: add class "pin-protected", set data-pin, and fill case study section below -->
-                    <a href="#case-study" class="case-study-link disabled" 
-                       data-pin="123456" 
+                    <a href="#case-study" class="case-study-link pin-protected" 
+                       data-pin="444888" 
                        data-target="caseStudySection">Read Case Study</a>
                 </div>
             </div>
@@ -168,44 +167,1043 @@
         </div>
 
         <!-- Case Study Section (Hidden until PIN is entered) -->
-        <section id="caseStudySection" class="case-study-section" style="display: none;">
+        <section id="caseStudySection" class="case-study-section" data-project="hopon" style="display: none;">
             <div class="case-study-content">
-                <div class="case-study-header">
-                    <h2 class="case-study-title">📖 Full Case Study</h2>
-                    <p class="case-study-intro">Detailed breakdown of this project.</p>
+
+                <!-- Hero Header -->
+                <div class="case-study-hero">
+                    <h2 class="case-study-headline">Turning empty seats into shared journeys - designing a platform where drivers publish routes and riders hop on.</h2>
                 </div>
 
+                <!-- Introduction -->
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">The Challenge</h3>
-                    <p>Add your case study content here...</p>
+                    <h3 class="case-study-heading">Introduction</h3>
+                    <p>HopOn&trade; is a shared transit platform designed to make long-distance travel in Sri Lanka more affordable, transparent, and efficient. Instead of hailing a ride on demand, drivers publish planned journeys with predefined routes, available seats, and pricing - and riders discover and book trips that already align with where they need to go.</p>
+                    <p>The concept was simple but underserved: most vehicles traveling between cities carry empty seats. A bus heading from Colombo to Galle has unused capacity. A van running daily to Arugam Bay leaves with rows unfilled. HopOn was designed to capture that wasted capacity and turn it into shared, affordable, point-to-point travel.</p>
+                    <p>This was not a ride-hailing app. It was a journey marketplace - optimized for scheduled, destination-based travel rather than instant, location-based pickup. Drivers set routes, times, and conditions in advance. Riders browsed, compared, and booked. The entire model was built around predictability over immediacy.</p>
+                    <p>I led product vision, end-to-end UX design, and early business modeling for HopOn from 2020 through early 2021. The project progressed through full UX design and prototyping but was ultimately shelved when COVID-19 fundamentally changed travel behavior and safety expectations around shared rides.</p>
                 </div>
 
+                <!-- My Role -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">My Role</h3>
+                    <p>I owned the product vision and experience design end-to-end - from initial concept through to high-fidelity prototypes and developer handoff. This wasn't a client project with predefined requirements. I shaped the product strategy, defined the user flows, and designed the interaction model from scratch.</p>
+                    <p>My responsibilities included:</p>
+                    <ul class="case-study-list">
+                        <li><strong>Product vision and system thinking</strong> - defining what HopOn should be, how it should work, and what it should not try to do</li>
+                        <li><strong>End-to-end UX flows</strong> - driver journey publishing, rider discovery and booking, pricing logic, route management, and trust/safety frameworks</li>
+                        <li><strong>Interaction design and screen flows</strong> - high-fidelity screens in Sketch, interactive prototypes in Principle, and flow diagrams in Whimsical</li>
+                        <li><strong>Early business and monetization modeling</strong> - pricing formulas, driver economics, commission structures, and MVP scoping</li>
+                        <li><strong>Prototyping and handoff</strong> - detailed specifications for the development team to build from</li>
+                    </ul>
+                </div>
+
+                <!-- Research & Discovery -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Research & Discovery</h3>
-                    <p>Add your case study content here...</p>
+                    <p>Before designing any screens, we spent significant time understanding how people actually travel long distances in Sri Lanka - the pain points, workarounds, and unmet needs that existing solutions failed to address.</p>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Design Approach</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">The Intercity Travel Landscape</h4>
+                    <p>In early 2020, Sri Lanka was experiencing strong tourism growth. Intercity travel demand was rising, but options were polarized: either expensive private vehicle hires or rigid public transport with limited comfort and visibility.</p>
+                    <p>On-demand ride-hailing platforms had established themselves in urban areas - short trips within cities worked well. But these platforms were fundamentally designed for instant, point-to-point urban rides. They were not built for planned, multi-stop, long-distance journeys where a driver might travel from Colombo through Galle to Katharagama to Arugam Bay over 8 hours.</p>
+                    <p>The result was a fragmented landscape: tourists overpaid for private hires, locals squeezed onto overcrowded public buses, and thousands of seats in private and commercial vehicles traveled empty every day between cities.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy">
-                        <p class="image-caption">Add image caption here</p>
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🗺️ Sri Lankan intercity travel landscape analysis coming soon</span>
+                        </div>
+                        <p class="image-caption">Mapping Sri Lanka's intercity travel corridors and demand patterns</p>
+                    </div>
+                </div>
+
+                <!-- Competitor Analysis -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Where Existing Platforms Fell Short</h4>
+                    <p>We analyzed the dominant ride-hailing platforms operating in Sri Lanka and studied shared transit models that had gained traction in other markets - particularly in North America and Europe. The gap was consistent:</p>
+                </div>
+
+                <div class="market-benchmarks-grid">
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                        <h4 class="benchmark-title">On-demand models don't serve long-distance</h4>
+                        <p class="benchmark-detail">Incumbent ride-hailing platforms treat every trip as an instant request. A driver is dispatched based on proximity, not route alignment. For an 8-hour intercity journey, this model breaks down entirely.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                        <h4 class="benchmark-title">No route publishing</h4>
+                        <p class="benchmark-detail">No platform let drivers announce planned journeys in advance. A minibus operator running Colombo to the southern coast daily had no way to publish that route and let travelers discover it.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+                        <h4 class="benchmark-title">Vehicle diversity ignored</h4>
+                        <p class="benchmark-detail">Ride-hailing focused on private cars and three-wheelers. Vans, minibuses, and larger vehicles - the backbone of Sri Lankan intercity transport - had no place in these systems.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                        <h4 class="benchmark-title">No comfort transparency</h4>
+                        <p class="benchmark-detail">Travelers had no way to evaluate journey quality before booking - air conditioning, luggage space, comfort level, or driver behavior. You booked blind and hoped for the best.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">Shared transit platforms in North America had proven the model worked - drivers publishing planned long-distance routes and travelers joining them.</p>
+                    <p class="callout-emphasis">But these were designed for Western infrastructure, car-centric culture, and different trust dynamics. The model needed fundamental rethinking for Sri Lanka.</p>
+                </div>
+
+                <!-- Concept Validation Research -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Validating the Concept</h4>
+                    <p>Before committing to design and development, we conducted both qualitative and quantitative research with selected members of the public - intercity travelers, daily commuters, tourists, and vehicle owners. We wanted to validate not just whether people would use a shared journey platform, but how they felt about the specific mechanics: pre-booking seats with strangers, paying online only, sharing ride details with known contacts, and trusting driver-published schedules.</p>
+                    <p>We also presented graphical interface prototypes to participants and compared their reactions against their current experiences with local ride-hailing and public transport. The findings were decisive:</p>
+                </div>
+
+                <div class="research-stats-grid">
+                    <div class="research-stat-card">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">Would Use</div>
+                        <p class="stat-detail">Of surveyed intercity travelers said they would try a shared journey platform if pricing was lower than private hire and the driver was verified</p>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Price Driven</div>
+                        <p class="stat-detail">Said cost was their primary decision factor for intercity travel - ahead of comfort, speed, and convenience</p>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Trust Gap</div>
+                        <p class="stat-detail">Expressed hesitation about sharing a vehicle with strangers for long distances - confirming that trust mechanisms were critical to the product's viability</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Outcome & Impact</h3>
-                    <p>Add your case study content here...</p>
+                    <p>When we showed prototype interfaces side by side with the existing ride-hailing experience, participants consistently preferred the journey marketplace model - the ability to browse options, see driver profiles, read ratings, compare pricing, and pre-book rather than request and wait. The prototype's transparency resolved the trust concerns that the statistics had surfaced.</p>
+                    <p>Qualitative interviews reinforced a critical finding: people did not want another taxi app. They wanted something closer to a flight or bus booking experience - browse available journeys, compare options, and commit with confidence. This shaped every design decision that followed.</p>
+                </div>
+
+                <!-- Driver Research -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Understanding Drivers</h4>
+                    <p>A core insight from early research was that HopOn's success depended entirely on the driver experience. If drivers didn't find value in publishing journeys, there would be no supply for riders to discover. We talked to intercity bus operators, van drivers, and private vehicle owners who regularly traveled long distances.</p>
+                </div>
+
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I drive to Galle and back three times a week with empty seats.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Regular route drivers had consistent unused capacity. These were not one-off trips - they were predictable patterns that could be turned into bookable journeys.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I need to know I'll cover fuel costs before I leave.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Drivers needed guaranteed minimum returns. The fare model had to ensure drivers hit their per-kilometer threshold regardless of how many riders booked.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">Passengers ask for AC, no music, or stops for food. I want to set that upfront.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Drivers wanted control over journey conditions. Add-on preferences needed to be declared at publishing time, not negotiated mid-trip.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I always come back the same day. The return trip is always empty.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Return journeys were a massive untapped opportunity. Auto-generating return trips would double available inventory without any additional driver effort.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Understanding Riders -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Understanding Riders</h4>
+                    <p>We also spoke to travelers - both locals and tourists - who regularly made intercity trips. Their frustrations aligned closely with the gaps we had identified in the platform landscape:</p>
+                </div>
+
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I paid three different prices for the same Colombo to Ella trip in one month.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight - Price opacity</span>
+                            <p>Hiring a private vehicle meant negotiating with individual drivers, with prices varying wildly. No standardized pricing, no way to compare options. Riders had zero price confidence before committing.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I just want to know if there's AC and space for my bags before I book.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight - Comfort uncertainty</span>
+                            <p>Public buses were affordable but offered no guarantees on comfort, luggage space, or arrival time. Riders wanted to know exactly what they were getting before they committed.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I won't get in a stranger's van for six hours without knowing who they are.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight - Safety concerns</span>
+                            <p>Sharing a vehicle with strangers required trust. Riders wanted identity verification, public pickup points, and structured communication rather than random encounters.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">The bus leaves at 6 AM or not at all. That doesn't work for me.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight - Schedule rigidity</span>
+                            <p>Public transport ran on fixed timetables that often didn't align with traveler plans. Riders wanted flexibility without the cost of a private hire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route System Research -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Route System and Journey Structure</h4>
+                    <p>Through driver interviews and route analysis, we developed the journey model that would become HopOn's foundation:</p>
+                </div>
+
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">Colombo to Galle to Katharagama to Arugam Bay - up to 3 stops per route.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Predefined multi-stop routes</span>
+                            <p>Drivers define a journey as A to B to C with up to 3 intermediate stops. Each stop maps to a predefined public pickup point - recognizable locations like bus stations, junctions, and landmarks - not GPS pins on random streets.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">Enter your home location. We'll show the routes nearest to you.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Home-based route matching</span>
+                            <p>Drivers enter their home location. The system surfaces routes closest to their starting point, making it effortless to discover and publish journeys they would naturally take.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">Publish outbound, get the return trip free.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Automatic return journeys</span>
+                            <p>If a driver publishes A to C outbound, the system auto-creates C to A as a return trip. The intermediate stop can differ on return - reflecting real driver behavior where they might take a different route back.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">Pick your days, set your departure times. Done.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Scheduled availability</span>
+                            <p>Drivers select which days they are available for hire and set outbound and inbound departure times. This created a predictable schedule that riders could rely on.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">30-45 minutes at each stop. Enough time for delays and boarding.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Travel time estimation</span>
+                            <p>The system calculates estimated arrival at each stop based on route distance and historical travel times. A 30-45 minute waiting window is built into each intermediate stop to account for delays and passenger boarding.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🗺️ Multi-stop route system and journey structure diagrams coming soon</span>
+                        </div>
+                        <p class="image-caption">Predefined journey model - Colombo to Galle to Katharagama to Arugam Bay with intermediate pickup points</p>
+                    </div>
+                </div>
+
+                <!-- Pricing Model -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Pricing Model</h4>
+                    <p>One of the most complex design challenges was creating a fare model that worked for both drivers and riders. We needed to ensure drivers covered their costs while keeping fares affordable enough to compete with public transport.</p>
+                    <p>The formula we developed was segment-based:</p>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">Journey price per passenger = (segment distance x rate per km) / number of passengers on that segment</p>
+                    <p class="callout-emphasis">Drivers set a minimum return per kilometer (e.g., LKR 80/km). The system ensures the total fare across all passengers on any segment meets or exceeds that threshold.</p>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Reflections</h3>
-                    <p>Add your case study content here...</p>
+                    <p>This approach meant:</p>
                 </div>
+
+                <div class="challenge-cards-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Fares decrease as more riders join</h4>
+                            <p class="challenge-card-desc">The cost is shared, incentivizing drivers to accept more passengers and riders to book routes with higher occupancy.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.12" y1="3.88" x2="15.88" y2="11.68"/><line x1="8.12" y1="8.12" x2="12" y2="12"/><line x1="12" y1="12" x2="15.88" y2="15.88"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Partial routes are priced fairly</h4>
+                            <p class="challenge-card-desc">A rider going Colombo to Galle only pays for that segment, not the full Colombo to Arugam Bay distance.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Drivers have guaranteed minimums</h4>
+                            <p class="challenge-card-desc">Even with just one passenger, the fare covers the driver's per-km threshold. Additional passengers are pure upside.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Transparency for riders</h4>
+                            <p class="challenge-card-desc">The fare breakdown shows exactly how the price was calculated - distance, rate, and passenger count. No surge pricing, no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Problem Space</h3>
+                    <p>Synthesizing driver interviews, rider research, and competitive analysis, we identified four core problems that defined our design challenge:</p>
+                </div>
+
+                <div class="problems-grid" data-accent="blue">
+                    <!-- Problem #1 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">1</span>
+                            <h4 class="problem-title">No Marketplace for Scheduled Long-Distance Travel</h4>
+                        </div>
+                        <p>Intercity travel in Sri Lanka existed in two extremes: expensive private hires or rigid public transport. There was no platform where drivers could publish planned journeys and riders could discover, compare, and book seats on those trips.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A van operator running Colombo to Arugam Bay three times weekly had no way to announce available seats. Travelers heading the same direction had no way to find him. Both sides relied on word of mouth, roadside signage, or luck.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Thousands of available seats traveled empty daily between Sri Lankan cities. Travelers overpaid for private hires or crammed into public buses. Drivers missed revenue. Everyone lost.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #2 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">2</span>
+                            <h4 class="problem-title">Trust Deficit in Shared Travel</h4>
+                        </div>
+                        <p>Sharing a vehicle with strangers for a multi-hour journey requires a fundamentally different level of trust than a 15-minute city ride. Neither existing ride-hailing platforms nor informal arrangements provided the safety infrastructure needed for long-distance shared travel.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A solo female traveler going from Colombo to Ella had no way to verify a driver's identity, check vehicle condition, or share trip details with family. The same driver had no way to screen passengers or set ground rules for a 6-hour journey.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Potential riders - especially tourists and solo travelers - defaulted to expensive private hires or avoided intercity travel entirely. The shared transit model couldn't grow without trust infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #3 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">3</span>
+                            <h4 class="problem-title">Driver Economics Were Unclear and Unprotected</h4>
+                        </div>
+                        <p>Drivers making long-distance trips had no way to calculate whether taking passengers would actually be profitable. Fuel costs, vehicle wear, waiting time at stops, and empty return legs all ate into potential earnings with no visibility or guarantees.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A private vehicle owner considering offering seats on a Colombo to Galle trip could not answer basic questions: What should I charge per seat? Will I cover fuel? What if only one person books? What about my return trip?</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Without economic clarity, drivers would not participate. Without drivers, there would be no supply. The entire marketplace depended on making driver economics transparent and guaranteed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #4 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">4</span>
+                            <h4 class="problem-title">Rigid Platforms vs. Flexible Reality</h4>
+                        </div>
+                        <p>Existing platforms forced travel into rigid models - either fully on-demand or fully scheduled. Sri Lankan intercity travel was neither. Drivers had regular patterns but flexible timing. Riders wanted options but not rigid timetables. The platform needed to accommodate this middle ground.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A driver heads to Katharagama every Thursday but sometimes leaves at 6 AM, sometimes at 8 AM. He might add a stop at Galle if a passenger requests it. No existing platform could handle this combination of regularity and flexibility.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Drivers were forced into either fully rigid schedules (which they abandoned) or fully informal arrangements (which riders couldn't discover). The sweet spot - structured flexibility - had no digital home.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">Our research revealed a core tension: long-distance travel needs the predictability of scheduled transport combined with the flexibility of on-demand services.</p>
+                    <p class="callout-emphasis">HopOn was designed to live in that middle ground - structured enough to be discoverable, flexible enough to match how people actually travel.</p>
+                </div>
+
+                <!-- The Challenge -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Challenge</h3>
+                    <p>Beyond the market gaps, HopOn faced significant product and operational constraints that shaped every design decision:</p>
+                </div>
+
+                <div class="challenge-cards-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Two-sided marketplace cold start</h4>
+                            <p class="challenge-card-desc">Riders would not come without drivers. Drivers would not publish without riders. We needed a strategy to bootstrap supply before demand existed - starting with larger commercial operators who already ran regular routes.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Trust and safety for multi-hour journeys</h4>
+                            <p class="challenge-card-desc">Sharing a vehicle with strangers for 6-8 hours is fundamentally different from a 15-minute city ride. Identity verification, public pickup points, structured communication, and trip sharing were non-negotiable trust elements.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Vehicle diversity</h4>
+                            <p class="challenge-card-desc">The platform had to support private cars, vans, minibuses, 4x4 vehicles, and even public transport operators within the same system. Each vehicle type had different seat counts, comfort levels, luggage capacity, and pricing expectations.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Segment-based pricing complexity</h4>
+                            <p class="challenge-card-desc">Multi-stop routes meant different passengers could join and leave at different points. The fare model had to calculate per-segment pricing, handle partial routes, ensure driver minimums, and remain transparent to riders - all in real time.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Sri Lankan infrastructure realities</h4>
+                            <p class="challenge-card-desc">Variable road conditions, inconsistent GPS accuracy in rural areas, unreliable mobile connectivity on certain routes, and a population with varying levels of smartphone literacy. The app had to work within these constraints, not assume them away.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">COVID-19 pandemic</h4>
+                            <p class="challenge-card-desc">The project launched in early 2020, just before the global pandemic fundamentally changed how people felt about sharing enclosed spaces with strangers. Travel demand collapsed, safety expectations shifted, and the core value proposition of shared transit became temporarily untenable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Goals</h3>
+                </div>
+
+                <div class="case-study-goals-grid">
+                    <div class="goals-column">
+                        <span class="goals-tag">BUSINESS GOALS</span>
+                        <h4>Capture wasted seat capacity</h4>
+                        <p>Turn the thousands of empty seats traveling between Sri Lankan cities daily into a bookable, revenue-generating inventory. Focus on larger vehicles first - buses, vans, and minibuses - where unused capacity is highest and commercial operators are already motivated to fill seats.</p>
+
+                        <h4>Build supply before demand</h4>
+                        <p>Bootstrap the marketplace by onboarding commercial operators who run regular routes. These drivers provide consistent, reliable supply that riders can discover. Private vehicle owners join later once the marketplace has proven its value.</p>
+
+                        <h4>Prove the model before expanding</h4>
+                        <p>Validate the shared transit concept on high-traffic Sri Lankan corridors (Colombo to southern coast, Colombo to hill country) before considering expansion to additional routes or markets.</p>
+                    </div>
+                    <div class="goals-column">
+                        <span class="goals-tag">USER GOALS</span>
+                        <h4>Let drivers monetize regular routes effortlessly</h4>
+                        <p>Publishing a journey should take under 2 minutes. Set home location, pick a route, declare vehicle and seats, set preferences, publish. Return trips auto-generate. Pricing calculates automatically. No negotiation required.</p>
+
+                        <h4>Give riders transparent, affordable options</h4>
+                        <p>Riders should be able to search a route, see available journeys with clear pricing, vehicle type, comfort level, and driver information - then book with confidence. No hidden fees, no blind bookings, no negotiation.</p>
+
+                        <h4>Make shared travel feel safe and predictable</h4>
+                        <p>Public pickup points at recognizable locations. Driver and vehicle verification. Trip sharing with family. Structured communication. Comfort and add-on transparency before booking. Every element designed to make sharing a vehicle with strangers feel socially acceptable and trustworthy.</p>
+                    </div>
+                </div>
+
+                <!-- Our Users -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Our Users</h3>
+                    <p>Through research and interviews, we identified four primary user archetypes - two on the driver side and two on the rider side - each with distinct motivations, constraints, and expectations:</p>
+                </div>
+
+                <!-- User Archetype 1: Commercial Route Operator -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Commercial Route Operator</h4>
+                        <p class="archetype-description">Bus or van operator who runs the same intercity route on a regular schedule - typically 3-5 times per week. Owns or leases a commercial vehicle with 8-40 seats. Motivated by filling unused capacity and generating additional revenue on trips they are already making.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm planning my weekly routes, I want to publish my schedule and available seats in one place, so travelers can find and book my trips without me having to manage inquiries through calls, messages, or roadside signage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 2: Occasional Long-Distance Driver -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-2-2.2-3.3C13 5.6 12 5 11 5c-1 0-7 0-7 0L2 8c-.6.3-1 .9-1 1.5V16c0 .6.4 1 1 1h1"/><circle cx="7" cy="17" r="2"/><circle cx="15" cy="17" r="2"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Occasional Long-Distance Driver</h4>
+                        <p class="archetype-description">Private vehicle owner making a one-off or semi-regular long-distance trip - visiting family, going on holiday, attending a work event outside Colombo. Has 1-3 empty seats and would share the journey to offset fuel costs.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm driving to Ella next weekend anyway, I want to offer my spare seats to travelers heading the same direction, so I can cover part of my fuel and toll costs without going out of my way.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 3: Budget-Conscious Local Traveler -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Budget-Conscious Local Traveler</h4>
+                        <p class="archetype-description">Sri Lankan resident traveling between cities for work, family visits, or personal reasons. Price-sensitive but willing to pay a premium over public transport for comfort, reliability, and time savings. Values schedule predictability and clear pricing.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I need to get from Colombo to Matara for a family event, I want to find a reliable shared ride that is cheaper than a private hire but more comfortable than a public bus, so I can travel affordably without sacrificing my time or comfort.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 4: Tourist / Visitor -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Tourist / Visitor</h4>
+                        <p class="archetype-description">International or domestic tourist exploring Sri Lanka's coastal, hill country, or cultural triangle routes. Often unfamiliar with local transport options, language, and geography. Values safety, comfort, and clear English-language communication. Willing to pay more for a trusted, transparent experience.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm planning my Sri Lanka trip, I want to discover reliable shared rides between tourist destinations with clear pricing and verified drivers, so I can travel independently without the stress of negotiating with strangers or navigating unfamiliar public transport systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Process</h3>
+                </div>
+
+                <!-- Driver Initial Setup / Onboarding -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Driver Initial Setup</h4>
+                    <p>Before a driver can publish their first journey, they complete a one-time onboarding process. We designed this as a guided setup rather than a registration form - each step collects information that directly serves trust, safety, rider transparency, comfort matching, and regulatory compliance.</p>
+                    <p>Drivers can serve multiple destinations, but only one at a time - this constraint keeps the experience simple and ensures each journey gets the driver's full attention.</p>
+
+                    <div class="process-flow">
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">1</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Account Registration and Verification</div>
+                                <p class="flow-step-desc">Driver creates an account with their name, email, secondary mobile number, NIC number, and password. Mobile verification uses a 4-digit OTP code sent via SMS - a deliberate choice for the Sri Lankan market where phone-first authentication is more trusted than email-only. The verification flow includes a resend timer to handle network delays common in rural coverage areas.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Mobile OTP</span>
+                                    <span class="flow-step-tag">NIC Number</span>
+                                    <span class="flow-step-tag">Email</span>
+                                    <span class="flow-step-tag">Secondary Mobile</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">2</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Trust Profile: Gender, Photo, and Bio</div>
+                                <p class="flow-step-desc">Drivers select their gender (male, female, or other) because "members feel safer knowing who they're travelling with." The profile photo screen enforces quality guidelines - full face, well-lit surroundings, no shades or hats, just the driver - with the explicit message that clear photos increase trust and generate more bookings. A short bio section lets drivers introduce themselves to the community in their own words, making the platform feel personal rather than transactional.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Gender</span>
+                                    <span class="flow-step-tag">Profile Photo</span>
+                                    <span class="flow-step-tag">Bio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">3</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Document Verification</div>
+                                <p class="flow-step-desc">The welcome screen presents a clear checklist of required documents: driving license, vehicle insurance, revenue license, and vehicle registration document. Each item shows a completion status with green checkmarks. Drivers can submit all documents immediately or continue and add them later - but full account approval requires all four. This progressive approach avoids abandonment from drivers who don't have every document on hand during signup.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Driving License</span>
+                                    <span class="flow-step-tag">Vehicle Insurance</span>
+                                    <span class="flow-step-tag">Revenue License</span>
+                                    <span class="flow-step-tag">Vehicle Registration</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">4</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Add Vehicle: Model and Type</div>
+                                <p class="flow-step-desc">Vehicle setup uses a searchable model database - the driver types a manufacturer name and selects from matching models (e.g., searching "Toyota Hiace" shows a filtered list). Vehicle type selection uses visual cards showing the vehicle silhouette, category name, and seat capacity: Eco Car (hybrid/electric only, 3 seats), Mini Bus (12-15 seats), or Van (5-7 seats). Each selection is manually verified by a platform agent to prevent misrepresentation.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Searchable Models</span>
+                                    <span class="flow-step-tag">Eco Car</span>
+                                    <span class="flow-step-tag">Mini Bus</span>
+                                    <span class="flow-step-tag">Van</span>
+                                    <span class="flow-step-tag">Agent Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">5</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Add Vehicle: Color, Year, and Licence Plate</div>
+                                <p class="flow-step-desc">Drivers pick from a curated color palette rather than typing free text - ensuring consistent vehicle identification for riders at pickup points. Year of manufacture uses a scroll picker. The licence plate (e.g., WP-CCC-2222) helps riders confirm they are boarding the correct vehicle, a critical safety detail for public pickup point scenarios where multiple vehicles may be present.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Color Picker</span>
+                                    <span class="flow-step-tag">Manufacture Year</span>
+                                    <span class="flow-step-tag">Licence Plate</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">6</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Luggage and Seating Allocation</div>
+                                <p class="flow-step-desc">Luggage capacity uses visual size cards: No luggage, Medium (40x55x20cm, 10kg - carry-on), or Large (110x119x81cm, 30kg). The app explicitly advises that more luggage space attracts long-haul travelers. Seating allocation is a deliberate design decision - drivers are encouraged to pledge fewer seats than the actual vehicle capacity for better rider comfort and better reviews. This trade-off between revenue and experience was surfaced transparently.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">No Luggage</span>
+                                    <span class="flow-step-tag">Medium</span>
+                                    <span class="flow-step-tag">Large</span>
+                                    <span class="flow-step-tag">Seat Pledge</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">7</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Vehicle Facilities and Accessibility</div>
+                                <p class="flow-step-desc">The final setup screen captures the vehicle's comfort and accessibility features through a toggle list. Sri Lanka's southern and eastern coasts attract surfers and adventure travelers, so surfboard friendliness became a genuine differentiator for coastal routes. Wheelchair accessibility was included from day one - an inclusive design decision. Drivers can always update these facilities when scheduling individual trips, keeping the profile flexible as vehicles change.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Surfboard Friendly</span>
+                                    <span class="flow-step-tag">Extra Recline Seats</span>
+                                    <span class="flow-step-tag">Air Conditioning</span>
+                                    <span class="flow-step-tag">Wheelchair Friendly</span>
+                                    <span class="flow-step-tag">Pet Friendly</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Once all vehicle details are complete, each item in the checklist turns to a green checkmark - giving drivers a clear sense of progress and completion. The vehicle profile is saved and displayed as a card in the Vehicles section showing the model, type badge, color, year, and plate number - exactly as riders will see it in search results.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Driver App: Journey Publishing Flow</h4>
+                    <p>The driver experience was designed around one core principle: publishing a journey should feel as natural as setting an alarm. The driver's home screen is a map of Sri Lanka centered on their home base, with their earnings balance prominently displayed and an "You're online" status indicator. Below the map, an "Earn more" section surfaces gamified challenges ("12 Trip in a Day Challenge - 2/12 completed") and seasonal demand alerts to drive engagement. Upcoming trips are listed with schedule details covering both outbound and inbound legs. From here, publishing a new trip is one tap away.</p>
+                    <p>The publishing flow worked in five steps:</p>
+
+                    <div class="process-flow">
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">1</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Home Location</div>
+                                <p class="flow-step-desc">Driver searches and sets their home town on a full map view of Sri Lanka. This anchors all route suggestions to their starting point. The map-first approach made location selection intuitive - drivers simply search or tap their town rather than typing addresses. The home base can always be updated later in the "My Place" settings.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">2</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Select Route</div>
+                                <p class="flow-step-desc">From the map-based dashboard, the driver enters a destination and adds up to 3 intermediate stops. Each stop maps to a predefined public pickup point. The map visualizes the full route across Sri Lanka, showing the driver exactly which pickup points their journey will serve.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">3</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Schedule</div>
+                                <p class="flow-step-desc">Driver selects the pickup date and sets a departure time window (e.g., 4:00-5:00pm) with a "Sweet" time suggestion highlighted for optimal rider demand. The option to make it a recurring trip saves repeat setup. The system calculates estimated arrival at each stop automatically, and both outbound and inbound legs are scheduled from this single screen.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">4</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Trip Preferences and Amenities</div>
+                                <p class="flow-step-desc">Driver confirms luggage capacity and seating availability for this specific trip (which can differ from the vehicle default). The amenities toggle list lets drivers enable or disable facilities per trip - surfboard friendly, extra recline seats, air conditioning, wheelchair friendly, and pet friendly. A compliance acknowledgment ("I understand my account could be suspended if I break the golden rules") reinforces platform standards before every post.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Luggage</span>
+                                    <span class="flow-step-tag">Seating</span>
+                                    <span class="flow-step-tag">Amenities</span>
+                                    <span class="flow-step-tag">Golden Rules</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">5</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Set Price and Post</div>
+                                <p class="flow-step-desc">The final screen shows the price per seat in rupees (e.g., Rs. 850.00) and gives the driver a clear "Post the Trip" action. On success, a confirmation screen with a green checkmark reads "Schedule Successful" and directs the driver to view all listed trips. The trip immediately appears on the driver's dashboard with outbound and inbound scheduling visible, and the driver can schedule additional trips from the same screen.</p>
+                                <div class="flow-step-tags">
+                                    <span class="flow-step-tag">Price Per Seat</span>
+                                    <span class="flow-step-tag">Post Trip</span>
+                                    <span class="flow-step-tag">Confirmation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Once published, the return journey auto-generates with the reverse route. The driver can accept or modify it. The entire flow was designed to complete in under 2 minutes for repeat routes. A "Heading somewhere?" onboarding modal greets first-time publishers with three golden rules: be reliable and show up on time, no cash (all payments happen online), and drive safely by sticking to local police rules.</p>
+                    <p>The driver's settings hub provides access to vehicle management (with vehicle cards showing model, type badge, color, year, and plate number), personal details, document uploads, payment methods (bank account linked for direct payouts), app settings (feed preferences and trip sharing), insurance, and a dedicated earnings dashboard showing weekly revenue with a "Remit to bank" action. A carbon offsetting feature was included from day one - signaling the platform's environmental values.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📱 Driver journey publishing flow coming soon</span>
+                        </div>
+                        <p class="image-caption">Five-step driver publishing flow - from home location to live journey in under 2 minutes</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Rider App: Discovery and Booking Flow</h4>
+                    <p>The rider experience was designed around browsing and comparison - more like searching for flights than hailing a cab. Before accessing the marketplace, first-time riders are presented with the platform's community rules: this is not a taxi or typical ride-hailing service (meet the driver at the given pickup point, sit in any seat), respect others (you're pooling with people, minimize phone calls), no cash (all payments happen online, drivers get paid after the trip), and show up on time (it's like catching a train or bus). These rules set expectations and filter for committed users.</p>
+                    <p>The rider's home menu provides access to My Places (saved locations), Inbox, Your Trips, Payments, Free Rides (referral program), a "Drive with us, Earn extra" cross-promotion for the driver app, Carbon Offsetting, and Settings. From the home screen, riders set their origin and destination on a full map view, and the system shows available journeys sorted by departure time, price, comfort level, and driver rating.</p>
+
+                    <div class="process-flow">
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">1</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Search</div>
+                                <p class="flow-step-desc">Riders open to a full map view of Sri Lanka with a "Morning, Where to?" prompt showing their current location (e.g., Colombo 01). They enter a destination from saved places (Home, Work, and custom favorites like Mirissa, Jaffna Town, Ella, Hiriketiya), recent searches, or a "Select from the Map" option. The map shows available route corridors with pickup points marked as blue information pins across the island, making the network feel tangible before searching. The search screen is designed to minimize typing - most riders select from their history or saved locations.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">2</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Compare</div>
+                                <p class="flow-step-desc">Search results slide up over the map, showing the route highlighted visually. Results are grouped by date ("Tomorrow," "Day after Tomorrow," "Fri, Oct 22"). Each journey card displays the price in rupees per seat (e.g., Rs. 300), a vehicle photo with type badge (Van, Mini Bus, SUV, Eco Car, Big Bus), vehicle model and year (e.g., Toyota SuperGL 2016), available seats remaining ("2 Left," "8 Left"), estimated travel time, departure time, driver name with star rating and trips driven count (e.g., 5.0 with 12 Driven), and amenity icons indicating pet policy, luggage, and accessibility. New drivers are clearly labeled with a "New Driver" badge. A route swap button lets riders reverse origin and destination instantly.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">3</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Book</div>
+                                <p class="flow-step-desc">Selecting a journey opens the full trip detail screen: vehicle photo and model, driver name ("You ride with Svashthika"), the complete route with pickup and drop-off points, distance (e.g., 105km), travel time (1h 20min), and seats remaining. Amenity badges show the trip's rules (No Pets, No Smoking, Medium Baggage Ok, Extra Recline Seats). Below, riders can purchase add-ons - Extra Luggage (from Rs. 130) and Food and Drinks (from Rs. 250) - with per-person baggage upgrade options: Large Baggage (Rs. 125) or X Large Baggage (Rs. 390). A message field lets riders communicate pickup details or ask questions directly. The itinerary plan shows the full route with estimated times and intermediate stops. Pricing shows per-seat cost with the total calculated automatically for the selected seat count, and payment is handled via saved card (e.g., VISA) with a "Confirm Pay" action.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-indicator">
+                                <div class="flow-step-number">4</div>
+                                <div class="flow-step-line"></div>
+                            </div>
+                            <div class="flow-step-content">
+                                <div class="flow-step-title">Track</div>
+                                <p class="flow-step-desc">After booking, a confirmation screen with a green checkmark reads "Booking Confirmed" and directs riders to view their ticket in the My Trips section. The "My Trips" screen splits into Upcoming and Recent tabs - upcoming trips show departure time, route, seat count, price, driver name, and co-riders count ("Yes and 7 Others booked"). The trip detail view shows the full booking summary including seats booked, total price, pickup and drop-off locations with dates, distance, travel time, vehicle details, and driver info. On the day of travel, estimated vehicle location updates in real time with delay notifications at each remaining stop. Riders can share trip details with family for safety.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📱 Rider discovery and booking flow coming soon</span>
+                        </div>
+                        <p class="image-caption">Rider search, compare, and booking experience - transparent pricing and journey details at every step</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Supply Strategy: Fill One Vehicle First</h4>
+                    <p>A critical product decision was the "fill one first" algorithm. When multiple vehicles were available on the same route, the system would prioritize filling one vehicle to capacity before surfacing the next one to riders.</p>
+                    <p>This approach had several benefits:</p>
+                    <ul class="case-study-list">
+                        <li><strong>Better driver economics:</strong> A fully booked van earns significantly more per trip than two half-empty vans. Concentrating demand improved driver satisfaction and retention</li>
+                        <li><strong>Better rider experience:</strong> Fuller vehicles meant more social proof and a livelier travel experience. An empty van with one passenger felt awkward; a van with seven felt like shared transport</li>
+                        <li><strong>Simpler operations:</strong> Fewer active vehicles per route meant fewer coordination challenges, fewer no-shows to manage, and easier real-time tracking</li>
+                    </ul>
+                    <p>The MVP deliberately prioritized larger vehicles - buses, vans, and minibuses - over private cars. More seats per vehicle meant faster fill rates, better driver economics, and a more sustainable model. Private car-sharing was planned for a future phase once the marketplace had critical mass.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Sketches and Early Exploration</h4>
+                    <p>I explored multiple directions through rapid sketching and flow diagramming in Whimsical before moving to high-fidelity screens. Key exploration areas included the driver dashboard layout, journey publishing wizard, rider search interface, and real-time trip tracking.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>✏️ Early sketches and flow diagrams coming soon</span>
+                        </div>
+                        <p class="image-caption">Divergent exploration - driver dashboard, rider discovery, and booking interactions</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🔀 User flow diagrams coming soon</span>
+                        </div>
+                        <p class="image-caption">End-to-end flow mapping in Whimsical - driver publishing and rider booking journeys</p>
+                    </div>
+                </div>
+
+                <!-- Key Design Solutions -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Key Design Solutions</h3>
+                    <p>Here are the design decisions that addressed our core challenges - each grounded in research findings and validated through prototyping:</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Public Pickup Points, Not GPS Pins</h4>
+                    <p>Instead of letting drivers and riders negotiate exact locations via GPS pins, we designed the system around predefined public pickup points - recognizable locations like Laksala in Colombo, Thumulla Junction, the Galle bus terminal, or major highway rest stops.</p>
+                    <p>This solved multiple problems simultaneously: riders knew exactly where to go without GPS confusion, drivers had consistent stopping points that didn't add detour time, and the fixed locations provided natural safety through public visibility. Every booking directed riders to a known, public, well-trafficked location.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📍 Public pickup point system coming soon</span>
+                        </div>
+                        <p class="image-caption">Predefined pickup points at recognizable public locations along intercity routes</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Comfort and Add-On Transparency</h4>
+                    <p>We designed a layered system that separated permanent vehicle facilities from per-trip amenities. During vehicle setup, drivers toggle persistent facilities - surfboard friendly, extra recline seats, air conditioning, wheelchair friendly, and pet friendly. When scheduling a specific trip, drivers confirm which of these are active for that journey, plus set luggage capacity and seating availability. This distinction let drivers with air conditioning offer it on some routes but not others (e.g., short coastal trips where windows-down was preferred).</p>
+                    <p>On the rider side, these appeared as clear badges on journey cards (No Pets, No Smoking, Medium Baggage Ok, Extra Recline Seats) and as paid add-on options during booking - Extra Luggage (from Rs. 130 per person) and Food and Drinks (from Rs. 250), with tiered baggage upgrades (Large at Rs. 125, X Large at Rs. 390). This created a transparent upsell model where riders paid only for what they needed, and drivers earned more from value-added services without raising base fares.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Driver Swipe-to-Accept Model</h4>
+                    <p>The swipe-to-accept model was not available to all riders from day one. It was a trust privilege. When a rider books a seat, the driver receives a notification card showing the passenger's pickup point, destination, profile, preferences, and any notes. During the rider's first few trips on the platform, the driver is required to manually review the rider's profile - their bio, language preferences, conversation style, and previous ratings - before approving them to join the journey. This initial friction was intentional: it protected both parties while the system gathered enough data to build trust.</p>
+                    <p>Once a rider completed enough trips and earned positive ratings, they graduated to a "trusted rider" status. At this point, the driver experience simplified to a swipe gesture - right-swipe to confirm, left-swipe to decline. No forms, no menus, no workflow hunting. The trust score was a built-in point mechanism where both drivers and riders rated each other after every trip, and the accumulated score determined how much friction the system applied.</p>
+                    <p>New drivers were eased in with shorter journeys first - the system initially suggested routes within a 2-3 hour radius of home before opening up longer distances. This built confidence before committing drivers to 8-hour trips.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Real-Time Delay Estimation</h4>
+                    <p>Sri Lankan intercity travel is rarely on time. Road conditions, weather, and traffic create unpredictable delays. Rather than pretending arrivals would be exact, we designed the system to calculate approximate vehicle location and update estimated arrival at each remaining stop in real time.</p>
+                    <p>Riders waiting at intermediate stops could see whether their vehicle was on schedule, 20 minutes late, or stuck in traffic near Bentota. This transparency turned unpredictable waiting into informed waiting - a significant experience improvement.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📊 Real-time journey tracking interface coming soon</span>
+                        </div>
+                        <p class="image-caption">Live delay estimation and vehicle location tracking for riders at intermediate stops</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Comfort Rating System</h4>
+                    <p>Beyond star ratings, we designed a multi-dimensional comfort scoring system. After each journey, riders rate specific dimensions: vehicle cleanliness, driver behavior, punctuality, luggage handling, and add-on accuracy (did the AC actually work?). These scores feed into a composite comfort level visible on future journey listings. The search results displayed driver ratings alongside trips driven count (e.g., 5.0 with 12 Driven, or 4.8 with 83 Driven) - giving riders both quality and experience signals at a glance. New drivers without enough ratings received a \"New Driver\" badge rather than an empty star rating, avoiding the cold-start penalty that discourages new supply.</p>
+                    <p>This gave riders granular decision-making power and gave drivers clear, actionable feedback on what to improve - not just \"3.5 stars\" but \"your punctuality is excellent, your vehicle cleanliness needs work.\"</p>
+                </div>
+
+
+                <!-- Online-Only Payment System -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Online-Only Payments</h4>
+                    <p>An early and deliberate decision was to remove cash entirely from the platform. No cash exchanges, no card swipes at pickup, no disputes about change. All payments happened online through cards saved in the app. This was not just a convenience choice - it was a safety and accountability decision.</p>
+                    <p>Cash creates friction and risk in shared travel: arguments about exact amounts, drivers carrying float, riders claiming they already paid, and no audit trail for disputes. By making the platform cashless from day one, every transaction was traceable, every fare was agreed before boarding, and every payment could be reversed if something went wrong.</p>
+                </div>
+
+                <div class="policy-timeline">
+                    <div class="policy-step">
+                        <div class="policy-step-icon">💳</div>
+                        <div class="policy-step-title">Trip Confirmed</div>
+                        <p class="policy-step-desc">When a rider books, the full fare amount is placed on hold from their saved card - not charged immediately</p>
+                    </div>
+                    <div class="policy-step">
+                        <div class="policy-step-icon">🚐</div>
+                        <div class="policy-step-title">Journey Completed</div>
+                        <p class="policy-step-desc">After the journey finishes successfully, the hold converts to a charge and enters a 24-hour settlement window</p>
+                    </div>
+                    <div class="policy-step">
+                        <div class="policy-step-icon">🏦</div>
+                        <div class="policy-step-title">Driver Paid</div>
+                        <p class="policy-step-desc">After 24 hours with no disputes raised, the driver receives their payout via "Remit to Bank" to their linked bank account</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <p>The 24-hour settlement window was inspired by platforms like Airbnb. If a driver experienced property damage during a trip - a spilled drink on upholstery, a scratched interior panel, or luggage damage - they could raise a dispute within that window. A HopOn staff member would review the claim, determine the appropriate compensation amount, and manually authorize the charge to the rider's saved payment method. The rider was notified of the charge with the reasoning, and funds were released to the driver's original payout method. This dispute model gave drivers confidence that they were protected without requiring upfront damage deposits that would scare away riders.</p>
+                </div>
+
+                <!-- Co-Traveler Visibility -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Know Who You Are Traveling With</h4>
+                    <p>Once a driver confirms a booking, both the rider and the driver can see who else is on the trip. Before the journey starts, riders can view the profiles of their co-travelers - their name, profile photo, gender, language preferences, conversation style (prefers quiet, enjoys small talk, or loves interesting conversations), and their trust rating on the platform.</p>
+                    <p>This visibility was designed for two reasons. First, safety: knowing who you are sharing a multi-hour journey with, especially on less-traveled routes, reduces anxiety. Second, comfort matching: a rider who speaks only Sinhala can see if their co-travelers and driver speak the same language. A rider who hates phone conversations in enclosed spaces can see if others share that preference. A solo female traveler can see the gender mix of the vehicle before boarding.</p>
+                    <p>My Trips showed co-rider counts (e.g., "You and 7 others booked") and after confirmation, the full list of travelers with their profiles and preferences became visible - turning an anonymous shared vehicle into a transparent, predictable social experience.</p>
+                </div>
+
+                <!-- Cancellation Policy: HopOut -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">HopOut: Fair Cancellation Policy</h4>
+                    <p>We named the cancellation feature "HopOut" - consistent with the HopOn brand language. The policy was designed to balance rider flexibility with driver income protection:</p>
+                </div>
+
+                <div class="policy-timeline">
+                    <div class="policy-step">
+                        <div class="policy-step-icon">✅</div>
+                        <div class="policy-step-title">Free HopOut</div>
+                        <p class="policy-step-desc">Cancel more than 24 hours before a pre-booked trip departure - full refund, no questions asked</p>
+                    </div>
+                    <div class="policy-step">
+                        <div class="policy-step-icon">⚠️</div>
+                        <div class="policy-step-title">Late HopOut</div>
+                        <p class="policy-step-desc">Cancel within 24 hours of departure or for a last-minute booking - 45% of the fare is retained as a driver protection fee</p>
+                    </div>
+                    <div class="policy-step">
+                        <div class="policy-step-icon">📝</div>
+                        <div class="policy-step-title">Reasoning</div>
+                        <p class="policy-step-desc">Riders select from system-defined cancellation reasons (schedule change, found alternative, emergency) and can add their own explanation</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <p>The 45% cut for late cancellations was calibrated carefully. Too low and drivers suffer income loss from no-shows that can't be refilled. Too high and riders feel trapped. The 45% mark compensated drivers enough to partially cover the empty seat while leaving riders willing to cancel honestly rather than simply not showing up - a worse outcome for everyone.</p>
+                </div>
+
+                <!-- Personal Safety & Security -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Built-in Safety and Security</h4>
+                    <p>Personal security in shared long-distance travel was a non-negotiable design pillar. We designed safety features that went significantly beyond what any existing ride-hailing platform in Sri Lanka offered at the time - including features that the leading local platform had not considered or implemented:</p>
+                </div>
+
+                <div class="challenge-cards-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="challenge-card-content">
+                            <h4>Live GPS Sharing with HopOn</h4>
+                            <p>Every active journey shared the vehicle's real-time GPS location directly with HopOn's platform. This was not optional or rider-initiated - it was a system-level feature that ran continuously during any confirmed trip. HopOn could monitor the vehicle's route in real time and flag deviations from the published path.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                        </div>
+                        <div class="challenge-card-content">
+                            <h4>In-Ride Audio Recording</h4>
+                            <p>With consent from all passengers, the app could record in-ride audio during the journey for safety purposes. Recordings were encrypted and stored securely - only accessible by HopOn's safety team in the event of a dispute or incident report. This feature was designed as a deterrent against inappropriate behavior and as evidence if something went wrong.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="challenge-card-content">
+                            <h4>Law Enforcement Data Sharing</h4>
+                            <p>GPS location data and trip records could be shared directly with police or law enforcement authorities when required. This was built into the platform architecture from day one - not as an afterthought privacy risk, but as a transparent safety commitment communicated to all users during onboarding.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="challenge-card-content">
+                            <h4>Trip Sharing with Trusted Contacts</h4>
+                            <p>Riders could share their live trip details - route, driver info, vehicle details, and real-time location - with family or friends before and during the journey. This feature was particularly valued by parents of university students making regular intercity trips and by solo female travelers on unfamiliar routes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">These safety features were not just product differentiators. They represented a design philosophy: if you are asking people to share an enclosed space with strangers for hours across remote highways, the platform must take responsibility for their physical safety - not just their booking experience.</p>
+                    <p class="callout-emphasis">No existing ride-hailing platform in Sri Lanka had implemented in-ride recording or continuous GPS sharing with the platform. These were first-of-their-kind considerations for the local market.</p>
+                </div>
+                <!-- What We Learned -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">What We Learned</h3>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Supply-side experience is the entire product</h4>
+                    <p>In a two-sided marketplace for travel, the driver experience determines everything. If publishing a journey is hard, drivers won't do it. If economics aren't transparent, drivers won't trust it. If the app interrupts their driving routine, drivers will abandon it. We learned that 80% of our design effort needed to go toward making the driver's life easier - even though riders are the paying customers.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Predefined routes beat on-demand dispatch for long-distance</h4>
+                    <p>The biggest conceptual breakthrough was rejecting the on-demand model entirely. Long-distance travel is inherently planned. Drivers know where they are going days in advance. Riders plan trips hours or days ahead. Matching planned supply with planned demand is fundamentally better than dispatching drivers reactively - and the UX reflected this with a discovery and booking model rather than a request and wait model.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Trust requires physical design, not just digital features</h4>
+                    <p>Adding ID verification badges and star ratings was necessary but not sufficient. Real trust for shared long-distance travel came from physical design decisions: public pickup points that were well-lit and visible, routes that followed main highways (not backroads), and departure times that kept travel within daylight hours by default. Trust was built through the structure of the experience, not just the interface.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Timing matters more than product quality</h4>
+                    <p>COVID-19 ended this project - not because the product was wrong, but because the world changed. Shared enclosed spaces with strangers went from a compelling value proposition to a public health concern overnight. We had a strong product concept, validated user needs, and working prototypes. None of that mattered when the fundamental behavior we were designing for became socially unacceptable. The lesson is humbling: external timing can override every design decision you make.</p>
+                </div>
+
+                <!-- Closing -->
+                <div class="case-study-closing">
+                    <p>HopOn was shelved but never abandoned. The intercity travel problem in Sri Lanka hasn't been solved. Empty seats still travel between cities daily. Tourists still overpay for private hires. Locals still cramp into overcrowded buses. The concept of a journey marketplace - where drivers publish and riders discover - remains valid and, I believe, inevitable.</p>
+                    <p>This project taught me more about marketplace design, supply-side thinking, and the intersection of physical and digital trust than any client engagement could. It was a product built from genuine conviction that travel should be shared, affordable, and transparent - and the design work reflects that belief at every level.</p>
+                    <p class="closing-thanks">Thank you for reading through the HopOn case study.</p>
+                </div>
+
             </div>
         </section>
 

@@ -80,19 +80,22 @@
                 </div>
                 <div class="project-meta-section">
                     <h3 class="meta-label">MY ROLE</h3>
+                    <p class="meta-value">UX Engineer (Design + Frontend Development)</p>
                     <p class="meta-value">UX strategy and experience redesign</p>
                     <p class="meta-value">POS-focused usability and interaction design</p>
+                    <p class="meta-value">High-fidelity prototyping (Sketch + Principle)</p>
+                    <p class="meta-value">Frontend development (HTML/CSS)</p>
+                    <p class="meta-value">React integration with frontend developer</p>
                     <p class="meta-value">Visual design and layout systems</p>
-                    <p class="meta-value">HTML/CSS-based UI theming</p>
-                    <p class="meta-value">Supporting React developers in building reusable UI components</p>
                     <p class="meta-value">Documentation and handover for long-term scalability</p>
                     
                 </div>
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TOOLS</h3>
+                    <p class="meta-value">Sketch</p>
+                    <p class="meta-value">Principle</p>
                     <p class="meta-value">Figma</p>
-                    <p class="meta-value">SketchApp</p>
                     <p class="meta-value">FullStory</p>
                 </div>
 
@@ -124,10 +127,7 @@
                 </div>
 
                 <div class="project-cta">
-                    <!-- To enable: add class "pin-protected", set data-pin, and fill case study section below -->
-                    <a href="#case-study" class="case-study-link disabled" 
-                       data-pin="123456" 
-                       data-target="caseStudySection">Read Case Study</a>
+                    <a href="#caseStudySection" class="case-study-link">Read Case Study</a>
                 </div>
             </div>
         </div>
@@ -153,45 +153,684 @@
             </div>
         </div>
 
-        <!-- Case Study Section (Hidden until PIN is entered) -->
-        <section id="caseStudySection" class="case-study-section" style="display: none;">
+        <!-- Case Study Section -->
+        <section id="caseStudySection" class="case-study-section revealed">
             <div class="case-study-content">
-                <div class="case-study-header">
-                    <h2 class="case-study-title">📖 Full Case Study</h2>
-                    <p class="case-study-intro">Detailed breakdown of this project.</p>
+                
+                <!-- Hero Header -->
+                <div class="case-study-hero">
+                    <h2 class="case-study-headline">Designing a POS for the speed of retail - from Colombo checkout counters to American wholesale floors.</h2>
                 </div>
 
+                <!-- Introduction -->
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">The Challenge</h3>
-                    <p>Add your case study content here...</p>
+                    <h3 class="case-study-heading">Introduction</h3>
+                    <p>WizPOS&trade; is a cloud-based point-of-sale system built by eWiz Solutions in Sri Lanka, with the end goal of entering the United States retail market - supermarkets, wholesale clubs, and high-volume chain operations where speed and reliability are non-negotiable.</p>
+                    <p>While the product was developed in Colombo, our ambition extended far beyond the local market. The system needed to work equally well for a Sri Lankan supermarket cashier processing LKR transactions and an American wholesale operator running USD tenders across multiple lanes. Two very different retail cultures, one product.</p>
+                    <p>I joined the project when the core system was functionally complete - backend logic, React frontend, and POS workflows were in place. What was missing was the human layer: POS ergonomics, visual coherence, touch optimization, and the kind of usability polish that separates a functional tool from a market-ready product.</p>
+                    <p>I worked as a UX Engineer on this project - designing the experience in Sketch, prototyping interactions in Principle, and then building the production frontend myself in HTML and CSS. I integrated the UI directly with a React developer, closing the gap between design intent and shipped product.</p>
+                    <p>WizPOS was designed as a touch-first system from day one. The primary interface runs entirely on touchscreen terminals with no physical keyboard dependency. That said, during our research phase we interviewed and observed both traditional keyboard-based POS operators and touch-based system users to understand the full spectrum of operator habits, muscle memory, and expectations before committing to our touch-only direction.</p>
                 </div>
 
+                <!-- My Role -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">My Role</h3>
+                    <p>I worked on this project as a UX Engineer, not just a designer. That meant I owned the full pipeline: research, design in Sketch, interactive prototyping in Principle, and building the production frontend in HTML and CSS. I then worked directly with a React developer to integrate my frontend code into the React component architecture.</p>
+                    <p>This design-to-code ownership meant fewer handover gaps. What I designed is what got built, because I built it. When a touch target needed to be 2px larger or a transition needed to feel faster, I adjusted it in code, not in a spec document.</p>
+                    <p>I collaborated closely with:</p>
+                    <ul class="case-study-list">
+                        <li><strong>eWiz Solutions (Sri Lanka)</strong> - product owners who drove the engineering and market vision</li>
+                        <li><strong>React Developer</strong> - worked alongside me to integrate my HTML/CSS frontend into the React component system, handling state management and backend connections while I owned the UI layer</li>
+                        <li><strong>Retail Operators</strong> - cashiers, shift managers, and store owners observed and interviewed in live retail environments across Sri Lanka</li>
+                        <li><strong>US Market Advisors</strong> - retail consultants who provided insights into American POS conventions, compliance, and operator expectations</li>
+                    </ul>
+                </div>
+
+                <!-- Research Section - NEW -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Research & Discovery</h3>
-                    <p>Add your case study content here...</p>
+                    <p>Before drawing a single screen, we invested significant time understanding how POS operators actually work - not how product specs say they should work. Our research approach combined existing industry data with hands-on fieldwork.</p>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Design Approach</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">Leveraging Existing Research</h4>
+                    <p>We didn't start from zero. We studied published research on retail POS operator diversity and literacy levels across the US and South Asian markets. Key findings we built upon:</p>
+                    <ul class="case-study-list">
+                        <li><strong>Operator demographics:</strong> US retail employs a wide range of ages and tech literacy levels - from teens in their first job to senior staff with decades of register experience. Sri Lanka's retail workforce skews younger but with lower touchscreen familiarity outside of smartphones</li>
+                        <li><strong>Literacy & language:</strong> US operators include non-native English speakers. Sri Lankan operators may work in Sinhala, Tamil, or English. The UI needed to communicate through visual hierarchy and spatial consistency, not just text</li>
+                        <li><strong>Fingertip & touch ergonomics:</strong> We referenced ISO touch-target research and anthropometric data on fingertip sizes across populations. Average adult fingertip pad width is 10-14mm, but effective touch targets need to account for angle of approach, screen position, and fatigue. We settled on 18mm minimum targets with 4mm spacing - exceeding Apple's HIG recommendation of 44pt</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Field Observations: Sri Lankan Retail Market</h4>
+                    <p>We spent weeks observing cashiers in live retail environments across Colombo and suburbs - large-scale supermarket chains, mid-size grocery stores, and small independent shops using random POS setups.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy">
-                        <p class="image-caption">Add image caption here</p>
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📹 Sri Lankan retail field observations coming soon</span>
+                        </div>
+                        <p class="image-caption">Observational research across Sri Lankan retail - supermarkets, independent shops, and wholesale environments</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Outcome & Impact</h3>
-                    <p>Add your case study content here...</p>
+                    <p>What we observed in the field:</p>
+                    <ul class="case-study-list">
+                        <li><strong>Speed under pressure:</strong> Experienced Sri Lankan supermarket cashiers process 20-30 items per minute during peak. Their hands move in a rhythm - scan, bag, scan, bag. Any interface interruption that breaks this rhythm creates visible frustration and queue buildup</li>
+                        <li><strong>Finger behavior:</strong> Operators use index fingers for most taps, but switch to thumbs on smaller screens. Angle of approach changes throughout a shift - early morning taps are precise; end-of-shift taps drift toward screen edges. Touch targets need to forgive this degradation</li>
+                        <li><strong>Workarounds are data:</strong> Cashiers at one major Sri Lankan supermarket chain had developed unofficial shortcuts - sticky notes with item codes, handwritten price lists taped to monitors, cheat sheets for discount workflows. These workarounds told us exactly where the existing UI was failing</li>
+                        <li><strong>Drawer culture:</strong> Unlike US operations where the drawer opens only at tender, Sri Lankan retail involves frequent cash handling - mid-shift reconciliations, cash drops, change-making for non-purchase transactions. The POS needed to support these as first-class workflows, not buried settings</li>
+                        <li><strong>Multi-role operators:</strong> In smaller Sri Lankan shops, one person is cashier, inventory manager, and store owner. The interface needed role-fluid access, not rigid permission hierarchies</li>
+                    </ul>
+                </div>
+
+                <div class="constraint-callout">
+                    <div class="constraint-callout-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                    <div class="constraint-callout-content">
+                        <h4 class="constraint-callout-title">Sri Lankan Payment Terminal Constraint</h4>
+                        <p class="constraint-callout-text">In Sri Lanka, only banks are authorized to run card payment terminals. These are bulky dumb terminals - completely separate devices with no integration capability. Every card transaction forces the operator to physically shift focus away from the POS screen to a disconnected banking terminal, process the payment in isolation, then return to the POS to confirm. This fragmented flow breaks the transaction rhythm, increases checkout time, and prevents us from offering the sleek integrated card reader experience that US POS systems take for granted. We had to design our payment workflow to gracefully accommodate this forced context switch rather than fight against it.</p>
+                    </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Reflections</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">Interviews: Large-Scale Sri Lankan Supermarket Staff</h4>
+                    <p>We conducted structured interviews with 15+ cashiers and shift supervisors working in large-scale Sri Lankan retail chains - the closest analog to the US market we were targeting. These were operators processing hundreds of transactions daily on existing POS systems.</p>
                 </div>
+
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I know where every button is by feel.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Experienced operators develop muscle memory. Redesigning layouts means temporarily making your best users slower. We had to balance improvement with familiarity.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">The refund screen takes too long.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Returns and voids were the #1 complaint. Not because they're rare, but because when they happen, there's already a frustrated customer waiting.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">I wish I could see if something is in stock without leaving this screen.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Inventory visibility during transactions was consistently requested across every interview.</p>
+                        </div>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">When the internet goes down, we write receipts by hand.</p>
+                        <div class="operator-quote-insight">
+                            <span class="insight-label">Insight</span>
+                            <p>Network dependency was a business-critical pain point, especially outside Colombo metro areas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Random POS System Audits</h4>
+                    <p>We audited POS systems in select independent shops - hardware store, pharmacy, textile shop, bakery - to understand the diversity of POS usage beyond supermarkets. These small businesses often used budget POS hardware with off-the-shelf software, giving us insight into the baseline expectations and pain points of the broader market.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🏪 Independent shop POS audit documentation coming soon</span>
+                        </div>
+                        <p class="image-caption">POS system audits across independent retail - hardware, pharmacy, textile, bakery</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">US Market Research & Benchmarking</h4>
+                    <p>For the US market - our primary commercial target - we combined secondary research, competitive analysis of incumbent systems (Square, Toast, NCR, Oracle MICROS), and advisory input from retail consultants familiar with American operator workflows.</p>
+                </div>
+
+                <div class="market-benchmarks-grid">
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                        <h4 class="benchmark-title">Compliance expectations</h4>
+                        <p class="benchmark-detail">US retailers expect PCI-DSS compliance, ADA accessibility considerations, and EMV chip/tap support as baseline - not premium features.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                        <h4 class="benchmark-title">Training budgets are minimal</h4>
+                        <p class="benchmark-detail">Large US chains allocate 4-8 hours for POS training. The system must be learnable in that window or operators will reject it.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                        <h4 class="benchmark-title">Speed benchmarks</h4>
+                        <p class="benchmark-detail">American wholesale operators expect sub-3-second transaction totals. Any lag is perceived as a system failure, not a loading state.</p>
+                    </div>
+                    <div class="market-benchmark-card">
+                        <span class="benchmark-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <h4 class="benchmark-title">Diverse operator pool</h4>
+                        <p class="benchmark-detail">US retail has high turnover. Systems must onboard new staff quickly regardless of tech literacy, age, or language background.</p>
+                    </div>
+                </div>
+
+                <!-- Touch & Ergonomics Section - NEW -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Touch Ergonomics & Operator Physicality</h3>
+                    <p>One of the most critical and often overlooked aspects of POS design is the physical interaction. A POS terminal isn't a phone or tablet - it's operated for 8-hour shifts, at specific angles, with varying hand sizes and fatigue levels. We treated touch ergonomics as a core design constraint, not an afterthought.</p>
+                </div>
+
+                <div class="research-finding-card">
+                    <div class="research-finding-header">
+                        <span class="research-finding-tag">Research Finding</span>
+                        <h4 class="research-finding-title">Fingertip Size Variance Across Populations</h4>
+                        <p class="research-finding-desc">Adult fingertip pad widths range from 10mm to 14mm across demographics. Sri Lankan female operators trend toward the smaller end; American male wholesale staff trend toward the larger end. A single touch-target size must accommodate this full range.</p>
+                    </div>
+                    <div class="research-finding-body">
+                        <div class="research-finding-approach">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#9881;</span> Our Approach</span>
+                            <p class="research-finding-text">We standardized on 18mm minimum touch targets (exceeding both Apple HIG 44pt and Material Design 48dp guidelines) with 4mm inter-element spacing. For primary action buttons (Tender, Void, Refund), we went larger - 24mm targets - to reduce mis-taps on high-stakes actions.</p>
+                        </div>
+                        <div class="research-finding-outcome">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#10003;</span> Outcome</span>
+                            <p class="research-finding-text">Mis-tap rates dropped significantly in prototype testing. Operators across both markets could hit targets reliably regardless of hand size, screen angle, or shift fatigue.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-finding-card">
+                    <div class="research-finding-header">
+                        <span class="research-finding-tag">Research Finding</span>
+                        <h4 class="research-finding-title">Tap Speed & Fatigue Patterns</h4>
+                        <p class="research-finding-desc">Through observation, we tracked how operator tapping behavior changes across a shift. Early in the day, taps are centered and precise. By hour 6-8, taps drift toward screen edges, become less precise, and operators unconsciously decrease tap pressure.</p>
+                    </div>
+                    <div class="research-finding-body">
+                        <div class="research-finding-approach">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#9881;</span> Our Approach</span>
+                            <p class="research-finding-text">We designed hit zones slightly larger than the visible button boundaries (invisible touch padding). Primary actions were placed in the screen's natural "comfort zone" - center-right for right-handed operators - with less-critical options pushed to edges.</p>
+                        </div>
+                        <div class="research-finding-outcome">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#10003;</span> Outcome</span>
+                            <p class="research-finding-text">End-of-shift error rates in testing were comparable to start-of-shift. The interface forgave the natural degradation that comes with 8 hours of physical interaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-finding-card">
+                    <div class="research-finding-header">
+                        <span class="research-finding-tag">Research Finding</span>
+                        <h4 class="research-finding-title">Screen Position & Approach Angle</h4>
+                        <p class="research-finding-desc">POS terminals are mounted at various angles - flat countertop, tilted stands, vertical kiosks. The angle of finger approach changes which screen regions are easy to reach and which cause wrist strain.</p>
+                    </div>
+                    <div class="research-finding-body">
+                        <div class="research-finding-approach">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#9881;</span> Our Approach</span>
+                            <p class="research-finding-text">We mapped comfortable reach zones for common terminal positions and placed high-frequency actions within the "effortless reach" area. Manager-only functions were placed in harder-to-reach zones - reducing accidental triggers while remaining accessible when needed.</p>
+                        </div>
+                        <div class="research-finding-outcome">
+                            <span class="research-finding-label"><span class="research-finding-label-icon">&#10003;</span> Outcome</span>
+                            <p class="research-finding-text">Operators reported reduced wrist fatigue during extended testing sessions. The layout felt "natural" across different hardware setups without any reconfiguration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>✋ Touch ergonomics study & heatmaps coming soon</span>
+                        </div>
+                        <p class="image-caption">Touch target sizing, reach zones, and fatigue-adjusted hit areas</p>
+                    </div>
+                </div>
+
+                <!-- Problem Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Problem Space</h3>
+                    <p>Synthesizing field observations, interviews, and market research, we identified four core problems that defined our design challenge:</p>
+                </div>
+
+                <div class="problems-grid" data-accent="blue">
+                    <!-- Problem #1 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">1</span>
+                            <h4 class="problem-title">High Cognitive Load in Fast Environments</h4>
+                        </div>
+                        <p>Cashiers work under sustained time pressure - processing transactions, managing queues, and handling interruptions. Every UI element competes for attention, and slow decision-making creates bottlenecks that ripple through the entire store.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A Sri Lankan supermarket cashier faces a dense menu with 20+ options (Refund, Suspend, Discount, Tender, Customer, Drawer, Settlement) with no visual hierarchy. A customer returns an item during peak hours - the cashier hunts for the correct workflow while six people wait in line.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Transaction times inflate by 30-60 seconds per exception. Customer frustration builds. Staff stress leads to more errors, creating a negative feedback loop during the busiest periods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #2 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">2</span>
+                            <h4 class="problem-title">Two Markets, Two Mental Models</h4>
+                        </div>
+                        <p>American and Sri Lankan retail operate on fundamentally different assumptions. US chains prioritize speed-per-transaction and labor efficiency. Sri Lankan operators prioritize cash management, flexibility, and multi-role access. A single interface trying to serve both created friction for everyone.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>In US wholesale, a cashier processes 40+ items, hits "Total," taps a payment method, and moves to the next customer. In Sri Lanka, the same transaction might involve a mid-sale price check, a manual discount negotiation, a partial cash/card split, and a drawer reconciliation - all before the next customer.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>One-size-fits-all workflows meant US operators saw unnecessary complexity, and Sri Lankan operators missed critical shortcuts. Both markets required workarounds to get their jobs done.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #3 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">3</span>
+                            <h4 class="problem-title">Inventory Blindness at the Register</h4>
+                        </div>
+                        <p>Operators frequently need to answer stock questions during transactions - "Do you have this in another size?" "When will this be back?" - but the POS kept transactional and inventory data completely siloed.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A wholesale floor manager spots a fast-moving item running low. To check stock levels, they need to leave the register, log into a separate inventory system, look up the SKU, and return. By then, three more customers have arrived and the item may already be out.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Lost upsell opportunities. Stockouts during peak periods. Managers spending half their time context-switching instead of serving customers. Small retailers losing revenue because they couldn't see what was right in front of them.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem #4 -->
+                    <div class="case-study-problem-card">
+                        <div class="problem-header">
+                            <span class="problem-number">4</span>
+                            <h4 class="problem-title">Error Recovery Was Designed for Developers, Not Operators</h4>
+                        </div>
+                        <p>When things went wrong - declined payments, barcode failures, network drops - the system showed technical error codes and generic menus. Operators were left to figure out recovery paths on their own, often with a frustrated customer watching.</p>
+                        <div class="problem-detail">
+                            <div class="problem-example">
+                                <span class="detail-label">Example</span>
+                                <p>A payment terminal returns "Error 0x4E - Transaction timeout." The cashier doesn't know if the payment went through, whether to retry, or if money was already charged. They call the manager. The manager doesn't know either. The customer is now irritated. Everyone is guessing.</p>
+                            </div>
+                            <div class="problem-impact">
+                                <span class="detail-label">Impact</span>
+                                <p>Manager calls for routine issues. Double-charges or lost transactions. Customer trust eroded. Staff anxiety around payment handling - the most critical moment of every transaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">Our field research revealed a consistent truth across both markets: the problem was never missing features. Every transaction type was technically possible in the existing system.</p>
+                    <p class="callout-emphasis">The problem was findability, context, and physical ergonomics - the human layer that makes software usable under real-world pressure.</p>
+                </div>
+
+                <!-- The Challenge -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Challenge</h3>
+                    <p>WizPOS&trade; faced a specific set of constraints that shaped every design decision:</p>
+                </div>
+
+                <div class="challenge-cards-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Sri Lankan product, American ambition</h4>
+                            <p class="challenge-card-desc">Built by eWiz Solutions in Colombo, but targeting the US retail market as the primary commercial goal. The product had to meet American operator expectations while being validated in Sri Lankan retail first.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">6-8 month runway</h4>
+                            <p class="challenge-card-desc">Limited time to ship a market-ready product for international deployment. No room for exploratory design - every decision needed to be validated quickly.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Dual-market workflows</h4>
+                            <p class="challenge-card-desc">Supporting fundamentally different retail cultures without forking the codebase or shipping two separate products.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Hardware diversity</h4>
+                            <p class="challenge-card-desc">7" mobile carts, 10" tablets in small shops, 15" touchscreen terminals in chains - one interface across all screen sizes.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Network resilience</h4>
+                            <p class="challenge-card-desc">Sri Lankan retail operates with inconsistent connectivity outside metro areas. US wholesale floors have dead zones. Offline-first wasn't optional - it was survival.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-card-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                        <div class="challenge-card-content">
+                            <h4 class="challenge-card-title">Sri Lankan payment terminal constraints</h4>
+                            <p class="challenge-card-desc">In Sri Lanka, only banks are authorized to operate card payment terminals. These are bulky dumb terminals running as completely separate devices - the operator must switch focus away from the POS to a disconnected banking terminal for every card transaction. This prevented us from using an integrated card reader and forced us to design around an inherently fragmented payment flow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">The Strategy: Configurable Workflows, Not Feature Flags</h4>
+                    <p>Rather than building separate versions for each market, we designed the core POS with <strong>workflow configuration</strong> at its center. Regional partners could customize transaction flows, menu layouts, drawer behaviors, and shortcut mappings while sharing a common codebase.</p>
+                    <p>This approach meant designing interactions that were <strong>flexible yet consistent</strong> - a Sri Lankan operator's drawer settlement flow and an American operator's quick-tender flow had to feel like the same product, even though they served different needs.</p>
+                </div>
+
+                <!-- Goals Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Goals</h3>
+                </div>
+
+                <div class="case-study-goals-grid">
+                    <div class="goals-column">
+                        <span class="goals-tag">BUSINESS GOALS</span>
+                        <h4>Enter the US retail market</h4>
+                        <p>Ship a product that can compete with incumbent American POS systems (Square, Toast, NCR) - meeting compliance, speed, and usability benchmarks expected by US chain retailers and wholesale operators.</p>
+                        
+                        <h4>Validate through Sri Lankan retail first</h4>
+                        <p>Use Sri Lanka's diverse retail landscape - supermarkets, independent shops, wholesale - as an intensive testing ground before US market entry. If it works in Colombo's chaotic retail environment, it'll work anywhere.</p>
+                        
+                        <h4>Enable partner ecosystem</h4>
+                        <p>Design the system to be extensible - allowing regional partners to configure workflows, branding, and operational patterns without engineering involvement.</p>
+                    </div>
+                    <div class="goals-column">
+                        <span class="goals-tag">USER GOALS</span>
+                        <h4>Make transactions feel instant</h4>
+                        <p>Speed up checkout by reducing taps, eliminating menu hunting, and surfacing the right actions at the right moment. Target: 95% of transactions completable without navigating away from the main screen.</p>
+                        
+                        <h4>Accommodate diverse operator hands and habits</h4>
+                        <p>Touch targets, layouts, and interaction patterns must work across the full range of operator demographics - varying fingertip sizes, tech literacy levels, language backgrounds, and 8-hour fatigue cycles.</p>
+                        
+                        <h4>Give managers operational visibility</h4>
+                        <p>Live transaction data, inventory alerts, and shift performance - accessible from the register without context-switching to separate tools.</p>
+                    </div>
+                </div>
+
+                <!-- Our Users -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Our Users</h3>
+                    <p>Through field research across Sri Lankan and American retail environments, we identified four primary operator archetypes - each with distinct needs, physical constraints, and workflow expectations:</p>
+                </div>
+
+                <!-- User Archetype 1: Cashier -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Cashier / Front-Line Operator</h4>
+                        <p class="archetype-description">The daily power user - processing hundreds of transactions across 6-8 hour shifts. Works under constant time pressure, manages customer interactions, and handles edge cases while maintaining speed. Ranges from first-job teenagers to 20-year veterans with deeply ingrained muscle memory.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm at the register during peak hours, I want to process every transaction - including returns, discounts, and payment splits - without hunting through menus, so I can keep lines moving and avoid frustrating customers or calling my manager.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 2: Shift Manager -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Shift Manager / Floor Supervisor</h4>
+                        <p class="archetype-description">Supervises operations, handles cashier exceptions, approves voids and refunds, and needs real-time visibility into sales performance and inventory status. In Sri Lankan retail, often doubles as the primary cashier during slower periods.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm managing the floor, I want instant access to live transaction data, override approvals, and stock status without leaving the register area, so I can resolve issues in seconds - not minutes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 3: Store Owner / Manager -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">Store Owner / Manager</h4>
+                        <p class="archetype-description">Responsible for store-level profitability, staffing, inventory management, and operational decisions. In Sri Lankan independent retail, this person often <em>is</em> the cashier. In US chains, they're focused on metrics and policy configuration.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm reviewing store performance, I want clear sales trends, inventory health, and staff efficiency data in one place, so I can make quick decisions about ordering, pricing, and staffing without juggling multiple systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Archetype 4: IT / Regional Admin -->
+                <div class="case-study-archetype">
+                    <div class="archetype-visual">
+                        <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                    </div>
+                    <div class="archetype-content">
+                        <h4 class="archetype-title">IT / Regional Administrator</h4>
+                        <p class="archetype-description">Deploys and configures POS systems across multiple locations. Handles hardware setup, workflow customization, payment processor integration, and regional compliance. The gatekeeper between product capability and operational reality.</p>
+                        <div class="archetype-jtbd">
+                            <span class="jtbd-label">JOBS-TO-BE-DONE</span>
+                            <p>When I'm rolling out WizPOS across stores, I want to configure market-specific workflows, payment integrations, and hardware settings through intuitive admin tools - so I can deploy 10 stores in a week without custom development for each.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process Section -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Process</h3>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Workflow Mapping & Task Analysis</h4>
+                    <p>I mapped every transaction workflow at granular level - not just "process sale" but every decision point, exception, and recovery path. What happens when a barcode doesn't scan? When payment declines mid-tender? When a customer wants to split payment across three methods? When manager approval is needed for a refund above the threshold?</p>
+                    <p>We mapped these flows for both market contexts side-by-side, identifying shared patterns (which became core workflows) and divergent patterns (which became configurable modules).</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🗺️ Transaction workflow maps coming soon</span>
+                        </div>
+                        <p class="image-caption">Side-by-side transaction flows for US and Sri Lankan retail contexts</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>🔀 Edge case decision trees coming soon</span>
+                        </div>
+                        <p class="image-caption">Exception handling paths - refunds, payment failures, inventory lookups</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Interaction Patterns & Speed Testing</h4>
+                    <p>For the highest-frequency tasks - item scanning, tendering, discounts, voids - I prototyped multiple interaction patterns and speed-tested them with actual operators. We measured taps-to-completion, time-on-task, and error rates for each approach.</p>
+                    <p>Every millisecond of decision time matters in retail. A POS that takes 2 seconds longer per transaction costs a busy cashier 30+ minutes of wasted time per shift.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Sketches & Early Exploration</h4>
+                    <p>I explored multiple layout directions through rapid sketching - challenging assumptions about where action buttons should live, how item lists should scroll, and whether the traditional "left-list, right-actions" POS layout was actually optimal. The answer, based on research: it depends on the operator's handedness and screen angle.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>✏️ Early POS layout explorations coming soon</span>
+                        </div>
+                        <p class="image-caption">Divergent layout exploration - challenging traditional POS screen conventions</p>
+                    </div>
+                </div>
+
+                <!-- Key Design Solutions -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Key Design Solutions</h3>
+                    <p>Here's how we solved the core challenges - each decision informed by field research, operator testing, and the dual-market constraint:</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Progressive Disclosure with Contextual Menus</h4>
+                    <p>Rather than displaying all 20+ options at once, the transaction interface shows only the most common actions for the current context. Scanning items? You see quantity, discount, void. Ready to pay? You see tender methods. Processing a return? You see refund options.</p>
+                    <p>The main screen stays clean: <strong>Tender, Refund, Discount, Void, Suspend, Customer.</strong> Everything else is one contextual tap away - no nested menus, no hunting.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📱 Progressive disclosure interface coming soon</span>
+                        </div>
+                        <p class="image-caption">Main transaction screen - context-aware action surfacing</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Market-Configurable Workflow Templates</h4>
+                    <p>US partners get streamlined, speed-optimized checkout flows - minimal steps from scan to tender. Sri Lankan partners get drawer settlement, mid-shift reconciliation, and flexible cash-handling workflows as first-class features. Both share one codebase, one design system, one training approach.</p>
+                    <p>Admin panels let regional teams customize menu visibility, keyboard shortcuts, transaction behaviors, receipt formats, and tax rules without touching code.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>⚙️ Regional configuration interface coming soon</span>
+                        </div>
+                        <p class="image-caption">Workflow customization for US and Sri Lankan retail contexts</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Human-Language Error Recovery</h4>
+                    <p>Instead of "Error 0x4E," the POS speaks operator language. Payment declined? <em>"Card was declined. Try again, use a different card, or switch to cash."</em> Barcode not found? <em>"Item not recognized. Enter SKU manually, search by name, or scan again."</em></p>
+                    <p>Every error state becomes a guided decision tree - not a dead end. Operators always know what happened and what to do next.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>⚠️ Error recovery flow designs coming soon</span>
+                        </div>
+                        <p class="image-caption">Contextual error handling - every failure has a clear recovery path</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Integrated Manager Dashboard</h4>
+                    <p>We embedded a lightweight operations dashboard accessible from the main register - live transaction feed, inventory alerts, shift performance metrics, and approval queues. Managers don't leave the floor to manage the floor.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
+                            <span>📊 Manager dashboard interface coming soon</span>
+                        </div>
+                        <p class="image-caption">Real-time operations view - accessible without leaving the register</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Responsive Touch Across Hardware</h4>
+                    <p>One interface across 7" mobile carts, 10" tablets, and 15" terminals. Layouts adapt intelligently - not just scaling, but restructuring. On smaller screens, secondary actions collapse into swipe gestures. On larger screens, inventory and reporting panels appear alongside the transaction view.</p>
+                    <p>Touch targets remain 18mm minimum on every screen size. Primary actions stay in the comfort zone regardless of terminal angle or mounting position.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Offline-First Architecture</h4>
+                    <p>The POS works fully offline - transactions process locally, receipts print, drawers open. When connectivity returns, data syncs automatically with conflict resolution. No more "Internet is down, we can't ring sales." No more handwritten receipts during outages.</p>
+                    <p>This was non-negotiable for Sri Lankan retail outside Colombo metro and equally critical for US wholesale floors with connectivity dead zones.</p>
+                </div>
+
+                <!-- Impact -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Impact & Outcomes</h3>
+                    <p>WizPOS&trade; shipped within the target timeline and has been deployed across retail partners in both markets:</p>
+                </div>
+
+                <div class="case-study-metrics">
+                    <div class="metric-card">
+                        <span class="metric-value">40%</span>
+                        <span class="metric-label">Faster checkout transactions vs. previous system</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">8 hrs</span>
+                        <span class="metric-label">Cashier training time (down from 2-3 days)</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">↓</span>
+                        <span class="metric-label">Significant reduction in manager-assist calls for routine issues</span>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <p>Sri Lankan retail partners confirmed the system handled their complex cash-management workflows without friction. US-market testing validated that the speed and simplicity met American operator expectations. The configurable architecture proved its value - regional deployments required minimal engineering involvement.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Handover & Continuity</h4>
+                    <p>After successfully building and validating the system, we handed over WizPOS to the respective product owners at eWiz Solutions for continued development and improvement. The design system documentation, component libraries, workflow configuration guides, and frontend codebase were structured for long-term maintainability so their team could evolve the product independently from that point forward.</p>
+                </div>
+
+                <!-- What We Learned -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">What We Learned</h3>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Watch hands, not faces</h4>
+                    <p>The most valuable research data came from watching operators' hands - where they hesitated, where they mis-tapped, where their rhythm broke. Interviews told us what operators thought they did. Observation showed us what they actually did. The two rarely matched.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Design for the 7th hour, not the 1st</h4>
+                    <p>A POS interface that works perfectly for a rested operator in the morning means nothing if it falls apart during the fatigue and pressure of hour 7. We learned to test at the end of shifts, not the beginning. That's when the real usability problems reveal themselves.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Colombo stress-tests better than any lab</h4>
+                    <p>If a POS system survives the chaos of Sri Lankan retail - inconsistent power, unreliable internet, diverse hardware, operators handling cash and conversation simultaneously - it's ready for any market. Our Sri Lankan validation phase caught issues that controlled lab testing would have completely missed.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Configurability is a design decision, not a dev decision</h4>
+                    <p>The choice to make workflows configurable rather than hard-coded wasn't just an engineering architecture decision - it was a UX decision. It meant designing interaction patterns that remained coherent regardless of which modules were active. That's harder than designing one fixed experience, but infinitely more scalable.</p>
+                </div>
+
+                <!-- Closing -->
+                <div class="case-study-closing">
+                    <p>WizPOS taught me that POS design is physical design. It's not just screens and flows - it's fingertips, fatigue, and the unforgiving pressure of a customer waiting. Getting the human layer right means faster transactions, less training, and real economic impact for every retail partner who adopts the system.</p>
+                    <p class="closing-thanks">Thank you for reading through the WizPOS case study.</p>
+                </div>
+
+                <!-- References -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">References & Further Reading</h3>
+                    <ul class="case-study-list">
+                        <li><a href="https://developer.apple.com/design/human-interface-guidelines/accessibility#Touch-targets" target="_blank" rel="noopener">Apple Human Interface Guidelines - Touch Targets</a> - Minimum 44pt touch target recommendations</li>
+                        <li><a href="https://m3.material.io/foundations/accessible-design/accessibility-basics#a]" target="_blank" rel="noopener">Material Design 3 - Accessibility - Touch Targets</a> - Google's 48dp minimum touch target guidance</li>
+                        <li><a href="https://www.iso.org/standard/52075.html" target="_blank" rel="noopener">ISO 9241-420:2011 - Ergonomics of human-system interaction</a> - Selection-based input for interactive systems</li>
+                        <li><a href="https://www.nngroup.com/articles/touch-target-size/" target="_blank" rel="noopener">Nielsen Norman Group - Touch Target Sizes</a> - Research on touch target sizing for usability</li>
+                        <li><a href="https://www.pcisecuritystandards.org/" target="_blank" rel="noopener">PCI Security Standards Council</a> - PCI-DSS compliance standards for payment processing</li>
+                        <li><a href="https://www.bls.gov/ooh/sales/cashiers.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics - Cashiers</a> - Occupational outlook and demographics data for US retail cashiers</li>
+                        <li><a href="https://www.nngroup.com/articles/progressive-disclosure/" target="_blank" rel="noopener">Nielsen Norman Group - Progressive Disclosure</a> - UX pattern for reducing cognitive load</li>
+                        <li><a href="https://www.smashingmagazine.com/2022/11/guide-keyboard-accessibility-html-css-part1/" target="_blank" rel="noopener">Smashing Magazine - Accessibility Guide</a> - Accessibility considerations for interactive interfaces</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
