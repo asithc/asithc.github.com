@@ -74,8 +74,8 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54FZQ2X"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Under Construction Banner -->
-    <div class="site-banner">
+    <!-- Under Construction Banner (hidden on work page - replaced by inline notice) -->
+    <div class="site-banner" style="display:none">
         <span class="banner-icon">🚧</span>
         <span class="banner-text">This site is currently under construction. Some features may be incomplete.</span>
     </div>
@@ -90,6 +90,16 @@
 
     <!-- Work Grid -->
     <main class="work-page">
+        <!-- Work in Progress Notice -->
+        <div class="work-notice">
+            <span class="work-notice-icon">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7.5" cy="7.5" r="7" stroke="#D97706" stroke-width="1"/>
+                    <circle cx="7.5" cy="7.5" r="3.5" fill="#D97706" class="wa-amber-pulse"/>
+                </svg>
+            </span>
+            <span class="work-notice-text">Most of these case studies are still works in progress. Bear with me.</span>
+        </div>
         <div class="work-grid-container">
             <!-- Trancity -->
             <a href="projects/trancity.html" class="work-card">

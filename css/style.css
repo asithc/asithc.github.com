@@ -122,7 +122,7 @@ button {
 /* Navigation - "Around the World" the site goes 🌍 */
 .nav {
     position: fixed;
-    top: 55px;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
@@ -3356,6 +3356,51 @@ button {
 .work-page {
     padding-top: 100px;
     min-height: 100vh;
+    position: relative;
+}
+
+/* Work in Progress Notice - absolute, centered in gap between nav and first card */
+.work-notice {
+    position: absolute;
+    top: 137px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 90%;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 16px;
+    background: rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.work-notice-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.wa-amber-pulse {
+    animation: amberPulse 1.4s ease-in-out infinite;
+    transform-origin: 7.5px 7.5px;
+}
+
+@keyframes amberPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.55); }
+}
+
+.work-notice-text {
+    font-size: 12.5px;
+    font-weight: 450;
+    color: rgba(0, 0, 0, 0.48);
+    letter-spacing: 0.1px;
+    line-height: 1.4;
 }
 
 .work-grid {
@@ -7590,6 +7635,22 @@ html {
     .contact-container {
         padding-left: var(--spacing-md);
         padding-right: var(--spacing-md);
+    }
+
+    .work-notice {
+        position: static;
+        transform: none;
+        left: auto;
+        display: flex;
+        max-width: calc(100% - 48px);
+        margin: 0 auto 8px;
+        border-radius: 20px;
+        white-space: normal;
+    }
+
+    .work-notice-text {
+        font-size: 12px;
+        white-space: normal;
     }
 
     .project-back-nav {
