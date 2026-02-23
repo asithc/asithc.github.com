@@ -3407,7 +3407,7 @@ button {
     align-items: center;
     gap: 7px;
     padding: 7px 16px;
-    background: rgba(0, 0, 0, 0.10);
+    background: var(--bg-secondary);
     /* border: 1px solid rgba(0, 0, 0, 0.10); */
     border-radius: 100px;
     pointer-events: none;
