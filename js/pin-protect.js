@@ -3,7 +3,7 @@
  * 
  * Usage:
  * 1. Add class "pin-protected" to any link/button
- * 2. Add data-pin="123456" (the 6-digit pin)
+ * 2. Add data-pin="<sha256-hash>" (SHA-256 hash of the 6-digit pin)
  * 3. Add data-redirect="https://example.com" (where to go after correct pin)
  * 4. Include this script on the page
  */
@@ -12,6 +12,15 @@ const PinProtect = (function() {
     'use strict';
 
     const PIN_LENGTH = 6;
+
+    // Hash a PIN using SHA-256 (Web Crypto API)
+    async function hashPin(pin) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(pin);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
 
     // Create modal HTML
     function createModal() {
@@ -148,10 +157,10 @@ const PinProtect = (function() {
         setLoading(false);
     }
 
-    function validatePin() {
+    async function validatePin() {
         const overlay = document.getElementById('pinModalOverlay');
         const enteredPin = getEnteredPin();
-        const correctPin = overlay.dataset.pin;
+        const correctPinHash = overlay.dataset.pin;
         const redirectUrl = overlay.dataset.redirect;
         const targetId = overlay.dataset.target;
         
@@ -162,9 +171,12 @@ const PinProtect = (function() {
         
         setLoading(true);
         
+        // Hash the entered PIN and compare with stored hash
+        const enteredHash = await hashPin(enteredPin);
+        
         // Small delay to show loading
         setTimeout(() => {
-            if (enteredPin === correctPin) {
+            if (enteredHash === correctPinHash) {
                 closeModal();
                 
                 // If there's a target section, reveal it and scroll to it

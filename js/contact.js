@@ -227,6 +227,13 @@ const scrollToBottom = () => {
     }
 };
 
+// Sanitize text to prevent XSS
+const sanitizeHTML = (str) => {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+};
+
 // Add message to chat
 const addMessage = (text, type = 'received', showAvatar = true, showNameLabel = true) => {
     const container = document.getElementById('messageContainer');
@@ -235,16 +242,19 @@ const addMessage = (text, type = 'received', showAvatar = true, showNameLabel = 
     const messageDiv = document.createElement('div');
     messageDiv.className = 'message-new ' + type;
 
+    // Sanitize user-sent messages to prevent self-XSS
+    const safeText = type === 'sent' ? sanitizeHTML(text) : text;
+
     if (type === 'received') {
         const avatarHTML = showAvatar ? '<img src="https://unavatar.io/twitter/asithc" alt="Asith" class="message-avatar-new">' : '<div class="message-avatar-spacer"></div>';
         const nameLabelHTML = showNameLabel ? '<div class="message-name-label">Asith</div>' : '';
         messageDiv.innerHTML =
             nameLabelHTML +
             avatarHTML +
-            '<div class="message-bubble-new"><p>' + text + '</p></div>';
+            '<div class="message-bubble-new"><p>' + safeText + '</p></div>';
     } else {
         messageDiv.innerHTML =
-            '<div class="message-bubble-new"><p>' + text + '</p></div>';
+            '<div class="message-bubble-new"><p>' + safeText + '</p></div>';
     }
 
     container.appendChild(messageDiv);
@@ -709,12 +719,34 @@ const handleMessage = async (text) => {
     chatState.isProcessing = false;
 };
 
+// Rate limiting for form submissions
+const formRateLimit = {
+    lastSubmission: 0,
+    submissionCount: 0,
+    cooldownMs: 60000, // 1 minute between submissions
+    maxSubmissions: 3,  // Max 3 submissions per session
+    windowMs: 600000    // 10 minute window for max submissions
+};
+
 // Google Sheets API URL (update this with your deployed script URL)
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbySW5IrauskchS8HOSWPxe-FiJ1wxg-Vsx_uIhOiQ_P-3KKLv2Fo_udGoim0zMul-CQ/exec';
 
 // Send data to Google Sheets and trigger email notifications
 const sendToGoogleSheets = async (data) => {
     try {
+        // Rate limit check
+        const now = Date.now();
+        if (now - formRateLimit.lastSubmission < formRateLimit.cooldownMs) {
+            console.warn('Rate limit: Too many submissions, please wait.');
+            return false;
+        }
+        if (formRateLimit.submissionCount >= formRateLimit.maxSubmissions) {
+            console.warn('Rate limit: Maximum submissions reached for this session.');
+            return false;
+        }
+        formRateLimit.lastSubmission = now;
+        formRateLimit.submissionCount++;
+
         const conversationEnd = new Date();
         const startTime = data.conversationStartTime ? new Date(data.conversationStartTime) : conversationEnd;
         

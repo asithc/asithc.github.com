@@ -21,6 +21,14 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="format-detection" content="telephone=no">
+
     <title>Asith Wijenayake - UX Designer & Product Creator</title>
     
     <!-- SEO Meta Tags -->
@@ -92,7 +100,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Model Viewer for 3D GLB -->
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js" integrity="sha384-NxrHiuPcsJaRbXc9EoFTt5OZ6WPVqKeDgcnykGs3spXmq0J7hbbGGlyUkrGuoJoA" crossorigin="anonymous"></script>
     
     <!-- Clear PWA Cache and Unregister Service Worker -->
     <script>
@@ -140,7 +148,7 @@
             <!-- Manifesto Widget -->
             <div class="manifesto-widget fade-in">
                 <h1 class="manifesto-text">
-                    <span class="name">Asith</span> <span class="light">is building</span> <a href="https://www.ifs.com/en#" class="link underline" target="_blank">IFS</a><span class="light">.</span>
+                    <span class="name">Asith</span> <span class="light">is building</span> <a href="https://www.ifs.com/en#" class="link underline" target="_blank" rel="noopener noreferrer">IFS</a><span class="light">.</span>
                 </h1>
                 
                 <div class="manifesto-divider"></div>
@@ -155,7 +163,7 @@
                     <h2 class="manifesto-item">the best things. an optimal amount.</h2>
                     
                     <p class="footnote">
-                        <a href="https://www.youtube.com/watch?v=QkhrGUSf2ok" target="_blank" class="link"><span class="red-asterisk">*</span> Less, but better.</a>
+                        <a href="https://www.youtube.com/watch?v=QkhrGUSf2ok" target="_blank" rel="noopener noreferrer" class="link"><span class="red-asterisk">*</span> Less, but better.</a>
                     </p>
                 </div>
             </div>
@@ -609,7 +617,7 @@
                         <span class="popup-title">${title}</span>
                     </div>
                     <div class="popup-bottom-row">
-                        <a href="${url}" target="_blank" class="popup-link">${link}</a>
+                        <a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-link">${link}</a>
                     </div>
                 `;
                 
@@ -671,7 +679,7 @@
                             <span class="popup-title">${title}</span>
                         </div>
                         <div class="popup-bottom-row">
-                            <a href="${url}" target="_blank" class="popup-link">${link}</a>
+                            <a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-link">${link}</a>
                         </div>
                     `;
                 });
