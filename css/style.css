@@ -3434,7 +3434,7 @@ button {
 .work-notice-text {
     font-size: 12.5px;
     font-weight: 450;
-    color: rgba(0, 0, 0, 0.48);
+    color: var(--text-secondary);
     letter-spacing: 0.1px;
     line-height: 1.4;
 }
@@ -7462,7 +7462,7 @@ html {
 .project-image-placeholder {
     width: 100%;
     aspect-ratio: 1200 / 750;
-    background: #f0f0f0;
+    background: var(--bg-secondary);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
