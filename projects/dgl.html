@@ -19,6 +19,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0f10">
 
     <!-- Security Meta Tags -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
@@ -32,8 +33,11 @@
     <meta name="description" content="DGL — Digital Gaming League, Sri Lanka's national gaming and esports community platform by Dialog Axiata. UX case study by Asith Wijenayake.">
     <meta name="keywords" content="DGL, Digital Gaming League, esports platform, gaming community, Dialog Axiata, Sri Lanka gaming, competitive gaming UX, Asith Wijenayake">
     <meta name="author" content="Asith Wijenayake">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://asith.cc/projects/dgl.html">
+    <link rel="alternate" hreflang="en" href="https://asith.cc/projects/dgl.html">
+    <link rel="alternate" hreflang="x-default" href="https://asith.cc/projects/dgl.html">
+    <link rel="alternate" type="text/markdown" href="https://asith.cc/llms.txt" title="LLM Profile">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
     
@@ -43,17 +47,49 @@
     <meta property="og:title" content="DGL - Digital Gaming League">
     <meta property="og:description" content="Digital Gaming League - National Gaming & Esports Community Platform by Dialog.">
     <meta property="og:image" content="https://asith.cc/images/Projects/DGL/DGL-feature.png">
+    <meta property="og:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Asith Wijenayake">
     <meta property="og:locale" content="en_US">    
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@asithcc">
+    <meta name="twitter:creator" content="@asithcc">
     <meta name="twitter:url" content="https://asith.cc/projects/dgl.html">
     <meta name="twitter:title" content="DGL - Digital Gaming League">
     <meta name="twitter:description" content="Digital Gaming League - National Gaming & Esports Community Platform by Dialog.">
     <meta name="twitter:image" content="https://asith.cc/images/Projects/DGL/DGL-feature.png">
     
+    <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "DGL - Digital Gaming League",
+        "url": "https://asith.cc/projects/dgl.html",
+        "description": "DGL — Digital Gaming League, Sri Lanka's national gaming and esports community platform by Dialog Axiata. UX case study by Asith Wijenayake.",
+        "image": "https://asith.cc/images/Projects/DGL/DGL-feature.png",
+        "author": {
+            "@type": "Person",
+            "name": "Asith Wijenayake",
+            "url": "https://asith.cc/"
+        },
+        "creator": {
+            "@type": "Person",
+            "name": "Asith Wijenayake",
+            "url": "https://asith.cc/"
+        },
+        "inLanguage": "en",
+        "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Work & Case Studies - Asith Wijenayake",
+            "url": "https://asith.cc/work.html"
+        }
+    }
+    </script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -170,18 +206,51 @@
         <!-- Project Collage Grid -->
         <div class="project-collage">
             <div class="project-collage-grid">
-                <div class="collage-item collage-item-1"></div>
-                <div class="collage-item collage-item-2"></div>
-                <div class="collage-item collage-item-3"></div>
-                <div class="collage-item collage-item-4"></div>
-                <div class="collage-item collage-item-5"></div>
-                <div class="collage-item collage-item-6"></div>
-                <div class="collage-item collage-item-1"></div>
-                <div class="collage-item collage-item-2"></div>
-                <div class="collage-item collage-item-3"></div>
-                <div class="collage-item collage-item-4"></div>
-                <div class="collage-item collage-item-5"></div>
-                <div class="collage-item collage-item-6"></div>
+                <svg class="collage-defs" aria-hidden="true" focusable="false">
+                    <symbol id="collageArrowDGL" viewBox="0 0 100 100">
+                        <path d="M18 24h48v48M66 24L24 66" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </symbol>
+                </svg>
+
+                <div class="collage-tile collage-brand collage-brand-pink">
+                    <svg class="collage-arrow" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                </div>
+
+                <div class="collage-tile collage-brand collage-brand-blue-small">
+                    <svg class="collage-arrow arrow-southwest" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                </div>
+
+                <div class="collage-tile collage-brand collage-brand-blue-main">
+                    <svg class="collage-arrow arrow-main" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                </div>
+
+                <div class="collage-tile collage-brand collage-brand-yellow">
+                    <div class="collage-arrow-stack">
+                        <svg class="collage-arrow" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                        <svg class="collage-arrow" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                        <svg class="collage-arrow" viewBox="0 0 100 100" aria-hidden="true"><use href="#collageArrowDGL"></use></svg>
+                    </div>
+                </div>
+
+                <article class="collage-tile collage-insight collage-insight-1">
+                    <p class="collage-quote">"Players stay when progress survives beyond a single event."</p>
+                    <span class="collage-meta">Hypothesis 01 • Retention Loop</span>
+                </article>
+
+                <article class="collage-tile collage-insight collage-insight-2">
+                    <p class="collage-quote">"Public ranks convert casual matches into long-term ambition."</p>
+                    <span class="collage-meta">Hypothesis 02 • Competitive Drive</span>
+                </article>
+
+                <article class="collage-tile collage-insight collage-insight-3">
+                    <p class="collage-quote">"Teams, players, and organizers need one shared operating layer."</p>
+                    <span class="collage-meta">Concept • Unified Platform</span>
+                </article>
+
+                <article class="collage-tile collage-insight collage-insight-4">
+                    <p class="collage-quote">"Tournament actions must work thumb-first in poor network conditions."</p>
+                    <span class="collage-meta">Concept • Mobile Resilience</span>
+                </article>
             </div>
         </div>
 
@@ -189,9 +258,7 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>🛠️ Asith is cooking something here...</span>
-                    </div>
+                    <img src="../images/Projects/DGL/DGL-feature.png" alt="DGL - Digital Gaming League feature image" loading="lazy" decoding="async">
                 </div>
                 <div class="project-image-item fade-in">
                     <div class="project-image-placeholder">
@@ -264,7 +331,7 @@
         </div>
     </main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/pin-protect.js"></script>
+    <script src="../js/script.js?v=20260320"></script>
+    <script src="../js/pin-protect.js?v=20260320"></script>
 </body>
 </html>

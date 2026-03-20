@@ -101,6 +101,28 @@ a {
     color: inherit;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.tm-mark {
+    display: inline-block;
+    margin-left: 0.08em;
+    font-size: 0.52em;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: super;
+}
+
 /* Under Construction Banner */
 .site-banner {
     position: fixed;
@@ -7369,54 +7391,212 @@ html {
 
 .project-collage-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: max(1rem, var(--spacing-md));
+    grid-template-columns: 1fr 2.15fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(130px, 1fr));
+    gap: clamp(10px, 1.25vw, 16px);
 }
 
-.collage-item {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    aspect-ratio: 1 / 1;
-    border: 1px solid #E6EAF2;
+.collage-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-.collage-item-1 {
-    background: #F4F7FF;
+.collage-tile {
+    border-radius: 30px;
+    border: 1px solid #d9deea;
+    overflow: hidden;
+    position: relative;
 }
 
-.collage-item-2 {
-    background: #EFF6FF;
+.collage-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
 }
 
-.collage-item-3 {
-    background: #F5F3FF;
+.collage-brand-pink {
+    grid-column: 1;
+    grid-row: 1;
+    background: #D12C77;
 }
 
-.collage-item-4 {
-    background: #F2F5F9;
+.collage-brand-blue-small {
+    grid-column: 1;
+    grid-row: 2;
+    background: #4499DB;
 }
 
-.collage-item-5 {
-    background: #EEF2FF;
+.collage-brand-blue-main {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background: #4499DB;
 }
 
-.collage-item-6 {
-    background: #F6F7FB;
+.collage-brand-yellow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background: #EDDB1F;
 }
 
-.collage-item.span-2x1 {
-    grid-column: span 2;
+.collage-arrow {
+    width: min(58%, 150px);
+    height: auto;
+    fill: currentColor;
+    transform-origin: center;
 }
 
-.collage-item.span-2x2 {
-    grid-column: span 2;
-    grid-row: span 2;
+.collage-arrow.arrow-main {
+    width: min(66%, 220px);
 }
 
-.collage-item.span-3x2 {
-    grid-column: span 3;
-    grid-row: span 2;
+.collage-arrow.arrow-southwest {
+    transform: rotate(180deg);
+}
+
+.collage-arrow-stack {
+    width: 100%;
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+}
+
+.collage-arrow-stack .collage-arrow {
+    width: min(68%, 90px);
+}
+
+.collage-brand-pink .collage-arrow {
+    animation: collageArrowBob 3.1s ease-in-out infinite;
+}
+
+.collage-brand-blue-main .collage-arrow {
+    animation: collageArrowMainDrift 4.2s ease-in-out infinite;
+}
+
+.collage-brand-blue-small .collage-arrow {
+    animation: collageArrowSouthwestDrift 3.4s ease-in-out infinite;
+}
+
+.collage-arrow-stack .collage-arrow {
+    animation: collageArrowStackPulse 2.8s ease-in-out infinite;
+}
+
+.collage-arrow-stack .collage-arrow:nth-child(2) {
+    animation-delay: 0.22s;
+}
+
+.collage-arrow-stack .collage-arrow:nth-child(3) {
+    animation-delay: 0.44s;
+}
+
+@keyframes collageArrowBob {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.04);
+    }
+}
+
+@keyframes collageArrowMainDrift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    35% {
+        transform: translate(6px, -4px) scale(1.03);
+    }
+    70% {
+        transform: translate(-4px, 3px) scale(0.99);
+    }
+}
+
+@keyframes collageArrowSouthwestDrift {
+    0%, 100% {
+        transform: rotate(180deg) translate(0, 0) scale(1);
+    }
+    45% {
+        transform: rotate(180deg) translate(5px, -4px) scale(1.03);
+    }
+}
+
+@keyframes collageArrowStackPulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .collage-brand .collage-arrow,
+    .collage-arrow-stack .collage-arrow {
+        animation: none !important;
+    }
+}
+
+.collage-insight {
+    background: linear-gradient(160deg, #edf1f8 0%, #f8f9fc 100%);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.collage-insight-1 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.collage-insight-2 {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.collage-insight-3 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.collage-insight-4 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.collage-insight::before {
+    content: "";
+    width: 34px;
+    height: 4px;
+    border-radius: 999px;
+    background: #4499DB;
+}
+
+.collage-insight-2::before {
+    background: #D12C77;
+}
+
+.collage-insight-4::before {
+    background: #EDDB1F;
+}
+
+.collage-quote {
+    margin: 12px 0 8px;
+    color: #272b37;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.collage-meta {
+    color: #5f6a7b;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .project-images {
@@ -7727,14 +7907,35 @@ html {
     }
 
     .project-collage-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
     }
 
-    .collage-item.span-2x1,
-    .collage-item.span-2x2,
-    .collage-item.span-3x2 {
+    .collage-brand-pink,
+    .collage-brand-blue-small,
+    .collage-brand-blue-main,
+    .collage-brand-yellow,
+    .collage-insight-1,
+    .collage-insight-2,
+    .collage-insight-3,
+    .collage-insight-4 {
         grid-column: auto;
         grid-row: auto;
+    }
+
+    .collage-brand {
+        min-height: 130px;
+    }
+
+    .collage-brand-yellow .collage-arrow-stack {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .collage-brand-yellow .collage-arrow-stack .collage-arrow {
+        width: 100%;
+        max-width: 46px;
     }
 
     .widget-row {

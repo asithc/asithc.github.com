@@ -21,6 +21,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0f10">
 
     <!-- Security Meta Tags -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
@@ -35,8 +36,11 @@
     <meta name="description" content="Explore Asith Wijenayake's UX design portfolio — enterprise platforms at IFS, fintech solutions at Dialog Axiata, POS systems, sustainability dashboards, mobile apps, and AI-driven product design case studies.">
     <meta name="keywords" content="Asith Wijenayake portfolio, UX design case studies, enterprise product design, mobile app UX, IFS Cloud, Dialog Axiata, POS design, fintech UX, AI-driven products, Sri Lanka designer, future-proof systems">
     <meta name="author" content="Asith Wijenayake">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://asith.cc/work.html">
+    <link rel="alternate" hreflang="en" href="https://asith.cc/work.html">
+    <link rel="alternate" hreflang="x-default" href="https://asith.cc/work.html">
+    <link rel="alternate" type="text/markdown" href="https://asith.cc/llms.txt" title="LLM Profile">
     
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
@@ -44,6 +48,7 @@
     <meta property="og:title" content="Check out Asith's Work - UX Design Portfolio">
     <meta property="og:description" content="Explore thoughtful UX design projects and case studies. From enterprise apps to consumer products.">
     <meta property="og:image" content="https://asith.cc/images/og-index.jpg">
+    <meta property="og:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -54,10 +59,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@asithcc">
     <meta name="twitter:creator" content="@asithcc">
+    <meta name="twitter:url" content="https://asith.cc/work.html">
     <meta name="twitter:title" content="Check out Asith's Work - UX Design Portfolio">
     <meta name="twitter:description" content="Explore thoughtful UX design projects and case studies. From enterprise apps to consumer products.">
-    <meta name="twitter:image" content="https://asith.cc/images/og-work.png">
+    <meta name="twitter:image" content="https://asith.cc/images/og-index.jpg">
     
+    <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <!-- Pinterest -->
     <meta property="pinterest:description" content="UX Design Portfolio by Asith Wijenayake">
     
@@ -76,11 +83,25 @@
         "name": "UX Design Portfolio - Asith Wijenayake",
         "url": "https://asith.cc/work.html",
         "description": "Enterprise UX design case studies and product design portfolio by Asith Wijenayake. Projects spanning IFS Cloud, Dialog Axiata fintech, POS systems, mobile apps, and AI-driven solutions.",
+        "inLanguage": "en",
         "author": {
             "@type": "Person",
             "name": "Asith Wijenayake",
-            "url": "https://asith.cc"
-        }
+            "url": "https://asith.cc/"
+        },
+        "hasPart": [
+            {"@type": "CreativeWork", "name": "IFSZero - Sustainability Platform", "url": "https://asith.cc/projects/IFSzero.html"},
+            {"@type": "CreativeWork", "name": "DGL - Digital Gaming League", "url": "https://asith.cc/projects/dgl.html"},
+            {"@type": "CreativeWork", "name": "OneCup - Pay-It-Forward Cafe Platform", "url": "https://asith.cc/projects/onecup.html"},
+            {"@type": "CreativeWork", "name": "Marketplace by Dialog Enterprise", "url": "https://asith.cc/projects/marketplace.html"},
+            {"@type": "CreativeWork", "name": "HopOn - Carpooling Platform", "url": "https://asith.cc/projects/trancity.html"},
+            {"@type": "CreativeWork", "name": "TrainPal - Train Booking Platform", "url": "https://asith.cc/projects/trainpal.html"},
+            {"@type": "CreativeWork", "name": "WizPOS - Next-Gen Point of Sale", "url": "https://asith.cc/projects/wizpos.html"},
+            {"@type": "CreativeWork", "name": "Dialog WeatherGuru - Weather Intelligence Platform", "url": "https://asith.cc/projects/dialog-weatherguru.html"},
+            {"@type": "CreativeWork", "name": "Click2Pay - Digital Payment Solution", "url": "https://asith.cc/projects/click2pay.html"},
+            {"@type": "CreativeWork", "name": "rsvp.lk - Event Management Platform", "url": "https://asith.cc/projects/rsvp-lk.html"},
+            {"@type": "CreativeWork", "name": "VDOmeet by Dialog - Video Conferencing Platform", "url": "https://asith.cc/projects/vdomeet.html"}
+        ]
     }
     </script>
     
@@ -121,6 +142,7 @@
 
     <!-- Work Grid -->
     <main class="work-page">
+        <h1 class="sr-only">UX design work and case studies by Asith Wijenayake</h1>
         <!-- Work in Progress Notice -->
         <div class="work-notice">
             <span class="work-notice-icon">
@@ -136,7 +158,7 @@
             <a href="projects/trancity.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">HopOn&trade;</h2>
+                        <h2 class="work-card-title">HopOn<span class="tm-mark">TM</span></h2>
                         <p class="work-card-description">Turn empty seats into shared journeys. A carpooling app for everyday drivers.</p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2C</span>
@@ -157,7 +179,7 @@
             <a href="projects/dgl.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">DGL&trade;<span class="work-card-title-light"> Digital Gaming League</span></h2>
+                        <h2 class="work-card-title">DGL<span class="tm-mark">TM</span><span class="work-card-title-light"> Digital Gaming League</span></h2>
                         <p class="work-card-description">National Gaming & Esports Community Platform</p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2C</span>
@@ -178,8 +200,8 @@
             <a href="projects/IFSzero.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">IFSZero&trade;</h2>
-                        <p class="work-card-description">Designing a zero-to-one Sustainability & Emissions platform inside IFS Cloud&trade;</p>
+                        <h2 class="work-card-title">IFSZero<span class="tm-mark">TM</span></h2>
+                        <p class="work-card-description">Designing a zero-to-one Sustainability & Emissions platform inside IFS Cloud<span class="tm-mark">TM</span></p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2B</span>
                             <span class="work-tag">Enterprise UX</span>
@@ -200,7 +222,7 @@
             <a href="projects/onecup.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">OneCup&trade;</h2>
+                        <h2 class="work-card-title">OneCup<span class="tm-mark">TM</span></h2>
                         <p class="work-card-description">Pay-It-Forward Pickup Platform for Local Cafés</p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2C</span>
@@ -221,7 +243,7 @@
             <a href="projects/marketplace.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">Marketplace&trade;<span class="work-card-title-light"> by Dialog Enterprise</span></h2>
+                        <h2 class="work-card-title">Marketplace<span class="tm-mark">TM</span><span class="work-card-title-light"> by Dialog Enterprise</span></h2>
                         <p class="work-card-description">One-stop digital business solutions marketplace</p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2B</span>
@@ -242,7 +264,7 @@
             <a href="projects/wizpos.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">WizPOS&trade;</h2>
+                        <h2 class="work-card-title">WizPOS<span class="tm-mark">TM</span></h2>
                         <p class="work-card-description">A next-generation POS built for people who move fast.</p>
                         <div class="work-card-tags">
                             <span class="work-tag">B2B</span>
@@ -446,6 +468,6 @@
         </div>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=20260320"></script>
 </body>
 </html>

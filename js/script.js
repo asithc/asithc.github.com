@@ -324,7 +324,7 @@ const initSingleWhatsAppViewer = (viewer) => {
     }
 
     function updateTimeLabel() {
-        const times = ['Just now', 'Today, 10:23 AM', 'Today, 2:15 PM', 'Yesterday, 8:11 PM', 'Yesterday, 6:45 PM', 'Today, 11:30 AM'];
+        const times = ['Feb 22, 10:23 AM', 'Feb 22, 2:15 PM', 'Feb 21, 8:11 PM'];
         timeLabel.textContent = times[currentIndex % times.length];
     }
 

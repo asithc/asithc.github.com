@@ -19,6 +19,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0f10">
 
     <!-- Security Meta Tags -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
@@ -31,8 +32,11 @@
     <meta name="description" content="WizPOS — A next-generation point-of-sale system designed for speed, accessibility, and enterprise retail. UX case study by Asith Wijenayake.">
     <meta name="keywords" content="WizPOS, point of sale design, POS UX, retail technology, enterprise POS, payment system UX, touch target optimization, Asith Wijenayake">
     <meta name="author" content="Asith Wijenayake">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://asith.cc/projects/wizpos.html">
+    <link rel="alternate" hreflang="en" href="https://asith.cc/projects/wizpos.html">
+    <link rel="alternate" hreflang="x-default" href="https://asith.cc/projects/wizpos.html">
+    <link rel="alternate" type="text/markdown" href="https://asith.cc/llms.txt" title="LLM Profile">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
     
@@ -42,16 +46,48 @@
     <meta property="og:title" content="WizPOS - Next-Gen Point of Sale">
     <meta property="og:description" content="WizPOS - A next-generation POS built for people who move fast.">
     <meta property="og:image" content="https://asith.cc/images/Projects/WIZPos/WizPOS-feature.png">
+    <meta property="og:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Asith Wijenayake">
     <meta property="og:locale" content="en_US">    
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@asithcc">
+    <meta name="twitter:creator" content="@asithcc">
     <meta name="twitter:url" content="https://asith.cc/projects/wizpos.html">
     <meta name="twitter:title" content="WizPOS - Next-Gen Point of Sale">
     <meta name="twitter:description" content="WizPOS - A next-generation POS built for people who move fast.">
     <meta name="twitter:image" content="https://asith.cc/images/Projects/WIZPos/WizPOS-feature.png">
+    <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "WizPOS - Next-Gen Point of Sale",
+        "url": "https://asith.cc/projects/wizpos.html",
+        "description": "WizPOS — A next-generation point-of-sale system designed for speed, accessibility, and enterprise retail. UX case study by Asith Wijenayake.",
+        "image": "https://asith.cc/images/Projects/WIZPos/WizPOS-feature.png",
+        "author": {
+            "@type": "Person",
+            "name": "Asith Wijenayake",
+            "url": "https://asith.cc/"
+        },
+        "creator": {
+            "@type": "Person",
+            "name": "Asith Wijenayake",
+            "url": "https://asith.cc/"
+        },
+        "inLanguage": "en",
+        "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Work & Case Studies - Asith Wijenayake",
+            "url": "https://asith.cc/work.html"
+        }
+    }
+    </script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -82,7 +118,7 @@
     <main class="project-detail-container">
         <div class="project-header">
             <div class="project-header-content">
-                <h1 class="project-title">WizPOS&trade;</h1>
+                <h1 class="project-title">WizPOS<span class="tm-mark">TM</span></h1>
                 <p class="project-subtitle">A next-generation POS built for people who move fast.</p>
             </div>
         </div>
@@ -139,7 +175,7 @@
 
                 <div class="project-section">
                     <h3 class="section-label">CONTEXT</h3>
-                    <p class="section-text">WizPOS&trade; was developed in Sri Lanka in partnership with eWiz Solutions and an independent engineering team from one of the world’s largest food supply organizations.</p>
+                    <p class="section-text">WizPOS<span class="tm-mark">TM</span> was developed in Sri Lanka in partnership with eWiz Solutions and an independent engineering team from one of the world’s largest food supply organizations.</p>
                     <p class="section-text">The core system was largely complete from a functional standpoint when I joined. However, the product lacked a cohesive visual language, POS ergonomics, and market-ready usability required for international deployment.</p>
                     <p class="section-text">By the time I joined the project, the system was already functionally mature. Core POS workflows, backend logic, and a React-based frontend were in place. However, the product was not yet ready for real-world retail usage or market adoption due to significant gaps in usability, visual consistency, and POS ergonomics.</p>
                     <p class="section-text">My role was to bridge that gap-transforming a technically complete system into a usable, market - ready POS product.</p>
@@ -155,9 +191,7 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>🛠️ Asith is cooking something here...</span>
-                    </div>
+                    <img src="../images/Projects/WIZPos/WizPOS-feature.png" alt="WizPOSTM feature image" loading="lazy" decoding="async">
                 </div>
                 <div class="project-image-item fade-in">
                     <div class="project-image-placeholder">
@@ -184,7 +218,7 @@
                 <!-- Introduction -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Introduction</h3>
-                    <p>WizPOS&trade; is a cloud-based point-of-sale system built by eWiz Solutions in Sri Lanka, with the end goal of entering the United States retail market - supermarkets, wholesale clubs, and high-volume chain operations where speed and reliability are non-negotiable.</p>
+                    <p>WizPOS<span class="tm-mark">TM</span> is a cloud-based point-of-sale system built by eWiz Solutions in Sri Lanka, with the end goal of entering the United States retail market - supermarkets, wholesale clubs, and high-volume chain operations where speed and reliability are non-negotiable.</p>
                     <p>While the product was developed in Colombo, our ambition extended far beyond the local market. The system needed to work equally well for a Sri Lankan supermarket cashier processing LKR transactions and an American wholesale operator running USD tenders across multiple lanes. Two very different retail cultures, one product.</p>
                     <p>I joined the project when the core system was functionally complete - backend logic, React frontend, and POS workflows were in place. What was missing was the human layer: POS ergonomics, visual coherence, touch optimization, and the kind of usability polish that separates a functional tool from a market-ready product.</p>
                     <p>I worked as a UX Engineer on this project - designing the experience in Sketch, prototyping interactions in Principle, and then building the production frontend myself in HTML and CSS. I integrated the UI directly with a React developer, closing the gap between design intent and shipped product.</p>
@@ -493,7 +527,7 @@
                 <!-- The Challenge -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">The Challenge</h3>
-                    <p>WizPOS&trade; faced a specific set of constraints that shaped every design decision:</p>
+                    <p>WizPOS<span class="tm-mark">TM</span> faced a specific set of constraints that shaped every design decision:</p>
                 </div>
 
                 <div class="challenge-cards-grid">
@@ -777,7 +811,7 @@
                 <!-- Impact -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Impact & Outcomes</h3>
-                    <p>WizPOS&trade; shipped within the target timeline and has been deployed across retail partners in both markets:</p>
+                    <p>WizPOS<span class="tm-mark">TM</span> shipped within the target timeline and has been deployed across retail partners in both markets:</p>
                 </div>
 
                 <div class="case-study-metrics">
@@ -868,7 +902,7 @@
         </div>
     </main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/pin-protect.js"></script>
+    <script src="../js/script.js?v=20260320"></script>
+    <script src="../js/pin-protect.js?v=20260320"></script>
 </body>
 </html>

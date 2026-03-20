@@ -147,6 +147,32 @@ const PinProtect = (function() {
         setTimeout(() => document.querySelector('.pin-input').focus(), 100);
     }
 
+    function unlockContent(redirectUrl, targetId) {
+        // If there's a target section, reveal it and scroll to it
+        if (targetId) {
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.classList.add('revealed');
+
+                setTimeout(() => {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+
+                // Hide trigger buttons once content is visible
+                document.querySelectorAll('[data-target="' + targetId + '"]').forEach(btn => {
+                    btn.style.display = 'none';
+                });
+            }
+        } else if (redirectUrl && redirectUrl !== '#' && !redirectUrl.startsWith('#')) {
+            // Redirect to external URL
+            window.location.href = redirectUrl;
+        }
+    }
+
     function closeModal() {
         const overlay = document.getElementById('pinModalOverlay');
         overlay.classList.remove('active');
@@ -179,30 +205,8 @@ const PinProtect = (function() {
             if (enteredHash === correctPinHash) {
                 closeModal();
                 
-                // If there's a target section, reveal it and scroll to it
-                if (targetId) {
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        // Reveal the section with animation
-                        targetSection.style.display = 'block';
-                        targetSection.classList.add('revealed');
-                        
-                        // Smooth scroll to the section
-                        setTimeout(() => {
-                            targetSection.scrollIntoView({ 
-                                behavior: 'smooth', 
-                                block: 'start' 
-                            });
-                        }, 100);
-                        
-                        // Hide the "Read Case Study" button since content is now visible
-                        document.querySelectorAll('.pin-protected[data-target="' + targetId + '"]').forEach(btn => {
-                            btn.style.display = 'none';
-                        });
-                    }
-                } else if (redirectUrl && redirectUrl !== '#') {
-                    // Redirect to external URL
-                    window.location.href = redirectUrl;
+                if (targetId || (redirectUrl && redirectUrl !== '#')) {
+                    unlockContent(redirectUrl, targetId);
                 } else {
                     alert('🎉 Access granted! Content unlocked.');
                 }
@@ -225,14 +229,13 @@ const PinProtect = (function() {
         document.getElementById('pinSubmitBtn').addEventListener('click', validatePin);
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
         
-        // Handle protected links
+        // Password bypass: open protected content directly without modal/PIN.
         document.querySelectorAll('.pin-protected').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const pin = link.dataset.pin;
                 const redirect = link.dataset.redirect || link.href;
                 const target = link.dataset.target;
-                openModal(pin, redirect, target);
+                unlockContent(redirect, target);
             });
         });
     }

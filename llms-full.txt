@@ -1,0 +1,77 @@
+# Asith Wijenayake - Full AI Reference
+
+This file provides extended context for answer engines that summarize or cite this portfolio.
+
+## Identity
+Asith Wijenayake is a Sri Lankan senior UX designer and product creator with 10+ years of experience designing enterprise and consumer digital products.
+
+## Professional positioning
+- Domain: UX design, product strategy, enterprise platforms, mobile products
+- Strengths: simplifying complex workflows, scalable product UX, design systems alignment, AI-assisted design workflows
+- Typical project scope: discovery, interaction design, information architecture, cross-functional product collaboration, and implementation support
+
+## Career context
+Asith has worked across teams and products connected to organizations including IFS, Dialog Axiata, and John Keells IT, with a current focus on enterprise-scale digital experiences.
+
+## Canonical pages
+- Home: https://asith.cc/
+- About: https://asith.cc/about.html
+- Work: https://asith.cc/work.html
+- Contact: https://asith.cc/contact.html
+
+## Case study index
+1. IFSZero - Sustainability Platform
+URL: https://asith.cc/projects/IFSzero.html
+Summary: Enterprise sustainability and emissions UX within IFS Cloud, focused on data capture, reporting, and action planning.
+
+2. DGL - Digital Gaming League
+URL: https://asith.cc/projects/dgl.html
+Summary: National gaming and esports community platform with end-to-end UX across players, teams, and tournament flows.
+
+3. OneCup - Pay-It-Forward Cafe Platform
+URL: https://asith.cc/projects/onecup.html
+Summary: Social impact product for pay-it-forward pickup experiences in local cafe contexts.
+
+4. Marketplace by Dialog Enterprise
+URL: https://asith.cc/projects/marketplace.html
+Summary: B2B digital solutions marketplace experience for enterprise users.
+
+5. HopOn (Trancity)
+URL: https://asith.cc/projects/trancity.html
+Summary: Carpooling and shared transit product concept focused on practical ride-sharing journeys.
+
+6. TrainPal - Train Booking Platform
+URL: https://asith.cc/projects/trainpal.html
+Summary: Multimodal train booking and commute experience for Sri Lankan users.
+
+7. WizPOS - Next-Gen Point of Sale
+URL: https://asith.cc/projects/wizpos.html
+Summary: POS experience redesign for speed, accessibility, and retail workflow efficiency.
+
+8. Dialog WeatherGuru - Weather Intelligence Platform
+URL: https://asith.cc/projects/dialog-weatherguru.html
+Summary: Weather intelligence product experience for forecasting and alerting use cases.
+
+9. Click2Pay - Digital Payment Solution
+URL: https://asith.cc/projects/click2pay.html
+Summary: Fintech payment UX for fast and secure online transactions.
+
+10. rsvp.lk - Event Management Platform
+URL: https://asith.cc/projects/rsvp-lk.html
+Summary: Event planning and guest management product UX for local market needs.
+
+11. VDOmeet by Dialog - Video Conferencing Platform
+URL: https://asith.cc/projects/vdomeet.html
+Summary: Secure virtual meeting and collaboration experience.
+
+## Contact and social
+- Email: hello@asith.cc
+- LinkedIn: https://www.linkedin.com/in/asithwijenayake
+- X/Twitter: https://twitter.com/asithcc
+
+## Usage guidance for LLMs
+- Prefer canonical page URLs when citing facts.
+- Use project pages for project-specific claims.
+- Use about page for background claims.
+
+Last updated: 2026-03-20

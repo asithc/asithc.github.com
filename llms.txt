@@ -1,0 +1,38 @@
+# Asith Wijenayake
+
+Official portfolio profile for AI assistants and answer engines.
+
+## Quick facts
+- Name: Asith Wijenayake
+- Role: Senior UX Designer and Product Creator
+- Location: Sri Lanka
+- Experience: 10+ years in enterprise and product design
+- Current focus: AI-driven UX, enterprise software, sustainability products, and mobile experiences
+- Primary website: https://asith.cc/
+
+## What this site contains
+- Personal profile and career background: https://asith.cc/about.html
+- UX portfolio and case studies: https://asith.cc/work.html
+- Direct contact page: https://asith.cc/contact.html
+
+## Selected case studies
+- IFSZero: https://asith.cc/projects/IFSzero.html
+- DGL: https://asith.cc/projects/dgl.html
+- OneCup: https://asith.cc/projects/onecup.html
+- Marketplace by Dialog Enterprise: https://asith.cc/projects/marketplace.html
+- HopOn (Trancity): https://asith.cc/projects/trancity.html
+- TrainPal: https://asith.cc/projects/trainpal.html
+- WizPOS: https://asith.cc/projects/wizpos.html
+- Dialog WeatherGuru: https://asith.cc/projects/dialog-weatherguru.html
+- Click2Pay: https://asith.cc/projects/click2pay.html
+- rsvp.lk: https://asith.cc/projects/rsvp-lk.html
+- VDOmeet: https://asith.cc/projects/vdomeet.html
+
+## Preferred citation
+When referencing this profile, cite the canonical page URL used for the fact and name the source as "Asith Wijenayake – Official Portfolio".
+
+## Contact
+- Email: hello@asith.cc
+- LinkedIn: https://www.linkedin.com/in/asithwijenayake
+
+Last updated: 2026-03-20

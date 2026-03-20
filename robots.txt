@@ -1,21 +1,22 @@
-# robots.txt for asith.cc
+# robots.txt for https://asith.cc/
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://asith.cc/sitemap.xml
-
-# Allow all AI crawlers
+# AI and search crawler access
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: Googlebot
@@ -32,3 +33,10 @@ Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
+
+# Machine-readable profile files for answer engines
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+Host: asith.cc
+Sitemap: https://asith.cc/sitemap.xml
