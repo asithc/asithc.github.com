@@ -217,8 +217,8 @@
                 </article>
 
                 <article class="collage-tile collage-insight collage-insight-2">
-                    <p class="collage-quote">"Publishing outbound + return in one flow can double seat utilization."</p>
-                    <span class="collage-meta">Hypothesis 02 • Supply Density</span>
+                    <p class="collage-quote">"Trust signals should appear before seat selection, not after checkout."</p>
+                    <span class="collage-meta">Hypothesis 02 • Trust-First Flow</span>
                 </article>
 
                 <article class="collage-tile collage-insight collage-insight-3">
@@ -240,14 +240,10 @@
                     <img src="../images/Projects/HopOn/HopOn-feature.png" alt="HopOnTM feature image" loading="lazy" decoding="async">
                 </div>
                 <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>🎨 Pixels are being pushed, please hold.</span>
-                    </div>
+                    <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.png" alt="Vehicle types supported in the HopOn app" loading="lazy" decoding="async">
                 </div>
                 <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>☕ Currently brewing... check back soon!</span>
-                    </div>
+                    <img src="../images/Projects/HopOn/concept.png" alt="Early HopOn concept sketch drawn by stakeholders" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -268,6 +264,29 @@
                     <p>The concept was simple but underserved: most vehicles traveling between cities carry empty seats. A bus heading from Colombo to Galle has unused capacity. A van running daily to Arugam Bay leaves with rows unfilled. HopOn was designed to capture that wasted capacity and turn it into shared, affordable, point-to-point travel.</p>
                     <p>This was not a ride-hailing app. It was a journey marketplace - optimized for scheduled, destination-based travel rather than instant, location-based pickup. Drivers set routes, times, and conditions in advance. Riders browsed, compared, and booked. The entire model was built around predictability over immediacy.</p>
                     <p>I led product vision, end-to-end UX design, and early business modeling for HopOn from 2020 through early 2021. The project progressed through full UX design and prototyping but was ultimately shelved when COVID-19 fundamentally changed travel behavior and safety expectations around shared rides.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/HopOn/concept.png" alt="Original stakeholder pencil sketch of the HopOn concept (code name Trancity)" loading="lazy" decoding="async">
+                        <p class="image-caption">Original stakeholder concept sketch that framed the first Trancity (HopOn) product logic and flow.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <div class="concept-frames-grid">
+                            <figure class="concept-frame-card concept-frame-written">
+                                <img src="../images/Projects/HopOn/concept-written.png" alt="Written concept board describing how HopOn should work for drivers and riders" loading="lazy" decoding="async">
+                                <figcaption>Concept-written</figcaption>
+                            </figure>
+                            <figure class="concept-frame-card concept-frame-basic">
+                                <img src="../images/Projects/HopOn/concept-basic.png" alt="Basic journey structure concept showing driver scheduling and stop sequencing" loading="lazy" decoding="async">
+                                <figcaption>Concept-basic</figcaption>
+                            </figure>
+                        </div>
+                        <p class="image-caption">Early concept artifacts used to align stakeholders on scheduling logic, route structure, and marketplace behavior before high-fidelity design.</p>
+                    </div>
                 </div>
 
                 <!-- My Role -->
@@ -299,12 +318,227 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🗺️ Sri Lankan intercity travel landscape analysis coming soon</span>
-                        </div>
-                        <p class="image-caption">Mapping Sri Lanka's intercity travel corridors and demand patterns</p>
+                        <section class="hopon-map-widget" aria-label="Interactive map of Sri Lankan intercity travel corridors">
+                            <div class="hopon-map-stage">
+                                <div class="hopon-map-base">
+                                    <img class="hopon-map-base-image is-active" data-layer="distances" src="../images/Projects/HopOn/map-sri-lanka-distances-1000.jpg" alt="Sri Lanka distances map reference" loading="lazy" decoding="async">
+                                    <img class="hopon-map-base-image" data-layer="regions" src="../images/Projects/HopOn/map-sri-lanka-regions-1000.jpg" alt="Sri Lanka regions map reference" loading="lazy" decoding="async">
+                                    <span class="hopon-map-brand-wash" aria-hidden="true"></span>
+                                </div>
+
+                                <svg class="hopon-map-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                    <g class="hopon-routes">
+                                        <path class="hopon-route" data-route="galle" d="M30 60Q31 71 36 82"/>
+                                        <path class="hopon-route" data-route="kandy" d="M30 60Q39 56 48 54"/>
+                                        <path class="hopon-route" data-route="ella" d="M30 60Q41 63 50 68"/>
+                                        <path class="hopon-route" data-route="sigiriya" d="M30 60Q33 50 42 40"/>
+                                        <path class="hopon-route" data-route="trincomalee" d="M30 60Q42 44 58 31"/>
+                                        <path class="hopon-route" data-route="jaffna" d="M30 60Q27 39 31 16"/>
+                                        <path class="hopon-route" data-route="arugam-bay" d="M30 60Q44 66 56 77"/>
+                                    </g>
+                                </svg>
+
+                                <div class="hopon-marker hopon-marker-hub" style="--x: 30%; --y: 60%;" aria-hidden="true">
+                                    <span>Colombo</span>
+                                </div>
+                                <button type="button" class="hopon-marker" data-destination="galle" aria-label="Galle, approx 127 kilometers from Colombo" style="--x: 36%; --y: 82%;">
+                                    <span>Galle</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="kandy" aria-label="Kandy, approx 115 kilometers from Colombo" style="--x: 48%; --y: 54%;">
+                                    <span>Kandy</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="ella" aria-label="Ella, approx 208 kilometers from Colombo" style="--x: 50%; --y: 68%;">
+                                    <span>Ella</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="sigiriya" aria-label="Sigiriya, approx 170 kilometers from Colombo" style="--x: 42%; --y: 40%;">
+                                    <span>Sigiriya</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="trincomalee" aria-label="Trincomalee, approx 257 kilometers from Colombo" style="--x: 58%; --y: 31%;">
+                                    <span>Trincomalee</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="jaffna" aria-label="Jaffna, approx 398 kilometers from Colombo" style="--x: 31%; --y: 16%;">
+                                    <span>Jaffna</span>
+                                </button>
+                                <button type="button" class="hopon-marker" data-destination="arugam-bay" aria-label="Arugam Bay, approx 415 kilometers from Colombo" style="--x: 56%; --y: 77%;">
+                                    <span>Arugam Bay</span>
+                                </button>
+                            </div>
+
+                            <div class="hopon-map-sidebar">
+                                <p class="hopon-map-kicker">Popular Tourist Corridors</p>
+                                <h5 class="hopon-map-heading">Intercity demand around Sri Lanka</h5>
+                                <p class="hopon-map-note">Select a destination to see distance, travel context, and why riders choose that route.</p>
+                                <div class="hopon-map-layer-switch" role="group" aria-label="Map layer">
+                                    <button type="button" class="hopon-layer-btn is-active" data-map-layer="distances">Distance Map</button>
+                                    <button type="button" class="hopon-layer-btn" data-map-layer="regions">Regions Map</button>
+                                </div>
+
+                                <div class="hopon-destination-list" aria-label="Destination route options">
+                                    <button type="button" class="hopon-destination-btn is-active" data-destination="kandy" data-name="Kandy" data-distance="~115 km from Colombo" data-time="Approx 3 to 3.5 hours by road" data-famous="Temple of the Tooth, hill-country climate, and cultural festivals." data-corridors="Kandy to Ella: ~138 km • Kandy to Trincomalee: ~180 km">
+                                        <span class="hopon-destination-name">Kandy</span>
+                                        <span class="hopon-destination-distance">~115 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="galle" data-name="Galle" data-distance="~127 km from Colombo" data-time="Approx 2.5 to 3 hours by road" data-famous="UNESCO fort city, southern beaches, and boutique tourism." data-corridors="Galle to Ella: ~205 km • Galle to Arugam Bay: ~270 km">
+                                        <span class="hopon-destination-name">Galle</span>
+                                        <span class="hopon-destination-distance">~127 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="ella" data-name="Ella" data-distance="~208 km from Colombo" data-time="Approx 5.5 to 6.5 hours by road" data-famous="Tea-country viewpoints, Nine Arches Bridge, and train tourism." data-corridors="Ella to Arugam Bay: ~135 km • Ella to Kandy: ~138 km">
+                                        <span class="hopon-destination-name">Ella</span>
+                                        <span class="hopon-destination-distance">~208 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="sigiriya" data-name="Sigiriya" data-distance="~170 km from Colombo" data-time="Approx 4 to 4.5 hours by road" data-famous="Sigiriya Rock Fortress, Dambulla caves, and Cultural Triangle tours." data-corridors="Sigiriya to Trincomalee: ~98 km • Sigiriya to Kandy: ~92 km">
+                                        <span class="hopon-destination-name">Sigiriya</span>
+                                        <span class="hopon-destination-distance">~170 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="trincomalee" data-name="Trincomalee" data-distance="~257 km from Colombo" data-time="Approx 5.5 to 6.5 hours by road" data-famous="Nilaveli beaches, whale watching, and east-coast bay access." data-corridors="Trincomalee to Arugam Bay: ~232 km • Trincomalee to Jaffna: ~238 km">
+                                        <span class="hopon-destination-name">Trincomalee</span>
+                                        <span class="hopon-destination-distance">~257 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="jaffna" data-name="Jaffna" data-distance="~398 km from Colombo" data-time="Approx 7 to 8.5 hours by road" data-famous="Northern heritage sites, local cuisine, and peninsula culture." data-corridors="Jaffna to Anuradhapura: ~197 km • Jaffna to Trincomalee: ~238 km">
+                                        <span class="hopon-destination-name">Jaffna</span>
+                                        <span class="hopon-destination-distance">~398 km</span>
+                                    </button>
+                                    <button type="button" class="hopon-destination-btn" data-destination="arugam-bay" data-name="Arugam Bay" data-distance="~415 km from Colombo" data-time="Approx 8 to 9 hours by road" data-famous="World-class surf breaks, east coast beaches, and seasonal tourism." data-corridors="Arugam Bay to Ella: ~135 km • Arugam Bay to Galle: ~270 km">
+                                        <span class="hopon-destination-name">Arugam Bay</span>
+                                        <span class="hopon-destination-distance">~415 km</span>
+                                    </button>
+                                </div>
+
+                                <article class="hopon-destination-detail" aria-live="polite">
+                                    <p class="hopon-detail-label">Selected destination</p>
+                                    <h6 class="hopon-detail-title" data-map-detail="name">Kandy</h6>
+                                    <p class="hopon-detail-copy" data-map-detail="famous">Temple of the Tooth, hill-country climate, and cultural festivals.</p>
+                                    <div class="hopon-detail-grid">
+                                        <div class="hopon-detail-cell">
+                                            <span class="hopon-detail-key">Distance</span>
+                                            <strong data-map-detail="distance">~115 km from Colombo</strong>
+                                        </div>
+                                        <div class="hopon-detail-cell">
+                                            <span class="hopon-detail-key">Road time</span>
+                                            <strong data-map-detail="time">Approx 3 to 3.5 hours by road</strong>
+                                        </div>
+                                    </div>
+                                    <p class="hopon-detail-corridors" data-map-detail="corridors">Kandy to Ella: ~138 km • Kandy to Trincomalee: ~180 km</p>
+                                </article>
+
+                                <p class="hopon-map-footnote">Distance values are approximate road estimates and can vary by traffic, route choice, and pickup stop count.</p>
+                            </div>
+                        </section>
+                        <p class="image-caption">Custom map composition using Sri Lanka distance and region references, overlaid with HopOn route interactions.</p>
                     </div>
                 </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Market Signals Behind the Idea</h4>
+                    <p>Before finalizing the product scope, we looked at source-backed global signals that pointed to one pattern: transport cost pressure was rising, affordability concerns were increasing, and app-based ride behavior was becoming mainstream.</p>
+                </div>
+
+                <div class="market-signal-grid">
+                    <article class="market-signal-card">
+                        <p class="signal-kicker">Signal 01</p>
+                        <h5 class="signal-title">Transport Cost Proxy: Brent Crude</h5>
+                        <p class="signal-note">Annual average spot price (USD per barrel), 2020-2024</p>
+                        <svg class="signal-line-chart" viewBox="0 0 296 170" role="img" aria-label="Brent crude annual average prices from 2020 to 2024">
+                            <line x1="24" y1="150" x2="272" y2="150"></line>
+                            <line x1="24" y1="87" x2="272" y2="87"></line>
+                            <line x1="24" y1="24" x2="272" y2="24"></line>
+                            <polyline class="signal-line signal-line-blue" points="24,150 86,88.2 148,24 210,63.4 272,67.6"></polyline>
+                            <circle cx="24" cy="150" r="3.5"></circle>
+                            <circle cx="86" cy="88.2" r="3.5"></circle>
+                            <circle cx="148" cy="24" r="3.5"></circle>
+                            <circle cx="210" cy="63.4" r="3.5"></circle>
+                            <circle cx="272" cy="67.6" r="3.5"></circle>
+                        </svg>
+                        <ul class="signal-axis-years" aria-hidden="true">
+                            <li>2020</li>
+                            <li>2021</li>
+                            <li>2022</li>
+                            <li>2023</li>
+                            <li>2024</li>
+                        </ul>
+                        <ul class="signal-values-list" aria-label="Brent crude values by year">
+                            <li><span>2020</span><strong>$41.96</strong></li>
+                            <li><span>2021</span><strong>$70.86</strong></li>
+                            <li><span>2022</span><strong>$100.93</strong></li>
+                            <li><span>2023</span><strong>$82.49</strong></li>
+                            <li><span>2024</span><strong>$80.52</strong></li>
+                        </ul>
+                    </article>
+
+                    <article class="market-signal-card">
+                        <p class="signal-kicker">Signal 02</p>
+                        <h5 class="signal-title">Affordability Pressure: World CPI Inflation</h5>
+                        <p class="signal-note">Global annual inflation rate (%), 2020-2024</p>
+                        <svg class="signal-line-chart" viewBox="0 0 296 170" role="img" aria-label="World CPI inflation trend from 2020 to 2024">
+                            <line x1="24" y1="150" x2="272" y2="150"></line>
+                            <line x1="24" y1="87" x2="272" y2="87"></line>
+                            <line x1="24" y1="24" x2="272" y2="24"></line>
+                            <polyline class="signal-line signal-line-yellow" points="24,150 86,117.5 148,24 210,67.9 272,128"></polyline>
+                            <circle cx="24" cy="150" r="3.5"></circle>
+                            <circle cx="86" cy="117.5" r="3.5"></circle>
+                            <circle cx="148" cy="24" r="3.5"></circle>
+                            <circle cx="210" cy="67.9" r="3.5"></circle>
+                            <circle cx="272" cy="128" r="3.5"></circle>
+                        </svg>
+                        <ul class="signal-axis-years" aria-hidden="true">
+                            <li>2020</li>
+                            <li>2021</li>
+                            <li>2022</li>
+                            <li>2023</li>
+                            <li>2024</li>
+                        </ul>
+                        <ul class="signal-values-list" aria-label="World inflation values by year">
+                            <li><span>2020</span><strong>1.91%</strong></li>
+                            <li><span>2021</span><strong>3.48%</strong></li>
+                            <li><span>2022</span><strong>7.99%</strong></li>
+                            <li><span>2023</span><strong>5.87%</strong></li>
+                            <li><span>2024</span><strong>2.97%</strong></li>
+                        </ul>
+                    </article>
+
+                    <article class="market-signal-card">
+                        <p class="signal-kicker">Signal 03</p>
+                        <h5 class="signal-title">App-Based Mobility Adoption: Uber Q4 Growth</h5>
+                        <p class="signal-note">Uber platform Q4 operational trend from SEC filings (2020-2024)</p>
+                        <p class="signal-mini-label">Monthly Active Platform Consumers (millions)</p>
+                        <svg class="signal-line-chart signal-line-chart-mini" viewBox="0 0 296 170" role="img" aria-label="Uber MAPCs trend from 2020 to 2024">
+                            <line x1="24" y1="150" x2="272" y2="150"></line>
+                            <line x1="24" y1="87" x2="272" y2="87"></line>
+                            <line x1="24" y1="24" x2="272" y2="24"></line>
+                            <polyline class="signal-line signal-line-pink" points="24,150 86,109.6 148,88.6 210,57.9 272,24"></polyline>
+                            <circle cx="24" cy="150" r="3.5"></circle>
+                            <circle cx="86" cy="109.6" r="3.5"></circle>
+                            <circle cx="148" cy="88.6" r="3.5"></circle>
+                            <circle cx="210" cy="57.9" r="3.5"></circle>
+                            <circle cx="272" cy="24" r="3.5"></circle>
+                        </svg>
+                        <p class="signal-mini-label">Trips (millions)</p>
+                        <svg class="signal-line-chart signal-line-chart-mini" viewBox="0 0 296 170" role="img" aria-label="Uber Q4 trips trend from 2020 to 2024">
+                            <line x1="24" y1="150" x2="272" y2="150"></line>
+                            <line x1="24" y1="87" x2="272" y2="87"></line>
+                            <line x1="24" y1="24" x2="272" y2="24"></line>
+                            <polyline class="signal-line signal-line-blue" points="24,150 86,124.7 148,98.7 210,60.2 272,24"></polyline>
+                            <circle cx="24" cy="150" r="3.5"></circle>
+                            <circle cx="86" cy="124.7" r="3.5"></circle>
+                            <circle cx="148" cy="98.7" r="3.5"></circle>
+                            <circle cx="210" cy="60.2" r="3.5"></circle>
+                            <circle cx="272" cy="24" r="3.5"></circle>
+                        </svg>
+                        <ul class="signal-axis-years" aria-hidden="true">
+                            <li>2020</li>
+                            <li>2021</li>
+                            <li>2022</li>
+                            <li>2023</li>
+                            <li>2024</li>
+                        </ul>
+                        <ul class="signal-values-list" aria-label="Uber Q4 MAPCs and trips values">
+                            <li><span>MAPCs</span><strong>93m → 171m</strong></li>
+                            <li><span>Trips</span><strong>1,443m → 3,068m</strong></li>
+                        </ul>
+                    </article>
+                </div>
+
+                <p class="market-signal-footnote">Sources: FRED series <a href="https://fred.stlouisfed.org/series/DCOILBRENTEU" target="_blank" rel="noopener noreferrer">DCOILBRENTEU</a> (Brent, data from U.S. EIA), World Bank indicator <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG" target="_blank" rel="noopener noreferrer">FP.CPI.TOTL.ZG</a> (world CPI inflation), and Uber SEC Q4 earnings releases for <a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315121000008/uberq420earningspressrelea.htm" target="_blank" rel="noopener noreferrer">2020</a>, <a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315122000004/uberq421earningspressrelea.htm" target="_blank" rel="noopener noreferrer">2021</a>, <a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315123000004/uberq422earningspressrelea.htm" target="_blank" rel="noopener noreferrer">2022</a>, <a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315124000008/uberq423earningspressrelea.htm" target="_blank" rel="noopener noreferrer">2023</a>, and <a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315125000004/uberq424earningspressrelea.htm" target="_blank" rel="noopener noreferrer">2024</a>.</p>
 
                 <!-- Competitor Analysis -->
                 <div class="case-study-block">
@@ -490,10 +724,11 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🗺️ Multi-stop route system and journey structure diagrams coming soon</span>
+                        <div class="concept-journey-board">
+                            <img src="../images/Projects/HopOn/concept-written.png" alt="Concept board explaining multi-stop route scheduling and trip publishing logic in HopOn" loading="lazy" decoding="async">
+                            <img src="../images/Projects/HopOn/concept-basic.png" alt="Basic route planning strip showing how drivers schedule recurring intercity journeys" loading="lazy" decoding="async">
                         </div>
-                        <p class="image-caption">Predefined journey model - Colombo to Galle to Katharagama to Arugam Bay with intermediate pickup points</p>
+                        <p class="image-caption">Predefined journey model and scheduling concept docs used to structure Colombo-Galle-Katharagama-Arugam Bay route logic.</p>
                     </div>
                 </div>
 
@@ -681,6 +916,13 @@
                             <h4 class="challenge-card-title">COVID-19 pandemic</h4>
                             <p class="challenge-card-desc">The project launched in early 2020, just before the global pandemic fundamentally changed how people felt about sharing enclosed spaces with strangers. Travel demand collapsed, safety expectations shifted, and the core value proposition of shared transit became temporarily untenable.</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.png" alt="HopOn vehicle type showcase for cars, vans, and minibuses" loading="lazy" decoding="async">
+                        <p class="image-caption">Vehicle type showcase used to communicate comfort, capacity, and pricing expectations across the HopOn marketplace.</p>
                     </div>
                 </div>
 
@@ -991,8 +1233,25 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📱 Driver journey publishing flow coming soon</span>
+                        <div class="wireframe-collage wireframe-collage-driver">
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/Landing%20-%20for%20first%20time%20visitor.png" alt="Driver wireframe landing screen for first-time visitor" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/2nd-Address%20enter%20-%20home%20address.png" alt="Driver wireframe home address setup screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/car-details.png" alt="Driver wireframe vehicle detail setup screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile wireframe-tile-tall">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/sheduling%20a%20trip.png" alt="Driver wireframe trip scheduling flow" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/sheduled-finalizing.png" alt="Driver wireframe scheduled trip finalizing screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/driver%20app/driver-profile.png" alt="Driver wireframe profile overview screen" loading="lazy" decoding="async">
+                            </figure>
                         </div>
                         <p class="image-caption">Five-step driver publishing flow - from home location to live journey in under 2 minutes</p>
                     </div>
@@ -1049,8 +1308,28 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📱 Rider discovery and booking flow coming soon</span>
+                        <div class="wireframe-collage wireframe-collage-rider">
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Landing-common.png" alt="Rider wireframe common landing screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Landing-%20destination-search.png" alt="Rider wireframe destination search screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Landing-%20single-destination-result-view.png" alt="Rider wireframe single destination result view" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/reservation-process-step-01.png" alt="Rider wireframe reservation step 1 screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/reservation-process-step-01%20-%20Add-ons.png" alt="Rider wireframe reservation add-ons screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/reservation-process-step-02-reciept.png" alt="Rider wireframe booking receipt screen" loading="lazy" decoding="async">
+                            </figure>
+                            <figure class="wireframe-tile">
+                                <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Itenaries%20-%20your%20trips.png" alt="Rider wireframe itinerary and trips screen" loading="lazy" decoding="async">
+                            </figure>
                         </div>
                         <p class="image-caption">Rider search, compare, and booking experience - transparent pricing and journey details at every step</p>
                     </div>
@@ -1075,14 +1354,13 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>✏️ Early sketches and flow diagrams coming soon</span>
-                        </div>
+                        <img src="../images/Projects/HopOn/concept-written.png" alt="Early concept exploration sheet for HopOn driver journey publishing logic" loading="lazy" decoding="async">
                         <p class="image-caption">Divergent exploration - driver dashboard, rider discovery, and booking interactions</p>
                     </div>
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🔀 User flow diagrams coming soon</span>
+                        <div class="flow-mapping-pair">
+                            <img src="../images/Projects/HopOn/wireframes/driver%20app/sheduling%20a%20trip.png" alt="Long-form driver scheduling wireframe showing end-to-end trip setup flow" loading="lazy" decoding="async">
+                            <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Landing-%20destination-%20search%20-%20details%20view.png" alt="Long-form rider destination and details wireframe showing journey discovery flow" loading="lazy" decoding="async">
                         </div>
                         <p class="image-caption">End-to-end flow mapping in Whimsical - driver publishing and rider booking journeys</p>
                     </div>
@@ -1102,9 +1380,7 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📍 Public pickup point system coming soon</span>
-                        </div>
+                        <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Landing-%20destination-search.png" alt="Rider destination search wireframe highlighting predefined pickup points and route corridors" loading="lazy" decoding="async">
                         <p class="image-caption">Predefined pickup points at recognizable public locations along intercity routes</p>
                     </div>
                 </div>
@@ -1130,9 +1406,7 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📊 Real-time journey tracking interface coming soon</span>
-                        </div>
+                        <img src="../images/Projects/HopOn/wireframes/user%20app%20wireframe/Itenaries%20-%20your%20trips.png" alt="Rider itinerary wireframe for trip status and journey progress tracking" loading="lazy" decoding="async">
                         <p class="image-caption">Live delay estimation and vehicle location tracking for riders at intermediate stops</p>
                     </div>
                 </div>

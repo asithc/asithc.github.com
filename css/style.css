@@ -5504,8 +5504,8 @@ html {
     display: none;
 }
 
-/* Pin Protected Case Study Button */
-.case-study-link.pin-protected::before {
+/* Pin Protected Case Study Button (icon only when lock is truly enabled) */
+.case-study-link.pin-protected.lock-enabled::before {
     content: "";
     display: inline-block;
     width: 16px;
@@ -5516,7 +5516,7 @@ html {
     margin-right: 4px;
 }
 
-.case-study-link.pin-protected:hover::before {
+.case-study-link.pin-protected.lock-enabled:hover::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'%3E%3C/rect%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -5838,6 +5838,720 @@ html {
     text-align: center;
     margin-top: 12px;
     font-style: italic;
+}
+
+.concept-frames-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 14px;
+}
+
+.concept-frame-card {
+    margin: 0;
+    border-radius: 14px;
+    border: 1px solid #d8e2f0;
+    background: #f9fbff;
+    overflow: hidden;
+}
+
+.concept-frame-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.concept-frame-basic img {
+    object-fit: contain;
+    background: linear-gradient(145deg, #ffffff, #eef6ff);
+    padding: 12px;
+}
+
+.concept-frame-card figcaption {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #475569;
+    padding: 8px 10px 10px;
+}
+
+.concept-journey-board {
+    display: grid;
+    gap: 10px;
+}
+
+.concept-journey-board img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid #d6e0ed;
+    background: #f8fbff;
+    box-shadow: 0 3px 14px rgba(15, 23, 42, 0.08);
+}
+
+.concept-journey-board img:last-child {
+    max-height: 180px;
+    object-fit: contain;
+    padding: 8px;
+}
+
+.market-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 10px 0 12px;
+}
+
+.market-signal-card {
+    border: 1px solid #d9e2ef;
+    border-radius: 14px;
+    padding: 14px;
+    background: linear-gradient(155deg, #ffffff, #f7fbff);
+    box-shadow: 0 2px 10px rgba(14, 33, 54, 0.06);
+}
+
+.signal-kicker {
+    margin: 0 0 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0b5e99;
+}
+
+.signal-title {
+    margin: 0 0 6px;
+    font-size: 16px;
+    line-height: 1.35;
+    color: #111827;
+}
+
+.signal-note {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+}
+
+.signal-line-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.signal-line-chart line {
+    stroke: #d8e3f1;
+    stroke-width: 1;
+}
+
+.signal-line {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.signal-line-blue {
+    stroke: #4499DB;
+}
+
+.signal-line-yellow {
+    stroke: #c9b300;
+}
+
+.signal-line-pink {
+    stroke: #D12C77;
+}
+
+.signal-line-chart circle {
+    fill: #ffffff;
+    stroke: #0f172a;
+    stroke-width: 1.2;
+}
+
+.signal-line-chart-mini {
+    margin-bottom: 4px;
+}
+
+.signal-mini-label {
+    margin: 6px 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.signal-axis-years {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.signal-axis-years li {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    text-align: center;
+}
+
+.signal-values-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 5px;
+}
+
+.signal-values-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 12px;
+    color: #334155;
+}
+
+.signal-values-list li span {
+    font-weight: 700;
+    color: #64748b;
+}
+
+.signal-values-list li strong {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.market-signal-footnote {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+.market-signal-footnote a {
+    color: #0b5e99;
+    text-decoration-thickness: 1px;
+}
+
+.wireframe-collage {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.wireframe-tile {
+    grid-column: span 3;
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #d2deee;
+    background: linear-gradient(150deg, #f8fbff, #eef5ff);
+    aspect-ratio: 9 / 19;
+}
+
+.wireframe-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.wireframe-collage-driver .wireframe-tile-tall {
+    grid-column: span 6;
+    grid-row: span 2;
+    aspect-ratio: 414 / 1565;
+}
+
+.wireframe-collage-rider .wireframe-tile:first-child,
+.wireframe-collage-rider .wireframe-tile:nth-child(2) {
+    grid-column: span 6;
+    aspect-ratio: 16 / 9;
+}
+
+.flow-mapping-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.flow-mapping-pair img {
+    width: 100%;
+    height: 100%;
+    max-height: 540px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid #d2deee;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+}
+
+/* HopOn interactive Sri Lanka map */
+.hopon-map-widget {
+    --hopon-pink: #D12C77;
+    --hopon-blue: #4499DB;
+    --hopon-yellow: #EDDB1F;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+    gap: 18px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid #dce3ee;
+    background:
+        radial-gradient(120% 140% at 8% 0%, rgba(68, 153, 219, 0.17), transparent 52%),
+        radial-gradient(90% 120% at 96% 100%, rgba(209, 44, 119, 0.14), transparent 48%),
+        #f7fbff;
+}
+
+.hopon-map-stage {
+    position: relative;
+    aspect-ratio: 10 / 14;
+    min-height: 520px;
+    max-height: 760px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(68, 153, 219, 0.22);
+}
+
+.hopon-map-base {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hopon-map-base-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 48%;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.hopon-map-base-image.is-active {
+    opacity: 1;
+}
+
+.hopon-map-brand-wash {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(160deg, rgba(68, 153, 219, 0.2) 0%, transparent 45%),
+        linear-gradient(330deg, rgba(209, 44, 119, 0.16) 0%, transparent 55%),
+        radial-gradient(circle at 76% 18%, rgba(237, 219, 31, 0.2), transparent 34%);
+    pointer-events: none;
+}
+
+.hopon-map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hopon-route {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.84);
+    stroke-width: 0.58;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1.8 2.4;
+    opacity: 0.72;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.56));
+    animation: hoponRouteFlow 8s linear infinite;
+}
+
+.hopon-route.is-active {
+    stroke: var(--hopon-pink);
+    stroke-width: 0.92;
+    stroke-dasharray: none;
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(209, 44, 119, 0.45));
+    animation: none;
+}
+
+.hopon-marker {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 14px;
+    height: 14px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 3px var(--hopon-blue), 0 4px 14px rgba(37, 57, 80, 0.28);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 4;
+}
+
+.hopon-marker::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(68, 153, 219, 0.42);
+    animation: hoponMarkerPulse 2.8s ease-out infinite;
+}
+
+.hopon-marker span {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2937;
+    border: 1px solid rgba(31, 41, 55, 0.12);
+    pointer-events: none;
+}
+
+.hopon-marker:hover,
+.hopon-marker:focus-visible,
+.hopon-marker.is-active {
+    transform: translate(-50%, -50%) scale(1.18);
+    box-shadow: 0 0 0 4px var(--hopon-pink), 0 8px 20px rgba(209, 44, 119, 0.32);
+    background: #fff6fb;
+    outline: none;
+}
+
+.hopon-marker.is-active span {
+    background: #fff;
+    color: #79183f;
+}
+
+.hopon-marker-hub {
+    width: 18px;
+    height: 18px;
+    box-shadow: 0 0 0 4px var(--hopon-yellow), 0 4px 14px rgba(91, 82, 8, 0.35);
+    background: #fff9d1;
+    cursor: default;
+    z-index: 5;
+}
+
+.hopon-marker-hub::after {
+    border-color: rgba(237, 219, 31, 0.55);
+}
+
+.hopon-marker-hub:hover,
+.hopon-marker-hub:focus-visible {
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px var(--hopon-yellow), 0 4px 14px rgba(91, 82, 8, 0.35);
+    background: #fff9d1;
+}
+
+.hopon-map-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hopon-map-kicker {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0f5b95;
+}
+
+.hopon-map-heading {
+    margin: 0;
+    font-size: 23px;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.hopon-map-note {
+    margin: 0;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.hopon-map-layer-switch {
+    display: inline-flex;
+    width: fit-content;
+    border: 1px solid #c8d5e5;
+    border-radius: 999px;
+    background: #ffffff;
+    padding: 3px;
+    gap: 3px;
+}
+
+.hopon-layer-btn {
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #1e293b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hopon-layer-btn:hover,
+.hopon-layer-btn:focus-visible {
+    background: #e2edf9;
+    outline: none;
+}
+
+.hopon-layer-btn.is-active {
+    background: linear-gradient(145deg, rgba(209, 44, 119, 0.94), rgba(68, 153, 219, 0.94));
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(39, 64, 89, 0.25);
+}
+
+.hopon-destination-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.hopon-destination-btn {
+    border: 1px solid #ced8e5;
+    background: #fff;
+    color: #0f172a;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    text-align: left;
+}
+
+.hopon-destination-btn:hover,
+.hopon-destination-btn:focus-visible {
+    border-color: var(--hopon-blue);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(35, 74, 110, 0.11);
+    outline: none;
+}
+
+.hopon-destination-btn.is-active {
+    border-color: var(--hopon-pink);
+    background: linear-gradient(145deg, rgba(209, 44, 119, 0.12), rgba(68, 153, 219, 0.09));
+    box-shadow: 0 10px 20px rgba(35, 74, 110, 0.12);
+}
+
+.hopon-destination-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.hopon-destination-distance {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0b5e99;
+}
+
+.hopon-destination-detail {
+    border: 1px solid #d7dfeb;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 14px;
+}
+
+.hopon-detail-label {
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 700;
+}
+
+.hopon-detail-title {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #111827;
+}
+
+.hopon-detail-copy {
+    margin: 8px 0 12px;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.hopon-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.hopon-detail-cell {
+    border-radius: 10px;
+    background: #f8fbff;
+    border: 1px solid #dce6f3;
+    padding: 8px 10px;
+}
+
+.hopon-detail-key {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.hopon-detail-cell strong {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #1f2937;
+}
+
+.hopon-detail-corridors {
+    margin: 10px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+}
+
+.hopon-map-footnote {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+@keyframes hoponRouteFlow {
+    to {
+        stroke-dashoffset: -26;
+    }
+}
+
+@keyframes hoponMarkerPulse {
+    0% {
+        transform: scale(0.72);
+        opacity: 0.85;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 980px) {
+    .concept-frames-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .market-signal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wireframe-collage {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+
+    .wireframe-tile {
+        grid-column: span 4;
+    }
+
+    .wireframe-collage-driver .wireframe-tile-tall {
+        grid-column: span 8;
+        grid-row: span 1;
+        aspect-ratio: 16 / 9;
+    }
+
+    .wireframe-collage-rider .wireframe-tile:first-child,
+    .wireframe-collage-rider .wireframe-tile:nth-child(2) {
+        grid-column: span 8;
+    }
+
+    .flow-mapping-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-mapping-pair img {
+        max-height: 520px;
+    }
+
+    .hopon-map-widget {
+        grid-template-columns: 1fr;
+    }
+
+    .hopon-map-stage {
+        min-height: 460px;
+        max-height: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .market-signal-card {
+        padding: 12px;
+    }
+
+    .signal-values-list li {
+        font-size: 11px;
+    }
+
+    .wireframe-collage {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wireframe-tile,
+    .wireframe-collage-driver .wireframe-tile-tall,
+    .wireframe-collage-rider .wireframe-tile:first-child,
+    .wireframe-collage-rider .wireframe-tile:nth-child(2) {
+        grid-column: span 1;
+        aspect-ratio: 9 / 16;
+    }
+
+    .hopon-map-widget {
+        padding: 12px;
+    }
+
+    .hopon-map-stage {
+        min-height: 400px;
+    }
+
+    .hopon-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hopon-marker span {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hopon-route,
+    .hopon-marker::after,
+    .hopon-map-base-image {
+        animation: none;
+        transition: none;
+    }
 }
 
 /* ================================
@@ -7545,6 +8259,10 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.collage-tile.collage-insight {
+    border-radius: 18px;
 }
 
 .collage-insight-1 {

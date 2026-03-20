@@ -198,6 +198,96 @@ const initProjectImageLazyLoad = () => {
     });
 };
 
+// Interactive Sri Lanka corridor map for HopOn case study
+const initHopOnRouteMap = () => {
+    const mapWidgets = document.querySelectorAll('.hopon-map-widget');
+    if (mapWidgets.length === 0) return;
+
+    mapWidgets.forEach((widget) => {
+        const routeButtons = Array.from(widget.querySelectorAll('.hopon-destination-btn'));
+        const layerButtons = Array.from(widget.querySelectorAll('.hopon-layer-btn'));
+        const markers = Array.from(widget.querySelectorAll('.hopon-marker[data-destination]'));
+        const routes = Array.from(widget.querySelectorAll('.hopon-route'));
+        const mapLayers = Array.from(widget.querySelectorAll('.hopon-map-base-image[data-layer]'));
+
+        const detailName = widget.querySelector('[data-map-detail="name"]');
+        const detailFamous = widget.querySelector('[data-map-detail="famous"]');
+        const detailDistance = widget.querySelector('[data-map-detail="distance"]');
+        const detailTime = widget.querySelector('[data-map-detail="time"]');
+        const detailCorridors = widget.querySelector('[data-map-detail="corridors"]');
+
+        if (routeButtons.length === 0 || routes.length === 0) return;
+
+        const updateDetailPanel = (button) => {
+            if (!button) return;
+
+            if (detailName) detailName.textContent = button.dataset.name || '';
+            if (detailFamous) detailFamous.textContent = button.dataset.famous || '';
+            if (detailDistance) detailDistance.textContent = button.dataset.distance || '';
+            if (detailTime) detailTime.textContent = button.dataset.time || '';
+            if (detailCorridors) detailCorridors.textContent = button.dataset.corridors || '';
+        };
+
+        const setActiveDestination = (destinationId) => {
+            const activeButton = routeButtons.find((button) => button.dataset.destination === destinationId);
+            if (!activeButton) return;
+
+            routeButtons.forEach((button) => {
+                button.classList.toggle('is-active', button.dataset.destination === destinationId);
+            });
+
+            markers.forEach((marker) => {
+                marker.classList.toggle('is-active', marker.dataset.destination === destinationId);
+            });
+
+            routes.forEach((route) => {
+                route.classList.toggle('is-active', route.dataset.route === destinationId);
+            });
+
+            updateDetailPanel(activeButton);
+        };
+
+        const setActiveMapLayer = (layerId) => {
+            if (!layerId) return;
+
+            layerButtons.forEach((button) => {
+                button.classList.toggle('is-active', button.dataset.mapLayer === layerId);
+            });
+
+            mapLayers.forEach((layer) => {
+                layer.classList.toggle('is-active', layer.dataset.layer === layerId);
+            });
+        };
+
+        routeButtons.forEach((button) => {
+            const destinationId = button.dataset.destination;
+            button.addEventListener('click', () => setActiveDestination(destinationId));
+        });
+
+        markers.forEach((marker) => {
+            const destinationId = marker.dataset.destination;
+            marker.addEventListener('click', () => setActiveDestination(destinationId));
+            marker.addEventListener('mouseenter', () => setActiveDestination(destinationId));
+            marker.addEventListener('focus', () => setActiveDestination(destinationId));
+        });
+
+        layerButtons.forEach((button) => {
+            const layerId = button.dataset.mapLayer;
+            button.addEventListener('click', () => setActiveMapLayer(layerId));
+        });
+
+        const defaultDestination =
+            routeButtons.find((button) => button.classList.contains('is-active'))?.dataset.destination ||
+            routeButtons[0].dataset.destination;
+        setActiveDestination(defaultDestination);
+
+        const defaultLayer =
+            layerButtons.find((button) => button.classList.contains('is-active'))?.dataset.mapLayer ||
+            mapLayers[0]?.dataset.layer;
+        setActiveMapLayer(defaultLayer);
+    });
+};
+
 // Hover sound for WhatsApp widgets
 const initWhatsAppHoverTone = () => {
     const widgets = document.querySelectorAll('.whatsapp-card, .whatsapp-single-widget');
@@ -1431,6 +1521,7 @@ const init = () => {
     initAudiblePlayer();
     initWorkCardLazyLoad();
     initProjectImageLazyLoad();
+    initHopOnRouteMap();
     initWhatsAppHoverTone();
     initPlaystationHoverSound();
     initWhatsAppMentions();
