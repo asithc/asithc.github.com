@@ -198,6 +198,352 @@ const initProjectImageLazyLoad = () => {
     });
 };
 
+// Full-screen screenshot viewer for project pages
+const initProjectScreenshotLightbox = () => {
+    if (!document.body.classList.contains('project-detail-page')) return;
+
+    const screenshotImages = Array.from(document.querySelectorAll('main img')).filter((img) => {
+        if (!img.src) return false;
+        if (img.classList.contains('wizpos-hero-symbol') || img.classList.contains('wizpos-wordmark')) return false;
+        if (img.classList.contains('dgl-main-logo') || img.classList.contains('hopon-map-base-image')) return false;
+        if (img.closest('.project-collage') || img.closest('.project-image-placeholder')) return false;
+
+        const src = (img.currentSrc || img.src || '').toLowerCase();
+        const isProjectAsset = src.includes('/images/projects/') || src.includes('../images/projects/');
+        const isRasterImage = /\.(png|jpe?g|webp|gif|avif)(\?|#|$)/i.test(src);
+        return isProjectAsset && isRasterImage;
+    });
+
+    if (screenshotImages.length === 0) return;
+
+    const slides = screenshotImages.map((img) => ({
+        src: img.currentSrc || img.src,
+        alt: img.alt || 'Project screenshot'
+    }));
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'project-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.innerHTML = `
+        <button class="project-lightbox-close" type="button" aria-label="Close full screen viewer">Close</button>
+        <div class="project-lightbox-inner">
+            <button class="project-lightbox-nav project-lightbox-prev" type="button" aria-label="Previous screenshot">&#8592;</button>
+            <div class="project-lightbox-stage">
+                <img class="project-lightbox-image" alt="">
+            </div>
+            <button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="Next screenshot">&#8594;</button>
+        </div>
+        <div class="project-lightbox-toolbar">
+            <button class="project-lightbox-zoom-out" type="button" aria-label="Zoom out">-</button>
+            <span class="project-lightbox-zoom-value">100%</span>
+            <button class="project-lightbox-zoom-in" type="button" aria-label="Zoom in">+</button>
+            <button class="project-lightbox-zoom-reset" type="button" aria-label="Reset zoom">Reset</button>
+            <span class="project-lightbox-counter"></span>
+        </div>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector('.project-lightbox-image');
+    const closeButton = lightbox.querySelector('.project-lightbox-close');
+    const prevButton = lightbox.querySelector('.project-lightbox-prev');
+    const nextButton = lightbox.querySelector('.project-lightbox-next');
+    const stage = lightbox.querySelector('.project-lightbox-stage');
+    const counter = lightbox.querySelector('.project-lightbox-counter');
+    const zoomInButton = lightbox.querySelector('.project-lightbox-zoom-in');
+    const zoomOutButton = lightbox.querySelector('.project-lightbox-zoom-out');
+    const zoomResetButton = lightbox.querySelector('.project-lightbox-zoom-reset');
+    const zoomValue = lightbox.querySelector('.project-lightbox-zoom-value');
+
+    let activeIndex = 0;
+    let scale = 1;
+    let panX = 0;
+    let panY = 0;
+    let savedBodyOverflow = '';
+
+    let isMouseDragging = false;
+    let mouseStartX = 0;
+    let mouseStartY = 0;
+    let panStartX = 0;
+    let panStartY = 0;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let pinchStartDistance = 0;
+    let pinchStartScale = 1;
+    let isTouchPanning = false;
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    const getStageMetrics = () => {
+        const stageWidth = stage.clientWidth || 1;
+        const stageHeight = stage.clientHeight || 1;
+        const naturalWidth = lightboxImage.naturalWidth || stageWidth;
+        const naturalHeight = lightboxImage.naturalHeight || stageHeight;
+
+        const imageRatio = naturalWidth / naturalHeight;
+        const stageRatio = stageWidth / stageHeight;
+
+        let displayWidth = stageWidth;
+        let displayHeight = stageHeight;
+
+        if (imageRatio > stageRatio) {
+            displayHeight = stageWidth / imageRatio;
+        } else {
+            displayWidth = stageHeight * imageRatio;
+        }
+
+        return { stageWidth, stageHeight, displayWidth, displayHeight };
+    };
+
+    const clampPan = () => {
+        if (scale <= 1) {
+            panX = 0;
+            panY = 0;
+            return;
+        }
+
+        const { stageWidth, stageHeight, displayWidth, displayHeight } = getStageMetrics();
+        const maxPanX = Math.max(0, ((displayWidth * scale) - stageWidth) / 2);
+        const maxPanY = Math.max(0, ((displayHeight * scale) - stageHeight) / 2);
+
+        panX = clamp(panX, -maxPanX, maxPanX);
+        panY = clamp(panY, -maxPanY, maxPanY);
+    };
+
+    const updateTransform = () => {
+        clampPan();
+        lightboxImage.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+        zoomValue.textContent = `${Math.round(scale * 100)}%`;
+    };
+
+    const setScale = (nextScale) => {
+        scale = clamp(nextScale, 1, 4);
+        if (scale === 1) {
+            panX = 0;
+            panY = 0;
+        }
+        updateTransform();
+    };
+
+    const resetZoom = () => {
+        scale = 1;
+        panX = 0;
+        panY = 0;
+        updateTransform();
+    };
+
+    const setSlide = (nextIndex) => {
+        const total = slides.length;
+        activeIndex = (nextIndex + total) % total;
+
+        const slide = slides[activeIndex];
+        counter.textContent = `${activeIndex + 1} / ${total}`;
+
+        lightboxImage.classList.add('is-loading');
+        lightboxImage.onload = () => {
+            lightboxImage.classList.remove('is-loading');
+            resetZoom();
+        };
+        lightboxImage.src = slide.src;
+        lightboxImage.alt = slide.alt;
+    };
+
+    const showNext = () => setSlide(activeIndex + 1);
+    const showPrev = () => setSlide(activeIndex - 1);
+
+    const openLightbox = (index) => {
+        savedBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        setSlide(index);
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = savedBodyOverflow;
+        resetZoom();
+    };
+
+    screenshotImages.forEach((img, index) => {
+        img.classList.add('project-lightbox-trigger');
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('aria-label', `Open screenshot ${index + 1} in full screen`);
+
+        img.addEventListener('click', (event) => {
+            event.preventDefault();
+            openLightbox(index);
+        });
+
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openLightbox(index);
+            }
+        });
+    });
+
+    closeButton.addEventListener('click', closeLightbox);
+    prevButton.addEventListener('click', showPrev);
+    nextButton.addEventListener('click', showNext);
+    zoomInButton.addEventListener('click', () => setScale(scale + 0.25));
+    zoomOutButton.addEventListener('click', () => setScale(scale - 0.25));
+    zoomResetButton.addEventListener('click', resetZoom);
+
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox || event.target.classList.contains('project-lightbox-inner')) {
+            closeLightbox();
+        }
+    });
+
+    stage.addEventListener('click', (event) => {
+        if (event.target === stage && scale === 1) {
+            closeLightbox();
+        }
+    });
+
+    stage.addEventListener('dblclick', () => {
+        if (scale > 1) {
+            resetZoom();
+            return;
+        }
+        setScale(2);
+    });
+
+    stage.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        const delta = event.deltaY < 0 ? 0.2 : -0.2;
+        setScale(scale + delta);
+    }, { passive: false });
+
+    stage.addEventListener('mousedown', (event) => {
+        if (scale <= 1) return;
+        event.preventDefault();
+        isMouseDragging = true;
+        mouseStartX = event.clientX;
+        mouseStartY = event.clientY;
+        panStartX = panX;
+        panStartY = panY;
+        lightboxImage.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mousemove', (event) => {
+        if (!isMouseDragging) return;
+        const deltaX = event.clientX - mouseStartX;
+        const deltaY = event.clientY - mouseStartY;
+        panX = panStartX + deltaX;
+        panY = panStartY + deltaY;
+        updateTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (!isMouseDragging) return;
+        isMouseDragging = false;
+        lightboxImage.classList.remove('is-dragging');
+    });
+
+    const getTouchDistance = (touches) => {
+        if (touches.length < 2) return 0;
+        const deltaX = touches[0].clientX - touches[1].clientX;
+        const deltaY = touches[0].clientY - touches[1].clientY;
+        return Math.hypot(deltaX, deltaY);
+    };
+
+    stage.addEventListener('touchstart', (event) => {
+        if (event.touches.length === 2) {
+            pinchStartDistance = getTouchDistance(event.touches);
+            pinchStartScale = scale;
+            return;
+        }
+
+        if (event.touches.length === 1) {
+            const touch = event.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            panStartX = panX;
+            panStartY = panY;
+            isTouchPanning = scale > 1;
+        }
+    }, { passive: true });
+
+    stage.addEventListener('touchmove', (event) => {
+        if (event.touches.length === 2) {
+            const distance = getTouchDistance(event.touches);
+            if (!pinchStartDistance || !distance) return;
+            event.preventDefault();
+            setScale(pinchStartScale * (distance / pinchStartDistance));
+            return;
+        }
+
+        if (event.touches.length === 1 && isTouchPanning) {
+            event.preventDefault();
+            const touch = event.touches[0];
+            panX = panStartX + (touch.clientX - touchStartX);
+            panY = panStartY + (touch.clientY - touchStartY);
+            updateTransform();
+        }
+    }, { passive: false });
+
+    stage.addEventListener('touchend', (event) => {
+        if (event.touches.length < 2) {
+            pinchStartDistance = 0;
+        }
+
+        if (event.touches.length !== 0) return;
+
+        if (scale <= 1 && event.changedTouches.length > 0) {
+            const changedTouch = event.changedTouches[0];
+            const deltaX = changedTouch.clientX - touchStartX;
+            const deltaY = changedTouch.clientY - touchStartY;
+            if (Math.abs(deltaX) > 64 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+                if (deltaX < 0) showNext();
+                else showPrev();
+            }
+        }
+
+        isTouchPanning = false;
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) return;
+
+        if (event.key === 'Escape') {
+            closeLightbox();
+            return;
+        }
+
+        if (event.key === 'ArrowRight') {
+            showNext();
+            return;
+        }
+
+        if (event.key === 'ArrowLeft') {
+            showPrev();
+            return;
+        }
+
+        if (event.key === '+' || event.key === '=') {
+            setScale(scale + 0.25);
+            return;
+        }
+
+        if (event.key === '-' || event.key === '_') {
+            setScale(scale - 0.25);
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (lightbox.classList.contains('is-open')) {
+            updateTransform();
+        }
+    });
+};
+
 // Interactive Sri Lanka corridor map for HopOn case study
 const initHopOnRouteMap = () => {
     const mapWidgets = document.querySelectorAll('.hopon-map-widget');
@@ -1521,6 +1867,7 @@ const init = () => {
     initAudiblePlayer();
     initWorkCardLazyLoad();
     initProjectImageLazyLoad();
+    initProjectScreenshotLightbox();
     initHopOnRouteMap();
     initWhatsAppHoverTone();
     initPlaystationHoverSound();
