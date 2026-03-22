@@ -544,6 +544,308 @@ const initProjectScreenshotLightbox = () => {
     });
 };
 
+// Custom HTML5 player controls for WizPos case-study video
+const initWizposVideoPlayers = () => {
+    const players = document.querySelectorAll('[data-wizpos-player]');
+    if (players.length === 0) return;
+    const autoplayStorageKey = 'wizpos-video-autoplay-enabled';
+
+    const formatTime = (seconds) => {
+        if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+        const rounded = Math.floor(seconds);
+        const mins = Math.floor(rounded / 60);
+        const secs = rounded % 60;
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    const getFullscreenElement = () => document.fullscreenElement || document.webkitFullscreenElement || null;
+
+    players.forEach((player) => {
+        const video = player.querySelector('.wizpos-video-el');
+        const controls = player.querySelector('.wizpos-video-controls');
+        const toggleButton = player.querySelector('[data-action="toggle"]');
+        const stopButton = player.querySelector('[data-action="stop"]');
+        const autoplayButton = player.querySelector('[data-action="autoplay"]');
+        const muteButton = player.querySelector('[data-action="mute"]');
+        const fullscreenButton = player.querySelector('[data-action="fullscreen"]');
+        const seekInput = player.querySelector('.wizpos-video-seek');
+        const currentTimeEl = player.querySelector('[data-time-current]');
+        const durationEl = player.querySelector('[data-time-duration]');
+        const bufferingIndicator = player.querySelector('[data-buffering-indicator]');
+
+        if (!video || !controls || !toggleButton || !muteButton || !fullscreenButton || !seekInput) return;
+
+        let isScrubbing = false;
+        let autoplayEnabled = false;
+
+        const getBufferedEndTime = () => {
+            const duration = Number.isFinite(video.duration) ? video.duration : 0;
+            if (!duration || !video.buffered || video.buffered.length === 0) return 0;
+
+            let bufferedEnd = 0;
+            for (let i = 0; i < video.buffered.length; i += 1) {
+                bufferedEnd = Math.max(bufferedEnd, video.buffered.end(i));
+            }
+            return Math.min(bufferedEnd, duration);
+        };
+
+        const syncSeekVisual = (previewTime = null) => {
+            const duration = Number.isFinite(video.duration) ? video.duration : 0;
+            if (!duration) {
+                seekInput.style.setProperty('--seek-played', '0%');
+                seekInput.style.setProperty('--seek-buffered', '0%');
+                return;
+            }
+
+            const playedTime = Number.isFinite(previewTime) ? previewTime : video.currentTime;
+            const playedPercent = Math.min(Math.max((playedTime / duration) * 100, 0), 100);
+            const bufferedPercent = Math.max(
+                playedPercent,
+                Math.min(Math.max((getBufferedEndTime() / duration) * 100, 0), 100)
+            );
+
+            seekInput.style.setProperty('--seek-played', `${playedPercent}%`);
+            seekInput.style.setProperty('--seek-buffered', `${bufferedPercent}%`);
+        };
+
+        const syncBufferingState = () => {
+            if (!bufferingIndicator) return;
+            const waitingForData = video.readyState < 3 && !video.paused && !video.ended;
+            player.classList.toggle('is-buffering', waitingForData);
+        };
+
+        const syncTimeline = () => {
+            const duration = Number.isFinite(video.duration) ? video.duration : 0;
+            const current = Number.isFinite(video.currentTime) ? video.currentTime : 0;
+
+            seekInput.max = duration > 0 ? duration.toString() : '0';
+            if (!isScrubbing) {
+                seekInput.value = Math.min(current, duration || 0).toString();
+                if (currentTimeEl) currentTimeEl.textContent = formatTime(current);
+            }
+            if (durationEl) durationEl.textContent = formatTime(duration);
+            syncSeekVisual();
+        };
+
+        const syncPlayState = () => {
+            const isPlaying = !video.paused && !video.ended;
+            const srText = toggleButton.querySelector('.sr-only');
+            toggleButton.classList.toggle('is-active', isPlaying);
+            toggleButton.setAttribute('aria-label', isPlaying ? 'Pause video' : 'Play video');
+            if (srText) srText.textContent = isPlaying ? 'Pause video' : 'Play video';
+            player.classList.toggle('is-playing', isPlaying);
+        };
+
+        const syncMuteState = () => {
+            const isMuted = video.muted || video.volume === 0;
+            const srText = muteButton.querySelector('.sr-only');
+            muteButton.classList.toggle('is-active', isMuted);
+            muteButton.setAttribute('aria-label', isMuted ? 'Unmute video' : 'Mute video');
+            if (srText) srText.textContent = isMuted ? 'Unmute video' : 'Mute video';
+        };
+
+        const syncFullscreenState = () => {
+            const fullscreenElement = getFullscreenElement();
+            const isFullscreen = fullscreenElement === player || fullscreenElement === video;
+            const srText = fullscreenButton.querySelector('.sr-only');
+            fullscreenButton.classList.toggle('is-active', isFullscreen);
+            fullscreenButton.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen');
+            if (srText) srText.textContent = isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen';
+        };
+
+        const syncAutoplayState = () => {
+            if (!autoplayButton) return;
+            const srText = autoplayButton.querySelector('.sr-only');
+            autoplayButton.classList.toggle('is-active', autoplayEnabled);
+            autoplayButton.setAttribute('aria-label', autoplayEnabled ? 'Disable autoplay' : 'Enable autoplay');
+            if (srText) srText.textContent = autoplayEnabled ? 'Disable autoplay' : 'Enable autoplay';
+        };
+
+        const tryAutoplay = () => {
+            if (!autoplayEnabled) return;
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {});
+            }
+        };
+
+        const togglePlayback = () => {
+            if (video.paused || video.ended) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        };
+
+        const toggleFullscreen = () => {
+            const fullscreenElement = getFullscreenElement();
+            const isFullscreen = fullscreenElement === player || fullscreenElement === video;
+
+            if (isFullscreen) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen().catch(() => {});
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+                return;
+            }
+
+            if (player.requestFullscreen) {
+                player.requestFullscreen().catch(() => {});
+            } else if (video.webkitEnterFullscreen) {
+                video.webkitEnterFullscreen();
+            }
+        };
+
+        const commitSeek = () => {
+            const nextTime = Number(seekInput.value);
+            if (Number.isFinite(nextTime)) {
+                video.currentTime = nextTime;
+            }
+            isScrubbing = false;
+            syncTimeline();
+        };
+
+        toggleButton.addEventListener('click', togglePlayback);
+        if (stopButton) {
+            stopButton.addEventListener('click', () => {
+                video.pause();
+                video.currentTime = 0;
+                isScrubbing = false;
+                syncTimeline();
+                syncPlayState();
+            });
+        }
+        if (autoplayButton) {
+            autoplayButton.addEventListener('click', () => {
+                autoplayEnabled = !autoplayEnabled;
+                try {
+                    window.localStorage.setItem(autoplayStorageKey, autoplayEnabled ? '1' : '0');
+                } catch (error) {
+                    // Ignore storage access issues (private mode / denied storage).
+                }
+                video.autoplay = autoplayEnabled;
+                syncAutoplayState();
+                if (autoplayEnabled) {
+                    tryAutoplay();
+                }
+            });
+        }
+        muteButton.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (!video.muted && video.volume === 0) {
+                video.volume = 0.8;
+            }
+        });
+        fullscreenButton.addEventListener('click', toggleFullscreen);
+        video.addEventListener('click', togglePlayback);
+
+        seekInput.addEventListener('input', () => {
+            isScrubbing = true;
+            const previewTime = Number(seekInput.value);
+            if (currentTimeEl && Number.isFinite(previewTime)) {
+                currentTimeEl.textContent = formatTime(previewTime);
+            }
+            syncSeekVisual(previewTime);
+        });
+        seekInput.addEventListener('change', commitSeek);
+        seekInput.addEventListener('pointerup', commitSeek);
+        seekInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                commitSeek();
+            }
+        });
+
+        video.addEventListener('loadedmetadata', syncTimeline);
+        video.addEventListener('loadedmetadata', tryAutoplay);
+        video.addEventListener('durationchange', syncTimeline);
+        video.addEventListener('timeupdate', syncTimeline);
+        video.addEventListener('progress', () => {
+            syncSeekVisual();
+            syncBufferingState();
+        });
+        video.addEventListener('canplay', syncBufferingState);
+        video.addEventListener('canplaythrough', syncBufferingState);
+        video.addEventListener('waiting', syncBufferingState);
+        video.addEventListener('stalled', syncBufferingState);
+        video.addEventListener('seeking', syncBufferingState);
+        video.addEventListener('seeked', syncBufferingState);
+        video.addEventListener('play', syncPlayState);
+        video.addEventListener('play', syncBufferingState);
+        video.addEventListener('pause', () => {
+            syncPlayState();
+            syncBufferingState();
+        });
+        video.addEventListener('ended', syncPlayState);
+        video.addEventListener('ended', syncBufferingState);
+        video.addEventListener('volumechange', syncMuteState);
+
+        document.addEventListener('fullscreenchange', syncFullscreenState);
+        document.addEventListener('webkitfullscreenchange', syncFullscreenState);
+
+        player.setAttribute('tabindex', '0');
+        player.addEventListener('keydown', (event) => {
+            const tagName = event.target?.tagName?.toLowerCase();
+            if (tagName === 'input' || tagName === 'button') return;
+
+            if (event.key === ' ' || event.key.toLowerCase() === 'k') {
+                event.preventDefault();
+                togglePlayback();
+                return;
+            }
+
+            if (event.key.toLowerCase() === 'm') {
+                event.preventDefault();
+                video.muted = !video.muted;
+                return;
+            }
+
+            if (event.key.toLowerCase() === 'f') {
+                event.preventDefault();
+                toggleFullscreen();
+                return;
+            }
+
+            if (event.key.toLowerCase() === 's') {
+                event.preventDefault();
+                video.pause();
+                video.currentTime = 0;
+                isScrubbing = false;
+                syncTimeline();
+                syncPlayState();
+                return;
+            }
+
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                const duration = Number.isFinite(video.duration) ? video.duration : 0;
+                video.currentTime = Math.min(video.currentTime + 5, duration || video.currentTime + 5);
+                return;
+            }
+
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                video.currentTime = Math.max(video.currentTime - 5, 0);
+            }
+        });
+
+        video.controls = false;
+        player.classList.add('is-enhanced');
+        try {
+            autoplayEnabled = window.localStorage.getItem(autoplayStorageKey) === '1';
+        } catch (error) {
+            autoplayEnabled = false;
+        }
+        video.autoplay = autoplayEnabled;
+        syncTimeline();
+        syncPlayState();
+        syncMuteState();
+        syncFullscreenState();
+        syncAutoplayState();
+        syncBufferingState();
+    });
+};
+
 // Interactive Sri Lanka corridor map for HopOn case study
 const initHopOnRouteMap = () => {
     const mapWidgets = document.querySelectorAll('.hopon-map-widget');
@@ -1868,6 +2170,7 @@ const init = () => {
     initWorkCardLazyLoad();
     initProjectImageLazyLoad();
     initProjectScreenshotLightbox();
+    initWizposVideoPlayers();
     initHopOnRouteMap();
     initWhatsAppHoverTone();
     initPlaystationHoverSound();

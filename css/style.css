@@ -5833,6 +5833,266 @@ html {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.wizpos-video-player {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #d5dde7;
+    background: #000000;
+    box-shadow: 0 10px 28px rgba(9, 13, 20, 0.22);
+}
+
+.wizpos-video-el {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(72vh, 640px);
+    aspect-ratio: auto;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    background: #000000;
+}
+
+.wizpos-video-controls {
+    display: grid;
+    grid-template-columns: auto auto auto minmax(120px, 1fr) auto auto auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-top: 1px solid #202734;
+    background: #0f141d;
+}
+
+.wizpos-video-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid #2d3748;
+    background: #171f2b;
+    color: #f9fafb;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.wizpos-video-btn:hover {
+    background: #306EE2;
+    border-color: #306EE2;
+}
+
+.wizpos-video-btn:active {
+    transform: translateY(1px);
+}
+
+.wizpos-video-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wizpos-video-icon-fill {
+    fill: currentColor;
+    stroke: none;
+}
+
+.wizpos-video-btn .wizpos-icon-alt {
+    display: none;
+}
+
+.wizpos-video-btn.is-active .wizpos-icon-default {
+    display: none;
+}
+
+.wizpos-video-btn.is-active .wizpos-icon-alt {
+    display: block;
+}
+
+.wizpos-video-btn:focus-visible,
+.wizpos-video-seek:focus-visible {
+    outline: 2px solid #5EC086;
+    outline-offset: 2px;
+}
+
+.wizpos-video-seek {
+    --seek-played: 0%;
+    --seek-buffered: 0%;
+    --seek-color-played: #306EE2;
+    --seek-color-buffered: #5a6981;
+    --seek-color-base: #2e394b;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.wizpos-video-seek::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        var(--seek-color-played) 0 var(--seek-played),
+        var(--seek-color-buffered) var(--seek-played) var(--seek-buffered),
+        var(--seek-color-base) var(--seek-buffered) 100%
+    );
+}
+
+.wizpos-video-seek::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #306EE2;
+}
+
+.wizpos-video-seek::-moz-range-track {
+    height: 6px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        var(--seek-color-played) 0 var(--seek-played),
+        var(--seek-color-buffered) var(--seek-played) var(--seek-buffered),
+        var(--seek-color-base) var(--seek-buffered) 100%
+    );
+}
+
+.wizpos-video-seek::-moz-range-progress {
+    height: 6px;
+    border-radius: 999px;
+    background: transparent;
+}
+
+.wizpos-video-seek::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #306EE2;
+}
+
+.wizpos-video-time {
+    color: #d7e0ec;
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.wizpos-video-time-sep {
+    opacity: 0.7;
+}
+
+.wizpos-video-buffering {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #9bb2d3;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.wizpos-video-buffering::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 1.8px solid rgba(155, 178, 211, 0.3);
+    border-top-color: #9bb2d3;
+    animation: wizposVideoBufferSpin 0.8s linear infinite;
+}
+
+.wizpos-video-player.is-buffering .wizpos-video-buffering {
+    opacity: 1;
+}
+
+.wizpos-video-player.is-playing .wizpos-video-btn[data-action="toggle"] {
+    background: #5EC086;
+    border-color: #5EC086;
+    color: #0b111a;
+}
+
+.wizpos-video-btn[data-action="autoplay"].is-active {
+    background: #5EC086;
+    border-color: #5EC086;
+    color: #0b111a;
+}
+
+.wizpos-video-btn[data-action="autoplay"] .wizpos-video-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.1;
+}
+
+.wizpos-video-player:fullscreen,
+.wizpos-video-player:-webkit-full-screen {
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wizpos-video-player:fullscreen .wizpos-video-el,
+.wizpos-video-player:-webkit-full-screen .wizpos-video-el {
+    max-height: calc(100vh - 88px);
+    height: calc(100vh - 88px);
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 720px) {
+    .wizpos-video-controls {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .wizpos-video-seek {
+        grid-column: 1 / -1;
+        order: 5;
+    }
+
+    .wizpos-video-time {
+        grid-column: 1 / span 2;
+        justify-self: start;
+    }
+
+    .wizpos-video-buffering {
+        grid-column: 3 / -1;
+        justify-self: end;
+    }
+
+    .wizpos-video-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@keyframes wizposVideoBufferSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .image-caption {
     font-size: 14px;
     color: #666;

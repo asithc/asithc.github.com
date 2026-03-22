@@ -95,7 +95,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="stylesheet" href="../css/style.css?v=5.18">
+        <link rel="stylesheet" href="../css/style.css?v=5.24">
     
     </head>
 <body class="project-detail-page">
@@ -817,10 +817,78 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <video controls playsinline preload="metadata" poster="../images/Projects/WIZPos/case-study/live-keells-action.jpg">
-                            <source src="../videos/live-recording-in%20dev-mode.mp4" type="video/mp4">
-                            Your browser does not support this video format.
-                        </video>
+                        <div class="wizpos-video-player" data-wizpos-player>
+                            <video class="wizpos-video-el" controls playsinline preload="metadata" poster="../images/Projects/WIZPos/case-study/live-keells-action.jpg">
+                                <source src="../videos/live-recording-in%20dev-mode.mp4" type="video/mp4">
+                                Your browser does not support this video format.
+                            </video>
+                            <div class="wizpos-video-controls" aria-label="WizPos video controls">
+                                <button type="button" class="wizpos-video-btn" data-action="toggle" aria-label="Play video">
+                                    <svg class="wizpos-video-icon wizpos-icon-default" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8 6v12l10-6z"></path>
+                                    </svg>
+                                    <svg class="wizpos-video-icon wizpos-icon-alt" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="7" y="6" width="4" height="12"></rect>
+                                        <rect x="13" y="6" width="4" height="12"></rect>
+                                    </svg>
+                                    <span class="sr-only">Play video</span>
+                                </button>
+                                <button type="button" class="wizpos-video-btn" data-action="stop" aria-label="Stop video">
+                                    <svg class="wizpos-video-icon wizpos-video-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="7" y="7" width="10" height="10" rx="1.5"></rect>
+                                    </svg>
+                                    <span class="sr-only">Stop video</span>
+                                </button>
+                                <button type="button" class="wizpos-video-btn" data-action="autoplay" aria-label="Enable autoplay">
+                                    <svg class="wizpos-video-icon wizpos-icon-default" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M9 8l7 4-7 4z"></path>
+                                        <path d="M20 12a8 8 0 1 1-2.34-5.66"></path>
+                                        <path d="M18.1 18.2l-.6 3.2 3.2-.6"></path>
+                                        <path d="M6 6l12 12"></path>
+                                    </svg>
+                                    <svg class="wizpos-video-icon wizpos-icon-alt" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M9 8l7 4-7 4z"></path>
+                                        <path d="M20 12a8 8 0 1 1-2.34-5.66"></path>
+                                        <path d="M18.1 18.2l-.6 3.2 3.2-.6"></path>
+                                    </svg>
+                                    <span class="sr-only">Enable autoplay</span>
+                                </button>
+                                <input type="range" class="wizpos-video-seek" min="0" value="0" step="0.1" aria-label="Seek video timeline">
+                                <span class="wizpos-video-time"><span data-time-current>0:00</span><span class="wizpos-video-time-sep"> / </span><span data-time-duration>0:00</span></span>
+                                <span class="wizpos-video-buffering" data-buffering-indicator role="status" aria-live="polite">Buffering</span>
+                                <button type="button" class="wizpos-video-btn" data-action="mute" aria-label="Mute video">
+                                    <svg class="wizpos-video-icon wizpos-icon-default" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 10v4h4l5 4V6l-5 4z"></path>
+                                        <path d="M18 9a5 5 0 0 1 0 6"></path>
+                                    </svg>
+                                    <svg class="wizpos-video-icon wizpos-icon-alt" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 10v4h4l5 4V6l-5 4z"></path>
+                                        <path d="M19 9l-6 6"></path>
+                                        <path d="M13 9l6 6"></path>
+                                    </svg>
+                                    <span class="sr-only">Mute video</span>
+                                </button>
+                                <button type="button" class="wizpos-video-btn" data-action="fullscreen" aria-label="Enter fullscreen">
+                                    <svg class="wizpos-video-icon wizpos-icon-default" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M4 9V4h5"></path>
+                                        <path d="M20 9V4h-5"></path>
+                                        <path d="M4 15v5h5"></path>
+                                        <path d="M20 15v5h-5"></path>
+                                    </svg>
+                                    <svg class="wizpos-video-icon wizpos-icon-alt" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M9 4H4v5"></path>
+                                        <path d="M15 4h5v5"></path>
+                                        <path d="M9 20H4v-5"></path>
+                                        <path d="M15 20h5v-5"></path>
+                                        <path d="M9 9L4 4"></path>
+                                        <path d="M15 9l5-5"></path>
+                                        <path d="M9 15l-5 5"></path>
+                                        <path d="M15 15l5 5"></path>
+                                    </svg>
+                                    <span class="sr-only">Enter fullscreen</span>
+                                </button>
+                            </div>
+                        </div>
                         <p class="image-caption">Test-environment recording of core WizPos operations (live interaction pass)</p>
                     </div>
                 </div>
@@ -994,7 +1062,7 @@
         </div>
     </main>
 
-    <script src="../js/script.js?v=20260322"></script>
+    <script src="../js/script.js?v=20260326"></script>
     <script src="../js/pin-protect.js?v=20260320"></script>
 </body>
 </html>
