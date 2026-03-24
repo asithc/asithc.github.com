@@ -991,6 +991,22 @@ button {
     grid-row: 3;
 }
 
+.project-card-third .project-card-content {
+    padding-bottom: 14px;
+}
+
+.project-card-third .project-title {
+    line-height: 1.12;
+}
+
+.project-card-third .project-description {
+    max-width: 30ch;
+}
+
+.project-card-third .project-thumbnail {
+    height: 48%;
+}
+
 .project-description {
     font-size: 13px;
     color: var(--text-secondary);
