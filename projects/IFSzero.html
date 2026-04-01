@@ -188,6 +188,7 @@
 
                 <!-- Scope coverage: col 1, full height -->
                 <article class="collage-tile ifs-scope-tile">
+                    <img class="ifs-sym ifs-sym-scope" src="../images/Projects/IFSZero/ifs-symbol.svg" alt="" aria-hidden="true">
                     <div>
                         <p class="ifs-kicker">Coverage</p>
                         <h4 class="ifs-scope-title">Scope 1, 2 &amp; 3</h4>
@@ -208,38 +209,70 @@
                     </div>
                 </article>
 
-                <!-- Emissions split donut: col 2, row 1 -->
+                <!-- ESG adoption trend: col 2, row 1 -->
                 <article class="collage-tile ifs-co2-tile">
-                    <p class="ifs-kicker">Emissions Split</p>
-                    <div class="ifs-donut-wrap" aria-hidden="true">
-                        <div class="ifs-donut"></div>
-                    </div>
-                    <div class="ifs-donut-legend">
-                        <span class="ifs-leg"><i style="background:#c084fc"></i>Scope 1</span>
-                        <span class="ifs-leg"><i style="background:#e9d5ff"></i>Scope 2</span>
-                        <span class="ifs-leg"><i style="background:#4c1d95"></i>Scope 3</span>
+                    <!-- Full-bleed area chart: enterprise sustainability reporting adoption 2019–2024 -->
+                    <svg class="ifs-trend-svg" viewBox="0 0 200 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="ifsTrendArea" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+                                <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Subtle grid lines -->
+                        <line x1="0" y1="73" x2="200" y2="73" stroke="rgba(255,255,255,0.07)" stroke-width="0.75"/>
+                        <line x1="0" y1="107" x2="200" y2="107" stroke="rgba(255,255,255,0.07)" stroke-width="0.75"/>
+                        <!-- Area fill using smooth bezier -->
+                        <path d="M0,160 L0,121 C13,117 27,112 40,108 C53,104 67,97 80,93 C93,89 107,78 120,74 C133,70 147,59 160,55 C173,51 187,42 200,38 L200,160 Z" fill="url(#ifsTrendArea)"/>
+                        <!-- Smooth line -->
+                        <path d="M0,121 C13,117 27,112 40,108 C53,104 67,97 80,93 C93,89 107,78 120,74 C133,70 147,59 160,55 C173,51 187,42 200,38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.75" stroke-linecap="round"/>
+                        <!-- Data point dots -->
+                        <circle cx="0"   cy="121" r="2.5" fill="rgba(255,255,255,0.4)"/>
+                        <circle cx="40"  cy="108" r="2.5" fill="rgba(255,255,255,0.4)"/>
+                        <circle cx="80"  cy="93"  r="2.5" fill="rgba(255,255,255,0.4)"/>
+                        <circle cx="120" cy="74"  r="2.5" fill="rgba(255,255,255,0.4)"/>
+                        <circle cx="160" cy="55"  r="2.5" fill="rgba(255,255,255,0.4)"/>
+                        <!-- Terminal dot with halo (2024) -->
+                        <circle cx="200" cy="38" r="10" fill="rgba(255,255,255,0.1)"/>
+                        <circle cx="200" cy="38" r="5"  fill="white" opacity="0.95"/>
+                        <!-- Year labels -->
+                        <text x="4"   y="155" fill="rgba(255,255,255,0.3)" font-size="9" font-family="inherit">2019</text>
+                        <text x="196" y="155" fill="rgba(255,255,255,0.3)" font-size="9" font-family="inherit" text-anchor="end">2024</text>
+                    </svg>
+                    <p class="ifs-kicker">ESG Adoption</p>
+                    <div class="ifs-trend-bottom">
+                        <span class="ifs-trend-pct">93%</span>
+                        <span class="ifs-trend-label">of Fortune 500 now report sustainability · KPMG 2024</span>
                     </div>
                 </article>
 
-                <!-- Live data sources: col 2, row 2 -->
+                <!-- ERP-native: col 2, row 2 -->
                 <article class="collage-tile ifs-native-tile">
-                    <p class="ifs-kicker">Live Sources</p>
+                    <p class="ifs-kicker">ERP-Native</p>
                     <div class="ifs-sources">
-                        <span class="ifs-source"><span class="ifs-live-dot"></span>Operations</span>
-                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:.35s"></span>Procurement</span>
-                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:.7s"></span>Logistics</span>
-                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:1.05s"></span>Energy</span>
+                        <div class="ifs-source-row">
+                            <span class="ifs-live-dot"></span>
+                            <span class="ifs-source-name">Finance</span>
+                        </div>
+                        <div class="ifs-source-row">
+                            <span class="ifs-live-dot" style="animation-delay:.35s"></span>
+                            <span class="ifs-source-name">Operations</span>
+                        </div>
+                        <div class="ifs-source-row">
+                            <span class="ifs-live-dot" style="animation-delay:.7s"></span>
+                            <span class="ifs-source-name">Procurement</span>
+                        </div>
+                        <div class="ifs-source-row">
+                            <span class="ifs-live-dot" style="animation-delay:1.05s"></span>
+                            <span class="ifs-source-name">Logistics</span>
+                        </div>
                     </div>
+                    <span class="ifs-native-tag">Zero manual re-entry</span>
                 </article>
 
                 <!-- Hero: col 3, full height -->
                 <article class="collage-tile ifs-hero-tile">
-                    <div class="ifs-hero-rings" aria-hidden="true">
-                        <div class="ifs-pulse-ring ifs-pulse-ring-1"></div>
-                        <div class="ifs-pulse-ring ifs-pulse-ring-2"></div>
-                        <div class="ifs-pulse-ring ifs-pulse-ring-3"></div>
-                        <div class="ifs-pulse-core"></div>
-                    </div>
+                    <img class="ifs-sym ifs-sym-hero" src="../images/Projects/IFSZero/ifs-symbol.svg" alt="" aria-hidden="true">
                     <div class="ifs-hero-content">
                         <p class="ifs-kicker">IFS Sustainability</p>
                         <h4 class="ifs-hero-title">Emissions intelligence built into your ERP.</h4>
@@ -270,6 +303,8 @@
 
                 <!-- Action planning: col 5, full height -->
                 <article class="collage-tile ifs-action-tile">
+                    <img class="ifs-sym ifs-sym-action-a" src="../images/Projects/IFSZero/ifs-symbol.svg" alt="" aria-hidden="true">
+                    <img class="ifs-sym ifs-sym-action-b" src="../images/Projects/IFSZero/ifs-symbol.svg" alt="" aria-hidden="true">
                     <p class="ifs-kicker">Action Planning</p>
                     <h4 class="ifs-action-title">Reduce, not just report.</h4>
                     <div class="ifs-action-arrow" aria-hidden="true">
@@ -493,7 +528,7 @@
                 <div class="case-study-archetype">
                     <div class="archetype-visual">
                         <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
-                            <span>👤</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
                         </div>
                     </div>
                     <div class="archetype-content">
@@ -510,7 +545,7 @@
                 <div class="case-study-archetype">
                     <div class="archetype-visual">
                         <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
-                            <span>👤</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
                         </div>
                     </div>
                     <div class="archetype-content">
@@ -527,7 +562,7 @@
                 <div class="case-study-archetype">
                     <div class="archetype-visual">
                         <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
-                            <span>👤</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><circle cx="8" cy="11" r=".5" fill="rgba(255,255,255,0.85)"/><circle cx="8" cy="16" r=".5" fill="rgba(255,255,255,0.85)"/></svg>
                         </div>
                     </div>
                     <div class="archetype-content">
@@ -544,7 +579,7 @@
                 <div class="case-study-archetype">
                     <div class="archetype-visual">
                         <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
-                            <span>👤</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
                         </div>
                     </div>
                     <div class="archetype-content">
@@ -561,7 +596,7 @@
                 <div class="case-study-archetype">
                     <div class="archetype-visual">
                         <div class="project-image-placeholder" style="aspect-ratio: 1/1; max-width: 200px;">
-                            <span>👤</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><polyline points="11 8 11 11 13 13"/></svg>
                         </div>
                     </div>
                     <div class="archetype-content">

@@ -8225,6 +8225,8 @@ html {
     margin: 0;
     font-size: 10px;
     font-weight: 700;
+    position: relative;
+    z-index: 1;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ifs-lilac);
@@ -8243,81 +8245,127 @@ html {
     font-weight: 700;
 }
 
-/* ======= Emissions split donut ======= */
+/* ======= IFS symbol decorative patterns ======= */
 
-.ifs-donut-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-.ifs-donut {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: conic-gradient(
-        #c084fc  0deg 79.2deg,
-        #e9d5ff  79.2deg 205.2deg,
-        #4c1d95  205.2deg 360deg
-    );
-    position: relative;
-    animation: ifsDonutPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
-}
-
-.ifs-donut::after {
-    content: '';
+.ifs-sym {
     position: absolute;
-    inset: 16px;
-    border-radius: 50%;
-    background: #6B21A8;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
-@keyframes ifsDonutPop {
-    from { transform: scale(0); opacity: 0; }
-    to   { transform: scale(1); opacity: 1; }
+/* Scope tile: large watermark bottom-right, cut off by overflow:hidden */
+.ifs-sym-scope {
+    width: 130px;
+    height: 130px;
+    bottom: -28px;
+    right: -28px;
+    opacity: 0.07;
+    filter: grayscale(1) brightness(2);
 }
 
-.ifs-donut-legend {
+/* Hero tile: oversized centered symbol, fills the background */
+.ifs-sym-hero {
+    width: 80%;
+    max-width: 260px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    opacity: 0.13;
+}
+
+/* Action tile: two symbols layered at different scales */
+.ifs-sym-action-a {
+    width: 160px;
+    height: 160px;
+    bottom: -40px;
+    right: -40px;
+    opacity: 0.14;
+}
+
+.ifs-sym-action-b {
+    width: 80px;
+    height: 80px;
+    top: 18px;
+    right: 18px;
+    opacity: 0.10;
+    transform: rotate(22deg);
+}
+
+/* ======= ESG adoption trend chart tile ======= */
+
+.ifs-trend-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+}
+
+.ifs-trend-bottom {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
+    position: relative;
+    z-index: 1;
 }
 
-.ifs-leg {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 10px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
+.ifs-trend-pct {
+    font-size: clamp(30px, 2.8vw, 40px);
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: -0.02em;
 }
 
-.ifs-leg i {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    flex-shrink: 0;
-    font-style: normal;
+.ifs-trend-label {
+    font-size: 9px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
 }
 
-/* ======= Live data sources ======= */
+/* ======= ERP-native / live sources ======= */
 
 .ifs-sources {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 9px;
     flex: 1;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
-.ifs-source {
+.ifs-source-row {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.ifs-source-name {
     font-size: 11px;
     font-weight: 600;
-    color: rgba(192, 132, 252, 0.85);
+    color: rgba(192, 132, 252, 0.9);
+}
+
+.ifs-native-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(74, 222, 128, 0.75);
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 5px;
+    padding: 3px 7px;
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
 }
 
 .ifs-live-dot {
@@ -8348,6 +8396,8 @@ html {
 .ifs-action-title {
     margin: 0;
     color: var(--ifs-white);
+    position: relative;
+    z-index: 1;
     font-size: clamp(19px, 1.5vw, 26px);
     line-height: 1.2;
     font-weight: 700;
@@ -8399,54 +8449,6 @@ html {
 @keyframes ifsFillBar {
     from { width: 0; }
     to   { width: var(--fill, 60%); }
-}
-
-/* ======= Hero: animated pulse rings ======= */
-
-.ifs-hero-rings {
-    position: absolute;
-    top: 36%;
-    left: 50%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.ifs-pulse-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    border: 1px solid rgba(147, 51, 234, 0.6);
-    transform: translate(-50%, -50%) scale(0.35);
-    opacity: 0;
-    animation: ifsPulseExpand 4s ease-out infinite;
-}
-
-.ifs-pulse-ring-1 { width: 90px;  height: 90px;  animation-delay: 0s; }
-.ifs-pulse-ring-2 { width: 155px; height: 155px; animation-delay: 1.33s; }
-.ifs-pulse-ring-3 { width: 220px; height: 220px; animation-delay: 2.66s; }
-
-.ifs-pulse-core {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(circle, #e879f9 0%, #9333EA 60%, #4c1d95 100%);
-    box-shadow: 0 0 18px rgba(147, 51, 234, 0.9), 0 0 46px rgba(147, 51, 234, 0.35);
-    animation: ifsCoreGlow 2.6s ease-in-out infinite;
-}
-
-@keyframes ifsPulseExpand {
-    0%   { transform: translate(-50%, -50%) scale(0.35); opacity: 0.85; }
-    100% { transform: translate(-50%, -50%) scale(1.6);  opacity: 0; }
-}
-
-@keyframes ifsCoreGlow {
-    0%, 100% { box-shadow: 0 0 18px rgba(147, 51, 234, 0.9), 0 0 46px rgba(147, 51, 234, 0.35); }
-    50%       { box-shadow: 0 0 30px rgba(232, 121, 249, 1), 0 0 70px rgba(147, 51, 234, 0.5); }
 }
 
 /* ======= Hero content ======= */
@@ -8525,6 +8527,8 @@ html {
 .ifs-action-arrow {
     width: 36px;
     color: rgba(255, 255, 255, 0.65);
+    position: relative;
+    z-index: 1;
     animation: ifsArrowFloat 2.8s ease-in-out infinite;
 }
 
@@ -8543,10 +8547,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
     .ifs-scope-fill  { animation: none !important; width: var(--fill, 60%); }
-    .ifs-donut       { animation: none !important; }
     .ifs-live-dot,
-    .ifs-pulse-ring,
-    .ifs-pulse-core,
     .ifs-action-arrow { animation: none !important; }
 }
 
