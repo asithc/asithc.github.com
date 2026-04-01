@@ -150,6 +150,9 @@
                     <p class="meta-value">FigJam</p>
                     <p class="meta-value">Miro</p>
                     <p class="meta-value">Jira</p>
+                    <p class="meta-value">Fullstory</p>
+                    <p class="meta-value">Figma Make</p>
+                    <p class="meta-value">Claude AI</p>
                 </div>
 
                 <div class="project-meta-section">
@@ -179,6 +182,106 @@
             </div>
         </div>
 
+        <!-- Project Collage Grid -->
+        <div class="project-collage project-collage-ifszero">
+            <div class="project-collage-grid project-collage-grid-ifszero">
+
+                <!-- Scope coverage: col 1, full height -->
+                <article class="collage-tile ifs-scope-tile">
+                    <div>
+                        <p class="ifs-kicker">Coverage</p>
+                        <h4 class="ifs-scope-title">Scope 1, 2 &amp; 3</h4>
+                    </div>
+                    <div class="ifs-scope-bars">
+                        <div class="ifs-scope-bar-row">
+                            <span class="ifs-scope-label">S1</span>
+                            <div class="ifs-scope-bar"><div class="ifs-scope-fill" style="--fill:74%"></div></div>
+                        </div>
+                        <div class="ifs-scope-bar-row">
+                            <span class="ifs-scope-label">S2</span>
+                            <div class="ifs-scope-bar"><div class="ifs-scope-fill" style="--fill:90%"></div></div>
+                        </div>
+                        <div class="ifs-scope-bar-row">
+                            <span class="ifs-scope-label">S3</span>
+                            <div class="ifs-scope-bar"><div class="ifs-scope-fill" style="--fill:58%"></div></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Emissions split donut: col 2, row 1 -->
+                <article class="collage-tile ifs-co2-tile">
+                    <p class="ifs-kicker">Emissions Split</p>
+                    <div class="ifs-donut-wrap" aria-hidden="true">
+                        <div class="ifs-donut"></div>
+                    </div>
+                    <div class="ifs-donut-legend">
+                        <span class="ifs-leg"><i style="background:#c084fc"></i>Scope 1</span>
+                        <span class="ifs-leg"><i style="background:#e9d5ff"></i>Scope 2</span>
+                        <span class="ifs-leg"><i style="background:#4c1d95"></i>Scope 3</span>
+                    </div>
+                </article>
+
+                <!-- Live data sources: col 2, row 2 -->
+                <article class="collage-tile ifs-native-tile">
+                    <p class="ifs-kicker">Live Sources</p>
+                    <div class="ifs-sources">
+                        <span class="ifs-source"><span class="ifs-live-dot"></span>Operations</span>
+                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:.35s"></span>Procurement</span>
+                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:.7s"></span>Logistics</span>
+                        <span class="ifs-source"><span class="ifs-live-dot" style="animation-delay:1.05s"></span>Energy</span>
+                    </div>
+                </article>
+
+                <!-- Hero: col 3, full height -->
+                <article class="collage-tile ifs-hero-tile">
+                    <div class="ifs-hero-rings" aria-hidden="true">
+                        <div class="ifs-pulse-ring ifs-pulse-ring-1"></div>
+                        <div class="ifs-pulse-ring ifs-pulse-ring-2"></div>
+                        <div class="ifs-pulse-ring ifs-pulse-ring-3"></div>
+                        <div class="ifs-pulse-core"></div>
+                    </div>
+                    <div class="ifs-hero-content">
+                        <p class="ifs-kicker">IFS Sustainability</p>
+                        <h4 class="ifs-hero-title">Emissions intelligence built into your ERP.</h4>
+                        <div class="ifs-badge-row">
+                            <span class="ifs-chip">ESG</span>
+                            <span class="ifs-chip">GHG Protocol</span>
+                            <span class="ifs-chip">CSRD</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ESG frameworks: col 4, row 1 -->
+                <article class="collage-tile ifs-esg-tile">
+                    <p class="ifs-kicker">Frameworks</p>
+                    <ul class="ifs-framework-list">
+                        <li>GHG Protocol</li>
+                        <li>CSRD 2024</li>
+                        <li>ISO 14064</li>
+                    </ul>
+                </article>
+
+                <!-- CSRD compliant: col 4, row 2 -->
+                <article class="collage-tile ifs-csrd-tile">
+                    <div class="ifs-check" aria-hidden="true">&#10003;</div>
+                    <p class="ifs-kicker">CSRD 2024</p>
+                    <h4 class="ifs-small-title">Report-ready.</h4>
+                </article>
+
+                <!-- Action planning: col 5, full height -->
+                <article class="collage-tile ifs-action-tile">
+                    <p class="ifs-kicker">Action Planning</p>
+                    <h4 class="ifs-action-title">Reduce, not just report.</h4>
+                    <div class="ifs-action-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 26V6M16 6L8 14M16 6L24 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
         <!-- Project Images -->
         <div class="project-images">
             <div class="project-image-grid">
@@ -200,7 +303,7 @@
 
         <!-- Case Study Section (Hidden until PIN is entered) -->
         <section id="caseStudySection" class="case-study-section" style="display: none;">
-            <div class="case-study-content">
+            <div class="case-study-content ifszero-case-study">
                 
                 <!-- Hero Header -->
                 <div class="case-study-hero">
@@ -234,73 +337,85 @@
                     <p>Sustainability software fails in predictable ways. Through competitive analysis and customer discovery, we identified patterns that enterprise teams consistently struggled with:</p>
                 </div>
 
+                <div class="problems-grid">
+
                 <!-- Problem #1 -->
-                <div class="case-study-problem-card">
+                <div class="case-study-problem-card" data-accent="violet">
                     <span class="problem-tag">PROBLEM #1</span>
                     <h4 class="problem-title">Regulatory Translation, Not Design</h4>
                     <p>Existing tools translate compliance frameworks literally into UI. Users see hierarchical structures that match standards like GHG Protocol or CSRD not their actual business operations.</p>
-                    <div class="problem-example">
-                        <span class="example-label">EXAMPLE</span>
-                        <p>A plant manager responsible for emissions doesn't think in "Scope 3, Category 4: Upstream Transportation." They think in fleet vehicles, supplier shipments, and production schedules.</p>
-                    </div>
-                    <div class="problem-impact">
-                        <span class="impact-label">IMPACT</span>
-                        <p>Users spend more time translating their work into software language than doing actual sustainability work. Adoption stalls.</p>
+                    <div class="problem-detail">
+                        <div class="problem-example">
+                            <span class="example-label">EXAMPLE</span>
+                            <p>A plant manager responsible for emissions doesn't think in "Scope 3, Category 4: Upstream Transportation." They think in fleet vehicles, supplier shipments, and production schedules.</p>
+                        </div>
+                        <div class="problem-impact">
+                            <span class="impact-label">IMPACT</span>
+                            <p>Users spend more time translating their work into software language than doing actual sustainability work. Adoption stalls.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Problem Image Placeholder -->
+                <!-- Problem #2 -->
+                <div class="case-study-problem-card" data-accent="amber">
+                    <span class="problem-tag">PROBLEM #2</span>
+                    <h4 class="problem-title">Expert Assumptions in Every Field</h4>
+                    <p>Data entry forms assume users have environmental science backgrounds. Every dropdown, unit selector, and calculation methodology requires specialized knowledge.</p>
+                    <div class="problem-detail">
+                        <div class="problem-example">
+                            <span class="example-label">EXAMPLE</span>
+                            <p>When entering fuel consumption, users must choose between emission factors, understand CO2e conversions, and select appropriate activity types without guidance.</p>
+                        </div>
+                        <div class="problem-impact">
+                            <span class="impact-label">IMPACT</span>
+                            <p>Data quality suffers. Users guess, skip fields, or enter incorrect values. Reports become unreliable, eroding trust in the system.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem #3 -->
+                <div class="case-study-problem-card" data-accent="blue">
+                    <span class="problem-tag">PROBLEM #3</span>
+                    <h4 class="problem-title">Auditor-First, Operator-Last</h4>
+                    <p>Reporting workflows are optimized for year-end audits, not day-to-day operations. The people who <em>use</em> the data aren't the people the tool is designed for.</p>
+                    <div class="problem-detail">
+                        <div class="problem-example">
+                            <span class="example-label">EXAMPLE</span>
+                            <p>An operations manager wants to see which fleet vehicles are driving the most emissions this quarter. Instead, they get data structures organized by emission categories and reporting periods.</p>
+                        </div>
+                        <div class="problem-impact">
+                            <span class="impact-label">IMPACT</span>
+                            <p>Sustainability becomes a compliance exercise, not an operational improvement tool. Action-taking gets separated from data visibility.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem #4 -->
+                <div class="case-study-problem-card" data-accent="rose">
+                    <span class="problem-tag">PROBLEM #4</span>
+                    <h4 class="problem-title">Bolted-On, Not Built-In</h4>
+                    <p>Sustainability tools feel like add-ons. They're separate systems requiring separate logins, separate data entry, and separate mental contexts from core business workflows.</p>
+                    <div class="problem-detail">
+                        <div class="problem-example">
+                            <span class="example-label">EXAMPLE</span>
+                            <p>When a maintenance team logs work in the ERP, they later have to re-enter the same activity data in a separate sustainability platform. Double work, double errors.</p>
+                        </div>
+                        <div class="problem-impact">
+                            <span class="impact-label">IMPACT</span>
+                            <p>Without integration into existing workflows, adoption requires behavioral change that most organizations can't sustain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div><!-- /problems-grid -->
+
+                <!-- Problem analysis image -->
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
                         <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
                             <span>📊 Problem analysis visualization coming soon</span>
                         </div>
                         <p class="image-caption">Mapping regulatory structures vs. operational mental models</p>
-                    </div>
-                </div>
-
-                <!-- Problem #2 -->
-                <div class="case-study-problem-card">
-                    <span class="problem-tag">PROBLEM #2</span>
-                    <h4 class="problem-title">Expert Assumptions in Every Field</h4>
-                    <p>Data entry forms assume users have environmental science backgrounds. Every dropdown, unit selector, and calculation methodology requires specialized knowledge.</p>
-                    <div class="problem-example">
-                        <span class="example-label">EXAMPLE</span>
-                        <p>When entering fuel consumption, users must choose between emission factors, understand CO2e conversions, and select appropriate activity types without guidance.</p>
-                    </div>
-                    <div class="problem-impact">
-                        <span class="impact-label">IMPACT</span>
-                        <p>Data quality suffers. Users guess, skip fields, or enter incorrect values. Reports become unreliable, eroding trust in the system.</p>
-                    </div>
-                </div>
-
-                <!-- Problem #3 -->
-                <div class="case-study-problem-card">
-                    <span class="problem-tag">PROBLEM #3</span>
-                    <h4 class="problem-title">Auditor-First, Operator-Last</h4>
-                    <p>Reporting workflows are optimized for year-end audits, not day-to-day operations. The people who <em>use</em> the data aren't the people the tool is designed for.</p>
-                    <div class="problem-example">
-                        <span class="example-label">EXAMPLE</span>
-                        <p>An operations manager wants to see which fleet vehicles are driving the most emissions this quarter. Instead, they get data structures organized by emission categories and reporting periods.</p>
-                    </div>
-                    <div class="problem-impact">
-                        <span class="impact-label">IMPACT</span>
-                        <p>Sustainability becomes a compliance exercise, not an operational improvement tool. Action-taking gets separated from data visibility.</p>
-                    </div>
-                </div>
-
-                <!-- Problem #4 -->
-                <div class="case-study-problem-card">
-                    <span class="problem-tag">PROBLEM #4</span>
-                    <h4 class="problem-title">Bolted-On, Not Built-In</h4>
-                    <p>Sustainability tools feel like add-ons. They're separate systems requiring separate logins, separate data entry, and separate mental contexts from core business workflows.</p>
-                    <div class="problem-example">
-                        <span class="example-label">EXAMPLE</span>
-                        <p>When a maintenance team logs work in the ERP, they later have to re-enter the same activity data in a separate sustainability platform. Double work, double errors.</p>
-                    </div>
-                    <div class="problem-impact">
-                        <span class="impact-label">IMPACT</span>
-                        <p>Without integration into existing workflows, adoption requires behavioral change that most organizations can't sustain.</p>
                     </div>
                 </div>
 
@@ -469,12 +584,32 @@
                     <p>We conducted extensive research with sustainability managers, compliance officers, and operations teams across manufacturing, aerospace, and energy sectors.</p>
                 </div>
 
+                <div class="research-stats-grid">
+                    <div class="research-stat-card">
+                        <div class="stat-number">83%</div>
+                        <div class="stat-label">Data Collection Challenge</div>
+                        <div class="stat-detail">of executives — Workiva ESG Practitioner Survey, 2024</div>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">72%</div>
+                        <div class="stat-label">Investor Pressure</div>
+                        <div class="stat-detail">would increase investment in companies actively tracking emissions — PwC</div>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">User Archetypes</div>
+                        <div class="stat-detail">distinct enterprise roles with conflicting needs around data and compliance</div>
+                    </div>
+                </div>
+
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🔍 Research synthesis board coming soon</span>
-                        </div>
-                        <p class="image-caption">Affinity mapping from customer discovery interviews</p>
+                        <img src="../images/Projects/IFSZero/img1.webp" alt="IFS Emissions Management design sprint — team working at whiteboard" loading="lazy" decoding="async">
+                        <p class="image-caption">Design sprint — mapping Scope 1, 2 &amp; 3 emission source hierarchies</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/img2.webp" alt="Team reviewing the Emissions Management high-level roadmap" loading="lazy" decoding="async">
+                        <p class="image-caption">Cross-functional roadmap review — prioritising 25R1 &amp; 25R2 features</p>
                     </div>
                 </div>
 
@@ -488,6 +623,23 @@
                     </ul>
                 </div>
 
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">"Reporting is great — but it's a means to an end. I'd rather choose action. But we have to report first and get our data right."</p>
+                        <p class="operator-quote-insight">
+                            <span class="insight-label">Design implication</span>
+                            Operations-first dashboard — lead with actionable hotspots, compliance views secondary.
+                        </p>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">"Even if just one Scope 3 category is missing, we still export everything, combine it in Excel, and report that way. That defeats the whole purpose of the tool."</p>
+                        <p class="operator-quote-insight">
+                            <span class="insight-label">Design implication</span>
+                            Complete Scope 3 coverage was a prerequisite for tool adoption — partial support equals zero benefit.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">User Flows & Information Architecture</h4>
                     <p>We mapped each archetype to their journey through the system, identifying handoff points and optimization opportunities.</p>
@@ -495,16 +647,12 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📐 User flow diagrams coming soon</span>
-                        </div>
-                        <p class="image-caption">Mapping user journeys from data entry to insight to action</p>
+                        <img src="../images/Projects/IFSZero/img3.webp" alt="Team testing the IFS emissions management interface" loading="lazy" decoding="async">
+                        <p class="image-caption">Live interface testing — evaluating emission source configuration flows</p>
                     </div>
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🗂️ Information architecture coming soon</span>
-                        </div>
-                        <p class="image-caption">Organizational hierarchy mapping for multi-entity enterprises</p>
+                        <img src="../images/Projects/IFSZero/img4.webp" alt="Whiteboard showing IFS Colombo 9 organisational hierarchy" loading="lazy" decoding="async">
+                        <p class="image-caption">Modelling real organisational hierarchies — IFS Colombo as reference structure</p>
                     </div>
                 </div>
 
@@ -558,15 +706,41 @@
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">Usability Testing & Validation</h4>
-                    <p>We tested prototypes with 12+ enterprise users across manufacturing, energy, and defense sectors. Sessions revealed critical insights about terminology confusion, navigation patterns, and mental model mismatches that shaped final designs.</p>
+                    <p>A formal usability session was conducted in June 2025 with an IFS Global Climate Strategy Manager — a power user representing the Sustainability Manager archetype.</p>
                 </div>
 
-                <div class="case-study-images">
-                    <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🧪 Usability testing insights coming soon</span>
-                        </div>
-                        <p class="image-caption">Key findings from validation sessions with enterprise users</p>
+                <div class="research-stats-grid">
+                    <div class="research-stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Enterprise Users</div>
+                        <div class="stat-detail">Global Climate Strategy Manager & Product Specialist</div>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">3/5</div>
+                        <div class="stat-label">Average Satisfaction</div>
+                        <div class="stat-detail">Post-session survey, June 2025</div>
+                    </div>
+                    <div class="research-stat-card">
+                        <div class="stat-number">~2 hrs</div>
+                        <div class="stat-label">Session Duration</div>
+                        <div class="stat-detail">Recorded, moderated — Jun 5, 2025</div>
+                    </div>
+                </div>
+
+                <div class="case-study-goals-grid">
+                    <div class="goals-column">
+                        <span class="goals-tag">WHAT WORKED</span>
+                        <h4>Activity data entry</h4>
+                        <p>Navigated to the right screens without prompting.</p>
+                        <h4>Configuration flows</h4>
+                        <p>Sites and legal entity setup rated most intuitive.</p>
+                    </div>
+                    <div class="goals-column">
+                        <span class="goals-tag">WHAT NEEDED WORK</span>
+                        <h4>Emission source hierarchy</h4>
+                        <p>Defining and organising sources was consistently confusing.</p>
+                        <h4>Bulk data upload</h4>
+                        <p>Bugs caused error states that looked like product defects.</p>
                     </div>
                 </div>
 
@@ -584,10 +758,8 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📊 Dashboard final design coming soon</span>
-                        </div>
-                        <p class="image-caption">Operations-first dashboard with actionable insights</p>
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-03-31 at 9.18.07 AM.png" alt="IFS 25R1 Lobby design exploration — widget suggestions and competitive analysis" loading="lazy" decoding="async">
+                        <p class="image-caption">25R1 Lobby design — widget ideation alongside competitor reference and user role mapping</p>
                     </div>
                 </div>
 
@@ -674,27 +846,27 @@
 
                 <!-- Impact -->
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Impact</h3>
-                    <p>IFSZero<span class="tm-mark">TM</span> has been integrated into IFS Cloud and is being adopted by enterprise customers globally. Due to confidentiality, specific metrics are indicated directionally:</p>
+                    <h3 class="case-study-heading">Validation</h3>
+                    <p>This product was in active development at the time of writing — I left IFS while the build was still ongoing. The numbers below reflect usability research conducted before deployment, not post-launch outcomes.</p>
                 </div>
 
                 <div class="case-study-metrics">
                     <div class="metric-card">
-                        <span class="metric-value">60%</span>
-                        <span class="metric-label">Reduction in data collection time</span>
+                        <span class="metric-value">3/5</span>
+                        <span class="metric-label">Average post-session satisfaction — formal usability study, Jun 2025</span>
                     </div>
                     <div class="metric-card">
-                        <span class="metric-value">↑</span>
-                        <span class="metric-label">Single source of truth for sustainability & operational data</span>
+                        <span class="metric-value">2</span>
+                        <span class="metric-label">Enterprise users in formal usability sessions — Global Climate Strategy Manager &amp; Product Specialist</span>
                     </div>
                     <div class="metric-card">
-                        <span class="metric-value">✓</span>
-                        <span class="metric-label">Positive validation from enterprise pilots</span>
+                        <span class="metric-value">4</span>
+                        <span class="metric-label">Critical friction points identified — hierarchy, bulk upload, Scope 3 gaps, ERP integration</span>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <p>More significantly, the project validated IFS's next-generation architectural approach demonstrating that composable patterns could deliver better user experiences faster. Learnings from IFSZero are now informing the broader platform evolution.</p>
+                    <p>The project also validated IFS's next-generation architectural approach — demonstrating that composable micro-frontend patterns could deliver better user experiences faster. Learnings from IFSZero directly informed the broader platform evolution strategy.</p>
                 </div>
 
                 <!-- What We Learned -->

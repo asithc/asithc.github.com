@@ -6117,6 +6117,44 @@ html {
     font-style: italic;
 }
 
+/* Case study closing section */
+.case-study-closing {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.case-study-closing p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 16px;
+}
+
+.closing-thanks {
+    font-size: 15px;
+    color: #888;
+    margin-top: 12px;
+}
+
+/* 2-column layout for case-study-images with multiple children */
+.case-study-images:has(.case-study-image + .case-study-image) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.case-study-images:has(.case-study-image + .case-study-image) .case-study-image {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .case-study-images:has(.case-study-image + .case-study-image) {
+        grid-template-columns: 1fr;
+    }
+}
+
 .concept-frames-grid {
     display: grid;
     grid-template-columns: 1.25fr 0.75fr;
@@ -7026,8 +7064,8 @@ html {
 }
 
 .problem-detail {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-top: auto;
 }
@@ -8046,6 +8084,490 @@ html {
 }
 
 /* ================================
+   IFSZERO SCOPED COLOR OVERRIDES
+   IFS brand: deep purple #6B21A8, violet #9333EA
+   ================================ */
+
+.ifszero-case-study .case-study-archetype::before {
+    background: #6B21A8;
+}
+
+.ifszero-case-study .archetype-visual .project-image-placeholder {
+    background: #6B21A8;
+}
+
+.ifszero-case-study .operator-quote-card::before {
+    color: #9333EA !important;
+}
+
+.ifszero-case-study .insight-label {
+    color: #6B21A8;
+}
+
+.ifszero-case-study .jtbd-label {
+    color: #6B21A8;
+}
+
+.ifszero-case-study .goals-column:first-child .goals-tag {
+    background: #6B21A8;
+    color: #fff;
+}
+
+.ifszero-case-study .goals-column:last-child .goals-tag {
+    background: linear-gradient(135deg, #9333EA, #6B21A8);
+    color: #fff;
+}
+
+/* ================================
+   IFSZERO COLLAGE VARIANT
+   5-col × 2-row grid · IFS purple palette · animated
+   ================================ */
+
+.project-collage-ifszero {
+    --ifs-deep:     #0D0120;
+    --ifs-dark:     #1A0033;
+    --ifs-purple:   #6B21A8;
+    --ifs-violet:   #9333EA;
+    --ifs-plum:     #4C1D95;
+    --ifs-lavender: #F3E8FF;
+    --ifs-lilac:    #C084FC;
+    --ifs-white:    #FFFFFF;
+    --ifs-ink:      #160626;
+}
+
+.project-collage-grid-ifszero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.95fr 1.7fr 0.95fr 1.1fr;
+    grid-template-rows: repeat(2, minmax(162px, 1fr));
+    gap: clamp(10px, 1.2vw, 16px);
+}
+
+.project-collage-grid-ifszero .collage-tile {
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ---- Scope tile: col 1, full height ---- */
+.ifs-scope-tile {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    background: var(--ifs-dark);
+    border: 1px solid rgba(147, 51, 234, 0.22);
+    justify-content: space-between;
+}
+
+/* ---- CO₂e tile: col 2, row 1 ---- */
+.ifs-co2-tile {
+    grid-column: 2;
+    grid-row: 1;
+    background: var(--ifs-purple);
+    color: var(--ifs-white);
+    justify-content: space-between;
+}
+
+/* ---- ERP-native tile: col 2, row 2 ---- */
+.ifs-native-tile {
+    grid-column: 2;
+    grid-row: 2;
+    background: var(--ifs-deep);
+    color: var(--ifs-white);
+    border: 1px solid rgba(147, 51, 234, 0.22);
+    justify-content: space-between;
+}
+
+/* ---- Hero tile: col 3, full height ---- */
+.ifs-hero-tile {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background:
+        radial-gradient(circle at 50% 38%, rgba(147, 51, 234, 0.24) 0%, transparent 58%),
+        var(--ifs-deep);
+    border: 1px solid rgba(147, 51, 234, 0.32) !important;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+/* ---- ESG frameworks tile: col 4, row 1 ---- */
+.ifs-esg-tile {
+    grid-column: 4;
+    grid-row: 1;
+    background: var(--ifs-lavender);
+    color: var(--ifs-ink);
+    justify-content: space-between;
+}
+
+/* ---- CSRD tile: col 4, row 2 ---- */
+.ifs-csrd-tile {
+    grid-column: 4;
+    grid-row: 2;
+    background: var(--ifs-purple);
+    color: var(--ifs-white);
+    justify-content: space-between;
+}
+
+/* ---- Action tile: col 5, full height ---- */
+.ifs-action-tile {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    background: linear-gradient(170deg, #9333EA 0%, var(--ifs-plum) 52%, var(--ifs-dark) 100%);
+    color: var(--ifs-white);
+    justify-content: space-between;
+}
+
+/* ======= Typography ======= */
+
+.ifs-kicker {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ifs-lilac);
+}
+
+.ifs-co2-tile .ifs-kicker,
+.ifs-csrd-tile .ifs-kicker { color: rgba(255, 255, 255, 0.6); }
+
+.ifs-esg-tile .ifs-kicker { color: var(--ifs-purple); }
+
+.ifs-scope-title {
+    margin: 0;
+    color: var(--ifs-white);
+    font-size: clamp(17px, 1.3vw, 20px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* ======= Emissions split donut ======= */
+
+.ifs-donut-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.ifs-donut {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #c084fc  0deg 79.2deg,
+        #e9d5ff  79.2deg 205.2deg,
+        #4c1d95  205.2deg 360deg
+    );
+    position: relative;
+    animation: ifsDonutPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+
+.ifs-donut::after {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border-radius: 50%;
+    background: #6B21A8;
+}
+
+@keyframes ifsDonutPop {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.ifs-donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ifs-leg {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ifs-leg i {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    font-style: normal;
+}
+
+/* ======= Live data sources ======= */
+
+.ifs-sources {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+    justify-content: center;
+}
+
+.ifs-source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(192, 132, 252, 0.85);
+}
+
+.ifs-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ADE80;
+    flex-shrink: 0;
+    animation: ifsLivePing 2.2s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+}
+
+@keyframes ifsLivePing {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); opacity: 0.7; }
+    50%       { box-shadow: 0 0 0 4px rgba(74, 222, 128, 0);  opacity: 1; }
+}
+
+.ifs-hero-title {
+    margin: 0;
+    color: var(--ifs-white);
+    font-size: clamp(22px, 1.85vw, 32px);
+    line-height: 1.18;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.ifs-action-title {
+    margin: 0;
+    color: var(--ifs-white);
+    font-size: clamp(19px, 1.5vw, 26px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* ======= Scope animated bars ======= */
+
+.ifs-scope-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.ifs-scope-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.ifs-scope-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(192, 132, 252, 0.6);
+    min-width: 14px;
+    text-transform: uppercase;
+}
+
+.ifs-scope-bar {
+    flex: 1;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.ifs-scope-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #7c3aed, #c084fc);
+    width: 0;
+    animation: ifsFillBar 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.ifs-scope-bars .ifs-scope-bar-row:nth-child(1) .ifs-scope-fill { animation-delay: 0.3s; }
+.ifs-scope-bars .ifs-scope-bar-row:nth-child(2) .ifs-scope-fill { animation-delay: 0.55s; }
+.ifs-scope-bars .ifs-scope-bar-row:nth-child(3) .ifs-scope-fill { animation-delay: 0.8s; }
+
+@keyframes ifsFillBar {
+    from { width: 0; }
+    to   { width: var(--fill, 60%); }
+}
+
+/* ======= Hero: animated pulse rings ======= */
+
+.ifs-hero-rings {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ifs-pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(147, 51, 234, 0.6);
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0;
+    animation: ifsPulseExpand 4s ease-out infinite;
+}
+
+.ifs-pulse-ring-1 { width: 90px;  height: 90px;  animation-delay: 0s; }
+.ifs-pulse-ring-2 { width: 155px; height: 155px; animation-delay: 1.33s; }
+.ifs-pulse-ring-3 { width: 220px; height: 220px; animation-delay: 2.66s; }
+
+.ifs-pulse-core {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, #e879f9 0%, #9333EA 60%, #4c1d95 100%);
+    box-shadow: 0 0 18px rgba(147, 51, 234, 0.9), 0 0 46px rgba(147, 51, 234, 0.35);
+    animation: ifsCoreGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes ifsPulseExpand {
+    0%   { transform: translate(-50%, -50%) scale(0.35); opacity: 0.85; }
+    100% { transform: translate(-50%, -50%) scale(1.6);  opacity: 0; }
+}
+
+@keyframes ifsCoreGlow {
+    0%, 100% { box-shadow: 0 0 18px rgba(147, 51, 234, 0.9), 0 0 46px rgba(147, 51, 234, 0.35); }
+    50%       { box-shadow: 0 0 30px rgba(232, 121, 249, 1), 0 0 70px rgba(147, 51, 234, 0.5); }
+}
+
+/* ======= Hero content ======= */
+
+.ifs-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ======= Hero chips ======= */
+
+.ifs-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    position: relative;
+    z-index: 2;
+}
+
+.ifs-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 12px;
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: rgba(192, 132, 252, 0.9);
+    background: rgba(107, 33, 168, 0.28);
+}
+
+/* ======= ESG framework list (light tile) ======= */
+
+.ifs-framework-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ifs-framework-list li {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ifs-ink);
+    padding: 5px 9px;
+    background: rgba(107, 33, 168, 0.09);
+    border-radius: 6px;
+    border-left: 3px solid var(--ifs-purple);
+}
+
+/* ======= CSRD checkmark ======= */
+
+.ifs-check {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ======= Action arrow ======= */
+
+.ifs-action-arrow {
+    width: 36px;
+    color: rgba(255, 255, 255, 0.65);
+    animation: ifsArrowFloat 2.8s ease-in-out infinite;
+}
+
+.ifs-action-arrow svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes ifsArrowFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-7px); }
+}
+
+/* ======= Reduced motion ======= */
+
+@media (prefers-reduced-motion: reduce) {
+    .ifs-scope-fill  { animation: none !important; width: var(--fill, 60%); }
+    .ifs-donut       { animation: none !important; }
+    .ifs-live-dot,
+    .ifs-pulse-ring,
+    .ifs-pulse-core,
+    .ifs-action-arrow { animation: none !important; }
+}
+
+/* ======= Mobile ======= */
+
+@media (max-width: 768px) {
+    .project-collage-grid-ifszero {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .ifs-scope-tile,
+    .ifs-hero-tile,
+    .ifs-action-tile {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+        min-height: 180px;
+    }
+}
+
+/* ================================
    PROCESS FLOW STEPS
    Visual flow chart step cards with connector lines
    ================================ */
@@ -8506,6 +9028,10 @@ html {
     .case-study-problem-card {
         padding: 22px;
     }
+
+    .problem-detail {
+        grid-template-columns: 1fr;
+    }
     
     .goal-card {
         padding: 22px;
@@ -8720,9 +9246,10 @@ html {
     }
 
     .wizpos-hero-symbol,
-    .wizpos-setup-list li,
-    .wizpos-setup-list li::before,
     .wizpos-sparkles i,
+    .wp-industry-list li,
+    .wp-setup-list li,
+    .wp-setup-list li::before,
     .project-lightbox,
     .project-lightbox-image {
         animation: none !important;
@@ -9099,263 +9626,213 @@ html {
     }
 }
 
-/* WIZPOS collage variant */
+/* WIZPOS collage variant — multi-industry redesign */
 .project-collage-wizpos {
-    --wizpos-primary: #306EE2;
-    --wizpos-secondary: #4F00FF;
-    --wizpos-green: #5EC086;
-    --wizpos-yellow: #FDC124;
-    --wizpos-orange: #FD8124;
-    --wizpos-black: #000000;
-    --wizpos-white: #FFFFFF;
-    --wizpos-gray-1: #939EAA;
-    --wizpos-gray-2: #E0E3E7;
-    --wizpos-gray-3: #F9FAFB;
+    --wp-blue:     #306EE2;
+    --wp-indigo:   #4F00FF;
+    --wp-green:    #16A34A;
+    --wp-orange:   #EA580C;
+    --wp-amber:    #D97706;
+    --wp-charcoal: #0E1118;
+    --wp-dark:     #111827;
+    --wp-white:    #FFFFFF;
 }
 
 .project-collage-grid-wizpos {
     display: grid;
-    grid-template-columns: 1.05fr 1.45fr 1.45fr 1.1fr;
-    grid-template-rows: repeat(2, minmax(164px, 1fr));
+    grid-template-columns: 1.1fr 0.9fr 1.75fr 0.9fr 1.1fr;
+    grid-template-rows: repeat(2, minmax(160px, 1fr));
     gap: clamp(10px, 1.2vw, 16px);
 }
 
 .project-collage-grid-wizpos .collage-tile {
-    border-radius: 24px;
-    border: 1px solid transparent;
+    border-radius: 22px;
     overflow: hidden;
     position: relative;
-    padding: 18px 16px;
+    padding: 20px 18px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
 }
 
-.wizpos-local-tile {
+/* ---- Industries: col 1, full height — WizPOS blue anchor ---- */
+.wp-industries-tile {
     grid-column: 1;
-    grid-row: 1;
-    background: var(--wizpos-primary);
-    color: var(--wizpos-white);
-}
-
-.wizpos-cloud-tile {
-    grid-column: 1;
-    grid-row: 2;
-    background: var(--wizpos-secondary);
-    color: var(--wizpos-white);
-}
-
-.wizpos-setup-tile {
-    grid-column: 4;
-    grid-row: 1;
-    background: var(--wizpos-yellow);
-    color: var(--wizpos-black);
-}
-
-.wizpos-secure-tile {
-    grid-column: 4;
-    grid-row: 2;
-    background: var(--wizpos-black);
-    color: var(--wizpos-white);
-}
-
-.wizpos-tile-kicker {
-    margin: 0;
-    font-size: 11px;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-tile-title {
-    margin: 0;
-    font-size: clamp(20px, 1.45vw, 22px);
-    line-height: 1.22;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-local-tile .wizpos-tile-kicker,
-.wizpos-local-tile .wizpos-tile-title,
-.wizpos-local-tile .wizpos-tile-copy,
-.wizpos-cloud-tile .wizpos-tile-kicker,
-.wizpos-cloud-tile .wizpos-tile-title,
-.wizpos-cloud-tile .wizpos-tile-copy {
-    color: var(--wizpos-white);
-}
-
-.wizpos-tile-copy {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.46;
-    font-weight: 600;
-    max-width: 95%;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-hero-tile {
-    grid-column: 2 / span 2;
     grid-row: 1 / span 2;
-    background: var(--wizpos-gray-3);
-    border: 1.5px solid var(--wizpos-gray-2) !important;
+    background: var(--wp-blue);
+    justify-content: space-between;
+}
+
+/* ---- Sector tiles: unified dark with accent left border ---- */
+.wp-retail-tile {
+    grid-column: 2;
+    grid-row: 1;
+    background: #0D1117;
+    color: var(--wp-white);
+    border-left: 4px solid var(--wp-blue) !important;
+    justify-content: space-between;
+}
+
+.wp-restaurant-tile {
+    grid-column: 2;
+    grid-row: 2;
+    background: #0D1117;
+    color: var(--wp-white);
+    border-left: 4px solid #F97316 !important;
+    justify-content: space-between;
+}
+
+/* ---- Hero: col 3, full height ---- */
+.wizpos-hero-tile {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background:
+        radial-gradient(circle at 68% 8%, rgba(48, 110, 226, 0.28), transparent 44%),
+        linear-gradient(150deg, #080d18 0%, #0e1829 55%, #080e1c 100%);
+    border: 1px solid rgba(48, 110, 226, 0.28) !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 14px;
 }
 
+.wp-pharmacy-tile {
+    grid-column: 4;
+    grid-row: 1;
+    background: #0D1117;
+    color: var(--wp-white);
+    border-left: 4px solid #5EC086 !important;
+    justify-content: space-between;
+}
+
+.wp-cafe-tile {
+    grid-column: 4;
+    grid-row: 2;
+    background: #0D1117;
+    color: var(--wp-white);
+    border-left: 4px solid #FDC124 !important;
+    justify-content: space-between;
+}
+
+/* ---- Setup: col 5, full height — WizPOS indigo anchor ---- */
+.wp-local-tile {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    background: var(--wp-indigo);
+    justify-content: space-between;
+}
+
+/* ======= Kicker ======= */
+
+.wp-kicker {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.wp-industries-tile .wp-kicker,
+.wp-local-tile .wp-kicker { color: rgba(255, 255, 255, 0.65); }
+
+.wp-retail-tile .wp-kicker     { color: #93C5FD; }
+.wp-restaurant-tile .wp-kicker { color: #FDBA74; }
+.wp-pharmacy-tile .wp-kicker   { color: #86EFAC; }
+.wp-cafe-tile .wp-kicker       { color: #FDE68A; }
+
+/* ======= Industries tile ======= */
+
+.wp-industries-title {
+    margin: 0;
+    color: var(--wp-white);
+    font-size: clamp(18px, 1.4vw, 22px);
+    line-height: 1.18;
+    font-weight: 700;
+}
+
+.wp-industry-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.wp-industry-list li {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    animation: wpPillSlide 0.45s ease-out both;
+}
+
+.wp-industry-list li:nth-child(1) { animation-delay: 0.10s; }
+.wp-industry-list li:nth-child(2) { animation-delay: 0.22s; }
+.wp-industry-list li:nth-child(3) { animation-delay: 0.34s; }
+.wp-industry-list li:nth-child(4) { animation-delay: 0.46s; }
+.wp-industry-list li:nth-child(5) { animation-delay: 0.58s; }
+
+.wp-pill-more {
+    color: rgba(255, 255, 255, 0.4) !important;
+    animation-delay: 0.70s !important;
+    background: rgba(0, 0, 0, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+@keyframes wpPillSlide {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ======= Sector tile titles ======= */
+
+.wp-sector-title {
+    margin: 0;
+    color: var(--wp-white);
+    font-size: clamp(16px, 1.25vw, 19px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* ======= Hero: emblem & wordmark ======= */
+
 .wizpos-hero-emblem {
     position: absolute;
-    top: 10px;
-    right: 12px;
-    width: 76px;
-    height: 62px;
+    top: 12px;
+    right: 14px;
+    width: 80px;
+    height: 66px;
     pointer-events: none;
     z-index: 2;
 }
 
 .wizpos-hero-symbol {
-    width: 76px;
+    width: 80px;
     height: auto;
-    opacity: 0.28;
+    opacity: 0.2;
+    animation: wizposSymbolFloat 5s ease-in-out infinite;
 }
 
-.wizpos-hero-kicker {
-    margin: 0;
-    color: var(--wizpos-primary);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
+@keyframes wizposSymbolFloat {
+    0%, 100% { opacity: 0.2;  transform: translateY(0) scale(1); }
+    50%       { opacity: 0.34; transform: translateY(-4px) scale(1.04); }
 }
 
 .wizpos-wordmark {
-    width: min(250px, 52%);
+    width: min(220px, 50%);
     height: auto;
     display: block;
+    filter: brightness(0) invert(1);
     position: relative;
     z-index: 2;
 }
 
-.wizpos-hero-title {
-    margin: 0;
-    color: var(--wizpos-black);
-    font-size: clamp(34px, 2.35vw, 46px);
-    line-height: 1.14;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-hero-copy {
-    margin: 0;
-    color: var(--wizpos-black);
-    font-size: 20px;
-    line-height: 1.44;
-    font-weight: 600;
-    max-width: 95%;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    color: var(--wizpos-white);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 7px 11px;
-}
-
-.wizpos-chip:nth-child(1) {
-    background: var(--wizpos-primary);
-}
-
-.wizpos-chip:nth-child(2) {
-    background: var(--wizpos-secondary);
-}
-
-.wizpos-chip:nth-child(3) {
-    background: var(--wizpos-green);
-}
-
-.wizpos-setup-list {
-    list-style: none;
-    margin: 10px 0 0;
-    padding: 0;
-    display: grid;
-    gap: 9px;
-    counter-reset: wizpos-step;
-    position: relative;
-    z-index: 2;
-}
-
-.wizpos-setup-list li {
-    counter-increment: wizpos-step;
-    background: rgba(255, 255, 255, 0.52);
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    border-radius: 12px;
-    padding: 10px 12px 10px 42px;
-    color: var(--wizpos-black);
-    font-size: 14px;
-    line-height: 1.35;
-    font-weight: 600;
-    position: relative;
-    animation: wizposStepCard 2.6s ease-in-out infinite;
-}
-
-.wizpos-setup-list li::before {
-    content: counter(wizpos-step);
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.18);
-    color: var(--wizpos-black);
-    font-size: 11px;
-    font-weight: 700;
-    display: grid;
-    place-items: center;
-    animation: wizposStepBadge 2.6s ease-in-out infinite;
-}
-
-.wizpos-setup-list li:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.wizpos-setup-list li:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.wizpos-setup-list li:nth-child(2)::before {
-    animation-delay: 0.2s;
-}
-
-.wizpos-setup-list li:nth-child(3)::before {
-    animation-delay: 0.4s;
-}
+/* ======= Hero sparkles ======= */
 
 .wizpos-sparkles {
     position: absolute;
@@ -9363,7 +9840,7 @@ html {
     right: 2px;
     width: 44px;
     height: 30px;
-    color: var(--wizpos-primary);
+    color: var(--wp-blue);
     z-index: 4;
 }
 
@@ -9377,69 +9854,138 @@ html {
     animation: wizposSparkleTwinkle 2.8s ease-in-out infinite;
 }
 
-.wizpos-sparkles i:nth-child(1) {
-    right: 4px;
-    top: 0;
-}
-
-.wizpos-sparkles i:nth-child(2) {
-    right: 0;
-    top: 12px;
-    width: 6px;
-    height: 6px;
-    animation-delay: 0.22s;
-}
-
-.wizpos-sparkles i:nth-child(3) {
-    right: 18px;
-    top: 6px;
-    width: 6px;
-    height: 6px;
-    animation-delay: 0.42s;
-}
-
-.wizpos-sparkles i:nth-child(4) {
-    right: 14px;
-    top: 18px;
-    width: 5px;
-    height: 5px;
-    animation-delay: 0.7s;
-}
-
-@keyframes wizposStepCard {
-    0%, 100% {
-        transform: translateX(0);
-        border-color: rgba(0, 0, 0, 0.16);
-        background: rgba(255, 255, 255, 0.52);
-    }
-    50% {
-        transform: translateX(7px);
-        border-color: rgba(0, 0, 0, 0.42);
-        background: rgba(255, 255, 255, 0.9);
-    }
-}
+.wizpos-sparkles i:nth-child(1) { right: 4px;  top: 0;    }
+.wizpos-sparkles i:nth-child(2) { right: 0;    top: 12px; width: 6px; height: 6px; animation-delay: 0.22s; }
+.wizpos-sparkles i:nth-child(3) { right: 18px; top: 6px;  width: 6px; height: 6px; animation-delay: 0.42s; }
+.wizpos-sparkles i:nth-child(4) { right: 14px; top: 18px; width: 5px; height: 5px; animation-delay: 0.70s; }
 
 @keyframes wizposSparkleTwinkle {
-    0%, 100% {
-        opacity: 0.2;
-        transform: scale(0.86);
-    }
-    50% {
-        opacity: 0.95;
-        transform: scale(1.22);
-    }
+    0%, 100% { opacity: 0.2;  transform: scale(0.86); }
+    50%       { opacity: 0.95; transform: scale(1.22); }
 }
 
-@keyframes wizposStepBadge {
-    0%, 100% {
-        transform: translateY(-50%) scale(1);
-        background: rgba(0, 0, 0, 0.18);
-        color: var(--wizpos-black);
+/* ======= Hero typography ======= */
+
+.wp-hero-kicker {
+    margin: 0;
+    color: var(--wp-blue);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.wp-hero-title {
+    margin: 0;
+    color: var(--wp-white);
+    font-size: clamp(32px, 2.4vw, 46px);
+    line-height: 1.12;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+/* ======= Hero chips ======= */
+
+.wp-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.wp-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 12px;
+    border: 1px solid rgba(48, 110, 226, 0.4);
+    color: rgba(147, 186, 255, 0.9);
+    background: rgba(48, 110, 226, 0.18);
+}
+
+/* ======= Setup list (right col) ======= */
+
+.wp-setup-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    counter-reset: wp-step;
+    flex: 1;
+    justify-content: center;
+}
+
+.wp-setup-list li {
+    counter-increment: wp-step;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px 12px 10px 40px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 600;
+    position: relative;
+    animation: wpStepSlide 2.8s ease-in-out infinite;
+}
+
+.wp-setup-list li::before {
+    content: counter(wp-step);
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--wp-indigo);
+    font-size: 10px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    animation: wpStepBadge 2.8s ease-in-out infinite;
+}
+
+.wp-setup-list li:nth-child(2)         { animation-delay: 0.22s; }
+.wp-setup-list li:nth-child(3)         { animation-delay: 0.44s; }
+.wp-setup-list li:nth-child(2)::before { animation-delay: 0.22s; }
+.wp-setup-list li:nth-child(3)::before { animation-delay: 0.44s; }
+
+@keyframes wpStepSlide {
+    0%, 100% { transform: translateX(0);    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.20); }
+    50%       { transform: translateX(6px); background: rgba(255, 255, 255, 0.26); border-color: rgba(255, 255, 255, 0.45); }
+}
+
+@keyframes wpStepBadge {
+    0%, 100% { transform: translateY(-50%) scale(1);    box-shadow: none; }
+    50%       { transform: translateY(-50%) scale(1.12); box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
+}
+
+/* ======= Mobile ======= */
+
+@media (max-width: 768px) {
+    .project-collage-grid-wizpos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
     }
-    50% {
-        transform: translateY(-50%) scale(1.12);
-        background: rgba(0, 0, 0, 0.9);
-        color: var(--wizpos-white);
+
+    .wp-industries-tile,
+    .wizpos-hero-tile,
+    .wp-local-tile {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+        min-height: 180px;
     }
 }
 
