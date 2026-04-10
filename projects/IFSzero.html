@@ -98,7 +98,7 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="../css/style.css?v=5.13">
+    <link rel="stylesheet" href="../css/style.css?v=5.15">
     
     </head>
 <body class="project-detail-page">
@@ -164,14 +164,14 @@
             <div class="project-content">
                 <div class="project-section">
                     <h3 class="section-label">DESCRIPTION</h3>
-                    <p class="section-text">IFSZero<span class="tm-mark">TM</span> is an enterprise sustainability and emissions management experience designed to help organizations capture activity data, calculate emissions, and turn insights into reduction actions within IFS Cloud<span class="tm-mark">TM</span>.</p>
-                    <p class="section-text">This work focuses on product strategy, information architecture, and scalable UX foundations for large, multi-entity organizations. Due to confidentiality, only a high-level overview is shared here.</p>
+                    <p class="section-text">IFSZero<span class="tm-mark">TM</span> is an emissions management platform I designed from scratch inside IFS Cloud<span class="tm-mark">TM</span>. I led the UX from early discovery through delivery, shaping every screen around real user workflows, validated through customer interviews, usability testing with enterprise sustainability managers, and continuous iteration with engineering.</p>
+                    <p class="section-text">The result is a system where organizations can structure their companies and sites, configure emission sources, capture activity data, sync verified emission factors, and track progress toward reduction targets, all without leaving their ERP. Due to confidentiality, only a high-level overview is shared here.</p>
                 </div>
 
                 <div class="project-section">
                     <h3 class="section-label">CONTEXT</h3>
-                    <p class="section-text">Enterprise teams face growing pressure to measure and report Scope 1, 2, and 3 emissions while aligning with evolving standards and regulatory frameworks.</p>
-                    <p class="section-text">IFSZero<span class="tm-mark">TM</span> is built to simplify complex data capture and provide a unified sustainability workspace inside an ERP environment, balancing compliance, auditability, and day-to-day usability.</p>
+                    <p class="section-text">The existing IFS Cloud interface had a well-known problem: heavy rendering patterns that slowed the entire system, froze screens on standard corporate hardware, and made day-to-day work painful. Sustainability tools in the market weren't much better, most were standalone products that forced double data entry and assumed users had environmental science backgrounds.</p>
+                    <p class="section-text">IFSZero<span class="tm-mark">TM</span> had to solve both problems at once: build the first sustainability workspace natively inside an ERP, and prove a new, lighter architectural approach that wouldn't repeat the performance issues users already lived with. It also served as the pilot for IFS's next-generation frontend patterns.</p>
                 </div>
 
                 <div class="project-cta">
@@ -321,18 +321,59 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/IFSZero/IFSZero-feature.png" alt="IFSZeroTM feature image" loading="lazy" decoding="async">
+                    <img src="../images/Projects/IFSZero/IFSZero-feature.png" alt="IFSZero feature image" loading="lazy" decoding="async">
                 </div>
-                <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>🎨 Pixels are being pushed, please hold.</span>
+            </div>
+
+            <!-- Story tiles -->
+            <div class="ifs-showcase-grid" style="margin-top: var(--spacing-lg);">
+
+                <!-- Tile 1: Before/After comparison (wide) -->
+                <div class="ifs-story-tile ifs-story-tile--wide fade-in">
+                    <div class="ifs-story-compare">
+                        <div class="ifs-story-compare__side">
+                            <span class="ifs-story-compare__tag ifs-story-compare__tag--before">Before</span>
+                            <img src="../images/Projects/IFSZero/current-ifs-cloud-list.png" alt="Old IFS Cloud list view" loading="lazy" decoding="async">
+                        </div>
+                        <span class="ifs-story-compare__arrow" aria-hidden="true">&rarr;</span>
+                        <div class="ifs-story-compare__side">
+                            <span class="ifs-story-compare__tag ifs-story-compare__tag--after">After</span>
+                            <img src="../images/Projects/IFSZero/Companies-and-sites-emissions-sources.png" alt="New IFSZero organizational view" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <div class="ifs-story-tile__narrative">
+                        <span class="ifs-story-tile__label">Rethinking the core pattern</span>
+                        <h4 class="ifs-story-tile__title">From a cramped list that froze screens to a layout that actually breathes.</h4>
+                        <p class="ifs-story-tile__desc">The old IFS Cloud list loaded the full tree into memory on every page. On standard corporate hardware, it locked up. We replaced it with progressive loading and a spacious detail panel.</p>
                     </div>
                 </div>
-                <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>☕ Currently brewing... check back soon!</span>
+
+                <!-- Tile 2: Emissions Dashboard -->
+                <div class="ifs-story-tile fade-in">
+                    <div class="ifs-story-tile__screen">
+                        <span class="ifs-story-badge ifs-story-badge--perf">Live data</span>
+                        <img src="../images/Projects/IFSZero/Emissions Dashboard-energy.png" alt="IFSZero Emissions Dashboard" loading="lazy" decoding="async">
+                    </div>
+                    <div class="ifs-story-tile__narrative">
+                        <span class="ifs-story-tile__label">Operations first</span>
+                        <h4 class="ifs-story-tile__title">Lead with what's actionable, not what's auditable.</h4>
+                        <p class="ifs-story-tile__desc">Year-over-year trends, energy mix, and source breakdown. Compliance views are one click away, but they're not the default.</p>
                     </div>
                 </div>
+
+                <!-- Tile 3: AI Assistant -->
+                <div class="ifs-story-tile fade-in">
+                    <div class="ifs-story-tile__screen">
+                        <span class="ifs-story-badge ifs-story-badge--ai">AI Assistant</span>
+                        <img src="../images/Projects/IFSZero/AI-assistant-enable-with more power-ratherthana chat-bot, quick access buld in to it.png" alt="AI Assistant with contextual insights" loading="lazy" decoding="async">
+                    </div>
+                    <div class="ifs-story-tile__narrative">
+                        <span class="ifs-story-tile__label">Built-in intelligence</span>
+                        <h4 class="ifs-story-tile__title">Not a chatbot. A workspace co-pilot.</h4>
+                        <p class="ifs-story-tile__desc">Summaries, data gaps, compliance checks, and trend forecasts pulled from live data. Quick actions sit where users already work.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -782,83 +823,182 @@
                 <!-- Final Designs -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Final Designs</h3>
-                    <p>Here's a walkthrough of the key experiences we shipped, and the design decisions behind them.</p>
+                    <p>What follows is a walkthrough of the key experiences we shipped, along with the thinking behind each decision.</p>
                 </div>
 
+                <!-- Multi-Entity Consolidation (moved to top, this is the foundation) -->
                 <div class="case-study-block">
-                    <h4 class="case-study-subheading">Operations-First Dashboard</h4>
-                    <p>The dashboard flips the traditional compliance hierarchy. Instead of leading with Scope 1/2/3 breakdowns, we lead with <strong>what's actionable</strong>: emission hotspots, trending comparisons, and direct links to the activities driving the numbers.</p>
-                    <p>Users see their operational reality first then can drill into compliance views when needed for reporting.</p>
+                    <h4 class="case-study-subheading">Organizational Structure &amp; Multi-Entity Consolidation</h4>
+                    <p>Everything starts here. Before tracking a single emission, users need to see their organization laid out clearly: companies, sites, facilities, and how they all connect. This is the foundation the rest of the platform builds on.</p>
+                    <p>The publicly available version of IFS Cloud uses a dense, narrow list pattern that tries to pack everything into a small column. On lower-spec machines, this approach eats up resources, freezes the screen, and makes the whole interface feel sluggish. We saw this first-hand during internal testing.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="../images/Projects/IFSZero/Screenshot 2026-03-31 at 9.18.07 AM.png" alt="IFS 25R1 Lobby design exploration — widget suggestions and competitive analysis" loading="lazy" decoding="async">
-                        <p class="image-caption">25R1 Lobby design — widget ideation alongside competitor reference and user role mapping</p>
+                        <img src="../images/Projects/IFSZero/current-ifs-cloud-list.png" alt="Current IFS Cloud list view showing cramped layout" loading="lazy" decoding="async">
+                        <p class="image-caption">The current IFS Cloud list: cramped columns, nested tree nodes, heavy rendering. This is what we set out to replace.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <p>Instead of that pattern, I introduced a spacious, interactive layout. Companies sit in a searchable list on the left. Selecting one reveals its sites with real detail: location, type, emission source count. No cramming. No guessing. Users can scan the full organizational picture at a glance and drill into any site to see its linked emission sources, each tagged with scope and status.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Companies-and-sites.png" alt="Companies and Sites with spacious layout" loading="lazy" decoding="async">
+                        <p class="image-caption">Companies &amp; Sites: spacious layout showing company detail with sites, locations, and types at a glance</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Companies-and-sites-emissions-sources.png" alt="Site selected showing its emission sources" loading="lazy" decoding="async">
+                        <p class="image-caption">Selecting a site expands to show its emission sources with scope tags, status, and last-updated timestamps</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/tree sctructure view, with organizational structure and emissions data.png" alt="Visual tree view of organizational hierarchy" loading="lazy" decoding="async">
+                        <p class="image-caption">Visual tree view: the full organizational hierarchy mapped out with emission source data overlaid</p>
+                    </div>
+                </div>
+
+                <div class="operator-quotes-grid">
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">"The old list chokes on anything above 50 entities. This new layout actually loads, and I can find what I need without scrolling endlessly."</p>
+                        <p class="operator-quote-insight">
+                            <span class="insight-label">Internal testing</span>
+                            Frontend engineer, early prototype review
+                        </p>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">"Architecturally, this is night and day. We're only rendering what's visible now. The old pattern pulled the full tree into memory on load, which is where the bottlenecks came from."</p>
+                        <p class="operator-quote-insight">
+                            <span class="insight-label">Internal testing</span>
+                            Backend lead, architecture review session
+                        </p>
+                    </div>
+                    <div class="operator-quote-card">
+                        <p class="operator-quote-text">"It just feels more alive. The old version felt like navigating a spreadsheet. This one actually shows me the relationships between things."</p>
+                        <p class="operator-quote-insight">
+                            <span class="insight-label">Internal testing</span>
+                            Product specialist, usability walkthrough
+                        </p>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">The previous IFS Cloud list rendered the full organizational tree on load, pulling every node into memory. On large tenants, this created visible lag and frequent freezes, especially on standard-issue corporate hardware.</p>
+                    <p class="callout-emphasis">Our approach loads only what's in view. Selecting a company fetches its sites. Selecting a site fetches its sources. The result: faster loads, no freezes, and a layout that actually scales with the data.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Operations-First Dashboard</h4>
+                    <p>The dashboard flips the traditional compliance hierarchy. Instead of leading with Scope 1/2/3 breakdowns, we lead with <strong>what's actionable</strong>: emission hotspots, trending comparisons, and direct links to the activities behind the numbers.</p>
+                    <p>Users see their operational reality first, then drill into compliance views when reporting deadlines come around.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Emissions Dashboard-energy.png" alt="IFSZero Emissions Dashboard, Energy tab" loading="lazy" decoding="async">
+                        <p class="image-caption">Energy dashboard: year-over-year comparison, source breakdown, and energy mix distribution</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-03-31 at 9.18.07 AM.png" alt="25R1 Lobby design exploration" loading="lazy" decoding="async">
+                        <p class="image-caption">25R1 Lobby design: widget ideation alongside competitor reference and user role mapping</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">Guided Data Capture</h4>
-                    <p>Data entry transforms from dense forms into guided experiences. Smart defaults pre-populate where possible, contextual help explains terminology in plain language, and validation catches errors before submission.</p>
-                    <p>The system leverages existing ERP data asset hierarchies, procurement records, work orders to reduce manual entry and improve accuracy.</p>
+                    <p>Data entry went from dense compliance forms to guided experiences. Smart defaults pre-populate where possible, contextual help explains jargon in plain language, and validation catches errors before submission.</p>
+                    <p>The system pulls from existing ERP data (asset hierarchies, procurement records, work orders) so users don't re-enter what the organization already knows.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📝 Guided capture wizard coming soon</span>
-                        </div>
-                        <p class="image-caption">Step-by-step data capture with intelligent defaults</p>
+                        <img src="../images/Projects/IFSZero/activity-data-1.png" alt="Activity Data table overview" loading="lazy" decoding="async">
+                        <p class="image-caption">Activity data table: all emission entries across companies and sites in one place</p>
                     </div>
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>💡 Contextual help system coming soon</span>
-                        </div>
-                        <p class="image-caption">In-context guidance translating technical terms to plain language</p>
+                        <img src="../images/Projects/IFSZero/activity-data-2.png" alt="Add New Activity Data form" loading="lazy" decoding="async">
+                        <p class="image-caption">Guided entry form: company, site, emission source, and measurement fields laid out step by step</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/activity-data-3.png" alt="Bulk CSV upload dialog" loading="lazy" decoding="async">
+                        <p class="image-caption">Bulk upload: CSV template with validation rules for importing large datasets</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Emission Source Configuration</h4>
+                    <p>Every emission source (fleet vehicles, boilers, refrigerant systems) carries its own parameters, calculation method, and reporting cadence. The detail panel gives users everything in one place: metadata, parameter tables, configuration tabs, and calculated results, without jumping between screens.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/emission-sources.png" alt="Fleet_Trucks emission source detail" loading="lazy" decoding="async">
+                        <p class="image-caption">Fleet_Trucks source: parameters, category, sub-category, and reporting frequency</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Emission-sources-with Emissions Calculations.png" alt="Emission source with calculation results" loading="lazy" decoding="async">
+                        <p class="image-caption">Same source with emissions calculated: linking configuration directly to results</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">Verified Emission Factors</h4>
-                    <p>Through partnership with Climatiq, users access a database of verified emission factors maintained by environmental data experts. The integration removes guesswork from calculations and ensures compliance with GHG Protocol and CSRD standards.</p>
-                    <p>Users simply describe their activity; the system matches the appropriate emission factor automatically with full auditability for compliance review.</p>
+                    <p>Through Climatiq integration, users get access to verified emission factors maintained by environmental data specialists. No more guessing which factor to apply. Users describe their activity, and the system matches the right factor with a full audit trail for compliance.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🔢 Emission factor selection coming soon</span>
-                        </div>
-                        <p class="image-caption">Automatic emission factor matching with audit trail</p>
+                        <img src="../images/Projects/IFSZero/emission-factors.png" alt="Emission Factors with sync notification" loading="lazy" decoding="async">
+                        <p class="image-caption">Emission factors library: new factors from Climatiq ready to sync</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/emission-factors-after-external-data sync.png" alt="Emission Factors after sync completed" loading="lazy" decoding="async">
+                        <p class="image-caption">After sync: all factors up to date with verified external sources</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h4 class="case-study-subheading">Multi-Entity Consolidation</h4>
-                    <p>Enterprise customers operate across subsidiaries, facilities, and business units. The consolidation view lets Sustainability Leads see the full picture while Operations Managers focus on their scope.</p>
-                    <p>The system leverages existing IFS organizational hierarchies, eliminating duplicate setup and ensuring data consistency across operational and sustainability views.</p>
+                    <h4 class="case-study-subheading">Advanced Configuration</h4>
+                    <p>Large organizations need to tailor the system to how they operate. Parameters, templates, parameter sets, source types, and units of measure are the backbone here. Every configuration screen uses the same pattern: searchable list on the left, contextual detail on the right when something is selected. Familiar once you've used one, easy to pick up across all of them.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🏢 Multi-entity view coming soon</span>
-                        </div>
-                        <p class="image-caption">Consolidated view across organizational hierarchy</p>
+                        <img src="../images/Projects/IFSZero/Parameters.png" alt="Parameters management view" loading="lazy" decoding="async">
+                        <p class="image-caption">Parameters: type classification, reporting frequency, and settings in a consistent master-detail layout</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Parameter-Templates.png" alt="Parameter Templates" loading="lazy" decoding="async">
+                        <p class="image-caption">Parameter Templates: reusable templates tied to emission source types</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Paameter-sets.png" alt="Parameter Sets" loading="lazy" decoding="async">
+                        <p class="image-caption">Parameter Sets: grouped parameters with scope and activity category mapping</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Emission-source-type-add-property.png" alt="Emission Source Types, Add Property" loading="lazy" decoding="async">
+                        <p class="image-caption">Emission Source Types: adding custom properties for organization-specific tracking</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Unit of Measure-local-sustianbility.png" alt="Units of Measure for sustainability" loading="lazy" decoding="async">
+                        <p class="image-caption">Units of Measure: sustainability-specific units with conversion factors and CO2e equivalents</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/unit of measure-includes, diffeent view, when table records selected.png" alt="Unit of Measure record detail" loading="lazy" decoding="async">
+                        <p class="image-caption">Selecting a unit reveals conversion details, system info, and related configuration</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h4 class="case-study-subheading">Action Planning & Targets</h4>
-                    <p>Reporting is only valuable if it leads to action. The action planning module lets users set reduction targets, track progress, and connect emission sources to specific initiatives.</p>
-                    <p>Unlike standalone planning tools, actions here link directly to operational data so progress updates automatically as activities change.</p>
+                    <h4 class="case-study-subheading">Action Planning &amp; Targets</h4>
+                    <p>Reporting only matters if it leads somewhere. The action planning module connects reduction targets to actual emission sources so progress updates automatically as operations change. No separate tracking tool needed.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
                         <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>🎯 Action planning interface coming soon</span>
+                            <span>Reduction targets connected to operational activities</span>
                         </div>
                         <p class="image-caption">Reduction targets connected to operational activities</p>
                     </div>
@@ -866,42 +1006,69 @@
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">Compliance-Ready Reporting</h4>
-                    <p>When it's time to report, the system generates export-ready documentation aligned with major frameworks GHG Protocol, CSRD, and industry-specific standards.</p>
-                    <p>Every data point carries full provenance, making audit preparation straightforward rather than a scramble.</p>
+                    <p>When reporting deadlines hit, the system generates export-ready documentation aligned with GHG Protocol, CSRD, and industry-specific standards. Every data point carries full provenance, so audit prep is a straightforward export rather than a last-minute scramble.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
                         <div class="project-image-placeholder" style="aspect-ratio: 16/9;">
-                            <span>📄 Reporting interface coming soon</span>
+                            <span>Audit-ready reports with full data provenance</span>
                         </div>
                         <p class="image-caption">Audit-ready reports with full data provenance</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">AI-Powered Intelligence</h4>
+                    <p>This is not a chatbot bolted onto the side. The AI Assistant lives inside the workspace and does real work: it pulls emission summaries, flags data gaps, checks compliance status, and runs trend forecasts. Quick actions give structured entry points for the most common tasks, and the built-in support channel (live chat, phone, ticket submission) keeps users moving without switching tools.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/AI-assistant-enable-with more power-ratherthana chat-bot, quick access buld in to it.png" alt="AI Assistant on the emissions dashboard" loading="lazy" decoding="async">
+                        <p class="image-caption">AI Assistant open alongside the dashboard, pulling contextual insights in real time</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-04-09 at 2.26.08 PM.png" alt="AI emissions summary analysis" loading="lazy" decoding="async">
+                        <p class="image-caption">Emissions summary with key metrics and breakdown charts</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-04-09 at 2.28.33 PM.png" alt="AI data quality scoring" loading="lazy" decoding="async">
+                        <p class="image-caption">Data quality scoring and proactive compliance recommendations</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-04-09 at 2.33.21 PM.png" alt="AI forecast trends" loading="lazy" decoding="async">
+                        <p class="image-caption">Forecast trends: projected emissions trajectory and compliance outlook</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img src="../images/Projects/IFSZero/Screenshot 2026-04-09 at 2.33.56 PM.png" alt="AI quick actions and support" loading="lazy" decoding="async">
+                        <p class="image-caption">Quick actions and integrated support: structured task entry with built-in ticket submission</p>
                     </div>
                 </div>
 
                 <!-- Impact -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Validation</h3>
-                    <p>This product was in active development at the time of writing — I left IFS while the build was still ongoing. The numbers below reflect usability research conducted before deployment, not post-launch outcomes.</p>
+                    <p>This product was in active development at the time of writing. I left IFS while the build was still ongoing. The numbers below reflect usability research conducted before deployment, not post-launch outcomes.</p>
                 </div>
 
                 <div class="case-study-metrics">
                     <div class="metric-card">
                         <span class="metric-value">3/5</span>
-                        <span class="metric-label">Average post-session satisfaction — formal usability study, Jun 2025</span>
+                        <span class="metric-label">Average post-session satisfaction, formal usability study, Jun 2025</span>
                     </div>
                     <div class="metric-card">
                         <span class="metric-value">2</span>
-                        <span class="metric-label">Enterprise users in formal usability sessions — Global Climate Strategy Manager &amp; Product Specialist</span>
+                        <span class="metric-label">Enterprise users in formal usability sessions: Global Climate Strategy Manager &amp; Product Specialist</span>
                     </div>
                     <div class="metric-card">
                         <span class="metric-value">4</span>
-                        <span class="metric-label">Critical friction points identified — hierarchy, bulk upload, Scope 3 gaps, ERP integration</span>
+                        <span class="metric-label">Critical friction points identified: hierarchy, bulk upload, Scope 3 gaps, ERP integration</span>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <p>The project also validated IFS's next-generation architectural approach — demonstrating that composable micro-frontend patterns could deliver better user experiences faster. Learnings from IFSZero directly informed the broader platform evolution strategy.</p>
+                    <p>The project also validated IFS's next-generation architectural approach. Composable micro-frontend patterns delivered better user experiences faster, and the learnings from IFSZero fed directly into the broader platform evolution strategy.</p>
                 </div>
 
                 <!-- What We Learned -->
