@@ -45,7 +45,7 @@
     <meta property="og:url" content="https://asith.cc/projects/trancity.html">
     <meta property="og:title" content="HopOn - Carpooling Platform">
     <meta property="og:description" content="HopOn - Turn empty seats into shared journeys. A carpooling app for everyday drivers.">
-    <meta property="og:image" content="https://asith.cc/images/Projects/HopOn/HopOn-feature.png">
+    <meta property="og:image" content="https://asith.cc/images/Projects/HopOn/HopOn-feature.webp">
     <meta property="og:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -58,7 +58,7 @@
     <meta name="twitter:url" content="https://asith.cc/projects/trancity.html">
     <meta name="twitter:title" content="HopOn - Carpooling Platform">
     <meta name="twitter:description" content="HopOn - Turn empty seats into shared journeys. A carpooling app for everyday drivers.">
-    <meta name="twitter:image" content="https://asith.cc/images/Projects/HopOn/HopOn-feature.png">
+    <meta name="twitter:image" content="https://asith.cc/images/Projects/HopOn/HopOn-feature.webp">
     <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
         <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -68,7 +68,7 @@
         "name": "HopOn - Carpooling Platform",
         "url": "https://asith.cc/projects/trancity.html",
         "description": "Trancity (HopOn) — Turn empty seats into shared journeys. A carpooling and ride-sharing app UX case study by Asith Wijenayake.",
-        "image": "https://asith.cc/images/Projects/HopOn/HopOn-feature.png",
+        "image": "https://asith.cc/images/Projects/HopOn/HopOn-feature.webp",
         "author": {
             "@type": "Person",
             "name": "Asith Wijenayake",
@@ -96,20 +96,23 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="../css/style.css?v=5.13">
+    <link rel="stylesheet" href="../css/style.css?v=5.21">
     
     </head>
 <body class="project-detail-page">
     <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../about.html" class="nav-link">About</a>
-        <a href="../work.html" class="nav-link active">Work</a>
+        <a href="../work.html" class="nav-link nav-link-work active" aria-label="Work — case studies">
+            <span class="nav-work-pulse" aria-hidden="true"></span>
+            <span class="nav-work-label">Work</span>
+        </a>
         <a href="../contact.html" class="nav-link">Contact</a>
     </nav>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
-        <img src="../images/asith-logo.svg" alt="Asith logo" />
+        <img src="../images/asith-logo.svg" alt="Asith logo" decoding="async" />
     </div>
 
     <div class="project-back-nav">
@@ -130,7 +133,7 @@
                     <h3 class="meta-label">STATUS</h3>
                     <div class="thanos-status-wrapper">
                         <span class="status-badge is-thanosd">
-                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!">
+                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!" loading="lazy" decoding="async">
                             Thanos'd
                         </span>
                         <span class="terminated-text">Terminated</span>
@@ -237,13 +240,13 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/HopOn/HopOn-feature.png" alt="HopOnTM feature image" loading="lazy" decoding="async">
+                    <img src="../images/Projects/HopOn/HopOn-feature.webp" alt="HopOnTM feature image" loading="eager" decoding="async" fetchpriority="high">
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.png" alt="Vehicle types supported in the HopOn app" loading="lazy" decoding="async">
+                    <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.webp" alt="Vehicle types supported in the HopOn app" loading="lazy" decoding="async">
                 </div>
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/HopOn/concept.png" alt="Early HopOn concept sketch drawn by stakeholders" loading="lazy" decoding="async">
+                    <img src="../images/Projects/HopOn/concept.webp" alt="Early HopOn concept sketch drawn by stakeholders" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -268,7 +271,7 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="../images/Projects/HopOn/concept.png" alt="Original stakeholder pencil sketch of the HopOn concept (code name Trancity)" loading="lazy" decoding="async">
+                        <img src="../images/Projects/HopOn/concept.webp" alt="Original stakeholder pencil sketch of the HopOn concept (code name Trancity)" loading="lazy" decoding="async">
                         <p class="image-caption">Original stakeholder concept sketch that framed the first Trancity (HopOn) product logic and flow.</p>
                     </div>
                 </div>
@@ -921,7 +924,7 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.png" alt="HopOn vehicle type showcase for cars, vans, and minibuses" loading="lazy" decoding="async">
+                        <img src="../images/Projects/HopOn/HopOn-sub-feature-cars.webp" alt="HopOn vehicle type showcase for cars, vans, and minibuses" loading="lazy" decoding="async">
                         <p class="image-caption">Vehicle type showcase used to communicate comfort, capacity, and pricing expectations across the HopOn marketplace.</p>
                     </div>
                 </div>
@@ -1165,7 +1168,7 @@
                                 <h5 class="ui-story-heading">Driver onboarding sequence</h5>
                                 <div class="ui-story-grid">
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-driver/splash-screen.png" alt="Driver app splash-screen UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-driver/splash-screen.webp" alt="Driver app splash-screen UI" loading="lazy" decoding="async">
                                         <figcaption>splash-screen</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
@@ -1324,7 +1327,7 @@
                                 <h5 class="ui-story-heading">Driver trip publishing and route setup</h5>
                                 <div class="ui-story-grid">
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-driver/usual-landing.png" alt="Driver app usual-landing UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-driver/usual-landing.webp" alt="Driver app usual-landing UI" loading="lazy" decoding="async">
                                         <figcaption>usual-landing</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
@@ -1473,7 +1476,7 @@
                                         <figcaption>Terms&amp;conditions</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/search-screen-first-time-user.png" alt="Rider app search-screen first-time-user UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/search-screen-first-time-user.webp" alt="Rider app search-screen first-time-user UI" loading="lazy" decoding="async">
                                         <figcaption>search-screen-first-time-user</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
@@ -1481,11 +1484,11 @@
                                         <figcaption>search-screen - normal user</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/search-screen%20-%20Full%20view.png" alt="Rider app search-screen full view UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/search-screen%20-%20Full%20view.webp" alt="Rider app search-screen full view UI" loading="lazy" decoding="async">
                                         <figcaption>search-screen - Full view</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/full-map-view%20-%202nd.png" alt="Rider app full-map-view 2nd UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/full-map-view%20-%202nd.webp" alt="Rider app full-map-view 2nd UI" loading="lazy" decoding="async">
                                         <figcaption>full-map-view - 2nd</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
@@ -1555,7 +1558,7 @@
                                         <figcaption>Payments</figcaption>
                                     </figure>
                                     <figure class="ui-screen-card">
-                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/user-profile.png" alt="Rider app user-profile UI" loading="lazy" decoding="async">
+                                        <img src="../images/Projects/HopOn/UI%20designs/UI%20designs%20Export-user/Main/user-profile.webp" alt="Rider app user-profile UI" loading="lazy" decoding="async">
                                         <figcaption>user-profile</figcaption>
                                     </figure>
                                 </div>

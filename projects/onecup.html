@@ -46,7 +46,7 @@
     <meta property="og:url" content="https://asith.cc/projects/onecup.html">
     <meta property="og:title" content="OneCup - Pay-It-Forward Café Platform">
     <meta property="og:description" content="Pay-It-Forward Pickup Platform for Local Cafés. A social impact project by Asith.">
-    <meta property="og:image" content="https://asith.cc/images/Projects/OneCup/OneCup-feature.png">
+    <meta property="og:image" content="https://asith.cc/images/Projects/OneCup/OneCup-feature.webp">
     <meta property="og:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -59,7 +59,7 @@
     <meta name="twitter:url" content="https://asith.cc/projects/onecup.html">
     <meta name="twitter:title" content="OneCup - Pay-It-Forward Café Platform">
     <meta name="twitter:description" content="Pay-It-Forward Pickup Platform for Local Cafés. A social impact project by Asith.">
-    <meta name="twitter:image" content="https://asith.cc/images/Projects/OneCup/OneCup-feature.png">
+    <meta name="twitter:image" content="https://asith.cc/images/Projects/OneCup/OneCup-feature.webp">
     
     <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <!-- Schema.org structured data -->
@@ -70,7 +70,7 @@
         "name": "OneCup - Pay-It-Forward Café Platform",
         "url": "https://asith.cc/projects/onecup.html",
         "description": "OneCup — Pay-it-forward pickup platform for local cafés. A social impact product design case study by Asith Wijenayake.",
-        "image": "https://asith.cc/images/Projects/OneCup/OneCup-feature.png",
+        "image": "https://asith.cc/images/Projects/OneCup/OneCup-feature.webp",
         "author": {
             "@type": "Person",
             "name": "Asith Wijenayake",
@@ -98,20 +98,23 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="../css/style.css?v=5.13">
+    <link rel="stylesheet" href="../css/style.css?v=5.21">
     
     </head>
 <body class="project-detail-page">
     <nav class="nav">
         <a href="../index.html" class="nav-link">Home</a>
         <a href="../about.html" class="nav-link">About</a>
-        <a href="../work.html" class="nav-link active">Work</a>
+        <a href="../work.html" class="nav-link nav-link-work active" aria-label="Work — case studies">
+            <span class="nav-work-pulse" aria-hidden="true"></span>
+            <span class="nav-work-label">Work</span>
+        </a>
         <a href="../contact.html" class="nav-link">Contact</a>
     </nav>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
-        <img src="../images/asith-logo.svg" alt="Asith logo" />
+        <img src="../images/asith-logo.svg" alt="Asith logo" decoding="async" />
     </div>
 
     <div class="project-back-nav">
@@ -132,7 +135,7 @@
                     <h3 class="meta-label">STATUS</h3>
                     <div class="thanos-status-wrapper">
                         <span class="status-badge is-thanosd">
-                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!">
+                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!" loading="lazy" decoding="async">
                             Thanos'd
                         </span>
                         <span class="terminated-text">Terminated</span>
@@ -239,7 +242,7 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/OneCup/OneCup-feature.png" alt="OneCupTM feature image" loading="lazy" decoding="async">
+                    <img src="../images/Projects/OneCup/OneCup-feature.webp" alt="OneCupTM feature image" loading="eager" decoding="async" fetchpriority="high">
                 </div>
                 <div class="project-image-item fade-in">
                     <div class="project-image-placeholder">
@@ -279,7 +282,7 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy">
+                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy" decoding="async">
                         <p class="image-caption">Add image caption here</p>
                     </div>
                 </div>

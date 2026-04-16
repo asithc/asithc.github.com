@@ -1,6 +1,6 @@
 # Portfolio Website - Asith Wijenayake
 
-A personal portfolio website showcasing Asith Wijenayake's work, skills, and journey as a UX designer and product creator. Features smooth animations, interactive elements, and a clean, modern design. Built with pure HTML, CSS, and JavaScript - no frameworks required!
+A personal portfolio website showcasing Asith Wijenayake's work, skills, and journey as a UX designer, UI/UX designer, and product designer. Features smooth animations, interactive elements, and a clean, modern design. Built with pure HTML, CSS, and JavaScript - no frameworks required!
 
 ## ✨ Features
 
@@ -273,7 +273,7 @@ Popular options:
 
 ## 📄 About This Project
 
-This is the personal portfolio website of Asith Wijenayake, a UX designer and product creator. The site showcases his work, skills, and career journey over the past years.
+This is the personal portfolio website of Asith Wijenayake, a UX designer, UI/UX designer, and product designer. The site showcases his work, skills, and career journey over the past years.
 
 ## 📧 Contact
 
@@ -281,6 +281,6 @@ Interested in collaborating or learning more about Asith's work? Feel free to re
 
 ---
 
-**Asith Wijenayake - UX Designer & Product Creator**
+**Asith Wijenayake — Senior UX Designer, UI/UX Designer & Product Designer**
 
 Building thoughtful digital experiences. 🚀
