@@ -107,12 +107,8 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="css/style.css?v=5.21">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/libre-baskerville-400-italic.woff2" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=5.22">
     
     </head>
 <body>
@@ -134,7 +130,7 @@
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
-        <img src="images/asith-logo.svg" alt="Asith logo" decoding="async" />
+        <img width="96" height="64" src="images/asith-logo.svg" alt="Asith logo" decoding="async" />
     </div>
 
     <!-- Main Content -->
@@ -243,7 +239,7 @@
                 <!-- Profile Badge -->
                 <div class="whatsapp-profile">
                     <div class="whatsapp-profile-avatar">
-                        <img src="images/IMG_4644.webp" alt="Asith WhatsApp profile" loading="lazy" decoding="async" />
+                        <img width="1920" height="1440" src="images/IMG_4644.webp" alt="Asith WhatsApp profile" loading="lazy" decoding="async" />
                     </div>
                     <div class="whatsapp-profile-info">
                         <div class="whatsapp-profile-name">Asith</div>
@@ -290,7 +286,7 @@
                         <!-- Slide 3: Image -->
                         <div class="wa-slide" data-type="image" data-duration="6000">
                             <div class="wa-media-wrapper">
-                                <img src="images/gallery/personal-8.webp" alt="Status" loading="lazy" decoding="async" />
+                                <img width="1440" height="1920" src="images/gallery/personal-8.webp" alt="Status" loading="lazy" decoding="async" />
                                 <div class="wa-media-caption">
                                     <span>Meet TARS, my BYD Sealion 6. Humour setting: 90%. Sarcasm: factory default.</span>
                                 </div>
@@ -327,97 +323,97 @@
                 <div class="photo-slides">
                     <!-- Random Photos (8 images) -->
                     <div class="photo-slide active" data-category="random" data-index="0" data-src="images/gallery/random-1.webp">
-                        <img src="images/gallery/random-1.webp" alt="Random photo 1" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1080" height="1349" src="images/gallery/random-1.webp" alt="Random photo 1" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="1" data-src="images/gallery/random-2.webp">
-                        <img src="images/gallery/random-2.webp" alt="Random photo 2" class="photo-image" loading="lazy" decoding="async">
+                        <img width="640" height="850" src="images/gallery/random-2.webp" alt="Random photo 2" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="2" data-src="images/gallery/random-3.webp">
-                        <img src="images/gallery/random-3.webp" alt="Random photo 3" class="photo-image" loading="lazy" decoding="async">
+                        <img width="4032" height="3024" src="images/gallery/random-3.webp" alt="Random photo 3" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="3" data-src="images/gallery/random-4.webp">
-                        <img src="images/gallery/random-4.webp" alt="Random photo 4" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/random-4.webp" alt="Random photo 4" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="4" data-src="images/gallery/random-5.webp">
-                        <img src="images/gallery/random-5.webp" alt="Random photo 5" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/random-5.webp" alt="Random photo 5" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="5" data-src="images/gallery/random-6.webp">
-                        <img src="images/gallery/random-6.webp" alt="Random photo 6" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/random-6.webp" alt="Random photo 6" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="6" data-src="images/gallery/random-7.webp">
-                        <img src="images/gallery/random-7.webp" alt="Random photo 7" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1159" src="images/gallery/random-7.webp" alt="Random photo 7" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="random" data-index="7" data-src="images/gallery/random-8.webp">
-                        <img src="images/gallery/random-8.webp" alt="Random photo 8" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/random-8.webp" alt="Random photo 8" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Home Photos (4 images) -->
                     <div class="photo-slide" data-category="home" data-index="0" data-src="images/gallery/home-1.webp">
-                        <img src="images/gallery/home-1.webp" alt="Home photo 1" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/home-1.webp" alt="Home photo 1" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="home" data-index="1" data-src="images/gallery/home-2.webp">
-                        <img src="images/gallery/home-2.webp" alt="Home photo 2" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/home-2.webp" alt="Home photo 2" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="home" data-index="2" data-src="images/gallery/home-3.webp">
-                        <img src="images/gallery/home-3.webp" alt="Home photo 3" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/home-3.webp" alt="Home photo 3" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="home" data-index="3" data-src="images/gallery/home-4.webp">
-                        <img src="images/gallery/home-4.webp" alt="Home photo 4" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/home-4.webp" alt="Home photo 4" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Personal Life (6 images) -->
                     <div class="photo-slide" data-category="personal" data-index="0" data-src="images/gallery/personal-1.webp">
-                        <img src="images/gallery/personal-1.webp" alt="Personal photo 1" class="photo-image" loading="lazy" decoding="async">
+                        <img width="3024" height="4032" src="images/gallery/personal-1.webp" alt="Personal photo 1" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="1" data-src="images/gallery/personal-2.webp">
-                        <img src="images/gallery/personal-2.webp" alt="Personal photo 2" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/personal-2.webp" alt="Personal photo 2" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="2" data-src="images/gallery/personal-3.webp">
-                        <img src="images/gallery/personal-3.webp" alt="Personal photo 3" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/personal-3.webp" alt="Personal photo 3" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="3" data-src="images/gallery/personal-4.webp">
-                        <img src="images/gallery/personal-4.webp" alt="Personal photo 4" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1446" height="1920" src="images/gallery/personal-4.webp" alt="Personal photo 4" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="4" data-src="images/gallery/personal-5.webp">
-                        <img src="images/gallery/personal-5.webp" alt="Personal photo 5" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1446" height="1920" src="images/gallery/personal-5.webp" alt="Personal photo 5" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="5" data-src="images/gallery/personal-6.webp">
-                        <img src="images/gallery/personal-6.webp" alt="Personal photo 6" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/personal-6.webp" alt="Personal photo 6" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="personal" data-index="6" data-src="images/gallery/personal-7.webp">
-                        <img src="images/gallery/personal-7.webp" alt="Personal photo 7" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/personal-7.webp" alt="Personal photo 7" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     
                     <!-- Adventures (10 images) -->
                     <div class="photo-slide" data-category="adventure" data-index="0" data-src="images/gallery/adventure-1.webp">
-                        <img src="images/gallery/adventure-1.webp" alt="Adventure photo 1" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1440" src="images/gallery/adventure-1.webp" alt="Adventure photo 1" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="1" data-src="images/gallery/adventure-2.webp">
-                        <img src="images/gallery/adventure-2.webp" alt="Adventure photo 2" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-2.webp" alt="Adventure photo 2" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="2" data-src="images/gallery/adventure-3.webp">
-                        <img src="images/gallery/adventure-3.webp" alt="Adventure photo 3" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-3.webp" alt="Adventure photo 3" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="3" data-src="images/gallery/adventure-4.webp">
-                        <img src="images/gallery/adventure-4.webp" alt="Adventure photo 4" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-4.webp" alt="Adventure photo 4" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="4" data-src="images/gallery/adventure-5.webp">
-                        <img src="images/gallery/adventure-5.webp" alt="Adventure photo 5" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1920" height="1482" src="images/gallery/adventure-5.webp" alt="Adventure photo 5" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="5" data-src="images/gallery/adventure-6.webp">
-                        <img src="images/gallery/adventure-6.webp" alt="Adventure photo 6" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-6.webp" alt="Adventure photo 6" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="6" data-src="images/gallery/adventure-7.webp">
-                        <img src="images/gallery/adventure-7.webp" alt="Adventure photo 7" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-7.webp" alt="Adventure photo 7" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="7" data-src="images/gallery/adventure-8.webp">
-                        <img src="images/gallery/adventure-8.webp" alt="Adventure photo 8" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-8.webp" alt="Adventure photo 8" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="8" data-src="images/gallery/adventure-9.webp">
-                        <img src="images/gallery/adventure-9.webp" alt="Adventure photo 9" class="photo-image" loading="lazy" decoding="async">
+                        <img width="3024" height="4032" src="images/gallery/adventure-9.webp" alt="Adventure photo 9" class="photo-image" loading="lazy" decoding="async">
                     </div>
                     <div class="photo-slide" data-category="adventure" data-index="9" data-src="images/gallery/adventure-10.webp">
-                        <img src="images/gallery/adventure-10.webp" alt="Adventure photo 10" class="photo-image" loading="lazy" decoding="async">
+                        <img width="1440" height="1920" src="images/gallery/adventure-10.webp" alt="Adventure photo 10" class="photo-image" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="photo-navigator">
@@ -455,49 +451,49 @@
             <div class="widget playstation-widget fade-in delay-3" id="playstationWidget">
                 <div class="ps-header">
                     <div class="ps-profile">
-                        <img src="images/Mara.webp" alt="PlayStation profile" class="ps-avatar" loading="lazy" decoding="async" />
+                        <img width="1024" height="1024" src="images/Mara.webp" alt="PlayStation profile" class="ps-avatar" loading="lazy" decoding="async" />
                         <div class="ps-profile-text">
                             <div class="ps-name">Asith</div>
                             <div class="ps-id">PSN: @Wasawarti</div>
                         </div>
                     </div>
                     <div class="ps-logo" aria-hidden="true">
-                        <img src="images/PlayStation_logo.svg" alt="PlayStation" loading="lazy" decoding="async" />
+                        <img width="200" height="155" src="images/PlayStation_logo.svg" alt="PlayStation" loading="lazy" decoding="async" />
                     </div>
                   
                 </div>
                 <div class="ps-subtitle">Currently playing</div>
                 <div class="games-stack ps-games-stack" data-interval="3000">
                     <article class="game-card is-active">
-                        <img src="images/games/game-f125.avif" alt="F1 25" class="game-cover" loading="lazy" decoding="async" />
+                        <img width="1024" height="1024" src="images/games/game-f125.avif" alt="F1 25" class="game-cover" loading="lazy" decoding="async" />
                         <div class="game-card-info">
                             <div class="game-title">F1 25</div>
                             <div class="game-meta">34 hours · Last played: 2 days ago</div>
                         </div>
                     </article>
                     <article class="game-card">
-                        <img src="images/games/game-farcry6.jpg" alt="Far Cry 6" class="game-cover" loading="lazy" decoding="async" />
+                        <img width="1024" height="1024" src="images/games/game-farcry6.jpg" alt="Far Cry 6" class="game-cover" loading="lazy" decoding="async" />
                         <div class="game-card-info">
                             <div class="game-title">Far Cry 6</div>
                             <div class="game-meta">18 hours · Last played: 1 week ago</div>
                         </div>
                     </article>
                     <article class="game-card">
-                        <img src="images/games/game-forza5.jpg" alt="Forza Horizon 5" class="game-cover" loading="lazy" decoding="async" />
+                        <img width="280" height="357" src="images/games/game-forza5.jpg" alt="Forza Horizon 5" class="game-cover" loading="lazy" decoding="async" />
                         <div class="game-card-info">
                             <div class="game-title">Forza Horizon 5</div>
                             <div class="game-meta">22 hours · Last played: 3 days ago</div>
                         </div>
                     </article>
                     <article class="game-card">
-                        <img src="images/games/game-grb.webp" alt="Ghost Recon Breakpoint" class="game-cover" loading="lazy" decoding="async" />
+                        <img width="1200" height="1600" src="images/games/game-grb.webp" alt="Ghost Recon Breakpoint" class="game-cover" loading="lazy" decoding="async" />
                         <div class="game-card-info">
                             <div class="game-title">Ghost Recon Breakpoint</div>
                             <div class="game-meta">12 hours · Last played: 5 days ago</div>
                         </div>
                     </article>
                     <article class="game-card">
-                        <img src="images/games/game-rdr2.jpg" alt="Red Dead Redemption 2" class="game-cover" loading="lazy" decoding="async" />
+                        <img width="564" height="564" src="images/games/game-rdr2.jpg" alt="Red Dead Redemption 2" class="game-cover" loading="lazy" decoding="async" />
                         <div class="game-card-info">
                             <div class="game-title">Red Dead Redemption 2</div>
                             <div class="game-meta">41 hours · Last played: 4 weeks ago</div>
@@ -520,7 +516,7 @@
                 
                 <!-- Album Cover -->
                 <div class="spotify-album-cover">
-                            <img src="images/music/ram.jpg" alt="Album Cover" class="album-cover-img" id="albumCoverImg" loading="lazy" decoding="async">
+                            <img width="1200" height="1200" src="images/music/ram.jpg" alt="Album Cover" class="album-cover-img" id="albumCoverImg" loading="lazy" decoding="async">
                         </div>
                         
                         <!-- Song Info & Progress Wrapper -->
@@ -669,6 +665,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=20260322"></script>
+    <script src="js/script.js?v=20260415"></script>
+    <script src="js/anim-pause.js?v=1.0"></script>
 </body>
 </html>

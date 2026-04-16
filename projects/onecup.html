@@ -98,7 +98,8 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="../css/style.css?v=5.21">
+    <link rel="preload" as="image" href="../images/Projects/OneCup/OneCup-feature.webp" fetchpriority="high">
+    <link rel="stylesheet" href="../css/style.css?v=5.22">
     
     </head>
 <body class="project-detail-page">
@@ -114,7 +115,7 @@
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
-        <img src="../images/asith-logo.svg" alt="Asith logo" decoding="async" />
+        <img width="96" height="64" src="../images/asith-logo.svg" alt="Asith logo" decoding="async" />
     </div>
 
     <div class="project-back-nav">
@@ -135,7 +136,7 @@
                     <h3 class="meta-label">STATUS</h3>
                     <div class="thanos-status-wrapper">
                         <span class="status-badge is-thanosd">
-                            <img class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!" loading="lazy" decoding="async">
+                            <img width="80" height="80" class="thanos-gauntlet" src="../images/thanos_idle.png" alt="Infinity Gauntlet" title="Snap!" loading="lazy" decoding="async">
                             Thanos'd
                         </span>
                         <span class="terminated-text">Terminated</span>
@@ -242,7 +243,7 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img src="../images/Projects/OneCup/OneCup-feature.webp" alt="OneCupTM feature image" loading="eager" decoding="async" fetchpriority="high">
+                    <img width="1194" height="834" src="../images/Projects/OneCup/OneCup-feature.webp" alt="OneCupTM feature image" loading="eager" decoding="async" fetchpriority="high">
                 </div>
                 <div class="project-image-item fade-in">
                     <div class="project-image-placeholder">
@@ -314,7 +315,8 @@
         </div>
     </main>
 
-    <script src="../js/script.js?v=20260322"></script>
+    <script src="../js/script.js?v=20260415"></script>
+    <script src="../js/anim-pause.js?v=1.0"></script>
     <script src="../js/pin-protect.js?v=20260320"></script>
     <script src="../js/thanos-snap.js"></script>
 </body>

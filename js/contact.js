@@ -246,7 +246,7 @@ const addMessage = (text, type = 'received', showAvatar = true, showNameLabel = 
     const safeText = type === 'sent' ? sanitizeHTML(text) : text;
 
     if (type === 'received') {
-        const avatarHTML = showAvatar ? '<img src="https://unavatar.io/twitter/asithc" alt="Asith" class="message-avatar-new">' : '<div class="message-avatar-spacer"></div>';
+        const avatarHTML = showAvatar ? '<img src="images/asith-avatar.webp" alt="Asith" class="message-avatar-new">' : '<div class="message-avatar-spacer"></div>';
         const nameLabelHTML = showNameLabel ? '<div class="message-name-label">Asith</div>' : '';
         messageDiv.innerHTML =
             nameLabelHTML +
@@ -270,7 +270,7 @@ const showTyping = () => {
     typingDiv.className = 'message-new received';
     typingDiv.id = 'typing-indicator';
     typingDiv.innerHTML =
-        '<img src="https://unavatar.io/twitter/asithc" alt="Asith" class="message-avatar-new">' +
+        '<img src="images/asith-avatar.webp" alt="Asith" class="message-avatar-new">' +
         '<div class="message-bubble-new typing">' +
         '<span class="dot"></span><span class="dot"></span><span class="dot"></span>' +
         '</div>';

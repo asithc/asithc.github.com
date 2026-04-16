@@ -2255,3 +2255,26 @@ window.portfolioUtils = {
     initSmoothScroll,
     updateActiveNav
 };
+
+// ---------------------------------------------------------------------------
+// Service worker registration. Deferred to the load event so it never
+// competes with first paint. The SW itself caches static assets only
+// (no HTML) so a bad deploy can never "stick" a stale page.
+// ---------------------------------------------------------------------------
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        // Small idle delay keeps the main thread free during the critical
+        // post-load window when analytics and widgets are initialising.
+        var register = function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {
+                // Registration failing is non-fatal — the site works fine
+                // without a SW. Don't log to console in production.
+            });
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(register, { timeout: 3000 });
+        } else {
+            setTimeout(register, 1500);
+        }
+    });
+}
