@@ -300,22 +300,6 @@ button {
 }
 
 /* Shimmer sweep — a thin light band drifts across the pill every few seconds */
-.nav-link-work::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(110deg, transparent 30%, rgba(74, 222, 128, 0.35) 50%, transparent 70%);
-    transform: translateX(-120%);
-    animation: nav-work-shimmer 5.2s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.nav-link-work.active::after {
-    display: none;
-}
-
 .nav-link-work > * {
     position: relative;
     z-index: 1;
@@ -352,12 +336,6 @@ button {
     letter-spacing: 0.01em;
 }
 
-@keyframes nav-work-shimmer {
-    0% { transform: translateX(-120%); }
-    60% { transform: translateX(120%); }
-    100% { transform: translateX(120%); }
-}
-
 @keyframes nav-work-ring {
     0% {
         transform: scale(0.6);
@@ -370,10 +348,6 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .nav-link-work::after {
-        animation: none;
-        display: none;
-    }
     .nav-work-pulse::before {
         animation: none;
         opacity: 0.4;
@@ -4642,8 +4616,8 @@ button {
     color: white;
 }
 
-.x-widget {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+.linkedin-dm-widget {
+    background: linear-gradient(135deg, #0A66C2 0%, #084b8e 100%);
     color: white;
 }
 
@@ -5034,10 +5008,6 @@ button {
     .nav-work-pulse {
         width: 7px;
         height: 7px;
-    }
-
-    .nav-link-work::after {
-        animation-duration: 6.5s;
     }
 
     /* Add bottom padding to avoid nav blocking content */
