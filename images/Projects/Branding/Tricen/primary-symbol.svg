@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="250px" viewBox="0 0 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SVG tricen / primary-symbol</title>
+    <defs>
+        <polygon id="path-1" points="1.35006326e-16 25.2836379 53.3346755 1.73064374e-14 155.651696 61.6354832 155.651696 90.0836195 53.3346755 28.4386418 26.1753598 41.4700743 66.6047877 65.4019548 66.6047877 196.144151 33.3023939 175.374244 33.3023939 74.5368882 0 54.1779884"></polygon>
+        <linearGradient x1="100%" y1="32.2106157%" x2="22.1699394%" y2="71.0203795%" id="linearGradient-3">
+            <stop stop-color="#5591F3" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-4" points="4.74493743e-14 3.55870307e-14 69.6764662 41.3310139 124.604513 15.7317539 124.604513 43.8446304 69.6764662 69.7750906 32.5957661 47.5214015 32.5957661 69.7750906 69.6764662 91.6212988 124.604513 67.2833321 124.604513 146.01069 69.6764662 172.070708 4.74493743e-14 129.630799 4.74493743e-14 101.854168 69.6764662 142.772853 101.873493 127.706136 101.873493 105.063248 69.6764662 119.625613 4.74493743e-14 77.6005536"></polygon>
+        <linearGradient x1="90.224086%" y1="33.5972078%" x2="-34.8489426%" y2="89.4931394%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#5591F3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="63.7385339%" y1="42.1806142%" x2="26.4254207%" y2="68.8035013%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#5591F3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tricen-logo" transform="translate(-482.000000, -83.000000)">
+            <g id="tricen-/-primary-symbol" transform="translate(482.000000, 83.000000)">
+                <rect id="base" x="0" y="0" width="250" height="250"></rect>
+                <g id="Path-3-+-Path-4-+-Path-5-Mask" transform="translate(20.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#5591F3" xlink:href="#path-1"></use>
+                    <polygon id="Path-3" mask="url(#mask-2)" points="53.3346755 1.42348123e-13 53.3346755 28.4386418 155.651696 90.0836195 155.651696 61.6354832"></polygon>
+                    <polygon id="Path-4" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="2.96558589e-15 25.2836379 26.1753598 41.4700743 53.3346755 28.4386418 53.3346755 9.48987485e-14"></polygon>
+                    <polygon id="Path-5" fill-opacity="0.1" fill="#000000" mask="url(#mask-2)" points="2.37246871e-14 25.2836379 2.37246871e-14 41.4700743 48.1506733 71.989173 48.1506733 185.081982 66.6047877 196.144151 66.6047877 65.4019548"></polygon>
+                </g>
+                <g id="Group" transform="translate(105.975230, 77.929292)">
+                    <g id="Path-7-+-Path-8-+-Path-9-+-Path-10-Mask" transform="translate(0.000000, 0.000000)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Mask" fill="#5591F3" xlink:href="#path-4"></use>
+                        <polygon id="Path-7" fill="url(#linearGradient-6)" mask="url(#mask-5)" points="69.6764662 41.3310139 69.6764662 69.7750906 124.604513 43.8446304 124.604513 15.7317539"></polygon>
+                        <polygon id="Path-8" fill="url(#linearGradient-7)" mask="url(#mask-5)" points="69.6764662 91.6212988 69.6764662 119.625613 101.873493 105.063248 101.873493 127.706136 69.6764662 142.772853 69.6764662 172.070708 124.604513 146.01069 124.604513 67.2833321"></polygon>
+                        <polygon id="Path-9" fill="#4C82DA" mask="url(#mask-5)" points="69.6764662 55.4852786 16.5694185 25.1076739 16.5694185 73.2356634 69.6764662 104.668973 69.6764662 119.67702 0 77.6005536 0 -4.74493743e-14 69.6764662 41.3310139"></polygon>
+                        <polygon id="Path-10" fill="#4C82DA" mask="url(#mask-5)" points="2.37246871e-14 116.549302 69.6764662 158.057056 69.6764662 172.070708 2.37246871e-14 129.630799"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
