@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asith Wijenayake - CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1.5px solid #1a1a1a;
+  }
+
+  /* ==== HEADER (dark band) ==== */
+  .header {
+    background: #0a0a0a;
+    color: #ffffff;
+    padding: 22px 26px 22px 26px;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 24px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin-bottom: 4px;
+  }
+
+  .header .role-line {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+    padding-bottom: 10px;
+    width: 70%;
+  }
+
+  .header .summary {
+    font-size: 10px;
+    line-height: 1.55;
+    color: #e6e6e6;
+  }
+
+  .header .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: flex-end;
+    font-size: 10px;
+    color: #ffffff;
+    padding-top: 4px;
+  }
+
+  .header .contact .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header .contact a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .header .contact .icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0a0a0a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ==== BODY (two columns) ==== */
+  .body {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 22px;
+    padding: 22px 26px 24px 26px;
+  }
+
+  /* ==== Section banners ==== */
+  .banner {
+    display: inline-block;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    margin-top: 4px;
+  }
+
+  .left .banner:first-child,
+  .right .banner:first-child { margin-top: 0; }
+
+  /* ==== Left column: Experience ==== */
+  .job {
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .job-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .job-head .square {
+    width: 7px;
+    height: 7px;
+    background: #0a0a0a;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .job-head .role {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .job-head .pipe {
+    color: #c8c8c8;
+    margin: 0 8px;
+    font-weight: 300;
+  }
+
+  .job-head .date {
+    font-size: 10px;
+    color: #555;
+    font-weight: 400;
+    align-self: center;
+  }
+
+  .job .company {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+
+  .job .desc {
+    font-size: 10px;
+    color: #2a2a2a;
+    margin-left: 15px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .job ul {
+    margin-left: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .job ul li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 10px;
+    color: #2a2a2a;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  .job ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    background: #0a0a0a;
+  }
+
+  .job ul li strong { font-weight: 700; color: #1a1a1a; }
+
+  /* ==== Right column ==== */
+  .right .item {
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .right .item-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+
+  .right .item-head .title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    flex: 1;
+  }
+
+  .right .item-head .date {
+    font-size: 9.5px;
+    color: #555;
+    white-space: nowrap;
+    padding-left: 6px;
+    border-left: 1px solid #c8c8c8;
+    align-self: center;
+  }
+
+  .right .item .org {
+    font-size: 10px;
+    color: #444;
+  }
+
+  /* Skills subsections */
+  .skill-block { margin-bottom: 10px; }
+  .skill-block h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .skill-block .list {
+    font-size: 10px;
+    color: #2a2a2a;
+    line-height: 1.55;
+  }
+  .skill-block .list .sep {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #0a0a0a;
+    margin: 0 6px 1px 6px;
+    vertical-align: middle;
+  }
+
+  /* Footer band */
+  .footer-band {
+    background: #0a0a0a;
+    color: #ffffff;
+    text-align: right;
+    padding: 6px 18px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  /* Print */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { border: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1>Asith Wijenayake</h1>
+      <div class="role-line">Senior Product Designer</div>
+      <div class="summary">
+        Senior Product Designer with 10+ years of experience in platform-level GUI and UX design across enterprise SaaS, telecom, and aviation systems. Owner of design systems at scale, contributor to the WordPress.org Core Design System (2016 to 2020), and champion of AI-augmented design reviews that cut early-stage UX rework by 25 to 30 percent inside IFS Cloud's Sustainability module. Currently founder of WizLabs Pvt Ltd, building WizPos, an AI-first POS ecosystem. Open to senior and lead product design roles in parallel.
+      </div>
+    </div>
+    <div class="contact">
+      <div class="item"><span>https://asith.cc</span><span class="icon">@</span></div>
+      <div class="item"><a href="https://linkedin.com/in/asithwijenayake">in/asithwijenayake/</a><span class="icon">in</span></div>
+      <div class="item"><span>asithwijenayake@gmail.com</span><span class="icon">&#9993;</span></div>
+      <div class="item"><span>(+94) 779691135</span><span class="icon">&#9742;</span></div>
+      <div class="item"><span>Rambukkanna, Sri Lanka</span><span class="icon">&#9679;</span></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT: EXPERIENCE -->
+    <div class="left">
+      <div class="banner">Professional Experience</div>
+
+      <!-- WizLabs / WizPos -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">Founder, Product Owner &amp; UX Engineer<span class="pipe">|</span><span class="date">Feb 2026 - Present</span></div>
+        </div>
+        <div class="company">WizLabs Pvt Ltd (WizPos 2.0)</div>
+        <div class="desc">
+          Independent product owner driving the next-generation rebuild of <strong>WizPos</strong>, an <strong>AI-first POS ecosystem</strong> that combines Electron-based local runtime speed with cloud-ready operations. Designed for retail and hospitality operators across Sri Lankan and US markets from a single configurable codebase.
+        </div>
+        <ul>
+          <li>Owning <strong>product strategy, UX architecture, interaction design, high-fidelity prototyping, and frontend development</strong> as the sole product lead post-2026 rebuild.</li>
+          <li>Designed an <strong>offline-first architecture</strong>: full transaction processing locally with automatic sync and conflict resolution on reconnection. Encrypted local storage plus encrypted cloud backup for recovery and audit continuity.</li>
+          <li>Ran <strong>field research across Sri Lankan supermarkets</strong> and combined it with industry data to design workflows around real operator behavior (hand ergonomics, fatigue patterns, transaction rhythm) instead of theoretical flows. Standardized 18mm minimum touch targets across 7" to 15" hardware.</li>
+          <li>Built <strong>market-configurable workflow templates</strong> so US compliance and Sri Lankan retail realities ship from one codebase without forks.</li>
+          <li>Replaced technical error messages with <strong>human-language recovery guidance</strong>, reducing operator stress in fast retail environments and shrinking training time.</li>
+          <li>Designed for <strong>four operator archetypes</strong> (cashiers, shift managers, store owners, IT/regional administrators) with role-based access and approval workflows, plus an integrated manager dashboard for live multi-location and multi-till visibility.</li>
+          <li>Industries served: <strong>retail, restaurants, pharmacies, supermarkets, cafes, takeaways, schools and universities, entertainment venues, pop events, and mixed-format enterprise deployments</strong>.</li>
+          <li>Stack: <strong>ReactJS, Electron, HTML, CSS, Sketch, Principle, Figma, FullStory</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- IFS -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">Lead UX Designer<span class="pipe">|</span><span class="date">Nov 2023 - Jan 2026 (2+ yrs)</span></div>
+        </div>
+        <div class="company">IFS R&amp;D International, Sustainability Applications</div>
+        <div class="desc">
+          Lead designer for next-generation Sustainability and Emissions Management experiences inside IFS Cloud, turning ESG frameworks, scientific models, and organizational reporting structures into intuitive, future-ready product systems.
+        </div>
+        <ul>
+          <li>Championed the shift toward <strong>AI-augmented design reviews</strong>, enabling rapid iteration, narrative clarity, and early detection of complexity issues. Reduced early-stage UX rework by <strong>25 to 30 percent</strong> through upfront design alignment.</li>
+          <li>Played a frontline role in <strong>onboarding and operationalizing IFS Cloud's newly introduced platform architecture and design system</strong> (late 2025), helping establish initial UX patterns, interaction standards, and alignment guidelines for next-generation modules.</li>
+          <li>Drove UX for end-to-end Sustainability and Emissions Management experiences used by enterprise customers across multiple industries.</li>
+          <li>Partnered with product managers, solution architects, domain experts, and ESG specialists across multiple cross-functional teams, reducing design ambiguity during early-stage implementation.</li>
+        </ul>
+      </div>
+
+      <!-- Dialog Senior -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">Senior UI/UX Engineer<span class="pipe">|</span><span class="date">Jan 2021 - Nov 2023 (3 yrs)</span></div>
+        </div>
+        <div class="company">Dialog Axiata PLC, Ideamart</div>
+        <div class="desc">
+          Sole UX owner for a large-scale digital ecosystem supporting enterprise, developer, and consumer platforms, impacting hundreds of thousands of active users across Sri Lanka and regional markets.
+        </div>
+        <ul>
+          <li>Led GUI and UX design for <strong>10+ web and mobile products</strong> as the single dedicated UX engineer responsible for end-to-end product experience, branding, design direction, and execution.</li>
+          <li>Owned UX direction for <strong>Ideabiz, Click2Pay, Ideamart App Store, Ideabilling, and Marketplace</strong> (Sri Lanka, Indonesia, and Bangladesh), improving task completion across billing, payments, and marketplace flows, and reducing friction in multi-step enterprise workflows.</li>
+          <li>Acted as single-point UX lead for engineering, business, and marketing teams across <strong>5+ concurrent initiatives</strong>, reducing design ambiguity and minimizing late-stage UX rework.</li>
+          <li>Standardized UI patterns across platforms, improving design consistency and accessibility compliance.</li>
+        </ul>
+      </div>
+
+      <!-- Dialog UI/UX -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">UI/UX Engineer<span class="pipe">|</span><span class="date">Jun 2019 - Jan 2021 (1.5+ yrs)</span></div>
+        </div>
+        <div class="company">Dialog Axiata PLC, Ideamart</div>
+        <ul>
+          <li>Delivered end-to-end product experiences (journeys, workflows, wireframes, hi-fi prototypes, production-ready assets) for web and mobile, enabling faster development cycles and clearer handoffs.</li>
+          <li>Translated complex telco and billing logic into intuitive, accessible experiences supporting regional scalability and diverse user groups.</li>
+          <li>Independently managed UX timelines and delivery across multiple products under tight commercial deadlines while maintaining accessibility and usability standards.</li>
+        </ul>
+      </div>
+
+      <!-- JKCS -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">UX/UI Developer<span class="pipe">|</span><span class="date">May 2017 - Jun 2019 (3+ yrs)</span></div>
+        </div>
+        <div class="company">John Keells IT (JKCS)</div>
+        <div class="desc">
+          Worked on aviation and airline-related platforms for regional and international clients, gaining early exposure to airline ecosystems and passenger-facing systems.
+        </div>
+        <ul>
+          <li>Developed the preliminary design language for upcoming products.</li>
+          <li>Created competitive UX analysis and research to support product direction. Notable clients: <strong>Dubai KHDA, Evinta Aviation Solutions, Zhara Hospitality Solutions, Salam Air</strong> (Flight and Meal Booking flow).</li>
+          <li>Gained exposure to aviation platform environments through Evinta Aviation Solutions, learning how airline systems integrate across operational and passenger-facing domains.</li>
+          <li>Aligned UX decisions with industry constraints and operational considerations.</li>
+        </ul>
+      </div>
+
+      <!-- JKCS Intern -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">Intern, UX/UI Developer<span class="pipe">|</span><span class="date">Jun 2016 - May 2017</span></div>
+        </div>
+        <div class="company">John Keells IT (JKCS)</div>
+      </div>
+
+      <!-- Freelancer -->
+      <div class="job">
+        <div class="job-head">
+          <div class="square"></div>
+          <div class="role">UX/UI Engineer / Designer<span class="pipe">|</span><span class="date">Jan 2013 - Present (10+ yrs)</span></div>
+        </div>
+        <div class="company">In-House Freelancer</div>
+        <ul>
+          <li>Designed POS interfaces for one of the world's largest food suppliers, optimizing for rapid task completion, shallow navigation depth, and minimal cognitive load.</li>
+          <li>Researched market behaviors, trends, and competitor insights to design <strong>ecoFuture.lk</strong>, a blockchain and NFT platform dedicated to rainforest and wildlife protection.</li>
+          <li>Led end-to-end UX for multiple early-stage digital products, including a peer-to-peer carpooling platform and a social-impact ordering application.</li>
+          <li>Worked directly with end-users and engineering teams to test usability in real environments, refining interaction models for speed, clarity, and accessibility across web and mobile.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+
+      <div class="banner">Education</div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">BCS Foundation Certificate in User Experience V1</div>
+          <div class="date">2023</div>
+        </div>
+        <div class="org">The Chartered Institute of IT</div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">B.Sc. (Hons) Computer Science</div>
+          <div class="date">2013 - 2017</div>
+        </div>
+        <div class="org">University College Dublin</div>
+      </div>
+
+      <div class="banner">Key Skills &amp; Tools</div>
+
+      <div class="skill-block">
+        <h4>UX &amp; Platform Design</h4>
+        <div class="list">User Experience Design<span class="sep"></span>Platform &amp; GUI Design<span class="sep"></span>Service Design<span class="sep"></span>Information Architecture<span class="sep"></span>Design Thinking<span class="sep"></span>Branding<span class="sep"></span>Design Systems<span class="sep"></span>Accessibility-first Design<span class="sep"></span>Design Consulting<span class="sep"></span>Creative Direction<span class="sep"></span>Design Strategy<span class="sep"></span>Experience Transformation<span class="sep"></span>Design Delivery at Scale</div>
+      </div>
+
+      <div class="skill-block">
+        <h4>AI Augmented UX</h4>
+        <div class="list">Prompt-assisted prototyping<span class="sep"></span>Automated pattern checks<span class="sep"></span>Assisted complexity reduction<span class="sep"></span>AI-supported design validation</div>
+      </div>
+
+      <div class="skill-block">
+        <h4>Research</h4>
+        <div class="list">Usability Testing<span class="sep"></span>Behavioral Insights<span class="sep"></span>Persona Modeling<span class="sep"></span>Competitive Analysis<span class="sep"></span>Ethnography</div>
+      </div>
+
+      <div class="skill-block">
+        <h4>Leadership &amp; Operations</h4>
+        <div class="list">Building High-Performing UX Teams<span class="sep"></span>Mentoring &amp; Coaching<span class="sep"></span>Stakeholder &amp; Vendor Governance<span class="sep"></span>Platform-level GUI ownership<span class="sep"></span>Design governance &amp; quality standards<span class="sep"></span>UX planning, scenarios, and validation strategies</div>
+      </div>
+
+      <div class="skill-block">
+        <h4>Prototyping &amp; Interaction</h4>
+        <div class="list">Figma<span class="sep"></span>Sketch<span class="sep"></span>Framer<span class="sep"></span>ProtoPie<span class="sep"></span>Principle<span class="sep"></span>Origami Studio<span class="sep"></span>Adobe CC Suite<span class="sep"></span>Affinity Suite</div>
+      </div>
+
+      <div class="skill-block">
+        <h4>Frontend &amp; Design Systems Engineering</h4>
+        <div class="list">HTML<span class="sep"></span>CSS<span class="sep"></span>SASS<span class="sep"></span>ReactJS<span class="sep"></span>Electron<span class="sep"></span>CSS Frameworks<span class="sep"></span>Design tokens<span class="sep"></span>Advanced Theming<span class="sep"></span>Component architecture</div>
+      </div>
+
+      <div class="banner">Leadership</div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="title">WordPress.org Core Design System contributor</div>
+          <div class="date">2016 - 2020</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">WordCamp Colombo 2017 Speaker &amp; WordCamp / WordPress Colombo Organizer</div>
+          <div class="date">2016 - Present</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">Colombo Dribbble Meetup, Founder &amp; Community Organizer</div>
+          <div class="date">2017 - Present</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">Colombo SketchApp Meetup, Co-Founder &amp; Community Organizer</div>
+          <div class="date">2016 - 2020</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">GDG Sri Lanka, Head of Design / Branding</div>
+          <div class="date">2015 - 2019</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">Google Product Expert (Maps, Chrome), Google South Asia</div>
+          <div class="date">2014 - 2018</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">Google Summer of Code, Mentor</div>
+          <div class="date">2019</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">FOSS NSBM Founding Member</div>
+          <div class="date">2013</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">Mozilla Student Ambassador</div>
+          <div class="date">2014 - 2016</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="title">FOSS.lk, Foss Sri Lanka Community Advocate</div>
+          <div class="date">2017 - Present</div>
+        </div>
+      </div>
+
+      <div class="banner">Referees</div>
+      <div class="item">
+        <div class="org">Referees available on request</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-band">Asith Wijenayake &nbsp;&nbsp;|&nbsp;&nbsp; Senior Product Designer</div>
+
+</div>
+</body>
+</html>

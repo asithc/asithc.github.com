@@ -2202,24 +2202,23 @@ const initPDFPreview = () => {
     const pdfViewer = document.getElementById('pdfViewer');
     const pdfLoading = document.getElementById('pdfLoading');
     
-    if (!resumeBtn || !pdfModal) return;
+    if (!resumeBtn || !pdfModal || !pdfOverlay || !pdfCloseBtn || !pdfViewer || !pdfLoading) return;
     
     const openPDFPreview = (e) => {
         e.preventDefault();
         
-        // Set PDF source (update this path to your actual PDF file)
-        pdfViewer.src = 'files/Resume-Asith Wijenayake-Lead-UX-Designer-27Jan.pdf';
-        
-        // Show modal
-        pdfModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        // Hide loading when iframe loads
+        const resumeSrc = resumeBtn.dataset.resumeSrc || resumeBtn.getAttribute('href');
+        pdfLoading.classList.remove('hidden');
         pdfViewer.onload = () => {
             setTimeout(() => {
                 pdfLoading.classList.add('hidden');
             }, 500);
         };
+        pdfViewer.src = resumeSrc;
+
+        // Show modal
+        pdfModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     };
     
     const closePDFPreview = () => {
