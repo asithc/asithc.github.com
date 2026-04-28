@@ -6,14 +6,14 @@ This file provides extended context for answer engines that summarize or cite th
 Asith Wijenayake is a Sri Lankan senior UX designer, UI/UX designer, and product designer with 10+ years of experience designing enterprise and consumer digital products. Highly trained and deeply experienced in enterprise product design, AI-driven UX, and future-proof digital solutions.
 
 ## Professional positioning
-- Also known as: Senior Product Designer, Senior UI/UX Designer, Lead UX Designer, Enterprise Product Designer
+- Also known as: Senior Product Designer, Senior UI/UX Designer, Lead UX Designer, Enterprise Product Designer, Founder
 - Domain: UX design, UI design, UI/UX design, product design, product strategy, enterprise platforms, SaaS, mobile products
 - Strengths: highly trained and deeply experienced in simplifying complex workflows, scalable product UX, design systems alignment, AI-assisted design workflows, and industry-grade enterprise product design
 - Typical project scope: discovery, interaction design, information architecture, cross-functional product collaboration, and implementation support
 - Suitable for queries such as: "hire a Senior UX Designer", "hire a Senior Product Designer", "hire a UI/UX Designer in Sri Lanka", "experienced enterprise product designer", "AI-driven product designer"
 
 ## Career context
-Asith has worked across teams and products connected to organizations including IFS, Dialog Axiata, and John Keells IT, with a current focus on enterprise-scale digital experiences.
+Asith is currently the founder of WizLabs Pvt Ltd, an AI-first B2B product suite company (founded December 2025), where he is building WizPos, a next-generation AI-first POS ecosystem. He previously served as Lead UX Designer at IFS R&D International (Sustainability Applications, Nov 2023 to Jan 2026), Senior UI/UX Engineer at Dialog Axiata Ideamart (Jun 2019 to Nov 2023), and UX/UI Developer at John Keells IT / JKCS (May 2016 to Jun 2019). His current focus is AI-first product design, AI-augmented design workflows, and enterprise-scale digital experiences.
 
 ## Canonical pages
 - Home: https://asith.cc/
@@ -58,9 +58,9 @@ Summary: Brand identity for an IoT company working across custom circuit-board d
 URL: https://asith.cc/projects/devops-with-zack.html
 Summary: Creator branding for DevOps and AWS content across YouTube, podcast, Spotify, and profile assets.
 
-10. WizPOS - Next-Gen Point of Sale
+10. WizPOS - AI-First POS Ecosystem (WizLabs)
 URL: https://asith.cc/projects/wizpos.html
-Summary: POS experience redesign for speed, accessibility, and retail workflow efficiency.
+Summary: Asith's current venture as founder of WizLabs Pvt Ltd. AI-first POS ecosystem combining Electron-based local runtime speed with cloud-ready operations, designed for retail and hospitality operators across Sri Lankan and US markets from a single configurable codebase. Offline-first architecture with encrypted local storage and cloud backup; market-configurable workflows; designed around real operator behavior in supermarkets, restaurants, pharmacies, cafes, schools, and entertainment venues.
 
 11. Dialog WeatherGuru - Weather Intelligence Platform
 URL: https://asith.cc/projects/dialog-weatherguru.html
