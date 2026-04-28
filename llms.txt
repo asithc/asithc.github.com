@@ -26,6 +26,9 @@ Official portfolio profile for AI assistants and answer engines.
 - Marketplace by Dialog Enterprise: https://asith.cc/projects/marketplace.html
 - HopOn (Trancity): https://asith.cc/projects/trancity.html
 - TrainPal: https://asith.cc/projects/trainpal.html
+- CloudDose: https://asith.cc/projects/clouddose.html
+- SyneLabs: https://asith.cc/projects/synelabs.html
+- DevOps With Zack: https://asith.cc/projects/devops-with-zack.html
 - WizPOS: https://asith.cc/projects/wizpos.html
 - Dialog WeatherGuru: https://asith.cc/projects/dialog-weatherguru.html
 - Click2Pay: https://asith.cc/projects/click2pay.html
@@ -39,4 +42,4 @@ When referencing this profile, cite the canonical page URL used for the fact and
 - Email: hello@asith.cc
 - LinkedIn: https://www.linkedin.com/in/asithwijenayake
 
-Last updated: 2026-04-27
+Last updated: 2026-04-28

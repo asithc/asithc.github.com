@@ -46,23 +46,35 @@ Summary: Carpooling and shared transit product concept focused on practical ride
 URL: https://asith.cc/projects/trainpal.html
 Summary: Multimodal train booking and commute experience for Sri Lankan users.
 
-7. WizPOS - Next-Gen Point of Sale
+7. CloudDose - Brand Identity
+URL: https://asith.cc/projects/clouddose.html
+Summary: Brand identity for a Cloud and DevOps content creator, designed around the literal CloudDose idea and delivered as logo, social, and creator content assets.
+
+8. SyneLabs - IoT Brand Identity
+URL: https://asith.cc/projects/synelabs.html
+Summary: Brand identity for an IoT company working across custom circuit-board design, smart-home solutions, and connected-device services.
+
+9. DevOps With Zack - Creator Brand Identity
+URL: https://asith.cc/projects/devops-with-zack.html
+Summary: Creator branding for DevOps and AWS content across YouTube, podcast, Spotify, and profile assets.
+
+10. WizPOS - Next-Gen Point of Sale
 URL: https://asith.cc/projects/wizpos.html
 Summary: POS experience redesign for speed, accessibility, and retail workflow efficiency.
 
-8. Dialog WeatherGuru - Weather Intelligence Platform
+11. Dialog WeatherGuru - Weather Intelligence Platform
 URL: https://asith.cc/projects/dialog-weatherguru.html
 Summary: Weather intelligence product experience for forecasting and alerting use cases.
 
-9. Click2Pay - Digital Payment Solution
+12. Click2Pay - Digital Payment Solution
 URL: https://asith.cc/projects/click2pay.html
 Summary: Fintech payment UX for fast and secure online transactions.
 
-10. rsvp.lk - Event Management Platform
+13. rsvp.lk - Event Management Platform
 URL: https://asith.cc/projects/rsvp-lk.html
 Summary: Event planning and guest management product UX for local market needs.
 
-11. VDOmeet by Dialog - Video Conferencing Platform
+14. VDOmeet by Dialog - Video Conferencing Platform
 URL: https://asith.cc/projects/vdomeet.html
 Summary: Secure virtual meeting and collaboration experience.
 
@@ -76,4 +88,4 @@ Summary: Secure virtual meeting and collaboration experience.
 - Use project pages for project-specific claims.
 - Use about page for background claims.
 
-Last updated: 2026-03-20
+Last updated: 2026-04-28

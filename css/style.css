@@ -5622,6 +5622,12 @@ html {
     display: block;
 }
 
+.work-card-preview img.work-preview-clouddose,
+.work-card-preview img.work-preview-synelabs,
+.work-card-preview img.work-preview-devops-zack {
+    object-position: center center;
+}
+
 .work-card.disabled {
     cursor: default;
     opacity: 0.6;
@@ -5903,6 +5909,36 @@ html {
     background: rgba(0, 122, 255, 0.15);
 }
 
+.project-meta-section .meta-link.clouddose-pdf-link {
+    color: #6f2dd9;
+    border-color: rgba(111, 45, 217, 0.45);
+    background: rgba(111, 45, 217, 0.08);
+}
+
+.project-meta-section .meta-link.clouddose-pdf-link:hover {
+    background: rgba(111, 45, 217, 0.15);
+}
+
+.project-meta-section .meta-link.synelabs-pdf-link {
+    color: #6f41dc;
+    border-color: rgba(136, 98, 230, 0.45);
+    background: rgba(136, 98, 230, 0.08);
+}
+
+.project-meta-section .meta-link.synelabs-pdf-link:hover {
+    background: rgba(136, 98, 230, 0.15);
+}
+
+.project-meta-section .meta-link.zack-site-link {
+    color: #5f67ef;
+    border-color: rgba(95, 103, 239, 0.45);
+    background: rgba(95, 103, 239, 0.08);
+}
+
+.project-meta-section .meta-link.zack-site-link:hover {
+    background: rgba(95, 103, 239, 0.15);
+}
+
 .project-content {
     display: flex;
     flex-direction: column;
@@ -6020,6 +6056,26 @@ html {
 
 .case-study-link svg {
     display: none;
+}
+
+.case-study-link.clouddose-document-link {
+    background: #111111;
+    border-color: #111111;
+}
+
+.case-study-link.clouddose-document-link:hover {
+    background: transparent;
+    color: #111111;
+}
+
+.case-study-link.synelabs-document-link {
+    background: #020831;
+    border-color: #020831;
+}
+
+.case-study-link.synelabs-document-link:hover {
+    background: transparent;
+    color: #020831;
 }
 
 /* Pin Protected Case Study Button (icon only when lock is truly enabled) */
@@ -6654,6 +6710,470 @@ html {
 @media (max-width: 768px) {
     .case-study-images:has(.case-study-image + .case-study-image) {
         grid-template-columns: 1fr;
+    }
+}
+
+.clouddose-logo-variants {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 48px 0;
+}
+
+.clouddose-logo-variant {
+    min-height: 220px;
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f6;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.clouddose-logo-variant.is-dark {
+    background: #050505;
+}
+
+.clouddose-logo-variant img {
+    width: min(100%, 210px);
+    height: auto;
+    display: block;
+}
+
+.clouddose-social-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+    margin: 48px 0;
+}
+
+.clouddose-social-grid .case-study-image {
+    margin-bottom: 0;
+}
+
+.clouddose-social-grid .case-study-image:first-child {
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .clouddose-logo-variants,
+    .clouddose-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clouddose-social-grid .case-study-image:first-child {
+        grid-row: auto;
+    }
+}
+
+.synelabs-logo-showcase {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: clamp(22px, 4vw, 48px);
+    margin: 48px 0;
+    padding: clamp(28px, 5vw, 56px);
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg, rgba(2, 8, 49, 0.92), rgba(2, 8, 49, 0.72)),
+        linear-gradient(90deg, #8862e6 0 33%, #5bc5d3 33% 66%, #020831 66% 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.synelabs-logo-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    pointer-events: none;
+}
+
+.synelabs-logo-card {
+    min-height: 260px;
+    border-radius: 18px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.synelabs-logo-card img {
+    width: min(100%, 190px);
+    height: auto;
+    display: block;
+}
+
+.synelabs-logo-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.synelabs-logo-copy h4 {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.02;
+}
+
+.synelabs-logo-copy p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.synelabs-color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 48px 0;
+}
+
+.synelabs-color-swatch {
+    min-height: 180px;
+    border-radius: 18px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffffff;
+    box-shadow: 0 10px 28px rgba(2, 8, 49, 0.12);
+}
+
+.synelabs-color-swatch strong {
+    font-size: 18px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.synelabs-color-swatch span {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.82;
+}
+
+.synelabs-swatch-purple {
+    background: #8862e6;
+}
+
+.synelabs-swatch-teal {
+    background: #5bc5d3;
+}
+
+.synelabs-swatch-navy {
+    background: #020831;
+}
+
+.case-study-image.synelabs-letterhead-shot img {
+    width: min(100%, 460px);
+    display: block;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .synelabs-logo-showcase,
+    .synelabs-color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .synelabs-logo-card {
+        min-height: 220px;
+    }
+}
+
+.synelabs-symbol-mask {
+    display: block;
+    width: clamp(64px, 9vw, 132px);
+    aspect-ratio: 1 / 1;
+    background: currentColor;
+    -webkit-mask: url("../images/Projects/Branding/SyneLabs/%5BFANCY%20-%20SVG%5D%20syneLabs__Fancy.svg") center / contain no-repeat;
+    mask: url("../images/Projects/Branding/SyneLabs/%5BFANCY%20-%20SVG%5D%20syneLabs__Fancy.svg") center / contain no-repeat;
+    flex: 0 0 auto;
+}
+
+.synelabs-symbol-white {
+    color: #ffffff;
+}
+
+.synelabs-symbol-navy {
+    color: #020831;
+}
+
+.synelabs-symbol-purple {
+    color: #8862e6;
+}
+
+.project-image-item.synelabs-brand-collage {
+    min-height: clamp(420px, 48vw, 640px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.75fr);
+    grid-template-rows: 1fr 1fr;
+    background: #020831;
+}
+
+.synelabs-collage-tile {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.synelabs-collage-primary {
+    grid-row: 1 / span 2;
+    justify-content: flex-start;
+    background:
+        radial-gradient(circle at 78% 20%, rgba(91, 197, 211, 0.22), transparent 34%),
+        linear-gradient(145deg, #020831 0%, #081453 58%, #020831 100%);
+}
+
+.synelabs-collage-purple {
+    background: #8862e6;
+}
+
+.synelabs-collage-cyan {
+    background: #5bc5d3;
+}
+
+.synelabs-collage-lockup {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 28px);
+    position: relative;
+    z-index: 1;
+}
+
+.synelabs-collage-wordmark {
+    color: #ffffff;
+    font-size: clamp(48px, 7vw, 108px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.project-image-item.synelabs-logo-options-panel {
+    display: grid;
+    grid-template-columns: 1.25fr 0.9fr 0.9fr;
+    gap: clamp(10px, 1.4vw, 16px);
+    padding: clamp(14px, 2.6vw, 28px);
+    background: #f4f4f6;
+}
+
+.synelabs-logo-option {
+    min-height: 170px;
+    border-radius: 14px;
+    border: 1px solid rgba(2, 8, 49, 0.08);
+    background: #ffffff;
+    padding: clamp(14px, 2.1vw, 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.synelabs-logo-option .synelabs-option-wordmark {
+    color: #020831;
+    font-size: clamp(26px, 3.2vw, 46px);
+    line-height: 1;
+    font-weight: 800;
+}
+
+.synelabs-logo-option small {
+    color: rgba(2, 8, 49, 0.54);
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.synelabs-option-horizontal {
+    grid-column: span 2;
+}
+
+.synelabs-option-lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 20px);
+}
+
+.synelabs-option-lockup img {
+    width: clamp(48px, 6vw, 84px);
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.synelabs-logo-options-panel .synelabs-symbol-mask {
+    width: clamp(52px, 6.5vw, 92px);
+}
+
+.synelabs-option-stacked {
+    background: #ffffff;
+}
+
+.synelabs-option-symbol {
+    background: #8862e6;
+}
+
+.synelabs-option-symbol small {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.synelabs-option-reverse {
+    grid-column: span 2;
+    background: #020831;
+}
+
+.synelabs-option-reverse .synelabs-option-wordmark,
+.synelabs-option-reverse small {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .project-image-item.synelabs-brand-collage,
+    .project-image-item.synelabs-logo-options-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .synelabs-collage-primary,
+    .synelabs-option-horizontal,
+    .synelabs-option-reverse {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .synelabs-collage-primary {
+        min-height: 300px;
+    }
+
+    .synelabs-collage-lockup,
+    .synelabs-option-lockup {
+        flex-wrap: wrap;
+    }
+}
+
+.zack-project-images .project-image-grid {
+    gap: 18px;
+}
+
+.project-image-item.zack-profile-cover-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+    gap: 0;
+    background: linear-gradient(145deg, #5867ee 0%, #b957f0 100%);
+}
+
+.zack-profile-card,
+.zack-channel-card {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.zack-profile-card {
+    padding: clamp(22px, 4vw, 48px);
+    background: linear-gradient(145deg, #5867ee 0%, #b957f0 100%);
+}
+
+.zack-channel-card {
+    background: linear-gradient(145deg, #5867ee 0%, #9c63f0 100%);
+}
+
+.project-image-item.zack-profile-cover-grid .zack-profile-card img {
+    width: min(100%, 380px);
+    height: auto;
+    border-radius: 22px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.project-image-item.zack-profile-cover-grid .zack-channel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zack-case-study .case-study-block {
+    margin-bottom: 28px;
+}
+
+.zack-surface-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 42px 0;
+}
+
+.zack-surface-card {
+    min-height: 220px;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.zack-surface-card span {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    opacity: 0.66;
+}
+
+.zack-surface-card h3 {
+    margin: auto 0 10px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 0.98;
+}
+
+.zack-surface-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.zack-surface-dark {
+    background: #111111;
+}
+
+.zack-surface-purple {
+    background: linear-gradient(145deg, #6a65f0, #b34fe8);
+}
+
+.zack-surface-blue {
+    background: linear-gradient(145deg, #455bea, #5d9cf7);
+}
+
+.zack-platform-assets {
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .project-image-item.zack-profile-cover-grid,
+    .zack-surface-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zack-profile-card,
+    .zack-channel-card {
+        min-height: 240px;
     }
 }
 

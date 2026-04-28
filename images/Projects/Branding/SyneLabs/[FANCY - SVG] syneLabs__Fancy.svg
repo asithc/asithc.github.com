@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="350px" viewBox="0 0 350 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>[FANCY - SVG] syneLabs__Fancy</title>
+    <defs>
+        <path d="M221.246343,123.200778 L221.246343,243.099855 L336.255216,243.099966 C309.693024,305.919642 247.494271,350 175,350 C102.505729,350 40.3069763,305.919642 13.7447841,243.099966 L92.7506998,243.099855 C118.864838,243.099855 148.763475,225.25112 148.763475,183.150316 L148.763475,149.984664 C148.763475,131.698402 151.373621,123.200778 169.777304,123.200778 L221.246343,123.200778 Z M175,0 C271.649831,0 350,78.3501688 350,175 C350,182.835107 349.485094,190.549952 348.487276,198.112542 L264.624944,198.111538 L264.624944,78.2352941 L162.727663,78.2352941 C122.035782,78.2352941 102.793346,106.961751 102.793346,131.698402 L102.793346,172.980186 C102.793346,191.352924 88.7939634,198.111538 78.9596612,198.111538 L1.51272437,198.112542 C0.514905626,190.549952 0,182.835107 0,175 C0,78.3501688 78.3501688,0 175,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Daniya's-work-SyneLabs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sandbox" transform="translate(-667, -4528)">
+            <g id="Rectangle-+-Rectangle-Copy-7-+-Rectangle-Copy-8-Mask" transform="translate(667, 4528)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#8862E6" xlink:href="#path-1"></use>
+                <g id="Group-3" mask="url(#mask-2)">
+                    <g transform="translate(0, 0)">
+                        <rect id="Rectangle" fill="#8862E6" x="2.13162821e-14" y="0" width="116.666667" height="350"></rect>
+                        <rect id="Rectangle-Copy-7" fill="#5BC5D3" x="116.67" y="0" width="116.666667" height="350"></rect>
+                        <rect id="Rectangle-Copy-8" fill="#020831" x="233.34" y="0" width="116.666667" height="350"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
