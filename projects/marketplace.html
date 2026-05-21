@@ -103,7 +103,7 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="preload" as="image" href="../images/Projects/Marketplace/MarketPlace-feature.webp" fetchpriority="high">
-    <link rel="stylesheet" href="../css/style.css?v=5.23">
+    <link rel="stylesheet" href="../css/style.css?v=5.25">
     
     </head>
 <body class="project-detail-page">
@@ -155,7 +155,6 @@
 
                 <div class="project-meta-section">
                     <h3 class="meta-label">TOOLS</h3>
-                    <p class="meta-value">Figma</p>
                     <p class="meta-value">SketchApp</p>
                     <p class="meta-value">Whimsical</p>
                     <p class="meta-value">draw.io</p>
@@ -190,11 +189,76 @@
                 </div>
 
                 <div class="project-cta">
-                    <!-- To enable: add class "pin-protected", set data-pin, and fill case study section below -->
-                    <a href="#case-study" class="case-study-link disabled" 
-                       data-pin="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" 
-                       data-target="caseStudySection">Read Case Study</a>
+                    <a href="#caseStudySection" class="case-study-link">Read Case Study</a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Project Collage Grid -->
+        <div class="project-collage project-collage-marketplace">
+            <div class="project-collage-grid project-collage-grid-marketplace">
+
+                <!-- Catalog scale: col 1, full height -->
+                <article class="collage-tile mp-scale-tile">
+                    <div>
+                        <p class="mp-kicker">Catalog Scale</p>
+                        <h4 class="mp-scale-title">Corner shop<br>to enterprise.</h4>
+                    </div>
+                    <ul class="mp-stat-list">
+                        <li><span class="mp-stat-num">25</span><span class="mp-stat-label">Categories</span></li>
+                        <li><span class="mp-stat-num">~100</span><span class="mp-stat-label">Widgets</span></li>
+                        <li><span class="mp-stat-num">4</span><span class="mp-stat-label">User Roles</span></li>
+                        <li><span class="mp-stat-num">1</span><span class="mp-stat-label">Open Catalog</span></li>
+                    </ul>
+                </article>
+
+                <!-- Voice & Comms: col 2, row 1 -->
+                <article class="collage-tile mp-voice-tile">
+                    <p class="mp-kicker">Voice &amp; Comms</p>
+                    <h4 class="mp-sector-title">OBD. IVR. SMS. MMS.</h4>
+                </article>
+
+                <!-- Payments: col 2, row 2 -->
+                <article class="collage-tile mp-payments-tile">
+                    <p class="mp-kicker">Payments</p>
+                    <h4 class="mp-sector-title">Genie. eZcash. Click2Pay. Bill.</h4>
+                </article>
+
+                <!-- Hero: col 3, full height -->
+                <article class="collage-tile marketplace-hero-tile">
+                    <span class="mp-sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                    <img width="430" height="70" class="marketplace-wordmark" src="../images/Projects/Marketplace/Logo-primary.530fae6f.svg" alt="Marketplace wordmark" loading="lazy" decoding="async">
+                    <p class="mp-hero-kicker">Telco Shopify</p>
+                    <h4 class="mp-hero-title">Pick.<br>Configure.<br>Live.</h4>
+                    <div class="mp-badge-row">
+                        <span class="mp-chip">Self-Serve</span>
+                        <span class="mp-chip">Open Catalog</span>
+                        <span class="mp-chip">Saved KYC</span>
+                    </div>
+                </article>
+
+                <!-- Security & ID: col 4, row 1 -->
+                <article class="collage-tile mp-security-tile">
+                    <p class="mp-kicker">Security &amp; ID</p>
+                    <h4 class="mp-sector-title">2FA. KYC. Verified Creds.</h4>
+                </article>
+
+                <!-- Analytics & IoT: col 4, row 2 -->
+                <article class="collage-tile mp-analytics-tile">
+                    <p class="mp-kicker">Analytics &amp; IoT</p>
+                    <h4 class="mp-sector-title">DAAS. CCTV. Monitoring.</h4>
+                </article>
+
+                <!-- Flow: col 5, full height -->
+                <article class="collage-tile mp-flow-tile">
+                    <p class="mp-kicker">How it Works</p>
+                    <ol class="mp-flow-list">
+                        <li>Browse the catalog</li>
+                        <li>Configure the widget</li>
+                        <li>Pay and go live</li>
+                    </ol>
+                </article>
+
             </div>
         </div>
 
@@ -202,59 +266,500 @@
         <div class="project-images">
             <div class="project-image-grid">
                 <div class="project-image-item fade-in">
-                    <img width="1194" height="834" src="../images/Projects/Marketplace/MarketPlace-feature.webp" alt="MarketplaceTM by Dialog Enterprise feature image" loading="eager" decoding="async" fetchpriority="high">
+                    <img width="1194" height="834" src="../images/Projects/Marketplace/MarketPlace-feature.webp" alt="Marketplace by Dialog Enterprise feature image" loading="eager" decoding="async" fetchpriority="high">
                 </div>
                 <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>🎨 Pixels are being pushed, please hold.</span>
-                    </div>
-                </div>
-                <div class="project-image-item fade-in">
-                    <div class="project-image-placeholder">
-                        <span>☕ Currently brewing... check back soon!</span>
-                    </div>
+                    <img width="1356" height="800" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/landing%20page%20-%20where%20puclic%20fin%20dabout%20us.png" alt="Public landing page open to anyone before sign-up" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
 
-        <!-- Case Study Section (Hidden until PIN is entered) -->
-        <section id="caseStudySection" class="case-study-section" style="display: none;">
+        <!-- Case Study Section -->
+        <section id="caseStudySection" class="case-study-section revealed">
             <div class="case-study-content">
-                <div class="case-study-header">
-                    <h2 class="case-study-title">📖 Full Case Study</h2>
-                    <p class="case-study-intro">Detailed breakdown of this project.</p>
+
+                <!-- Hero Header -->
+                <div class="case-study-hero">
+                    <h2 class="case-study-headline">A Shopify for Sri Lanka&#39;s enterprise software.</h2>
+                </div>
+
+                <!-- Introduction -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Introduction</h3>
+                    <p>Dialog Enterprise Marketplace is the largest public-facing enterprise SaaS product shipped by the Ideamart engineering team at Dialog Axiata. The core idea, in one line: <strong>a Shopify for telco-grade enterprise tools</strong>. Pick the solution you need, configure it, pay, and it is live, with no developer, no sales engineer, no procurement cycle.</p>
+                    <p>The public marketing site frames it as &quot;a one-stop-shop digital platform with a wide range of easy-to-use, click-and-go type widgets-based enterprise solutions&quot;, with three promises on the wall: <strong>Zero Complexity, no coding knowledge is needed</strong>, a <strong>self-service model</strong>, and <strong>affordability</strong> through single-provider billing. The job of the design work below was to make those three promises true at every step of the actual product.</p>
+                    <p>It started in early 2020 as an internal pilot beside the existing Ideamart API and Ideabiz developer platforms. Those products served code-literate buyers well. This one had to serve everyone else.</p>
+                    <p>The Beta went live quietly. Within weeks, marketing, existing Ideamart customers, and Ideabiz business users were pitching it inside their own networks. We had not planned for the attention. Rather than retreat, we kept the Beta live as a research instrument and formed a parallel team to rebuild from scratch as Marketplace 2.0, codename Polaris.</p>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">The Challenge</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">Where it lives today</h4>
+                    <ul class="case-study-list">
+                        <li><strong>marketplace.dialog.lk</strong>, the consumer-facing marketing landing for Marketplace.</li>
+                        <li><strong>marketplaceportalbeta.dialog.lk</strong>, the live portal where the public can browse the full catalog and complete the first-time user wizard that builds their organisation on Marketplace.</li>
+                        <li><strong>business.dialog.lk/products-services/toolsapps/de-market-place/</strong>, the Dialog Enterprise corporate placement that positions Marketplace as a product line.</li>
+                    </ul>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Research & Discovery</h3>
-                    <p>Add your case study content here...</p>
-                </div>
-
-                <div class="case-study-block">
-                    <h3 class="case-study-heading">Design Approach</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">Scale of the Catalog</h4>
+                    <p>By September 2023 the catalog spanned 25 categories and roughly 100 widgets, from corporate voice and digital payments to IoT, security, surveys, location intelligence, and enterprise analytics. The buyer might be a corner shop or a multi-branch enterprise. Designing one discovery surface that worked for both was the central UX problem.</p>
                 </div>
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <img src="https://picsum.photos/1200/750?random=100" alt="Case Study Image" loading="lazy" decoding="async">
-                        <p class="image-caption">Add image caption here</p>
+                        <img width="1820" height="320" src="../images/Projects/Marketplace/case-study/widget-catalog.png" alt="Widget catalog: 25 categories spanning nearly 100 enterprise solutions" loading="lazy" decoding="async">
+                        <p class="image-caption">Widget catalog snapshot, September 2023. 25 categories, nearly 100 enterprise solutions to surface inside one self-serve experience.</p>
                     </div>
                 </div>
 
                 <div class="case-study-block">
-                    <h3 class="case-study-heading">Outcome & Impact</h3>
-                    <p>Add your case study content here...</p>
+                    <h4 class="case-study-subheading">Process at a Glance</h4>
+                    <p>The work below maps to an end-to-end design process that I owned across multiple years:</p>
+                    <ol class="case-study-list">
+                        <li><strong>Frame the problem.</strong> 2020 origin sketches under the Ideabiz Enterprise Solutions brand. Category-grouped catalog, multi-rail checkout, partner revenue model.</li>
+                        <li><strong>Ship the Beta as research.</strong> Public release of an unfinished pilot, deliberately, to surface real-user constraints.</li>
+                        <li><strong>Research and discovery.</strong> Qualitative Beta feedback, catalog-scale analysis, structural audit of the inherited onboarding.</li>
+                        <li><strong>Constraint mapping.</strong> Documenting the Keycloak auth lock as the load-bearing problem to design around.</li>
+                        <li><strong>Information architecture.</strong> Four user types, journey maps, role permission matrix.</li>
+                        <li><strong>Design and prototype.</strong> Wireframes, high-fidelity screens, interaction patterns in the new design framework.</li>
+                        <li><strong>Build and ship.</strong> HTML and CSS implementation of the full UI layer, consumed by React engineers.</li>
+                        <li><strong>Standardise.</strong> Extract the framework into a reusable system for the next generation of Ideamart products.</li>
+                    </ol>
+                </div>
+
+                <!-- My Role -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">My Role</h3>
+                    <p>I was the only UX person on this product. Over the lifespan of the project that role kept widening, because the gaps I saw kept demanding it.</p>
                 </div>
 
                 <div class="case-study-block">
+                    <h4 class="case-study-subheading">UX Designer first</h4>
+                    <p>I joined as the UX designer. I owned research, information architecture, user flows, wireframes, and high-fidelity screens for the full product. Every flow you can see on the live portal, I sketched, mapped, and designed.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">UX Engineer, by necessity</h4>
+                    <p>Designs kept losing detail on the way to React. So I stopped handing off and started shipping. I built the entire UI layer of Polaris in HTML and CSS, component by component, exactly to my own specs. The React team consumed my markup as the source of truth instead of trying to interpret a Sketch file. What I designed is what got built, because I was the one building it.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Part Product Owner, when nobody else held the vision</h4>
+                    <p>The original Beta had no UX owner and a fragmented product direction. When the rebuild started, I wrote the roadmap, defined the four user types, scoped the public catalog cut, set the saved-resumable KYC as a non-negotiable, and stayed in the room for every prioritisation call. I was not the product manager, but on every decision that touched user experience, I owned the position.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Architect of the Ideamart design framework</h4>
+                    <p>Marketplace became the first product to ship on a custom, in-house design system I built for the Ideamart organisation. The framework, tokens, components, layout primitives, and interaction patterns, did not exist before. Every previous Ideamart product had reinvented its own UI from scratch. Marketplace was the moment the org stopped doing that.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Who I worked with</h4>
+                    <ul class="case-study-list">
+                        <li><strong>Ideamart product and engineering leadership</strong>, who set the case for moving from a developer audience to a self-serve business audience.</li>
+                        <li><strong>The Polaris rebuild team</strong>, formed specifically to ship Marketplace 2.0 while the Beta continued serving live users.</li>
+                        <li><strong>The Dialog Enterprise marketing and sales organisation</strong>, who provided early demand signal and acted as a proxy voice of the customer.</li>
+                        <li><strong>Existing Ideamart and Ideabiz customers</strong>, who became unintended Beta testers and the richest source of qualitative feedback we had.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Cross-functional collaboration, start to finish</h4>
+                    <p>I was in the room from the first brainstorm and stayed in the room through every phase that followed. That meant pitching the original concept internally, then re-pitching the Polaris vision to the XL Axiata team in Indonesia when the sister deployment was on the table. Day to day, I drove the product sprints alongside the Product Manager and the Project Manager, kept the development team aligned with the build vision, and stayed close to the Product Owner so the satisfaction loop on every release was visible. The job was never just &quot;design and hand off&quot;. It was making sure design, engineering, and product strategy stayed in sync at every layer.</p>
+                </div>
+
+                <!-- The Beta That Forced a Rebuild -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Beta That Forced a Rebuild</h3>
+                    <p>The Ideamart API and Ideabiz developer platforms served code-literate buyers well. The pilot tested whether the same enterprise tooling could be wrapped in a self-serve surface for buyers who had never seen a webhook.</p>
+                    <p>The internal pitch landed instantly. Rather than shelve an unfinished product, we published it as a Beta. The bet: every real user who hit a wall would point us to a constraint we had not seen. The Beta became our biggest user interview, conducted live, in production, at zero research cost.</p>
+                </div>
+
+                <!-- Origin Sketches -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Origin Sketches, 2020</h3>
+                    <p>The earliest artifacts of this product are wireframes I drew when the brand was still &quot;Ideabiz Enterprise Solutions&quot;, before the Marketplace name existed. The Shopify-like idea is already visible: categorised solutions, a dashboard that tracks what is active and what is expiring, a checkout that aggregates a cart of services across multiple Dialog payment rails. The vocabulary changed. The shape did not.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1500" height="1100" src="../images/Projects/Marketplace/case-study/when%20we.%20starting%20in%202020%20this%20is%20how%20we%20initially%20started.png" alt="Early 2020 dashboard wireframe under the Ideabiz Enterprise Solutions brand" loading="lazy" decoding="async">
+                        <p class="image-caption">Dashboard wireframe, 2020. Services Purchased, expiring services, monthly usage, and a grid of activated widgets. The dashboard primitives that ship in Polaris today were drawn here.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="820" height="1640" src="../images/Projects/Marketplace/case-study/very%20early%20stage%20screen%20structure%20of%20the%20home%20page..png" alt="Catalog homepage wireframe with grouped category sections" loading="lazy" decoding="async">
+                        <p class="image-caption">Catalog homepage wireframe. Security, Education, Weather, My Apps, Smart Employee Engagements, Customer Engagement, Payments, City Analytics, Transportation. Category-grouped, Shopify-style, before the catalog name existed.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="600" height="600" src="../images/Projects/Marketplace/case-study/very%20first%20payment%20process%20screen.png" alt="Checkout wireframe with multiple Dialog payment methods" loading="lazy" decoding="async">
+                        <p class="image-caption">Checkout wireframe. Cart with multiple services, each priced by subscription tier, settled through Genie, eZcash, Click2Pay, Add to Bill, or card. The payment-rail flexibility that Polaris ships today was scoped here.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1024" height="600" src="../images/Projects/Marketplace/case-study/marketplace%200.5.png" alt="Marketing agent flow with sign-up, configuration, admin approval, and revenue landing page" loading="lazy" decoding="async">
+                        <p class="image-caption">Marketing agent flow, 2020. Sign Up to Configurations to Admin Approval to a revenue dashboard showing portion of monthly income per onboarded enterprise. This is the seed of the Polaris Partner program.</p>
+                    </div>
+                </div>
+
+                <!-- Research & Discovery -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Research and Discovery</h3>
+                    <p>The discovery work happened in three streams running in parallel: qualitative feedback from the live Beta, a hard look at the catalog scale problem, and a structural audit of the inherited onboarding flow that I had not designed.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Learning from Beta Public Feedback</h4>
+                    <p>Once the Beta was live, the feedback was almost universal in shape: people appreciated the effort and the ambition, then quickly hit a wall. The walls were almost always in the same places. Onboarding was too long for the value being offered. The decision of what type of user someone was got made before they understood the choices. The catalog itself was hidden behind sign-up, KYC, and manual approval, so prospects who wanted to evaluate fit could not even see what was on offer.</p>
+                    <p>This was the signal that justified the rebuild. The product was solving a real problem, the surface that wrapped it was not.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">The Catalog-Scale Problem</h4>
+                    <p>Roughly 100 widgets across 25 categories is a lot of surface area to expose to a non-technical buyer. The Beta tried to surface everything as a flat grid once you got inside, with no progressive disclosure, no comparison helpers, and no contextual recommendation. The information architecture needed to start over with the buyer in mind, not the product taxonomy.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Inherited UX Violations in the Beta Onboarding</h4>
+                    <p>The Beta onboarding flow had been built as a prototype, without UX involvement. Once I was given the mandate to lead the rebuild, I documented the inherited flow in full so the team had a shared reference for what we were redesigning away from.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small.png" alt="Beta login screen, the first surface any visitor encountered" loading="lazy" decoding="async">
+                        <p class="image-caption">Beta login. The product opens with a credential prompt before any value is shown.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy.png" alt="Beta sign-up form with username, name, email, mobile, password, and CAPTCHA" loading="lazy" decoding="async">
+                        <p class="image-caption">Beta sign-up. Six required fields, mobile number validation tied to Dialog NIC or BRC, CAPTCHA, all before the catalog is visible.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%202.png" alt="Modal asking the user to pick one of four profile types with no undo" loading="lazy" decoding="async">
+                        <p class="image-caption">Profile type selection. Four roles, an irreversible choice, made before the user has seen any catalog content that would inform the decision.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%203.png" alt="Empty portfolio prompting the user to add an enterprise" loading="lazy" decoding="async">
+                        <p class="image-caption">Post-signup landing. The product still hides the catalog and asks the user to create an enterprise record first.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1600" height="1700" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%204.png" alt="Beta enterprise creation form with required KYC fields" loading="lazy" decoding="async">
+                        <p class="image-caption">Enterprise creation form. Address, business description, NIC number, NIC copy upload, document type, owner identity. All required upfront, with no preview of what the user is unlocking.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1600" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%205.png" alt="Agreement gate with two checkboxes and Create My Account action" loading="lazy" decoding="async">
+                        <p class="image-caption">Agreement gate. Two checkboxes, dense legal copy, the final wall before submission.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%207.png" alt="Pending approval state with no ability to browse the catalog" loading="lazy" decoding="async">
+                        <p class="image-caption">Pending approval. The user has spent fifteen minutes on forms, and is now told to wait for a human to review them, with no catalog access in the meantime.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1500" height="900" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%206.png" alt="Beta mobile verification modal interrupting the agreement gate" loading="lazy" decoding="async">
+                        <p class="image-caption">Mobile verification modal, popped on top of the agreement gate. Another mandatory step, layered on top of an already-mandatory step, with no progress saved if the user drops off.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%208.png" alt="Beta reports view with an empty Total Expense table" loading="lazy" decoding="async">
+                        <p class="image-caption">Reports navigation in the Beta. Functional skeleton, no operational warmth, and accessible only after the gate is cleared.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1700" height="1100" src="../images/Projects/Marketplace/Marketplace%20Beta/Extra%20Small%20Copy%209.png" alt="Post-approval portfolio showing one enterprise card" loading="lazy" decoding="async">
+                        <p class="image-caption">Post-approval portfolio. The user can finally enter the catalog, several days after first arrival.</p>
+                    </div>
+                </div>
+
+                <!-- Key Constraint -->
+                <div class="constraint-callout">
+                    <div class="constraint-callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+                    <div class="constraint-callout-content">
+                        <h4 class="constraint-callout-title">The Keycloak Authentication Lock</h4>
+                        <p class="constraint-callout-text">The Beta authenticated every visitor through Keycloak. The only way to check whether a person already had an account was to attempt a login, which forced anyone curious about the product into a credential prompt as their first experience. Combined with mandatory KYC and manual approval, this meant the heaviest gate in the product, identity verification, sat in front of the lightest activity in the product, browsing the catalog. The redesign had to invert that relationship without losing the compliance, billing, and partner-attribution guarantees that Keycloak was already providing.</p>
+                    </div>
+                </div>
+
+                <!-- Re-architecting the Journeys -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Re-architecting the User Journeys</h3>
+                    <p>Marketplace 2.0 had to serve four distinct user types, each with a different reason for being on the platform, a different permission surface, and a different journey. Designing one flow for all four was the trap the Beta fell into. Designing four journeys that converged on a shared catalog was the way out.</p>
+                    <ul class="case-study-list">
+                        <li><strong>Enterprise owners</strong>, the buyers. They want to discover, evaluate, configure, and subscribe to solutions for their own business.</li>
+                        <li><strong>Marketplace partners</strong>, external resellers. They want to discover demand, configure on behalf of customers, and earn margin on subscriptions they bring in.</li>
+                        <li><strong>Service providers</strong>, the solution publishers. They want to list, price, and operate a widget on the catalog and reach the buyer base directly.</li>
+                        <li><strong>Dialog account managers</strong>, internal sales. They sit on a separate internal admin surface in Polaris rather than the public signup, because their access path is account-attached, not self-serve.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Permission-Aware Journey Mapping</h4>
+                    <p>Before any screens were sketched, I mapped the partner portal journey end to end, including which screens each role could see, which actions each role could take, and where the journeys diverged versus shared a screen. The map became the single source of truth for the rebuild team, and it caught permission edge cases that would otherwise have surfaced only in QA.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1820" height="2310" src="../images/Projects/Marketplace/case-study/PartnerPortalJourneys.svg" alt="Partner portal journey map: shared shell screens and role-scoped views across the platform" loading="lazy" decoding="async">
+                        <p class="image-caption">Partner portal journey map. Yellow nodes are shared shell screens, red nodes are role-scoped views. The same map drove the role permission matrix and the route table the React team consumed.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Public Marketing and Catalog Before the Gate</h4>
+                    <p>The most consequential change was structural. The marketing site, the category browse, and the individual widget detail pages all moved in front of authentication. A first-time visitor can land on the homepage, follow a link to a specific app, and read what it does, what it costs, and how it integrates, without ever signing up. KYC and approval still gate the act of subscribing, but they no longer gate the act of looking.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Key Decisions and the Tradeoffs Behind Them</h4>
+                    <ul class="case-study-list">
+                        <li><strong>Parallel rebuild, not in-place refactor.</strong> Considered: refactor the Beta incrementally to preserve continuity. Rejected because the Beta&#39;s auth, IA, and onboarding were structurally entangled, so an incremental fix would have meant living inside Beta scaffolding for the entire rebuild. The cost was running two products at once for the transition window. The win was a clean foundation and zero churn for existing Beta users.</li>
+                        <li><strong>Move profile-type to a wizard step, not a blocking modal.</strong> Considered: keep the four-option pre-signup modal but with better copy. Rejected because asking someone to declare their role before seeing the catalog is the wrong order of decisions. The wizard step lets the user complete it once they have context, and the role can change behaviour of later steps inline.</li>
+                        <li><strong>Keep human approval, fix the experience around it.</strong> Considered: remove manual approval entirely for low-risk roles. Rejected because owner identity, business legitimacy, and partner payouts genuinely need a human check, and arguing that internally would have delayed the rebuild by quarters. The tradeoff: keep the gate, but ship a stated SLA, a celebratory approved state, and a transparent pending screen so the wait feels honest instead of opaque.</li>
+                        <li><strong>Build the UI in HTML/CSS, not just hand off Sketch.</strong> Considered: high-fidelity Sketch files plus a design spec for the React team. Rejected because in Beta we had already seen Sketch-to-React lose detail at every handoff. The tradeoff: I personally owned more implementation work, but what I designed is what got built, with no interpretation gap.</li>
+                        <li><strong>Open the catalog publicly, keep purchase gated.</strong> Considered: stay fully gated for simpler compliance and analytics. Rejected because the Beta&#39;s drop-off lived right at the gate, before anyone could evaluate fit. Separating discovery from commitment was the highest-leverage UX move in the rebuild.</li>
+                    </ul>
+                </div>
+
+                <!-- The Polaris Rebuild -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">The Polaris Rebuild</h3>
+                    <p>Rather than refactor the Beta in place, we ran two products in parallel. The Beta kept serving its growing audience and kept producing feedback. A separate team, with me leading UX end to end, built Marketplace 2.0 from a clean foundation. That decision protected the live users from churn, protected the rebuild from being constrained by Beta scaffolding, and let us cut over only when the new product was demonstrably better on every flow we cared about.</p>
+                    <p>The live portal is at <a href="https://marketplaceportalbeta.dialog.lk/" target="_blank" rel="noopener noreferrer">marketplaceportalbeta.dialog.lk</a>, the consumer marketing site is at <a href="https://marketplace.dialog.lk/" target="_blank" rel="noopener noreferrer">marketplace.dialog.lk</a>, and the corporate placement sits at <a href="https://business.dialog.lk/products-services/toolsapps/de-market-place/" target="_blank" rel="noopener noreferrer">business.dialog.lk</a>. The walkthrough below covers the flows that resolved the Beta&#39;s biggest UX failures.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Marketing in Front, Catalog Open</h4>
+                    <p>The Polaris homepage is a public marketing surface, not a login wall. Anyone can read the value proposition, follow the Products menu into a category, and open a specific widget detail page. The Beta&#39;s first impression was a credential prompt. Polaris&#39;s first impression is the product itself.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1356" height="800" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/landing%20page%20-%20where%20puclic%20fin%20dabout%20us.png" alt="Polaris public landing page with Try Now and Sign Up actions" loading="lazy" decoding="async">
+                        <p class="image-caption">Polaris public landing. Marketing, navigation, and direct CTAs sit in front of the auth wall, where the Beta&#39;s credential prompt used to be.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="2100" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Single%20App%20%5C%20user%20not%20signed-in.png" alt="Single widget detail page accessible without sign-in" loading="lazy" decoding="async">
+                        <p class="image-caption">Single app detail, viewed while signed out. Pricing, features, similar apps, and support links are all available before any account exists.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">AI-Powered Match Scoring</h4>
+                    <p>Even in 2023, we shipped a native AI match score on every widget detail page. The score reflects how well the widget fits the visitor&#39;s business profile based on the categories they have explored, the apps they have viewed, and the inputs they have already given the platform. It was the first native AI-driven recommendation surface on a Dialog Enterprise product.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1356" height="760" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/even%20it%20was%202023%20we%20were%20first%20to%20build%20native%20AI%20powerd%20favor%20suggetions%2C%20and%20matching.png" alt="AI match score modal explaining how an 80 percent fit was calculated" loading="lazy" decoding="async">
+                        <p class="image-caption">Native AI match score on a widget detail page, shipped in 2023. The modal explains how the percentage is calculated, so the recommendation stays legible rather than opaque.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">The First-Time User Wizard, Saved and Resumable</h4>
+                    <p>The single largest behavioural change between Beta and Polaris is here. KYC stopped being a one-shot form gauntlet and became a four-step Build-your-Organization wizard with a progress bar, independent steps, and a save state on every input. A user can complete the four steps in any order, leave halfway through, return days later, and pick up exactly where they left off. The product never asks them to start over.</p>
+                    <p>The four steps are Your Profile, Account Type, Business Profile, and Terms and Conditions. Each step is independently completable, independently saveable, and shows a clear status on the parent screen. Sign-in is offered inline on the very first step for users who already have an account, so the &quot;am I new or returning&quot; ambiguity that the Beta forced into the login form is resolved here instead.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Before and After, by the Screens</h4>
+                    <p>Counting screens to get from &quot;new visitor&quot; to &quot;able to use the product&quot;:</p>
+                    <ul class="case-study-list">
+                        <li><strong>Beta path:</strong> Login, Signup, Profile-type modal, Empty portfolio, Enterprise creation form, Agreement gate, Mobile OTP modal, Pending screen, then days of waiting, then Approved portfolio. Around <strong>9 mandatory screens</strong>, all one-shot, none resumable, with the catalog locked behind every step.</li>
+                        <li><strong>Polaris path:</strong> Browse the catalog and read any widget detail page without an account. When ready, enter the first-time user wizard, complete <strong>4 saved steps</strong> in any order over any time window, submit, wait 1 to 12 hours, land on Approved with a direct CTA into Discover.</li>
+                    </ul>
+                    <p>Same compliance outcome, very different path through it.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="800" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Start%20of%20the%20KYc%20process.png" alt="Build your Organization start state with four pending steps and progress bar" loading="lazy" decoding="async">
+                        <p class="image-caption">Build your Organization at 0 percent. Four steps, all pending, completable in any order. The progress bar at the top is the visible save state.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="934" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.33.14%20PM.png" alt="Your Profile step with inline mobile OTP verification and sign-in cross-link" loading="lazy" decoding="async">
+                        <p class="image-caption">Your Profile, mid-flow. Inline mobile OTP verification, password rules, and an &quot;Already have an account? Sign in&quot; cross-link on the same screen, removing the Beta&#39;s login-versus-signup ambiguity.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1420" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.33.28%20PM.png" alt="Profile type step with three role cards including Service Provider" loading="lazy" decoding="async">
+                        <p class="image-caption">Account Type, presented as a step inside the build flow rather than a blocking modal. Three role cards, with explanatory copy and role-specific responsibilities under each.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1980" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.33.49%20PM.png" alt="Business Profile step with a saved badge while editing" loading="lazy" decoding="async">
+                        <p class="image-caption">Business Profile, with a &quot;Saved&quot; badge on the step header while the form is still being edited. The user can leave at any point without losing input.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Honest Waiting and a Clean Handoff to Approved</h4>
+                    <p>Approval still exists. Owner identity, business legitimacy, and partner payouts demand a human review step, and removing that was never on the table. What changed is how the waiting period is communicated. The Beta dropped users into an opaque &quot;pending&quot; screen with no expectation set. Polaris commits to a 1 to 12 hour SLA, surfaces the completed steps the user just submitted, and explains the next handoff in plain language. When approval lands, the same screen flips to an &quot;Approved&quot; celebratory state with a direct CTA into Discover.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="748" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.36.38%20PM.png" alt="Approval pending state with completed steps and time SLA" loading="lazy" decoding="async">
+                        <p class="image-caption">Approval Pending. The product names the 1 to 12 hour SLA, lists the four completed steps as evidence of progress, and avoids the &quot;blank waiting room&quot; tone of the Beta.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="748" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.37.24%20PM.png" alt="Approved state with congratulations banner and a clear CTA to Discover" loading="lazy" decoding="async">
+                        <p class="image-caption">Approved. The pending state flips in place to a celebratory confirmation with a one-tap path into Discover.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">A Dashboard, Not Just a Catalog</h4>
+                    <p>Post-approval, the user lands on a portal home that frames Marketplace as an operational surface rather than a one-time purchase. Month-to-date spend, active apps, average app cost, what is new in the marketplace, and onboarding videos all live on the home screen. The Discover surface sits one click away and is built as a dynamic feature page with featured apps, top apps by usage, categories, and audience-segmented entry points for Startups, SMEs, and Large Enterprise.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1534" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Portal%20home%20page.png" alt="Portal home dashboard with monthly spend, active apps, and what is new" loading="lazy" decoding="async">
+                        <p class="image-caption">Portal home. The first screen after approval shows spend, usage, and operational content, framing Marketplace as a place to manage a digital stack, not just buy one.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="2840" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/main%20discover%20page%2C%20its%20a%20dynmic%20feature%20page%20for%20the%20user.png" alt="Discover page with featured apps, top apps, categories, and audience segments" loading="lazy" decoding="async">
+                        <p class="image-caption">Discover. A dynamic feature page that adapts to the signed-in business: featured apps, top apps by usage, categories, and audience-segmented entry points for Startups, SMEs, and Large Enterprise.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1900" height="1100" src="../images/Projects/Marketplace/case-study/Screenshot%202026-05-21%20at%2010.43.52%20PM.png" alt="Featured Apps and Top Apps sections from the Discover page" loading="lazy" decoding="async">
+                        <p class="image-caption">Featured Apps and Top Apps, close-up. eSMS, CRBT, Managed Campaign, Voting, My Call Center, Emojit, WhatsApp Business, Better HR. Card-level discovery patterns that turn the catalog from a list into a storefront.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="3026" height="526" src="../images/Projects/Marketplace/case-study/Screenshot%202026-05-21%20at%2010.44.38%20PM.png" alt="Apps by Categories horizontal carousel from the Discover page" loading="lazy" decoding="async">
+                        <p class="image-caption">Apps by Categories carousel. The 25-category structure shipped as a horizontally scrollable rail with visual cues per category, the closest Marketplace gets to a Shopify-style category browse.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Subscribe, Without Leaving the App</h4>
+                    <p>Activating a widget pulls payment method, package selection, and partner attribution into a single confirmation flow. Add-to-bill or card payment, monthly versus per-month versus per-request pricing, and a marketing-agent assignment field for partner-led deals all live on one screen. The user reviews, confirms, and is redirected back into the app home page with a clean success state.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1840" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Details%20confirmation.png" alt="App subscribe confirmation with payment method, package picker, and partner agent assignment" loading="lazy" decoding="async">
+                        <p class="image-caption">Subscribe confirmation for a single widget. Payment method, package selection, and partner agent assignment all collapse into one decision surface.</p>
+                    </div>
+                </div>
+
+                <!-- Surface Collage -->
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">The Surface, at a Glance</h4>
+                    <p>A quick sweep across the rest of Polaris: multi-business switching, mid-flow KYC states, alternative widget detail pages, payment method variants, and the success state after a subscription lands.</p>
+                </div>
+
+                <div class="case-study-images">
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="740" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.33.01%20PM.png" alt="Select your business screen for users with multiple enterprises" loading="lazy" decoding="async">
+                        <p class="image-caption">Select your business. Multi-tenant switching for owners managing more than one enterprise.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1420" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.34.01%20PM.png" alt="Build your Organization at 75 percent with one step remaining" loading="lazy" decoding="async">
+                        <p class="image-caption">75 percent complete. Three of four steps green, one to go, every state saved.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="1980" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.37.46%20PM.png" alt="Business profile step with the Individual versus Corporate toggle" loading="lazy" decoding="async">
+                        <p class="image-caption">Business profile, Individual vs Dialog Corporate toggle. The same step adapts to two legal entity shapes without forking the flow.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="2840" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/Screenshot%202026-05-21%20at%208.44.05%20PM.png" alt="KYC Solutions widget detail page" loading="lazy" decoding="async">
+                        <p class="image-caption">Another widget detail page. The template flexes from OBD &amp; Campaign Solutions to KYC Solutions to any of the ~100 widgets without re-design.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="780" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Details%20confirmation%20%5C%20Payment%20method%20change%20modal%20%5C%20card.png" alt="Payment method change modal with card payment selected" loading="lazy" decoding="async">
+                        <p class="image-caption">Payment method change modal, card variant. The modal is consistent across rails, the inputs adapt.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="780" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Details%20confirmation%20%5C%20Payment%20method%20change%20modal%20%5C%20add-to-bill.png" alt="Payment method change modal with Add to Bill selected" loading="lazy" decoding="async">
+                        <p class="image-caption">Same modal, Add to Bill variant. Single component, multiple settlement rails.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="780" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Details%20confirmation%20-%20charging%20type%203.png" alt="Subscribe confirmation with usage-based charging" loading="lazy" decoding="async">
+                        <p class="image-caption">Subscribe confirmation, usage-based charging variant. The flow reshapes to surface per-request pricing when the widget bills on consumption.</p>
+                    </div>
+                    <div class="case-study-image fade-in">
+                        <img width="1194" height="900" src="../images/Projects/Marketplace/Marketpalace%202.1%20-%20Polaris/App%20Portal%20%5C%20Add%20Adding%20redirecting%20-%20adding%20confirmation.png" alt="App successfully added to enterprise with redirect to app home" loading="lazy" decoding="async">
+                        <p class="image-caption">Add success state. App successfully added to the enterprise, redirecting to the app home, closing the loop on a flow that took the Beta four screens and a manual approval to get to.</p>
+                    </div>
+                </div>
+
+                <!-- Outcome & Impact -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Outcome and Impact</h3>
+                    <ul class="case-study-list">
+                        <li><strong>Shipped live.</strong> Marketplace 2.0 is the production experience at marketplaceportalbeta.dialog.lk and remains the largest public-facing enterprise SaaS product released by Dialog Ideamart engineering.</li>
+                        <li><strong>Marketing and catalog opened up.</strong> Prospective buyers can read the value proposition and explore individual widget detail pages without an account, removing the single largest drop-off in the Beta funnel.</li>
+                        <li><strong>Saved, resumable KYC.</strong> The four-step Build your Organization flow replaced the Beta&#39;s one-shot form gauntlet. Every input is saved at the moment it is entered, and the user can resume the flow days later without re-starting.</li>
+                        <li><strong>Native AI match scoring, in 2023.</strong> Every widget detail page surfaces a personalised match score with an explainer modal, well ahead of generative-AI being mainstream in enterprise SaaS.</li>
+                        <li><strong>Partner program enabled.</strong> The Marketplace Partner role moved from a paper concept in the Beta to a working revenue stream, with partner attribution baked into the subscribe flow itself.</li>
+                        <li><strong>Three public roles, one product.</strong> Enterprise owners, partners, and service providers coexist on a single platform with role-aware journeys. Dialog account managers operate on an internal admin surface that maps to the same data model.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">By the Numbers</h4>
+                    <ul class="case-study-list">
+                        <li><strong>~90% reduction in manual onboarding calls.</strong> Self-serve onboarding scaled to the point that the manual call-to-onboard motion for Owners and Partners was almost eliminated. Partners began joining the platform without ever contacting support, because nothing was blocking them.</li>
+                        <li><strong>~60% reduction in inbound support calls.</strong> Polaris shipped with a well-organised, highly searchable support catalog. Users found their own answers, and the volume that used to land on the support team&#39;s phones dropped accordingly.</li>
+                        <li><strong>Time-to-activation collapsed from 24, 36 hours to almost instant.</strong> The combination of the saved-resumable wizard, the public catalog ahead of the gate, and the eventual auto-approval of KYC closed the wait between visitor and active widget.</li>
+                        <li><strong>Two-country deployment.</strong> The product, the architecture, and the design framework were portable enough that XL Axiata in Indonesia picked the platform up almost verbatim for a different regulatory and payment-rail stack.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">A sister deployment in Indonesia</h4>
+                    <p>While the rebuild was wrapping up, our fellow Axiata Group company, XL Axiata in Indonesia, learned about what we were building. After the majority of our scope was complete, a small group of individual developers from our team were sent over to XL Axiata to customise the platform for the Indonesian market and deploy it there. The product that started as an internal Sri Lankan pilot now also runs at a second telco, against a different regulatory stack, a different language, and a different payment-rail mix. The architecture and the design framework held up well enough that a sister telco picked it up almost verbatim.</p>
+                </div>
+
+                <!-- The Ideamart Design Framework -->
+                <div class="case-study-block">
+                    <h3 class="case-study-heading">Building the Ideamart Design Framework</h3>
+                    <p>For years before Marketplace, every Ideamart product reinvented its own UI from scratch. There was no shared component library, no token set, no agreed-upon interaction patterns. Each release looked, behaved, and broke differently. Marketplace was the first product where I refused to start from zero, and the framework I built for it became the standard the org had been missing.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">What the framework gave us</h4>
+                    <ul class="case-study-list">
+                        <li><strong>A token system</strong> for colour, spacing, type, and radii, so the same primary purple, the same button rhythm, and the same step-cards appear across every screen without anyone making a fresh decision each time.</li>
+                        <li><strong>A component library</strong> for the patterns that repeat: step cards, status badges, role cards, app cards, package selectors, payment-method tiles, search bars, dashboard tiles, agreement gates.</li>
+                        <li><strong>Layout primitives</strong> for the screens that recur: dashboard shells, multi-step build flows, app detail pages, confirmation flows, empty states.</li>
+                        <li><strong>Interaction patterns</strong> for the moments that mattered: saved-step transitions, in-place pending-to-approved flips, modal-on-context-not-as-blocker, mobile OTP verification.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Why this matters beyond Marketplace</h4>
+                    <p>Once the framework existed and shipped on a flagship product, it could be reused. New Ideamart enterprise products no longer needed a UX designer to start from zero, because the surface area, the look, the rhythm, and the components were already decided. The framework became a reusable foundation for the next generation of Dialog Ideamart enterprise products. The gap that had existed in the org for years, no shared design language, closed with this release.</p>
+                </div>
+
+                <!-- Reflections -->
+                <div class="case-study-block">
                     <h3 class="case-study-heading">Reflections</h3>
-                    <p>Add your case study content here...</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">A live Beta is the cheapest research budget you will ever have</h4>
+                    <p>Shipping an unfinished product is a cost. Shipping it deliberately, with the team aligned that the first version will be replaced, turns that cost into a research investment. Every wall a user hit in the Beta was a brief for the rebuild.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Discovery and commitment are different problems</h4>
+                    <p>The single biggest design decision in Polaris was to stop treating browsing and buying as one funnel. Discovery wants minimum friction. Commitment wants verification. The Beta forced the same gate on both, and lost most users at the first step.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Map the journeys before you draw a screen</h4>
+                    <p>Four roles on one product is the kind of complexity that explodes into edge cases late in build if it is not modelled early. The partner portal journey map paid for itself many times over by catching permission conflicts and shared-screen ambiguities before any React component existed.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Being the sole UX is a forcing function, not a limit</h4>
+                    <p>Owning research, IA, interaction, visual, and front-end implementation on a product of this scale was demanding, and it removed every excuse for misalignment between what was designed and what was built. There was no handoff to lose anything in, because there was no handoff.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h4 class="case-study-subheading">Where the work was not finished, and what happened next</h4>
+                    <p>At the time of the Polaris rebuild, approval was still a wall, just a more humane one. Owners and partners could browse the catalog freely, but could not activate a widget until KYC was approved. We had replaced an opaque blocker with a transparent one, complete with a stated SLA and visible progress, but the human review step itself remained. I framed it as an organisational decision rather than a UX one.</p>
+                    <p>After I left Dialog in November 2023, that organisational decision was made. The team implemented auto-approval for KYC, and the last wall came down. Time-to-activation went from 24 to 36 hours to effectively instant. The system was designed to be finishable without me, and the next team finished it.</p>
+                </div>
+
+                <div class="case-study-closing">
+                    <p>Marketplace taught me that the most important UX decisions on an enterprise product are not made in Sketch. They are made in the meeting where the team chooses what to put behind the login, what to leave in front of it, and which audiences to serve in which order. The job of design is to make those decisions visible, defensible, and obvious in hindsight.</p>
                 </div>
             </div>
         </section>
