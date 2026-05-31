@@ -20,3 +20,9 @@ npm-debug.log*
 # Ignore temporary files
 .tmp/
 temp/
+
+# Locked demo: keep the PLAINTEXT source + build tooling out of the repo and off
+# the live site. Only the encrypted demo.html (at repo root) is committed/served.
+# To change the PIN or edit the deck: edit demo-src/payload.html then run
+#   node demo-src/build.js <PIN>
+demo-src/
