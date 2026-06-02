@@ -6707,9 +6707,28 @@ html {
     margin-bottom: 0;
 }
 
+.wizpos-product-screens {
+    align-items: start;
+}
+
+.wizpos-product-screens .case-study-image:first-child {
+    grid-column: 1 / -1;
+}
+
+.wizpos-product-screens .case-study-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top center;
+    background: #f6f8fb;
+}
+
 @media (max-width: 768px) {
     .case-study-images:has(.case-study-image + .case-study-image) {
         grid-template-columns: 1fr;
+    }
+
+    .wizpos-product-screens .case-study-image:first-child {
+        grid-column: auto;
     }
 }
 
