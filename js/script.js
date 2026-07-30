@@ -174,6 +174,49 @@ const initWorkCardLazyLoad = () => {
     });
 };
 
+// Expand and collapse the secondary projects on the work page
+const initAdditionalWorkToggle = () => {
+    const toggle = document.querySelector('.work-more-toggle');
+    const additionalWork = document.getElementById('additional-work');
+    if (!toggle || !additionalWork) return;
+
+    const label = toggle.querySelector('.work-more-label');
+    const additionalCards = additionalWork.querySelectorAll('.work-card');
+
+    toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        const shouldExpand = !isExpanded;
+
+        toggle.setAttribute('aria-expanded', String(shouldExpand));
+        additionalWork.hidden = !shouldExpand;
+
+        if (label) {
+            label.textContent = shouldExpand ? 'Show less work' : 'Explore more work';
+        }
+
+        if (shouldExpand) {
+            requestAnimationFrame(() => {
+                additionalCards.forEach((card, index) => {
+                    card.style.transitionDelay = `${(index % 2) * 0.1}s`;
+                    card.classList.add('is-visible');
+                });
+            });
+        } else {
+            additionalCards.forEach(card => {
+                card.classList.remove('is-visible');
+                card.style.removeProperty('transition-delay');
+            });
+
+            requestAnimationFrame(() => {
+                toggle.scrollIntoView({
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                    block: 'center'
+                });
+            });
+        }
+    });
+};
+
 // Lazy loading for project detail images
 const initProjectImageLazyLoad = () => {
     const projectImages = document.querySelectorAll('.project-image-item');
@@ -2168,6 +2211,7 @@ const init = () => {
     initSpotifyPlayer();
     initAudiblePlayer();
     initWorkCardLazyLoad();
+    initAdditionalWorkToggle();
     initProjectImageLazyLoad();
     initProjectScreenshotLightbox();
     initWizposVideoPlayers();
