@@ -56,7 +56,7 @@ const PinProtect = (function() {
                     </div>
                     <div class="pin-modal-footer">
                         <p class="pin-contact">Don't have the pin? No worries!</p>
-                        <p class="pin-contact">Contact Asith at <a href="mailto:hello@asith.cc">hello@asith.cc</a> to request access.</p>
+                        <p class="pin-contact">Contact Asith at <a href="mailto:asithwijenayake@gmail.com">asithwijenayake@gmail.com</a> to request access.</p>
                     </div>
                 </div>
             </div>

@@ -771,7 +771,7 @@ const sendToGoogleSheets = async (data) => {
             website: '', // Honeypot field — should always be empty
             timestamp: Date.now(),
             sendEmail: true,
-            emailRecipients: ['asithwijenayake@gmail.com', 'hello@asith.cc']
+            emailRecipients: ['asithwijenayake@gmail.com']
         };
 
         const response = await fetch(GOOGLE_SHEETS_URL, {
@@ -872,4 +872,3 @@ document.addEventListener('DOMContentLoaded', initContactChat);
 if (document.readyState !== 'loading') {
     initContactChat();
 }
-

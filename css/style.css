@@ -2959,22 +2959,22 @@ button {
 
 .about-page .whatsapp-card {
     grid-column: 3 / span 1;
-    grid-row: 1 / span 1;
+    grid-row: 2 / span 1;
 }
 
 .spotify-player-widget {
     grid-column: 4 / span 1;
-    grid-row: 1 /span 1;
+    grid-row: 2 /span 1;
 }
 
 .about-page .photo-card {
     grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .about-page .playstation-widget {
     grid-column: 4 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .about-page .audible-widget {
@@ -3187,12 +3187,12 @@ button {
 }
 .about-page .resume-widget {
     grid-column: 3 / span 1;
-    grid-row: 3 / span 1;
+    grid-row: 1 / span 1;
 }
 
 .about-page .linkedin-widget {
     grid-column: 4 / span 1;
-    grid-row: 3 / span 1;
+    grid-row: 1 / span 1;
 }
 .about-item {
     margin-bottom: 14px;
