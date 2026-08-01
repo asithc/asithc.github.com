@@ -209,15 +209,15 @@
                 
                 <div class="manifesto-list">
                     <h2 class="manifesto-item">i design things.</h2>
-                    <h2 class="manifesto-item">i think design can change things.</h2>
-                    <h2 class="manifesto-item">i think the things we design are just as important as the things we choose not to.</h2>
-                    <h2 class="manifesto-item">i think we should design things that do the things we don't enjoy, and make the things we do enjoy, even better.</h2>
-                    <h2 class="manifesto-item">i think there are too many things.</h2>
-                    <h2 class="manifesto-item">i think there should be fewer, but better things<span class="red-asterisk">*</span>.</h2>
+                    <h2 class="manifesto-item">i design with ai, but for people.</h2>
+                    <h2 class="manifesto-item">i think design can change things, including through the things we choose not to make.</h2>
+                    <h2 class="manifesto-item">i think ai should handle what people don’t enjoy, leaving more space for what they do.</h2>
+                    <h2 class="manifesto-item">i think ai can generate endless possibilities. design decides which deserve to exist.</h2>
+                    <h2 class="manifesto-item">i think there are already too many things. there should be fewer, but better things<span class="red-asterisk">*</span>.</h2>
                     <h2 class="manifesto-item">the best things. an optimal amount.</h2>
                     
                     <p class="footnote">
-                        <a href="https://www.youtube.com/watch?v=QkhrGUSf2ok" target="_blank" rel="noopener noreferrer" class="link"><span class="red-asterisk">*</span> Less, but better.</a>
+                        <a href="https://www.youtube.com/watch?v=QkhrGUSf2ok" target="_blank" rel="noopener noreferrer" class="link"><span class="red-asterisk">*</span> less, but better.</a>
                     </p>
                 </div>
             </div>
@@ -401,7 +401,7 @@
                         </div>
                         <div class="whatsapp-profile-info">
                             <div class="whatsapp-profile-name">Asith</div>
-                            <div class="whatsapp-profile-label">Just now</div>
+                            <time class="whatsapp-profile-label" datetime="2026-07-31T10:30:00+05:30">31 Jul 2026, 10:30 AM</time>
                         </div>
                     </div>
 
@@ -419,14 +419,21 @@
                     <!-- Status Slides Container -->
                     <div class="wa-slides-wrapper">
                         <div class="wa-slides-track">
-                            <!-- Slide 1: Text status -->
-                            <div class="wa-slide" data-type="text" data-duration="6000">
+                            <!-- Add new statuses first, preserve older slides unless removal is requested, and use the real ISO publication time. -->
+                            <!-- Slide 1: Latest text status -->
+                            <div class="wa-slide" data-type="text" data-duration="6000" data-published-at="2026-07-31T10:30:00+05:30">
                                 <div class="wa-text-status">
-                                    <span>"UX is AI, AI is UX"</span>
+                                    <span class="wa-ai-quote">"UX is <strong class="wa-ai-keyword">AI<svg class="wa-ai-sparkle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c.5 4.5 3.5 7.5 8 8-4.5.5-7.5 3.5-8 8-.5-4.5-3.5-7.5-8-8 4.5-.5 7.5-3.5 8-8Z"/></svg></strong>, <strong class="wa-ai-keyword">AI<svg class="wa-ai-sparkle" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c.5 4.5 3.5 7.5 8 8-4.5.5-7.5 3.5-8 8-.5-4.5-3.5-7.5-8-8 4.5-.5 7.5-3.5 8-8Z"/></svg></strong> is UX"</span>
                                 </div>
                             </div>
-                            <!-- Slide 2: Video -->
-                            <div class="wa-slide" data-type="video" data-duration="47000">
+                            <!-- Slide 2: Previous text status -->
+                            <div class="wa-slide" data-type="text" data-duration="6000" data-published-at="2026-02-02T09:11:12+05:30">
+                                <div class="wa-text-status">
+                                    <span>"UX. You Keep using that word, I don't think it means what you think it means <span class="whatsapp-mention">@uxmemes</span>"</span>
+                                </div>
+                            </div>
+                            <!-- Slide 3: Video -->
+                            <div class="wa-slide" data-type="video" data-duration="47000" data-published-at="2026-02-22T21:05:44+05:30">
                                 <div class="wa-media-wrapper">
                                     <div class="wa-video-placeholder">
                                         <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
@@ -441,8 +448,8 @@
                                     <svg class="wa-icon-unmuted" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                                 </button>
                             </div>
-                            <!-- Slide 3: Image -->
-                            <div class="wa-slide" data-type="image" data-duration="6000">
+                            <!-- Slide 4: Image -->
+                            <div class="wa-slide" data-type="image" data-duration="6000" data-published-at="2026-02-22T21:05:44+05:30">
                                 <div class="wa-media-wrapper">
                                     <img width="1440" height="1920" src="images/gallery/personal-8.webp" alt="Status" loading="lazy" decoding="async" />
                                     <div class="wa-media-caption">

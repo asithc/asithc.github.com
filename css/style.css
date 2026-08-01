@@ -2648,6 +2648,38 @@ button {
     text-align: left;
 }
 
+.wa-text-status > .wa-ai-quote {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+}
+
+.wa-text-status .wa-ai-keyword {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.12em;
+    border-radius: 0.2em;
+    background: linear-gradient(120deg, rgba(126, 87, 194, 0.14), rgba(66, 165, 245, 0.18));
+    color: #6043a5;
+    font: inherit;
+    font-weight: 700;
+}
+
+.wa-text-status .wa-ai-sparkle {
+    position: absolute;
+    z-index: 2;
+    top: -9px;
+    right: -8px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    overflow: visible;
+    fill: #7d55d9;
+    filter: drop-shadow(0 0 4px rgba(125, 85, 217, 0.55));
+    pointer-events: none;
+}
+
 .whatsapp-mention {
     color: var(--accent-blue)!important;
 }

@@ -1105,8 +1105,27 @@ const initSingleWhatsAppViewer = (viewer) => {
     }
 
     function updateTimeLabel() {
-        const times = ['Feb 22, 10:23 AM', 'Feb 22, 2:15 PM', 'Feb 21, 8:11 PM'];
-        timeLabel.textContent = times[currentIndex % times.length];
+        if (!timeLabel) return;
+
+        const publishedAt = slides[currentIndex].dataset.publishedAt;
+        const publishedDate = new Date(publishedAt);
+
+        if (!publishedAt || Number.isNaN(publishedDate.getTime())) {
+            timeLabel.textContent = 'Published previously';
+            timeLabel.removeAttribute('datetime');
+            return;
+        }
+
+        timeLabel.setAttribute('datetime', publishedAt);
+        timeLabel.textContent = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Colombo',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        }).format(publishedDate).replace(/\b(am|pm)\b/i, value => value.toUpperCase());
     }
 
     function startFill(index, elapsed = 0) {
