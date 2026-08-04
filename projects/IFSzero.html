@@ -147,6 +147,7 @@
                     <p class="meta-value">Lead UX Designer</p>
                     <p class="meta-value">Product strategy and experience vision</p>
                     <p class="meta-value">End-to-end user journeys across data capture, reporting, and action planning</p>
+                    <p class="meta-value">AI interaction strategy for data capture, gap resolution, and decision support</p>
                     <p class="meta-value">Design system alignment for enterprise-scale workflows</p>
                     <p class="meta-value">Cross-functional collaboration with product and engineering</p>
                 </div>
@@ -172,6 +173,7 @@
                 <div class="project-section">
                     <h3 class="section-label">DESCRIPTION</h3>
                     <p class="section-text">IFSZero<span class="tm-mark">TM</span> is an emissions management platform I designed from scratch inside IFS Cloud<span class="tm-mark">TM</span>. I led the UX from early discovery through delivery, shaping every screen around real user workflows, validated through customer interviews, usability testing with enterprise sustainability managers, and continuous iteration with engineering.</p>
+                    <p class="section-text">A key part of the experience strategy was introducing AI where it could remove real effort: importing legacy records, identifying reporting gaps, proposing field-level mappings and estimates, and keeping the final decision with the user.</p>
                     <p class="section-text">The result is a system where organizations can structure their companies and sites, configure emission sources, capture activity data, sync verified emission factors, and track progress toward reduction targets, all without leaving their ERP. Due to confidentiality, only a high-level overview is shared here.</p>
                 </div>
 
@@ -182,7 +184,7 @@
                 </div>
 
                 <div class="project-cta">
-                    <a href="#case-study" class="case-study-link pin-protected" 
+                    <a href="#caseStudySection" class="case-study-link pin-protected"
                        data-pin="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" 
                        data-target="caseStudySection">Read Case Study</a>
                 </div>
@@ -398,7 +400,7 @@
                     <h3 class="case-study-heading">Introduction</h3>
                     <p>IFSZero<span class="tm-mark">TM</span> is an enterprise sustainability and emissions management experience built inside IFS Cloud<span class="tm-mark">TM</span> the ERP platform powering asset-intensive industries like aerospace, defense, energy, and manufacturing.</p>
                     <p>This wasn't a standalone sustainability tool. It was a foundational layer that needed to integrate seamlessly with existing ERP workflows while serving as IFS's first pilot for a next-generation architectural approach.</p>
-                    <p>I led the UX vision and end-to-end experience design, collaborating with product managers, engineers, sustainability domain experts, and enterprise customers to shape the product from concept to launch.</p>
+                    <p>I led the UX vision and end-to-end experience design, collaborating with product managers, engineers, sustainability domain experts, and enterprise customers to shape the product from concept to delivery.</p>
                 </div>
 
                 <!-- My Role -->
@@ -411,6 +413,7 @@
                         <li><strong>Domain Experts</strong> to translate regulatory requirements into usable workflows</li>
                         <li><strong>Design System Team</strong> to ensure consistency and contribute new patterns back</li>
                         <li><strong>Enterprise Customers</strong> through discovery interviews and validation testing</li>
+                        <li><strong>AI Product Strategy</strong> to decide where assistance should act, where it should explain itself, and where people must retain control</li>
                     </ul>
                 </div>
 
@@ -671,12 +674,12 @@
                     <div class="research-stat-card">
                         <div class="stat-number">83%</div>
                         <div class="stat-label">Data Collection Challenge</div>
-                        <div class="stat-detail">of executives, Workiva ESG Practitioner Survey, 2024</div>
+                        <div class="stat-detail">of 2,000 ESG reporting practitioners said collecting accurate CSRD data would be challenging. <a href="https://newsroom.workiva.com/press-releases/sustainability-regulation-propelling-transformation-corporate-reporting-according" target="_blank" rel="noopener noreferrer">Workiva, 2024</a></div>
                     </div>
                     <div class="research-stat-card">
-                        <div class="stat-number">72%</div>
-                        <div class="stat-label">Investor Pressure</div>
-                        <div class="stat-detail">would increase investment in companies actively tracking emissions, PwC</div>
+                        <div class="stat-number">2,000</div>
+                        <div class="stat-label">Reporting Practitioners</div>
+                        <div class="stat-detail">finance, sustainability, risk, audit, legal, and compliance professionals surveyed by Workiva in 2024</div>
                     </div>
                     <div class="research-stat-card">
                         <div class="stat-number">5</div>
@@ -830,7 +833,7 @@
                 <!-- Final Designs -->
                 <div class="case-study-block">
                     <h3 class="case-study-heading">Final Designs</h3>
-                    <p>What follows is a walkthrough of the key experiences we shipped, along with the thinking behind each decision.</p>
+                    <p>What follows is a walkthrough of the key experiences I designed and validated, along with the thinking behind each decision.</p>
                 </div>
 
                 <!-- Multi-Entity Consolidation (moved to top, this is the foundation) -->
@@ -934,6 +937,38 @@
                 </div>
 
                 <div class="case-study-block">
+                    <h4 class="case-study-subheading">AI-Assisted Emissions Calculation</h4>
+                    <p>Introducing AI to emissions calculation was a potential game changer because the real barrier was not the formula. It was converting years of fragmented records into structured, reportable activity data without asking operators to become carbon-accounting experts.</p>
+                    <p>The proposed flow begins by importing prior data from familiar formats such as spreadsheets, PDFs, invoices, and supporting documents. AI extracts the relevant values, maps them to the right company, site, emission source, period, and unit, then highlights information that was not reported.</p>
+                </div>
+
+                <div class="case-study-goals-grid">
+                    <div class="goals-column">
+                        <span class="goals-tag">THE AI WORKFLOW</span>
+                        <h4>1. Import and understand</h4>
+                        <p>Bring in historical documents and existing ERP records without forcing a new data-entry routine.</p>
+                        <h4>2. Map and complete</h4>
+                        <p>Identify each value, place it in the correct reporting field, and flag missing information rather than quietly hiding it.</p>
+                        <h4>3. Estimate with evidence</h4>
+                        <p>When source data is incomplete, propose a confidence-scored estimate using historical patterns, available operational context, and the relevant calculation method.</p>
+                    </div>
+                    <div class="goals-column">
+                        <span class="goals-tag">MY DESIGN PRINCIPLE</span>
+                        <h4>Make the intelligence feel invisible</h4>
+                        <p>I led the conversation on where AI belonged in the journey: inside the moments that create friction, not as a destination or a chatbot users have to learn.</p>
+                        <h4>Keep decisions explainable</h4>
+                        <p>Every mapping or estimate needs a clear source, rationale, confidence signal, and an easy path to edit or reject it.</p>
+                        <h4>Keep people accountable</h4>
+                        <p>AI prepares and recommends. The sustainability professional reviews, approves, and remains accountable for the reported result.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-block case-study-callout">
+                    <p class="callout-text">The aim was not to make AI visible. It was to make the gap between a legacy document and a defensible emissions calculation disappear.</p>
+                    <p class="callout-emphasis">Automation handles repetition; people retain judgment, traceability, and final approval.</p>
+                </div>
+
+                <div class="case-study-block">
                     <h4 class="case-study-subheading">Emission Source Configuration</h4>
                     <p>Every emission source (fleet vehicles, boilers, refrigerant systems) carries its own parameters, calculation method, and reporting cadence. The detail panel gives users everything in one place: metadata, parameter tables, configuration tabs, and calculated results, without jumping between screens.</p>
                 </div>
@@ -1027,7 +1062,7 @@
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">AI-Powered Intelligence</h4>
-                    <p>This is not a chatbot bolted onto the side. The AI Assistant lives inside the workspace and does real work: it pulls emission summaries, flags data gaps, checks compliance status, and runs trend forecasts. Quick actions give structured entry points for the most common tasks, and the built-in support channel (live chat, phone, ticket submission) keeps users moving without switching tools.</p>
+                    <p>This was designed as more than a chatbot bolted onto the side. The AI Assistant sits inside the workspace to surface emission summaries, flag data gaps, check compliance status, and run trend forecasts. Quick actions provide structured entry points for common tasks, while integrated support keeps users moving without switching tools.</p>
                 </div>
 
                 <div class="case-study-images">
@@ -1085,7 +1120,7 @@
 
                 <div class="case-study-block">
                     <h4 class="case-study-subheading">Design for operators, not auditors</h4>
-                    <p>Compliance is the destination; operations is the journey. When we shifted our primary persona from compliance officers to operations managers, usage patterns improved dramatically. The compliance views still exist but they're accessed when needed, not imposed as the default structure.</p>
+                    <p>Compliance is the destination; operations is the journey. Shifting the primary persona from compliance officers to operations managers gave the experience a clearer everyday purpose. The compliance views still exist, but they are accessed when needed rather than imposed as the default structure.</p>
                 </div>
 
                 <div class="case-study-block">

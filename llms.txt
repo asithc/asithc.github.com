@@ -40,7 +40,7 @@ Asith leads product design for B2B SaaS and enterprise software. His work combin
 
 ## Selected case studies
 
-- IFSZero, ESG and emissions management in IFS Cloud: https://asith.cc/projects/IFSzero.html
+- IFSZero, AI-assisted ESG and emissions management in IFS Cloud: https://asith.cc/projects/IFSzero.html
 - WizPos 2.0, AI-first POS and hospitality operations: https://asith.cc/projects/wizpos.html
 - Dialog Enterprise Marketplace, B2B solutions marketplace: https://asith.cc/projects/marketplace.html
 - DGL, gaming and esports community platform: https://asith.cc/projects/dgl.html
