@@ -53,7 +53,7 @@ Asith worked as a UX/UI Developer from 2016 to 2019.
 
 URL: https://asith.cc/projects/IFSzero.html
 
-IFSZero is an enterprise sustainability and emissions management platform in IFS Cloud. The case study covers carbon data, reporting, ESG compliance, user roles, and action planning.
+IFSZero is an enterprise sustainability and emissions management platform in IFS Cloud. The case study covers carbon data, reporting, ESG compliance, user roles, action planning, and an AI-assisted calculation flow that imports legacy records, maps data to reporting fields, flags missing information, proposes confidence-scored estimates, and retains human review and approval.
 
 ### WizPos 2.0: AI-first POS ecosystem
 
