@@ -16,75 +16,43 @@ const chatState = {
     gibberishCount: 0,
     vulgarCount: 0,
     sinhalaVulgarCount: 0,
-    isProcessing: false
+    isProcessing: false,
+    submissionInFlight: false
 };
 
 // --- Vulgar language detection ---
 const vulgarWords = ['fuck', 'shit', 'bitch', 'damn', 'crap', 'bastard', 'idiot', 'stupid', 'dumb', 'hate'];
 const sinhalaVulgarWords = ['pakaya', 'huththa', 'huththo', 'wesi', 'wesawa', 'wesawi', 'ponnaya', 'kariya'];
 
-const containsVulgar = (text) => vulgarWords.some(w => text.toLowerCase().includes(w));
+const containsVulgar = (text) => vulgarWords.some(w => new RegExp('\\b' + w + '\\b', 'i').test(text));
 const containsSinhalaVulgar = (text) => {
     const lower = text.toLowerCase();
-    return sinhalaVulgarWords.some(w => lower.includes(w));
+    return sinhalaVulgarWords.some(w => new RegExp('\\b' + w + '\\b', 'i').test(lower));
 };
 
-// --- Gibberish detection (Set for O(1) lookup) ---
-const commonWords = new Set([
-    'hi', 'hello', 'hey', 'yes', 'no', 'ok', 'okay', 'sure', 'thanks', 'thank',
-    'you', 'i', 'me', 'my', 'we', 'us', 'the', 'a', 'an', 'is', 'are', 'was',
-    'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will',
-    'would', 'could', 'should', 'can', 'may', 'might', 'must', 'need', 'want',
-    'like', 'love', 'work', 'help', 'project', 'design', 'app', 'website', 'job',
-    'hire', 'collaborate', 'question', 'ask', 'talk', 'chat', 'please', 'just',
-    'looking', 'interested', 'about', 'for', 'with', 'and', 'or', 'but', 'not',
-    'this', 'that', 'what', 'how', 'why', 'when', 'where', 'who', 'your', 'name',
-    'email', 'phone', 'number', 'contact', 'message', 'great', 'good', 'nice',
-    'awesome', 'cool', 'amazing', 'get', 'let', 'make', 'take', 'give', 'see',
-    'know', 'think', 'feel', 'new', 'old', 'big', 'small', 'first', 'last', 'one',
-    'two', 'time', 'way', 'day', 'thing', 'person', 'people', 'world', 'life',
-    'hand', 'part', 'place', 'case', 'week', 'company', 'system', 'program',
-    'point', 'home', 'area', 'money', 'story', 'fact', 'month', 'lot', 'right',
-    'study', 'book', 'word', 'business', 'issue', 'side', 'kind', 'head', 'house',
-    'service', 'friend', 'power', 'hour', 'game', 'line', 'end', 'member', 'law',
-    'car', 'city', 'community', 'team', 'minute', 'idea', 'body', 'information',
-    'back', 'face', 'level', 'office', 'door', 'health', 'art', 'history', 'party',
-    'result', 'change', 'morning', 'reason', 'research', 'moment', 'teacher',
-    'force', 'education',
-    // UX/Design vocabulary so these aren't flagged as gibberish
-    'ux', 'ui', 'product', 'mentor', 'mentorship', 'portfolio', 'brand', 'branding',
-    'mobile', 'desktop', 'user', 'experience', 'interface', 'wireframe', 'prototype',
-    'figma', 'sketch', 'audit', 'consultation', 'saas', 'startup', 'mvp', 'feature',
-    'roadmap', 'strategy', 'dashboard', 'platform', 'landing', 'page', 'review',
-    'feedback', 'critique', 'redesign', 'usability', 'heuristic', 'interaction',
-    'visual', 'graphic', 'logo', 'identity', 'ios', 'android', 'web', 'freelance',
-    'contract', 'opportunity', 'collaboration', 'guide', 'career', 'grow', 'growth',
-    'learn', 'teach', 'position', 'role', 'opening', 'call', 'reach', 'text',
-    'whatsapp', 'some', 'also', 'much', 'many', 'very', 'too', 'more', 'then',
-    'than', 'here', 'there', 'now', 'well', 'still', 'already', 'any', 'each',
-    'every', 'other', 'such', 'most', 'same', 'own', 'only', 'both', 'few',
-    'after', 'before', 'above', 'below', 'between', 'through', 'during', 'without',
-    'again', 'further', 'been', 'being', 'having', 'doing', 'going', 'coming',
-    'looking', 'trying', 'wanting', 'needing', 'working', 'helping', 'using',
-    'making', 'building', 'creating', 'designing', 'developing'
-]);
-
+// Reject obvious noise, not unfamiliar words or non-English names.
 const isGibberish = (text) => {
-    const cleaned = text.toLowerCase().replace(/[^a-z\s]/g, '');
-    const words = cleaned.split(/\s+/).filter(w => w.length > 0);
-    if (words.length === 0) return true;
-
-    let recognized = 0;
-    for (const word of words) {
-        if (commonWords.has(word) || word.length <= 2) recognized++;
-    }
-
-    const ratio = recognized / words.length;
-    if (/^[asdfghjklqwertyuiopzxcvbnm]{4,}$/i.test(cleaned.replace(/\s/g, ''))) return true;
-    if (/(.)\1{3,}/.test(cleaned)) return true;
-    if (words.length === 1 && !commonWords.has(words[0]) && words[0].length > 3) return true;
-    if (ratio < 0.3 && words.length > 2) return true;
+    const cleaned = text.normalize('NFC').trim();
+    if (!/[\p{L}\p{N}]/u.test(cleaned)) return true;
+    if (/(.)\1{3,}/u.test(cleaned)) return true;
+    const compact = cleaned.toLowerCase().replace(/\s/g, '');
+    if (/^(?:asdf|qwer|zxcv|hjkl|qwerty|asdfgh|zxcvbn|poiuyt|lkjhg)[a-z]*$/.test(compact)) return true;
+    if (/^[a-z]{6,}$/i.test(compact) && !/[aeiouy]/i.test(compact)) return true;
     return false;
+};
+
+const extractName = (text) => {
+    let candidate = text.normalize('NFC').trim();
+    candidate = candidate.replace(/^(?:hi|hello|hey)[,!.]?\s+(?=(?:my name|i['’]m|i am|this is))/i, '');
+    candidate = candidate.replace(/^(?:my name(?: is)?|i['’]m|i am|call me|it['’]s|this is)\s*[:,-]?\s+/i, '');
+    candidate = candidate.replace(/[!?,]+$/g, '').trim();
+    if (candidate.length > 80 || !/\p{L}/u.test(candidate)) return null;
+    if (!/^[\p{L}\p{M}][\p{L}\p{M} .’'−-]*$/u.test(candidate)) return null;
+    if (candidate.split(/\s+/).length > 6 || isGibberish(candidate)) return null;
+    if (/^(?:hi|hello|hey|yes|no|ok|okay|sure|thanks|thank you|test|testing|skip|anonymous|not sure|just browsing|just looking|just saying hi|help me)$/i.test(candidate)) return null;
+    if (/^(?:a |an |the |i |we |you |my |can |could |what |how |why |looking |need |want |just |not |rather |prefer |none |don't |do not )/i.test(candidate)) return null;
+    if (hasWorkIntent(candidate) || /^(?:work|project|help|design|ux|ui|product|review|feedback|consultation)$/i.test(candidate)) return null;
+    return candidate.replace(/\s+/g, ' ');
 };
 
 // --- Phone number extraction & validation ---
@@ -139,6 +107,8 @@ const isValidEmail = (email) => {
 // --- Intent detection (work/project/hire/mentor/job/career) ---
 const hasWorkIntent = (text) => {
     return [
+        /\b(?:website|web|app|mobile|brand|logo|product)\s+(?:design|redesign|development)\b/i,
+        /\b(?:need|want|looking for)\b.*\b(?:website|app|design|help|project)\b/i,
         /let'?s\s+(work|collaborate|connect|build|talk|chat)/i,
         /work\s+(together|with you)/i,
         /i\s+(have|got|need)\s+(a\s+)?(project|job|work|task|gig|idea|proposal)/i,
@@ -290,7 +260,7 @@ const hideTyping = () => {
 // Human-like delay calculation
 const humanDelay = (text) => {
     // Base "reading" pause before typing starts
-    const readPause = 400 + Math.random() * 600; // 400-1000ms
+    const readPause = 150 + Math.random() * 150; // 150-300ms
 
     // Typing speed: ~35-55ms per character
     const charDelay = text.length * (35 + Math.random() * 20);
@@ -298,8 +268,8 @@ const humanDelay = (text) => {
     // Thinking jitter
     const jitter = Math.random() * 800; // 0-800ms
 
-    // Clamp total typing time between 1.2s and 4s
-    const typingTime = Math.min(Math.max(charDelay + jitter, 1200), 4000);
+    // Keep replies responsive while retaining a brief typing cue.
+    const typingTime = Math.min(Math.max(charDelay + jitter, 350), 1000);
 
     return { readPause, typingTime };
 };
@@ -347,6 +317,17 @@ const handleMessage = async (text) => {
         return;
     }
 
+    if (chatState.currentStep === 'delivery_failed') {
+        if (/^(retry|try again)$/i.test(userText)) {
+            input.value = '';
+            await completeChat();
+        } else {
+            addMessage('Your details are saved in this conversation. Use Retry or Send by email below.', 'received');
+        }
+        chatState.isProcessing = false;
+        return;
+    }
+
     // Show user message
     addMessage(userText, 'sent');
     input.value = '';
@@ -373,8 +354,8 @@ const handleMessage = async (text) => {
         if (chatState.currentStep === 'ask_whatsapp') {
             chatState.currentStep = 'complete';
             await botReply("Got it! 📱", false, true);
-            await botReply("Thanks for reaching out" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll be in touch very soon ✨", true, false);
-            completeChat();
+            await botReply("Thanks! I’ll submit your details now.", true, false);
+            await completeChat();
             chatState.isProcessing = false;
             return;
         }
@@ -394,8 +375,8 @@ const handleMessage = async (text) => {
             await botReply("What's the best email to reach you at? 📧", true, false);
         } else {
             await botReply("Perfect, got everything I need! 📱", false, true);
-            await botReply("Thanks" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll be in touch soon ✨", true, false);
-            completeChat();
+            await botReply("Thanks! I’ll submit your details now.", true, false);
+            await completeChat();
         }
         chatState.isProcessing = false;
         return;
@@ -413,8 +394,8 @@ const handleMessage = async (text) => {
                 await botReply("Got a WhatsApp number too? Makes it easier to chat 📱 (Type 'skip' if you'd rather stick with email)", true, false);
             } else {
                 await botReply("Perfect 📧", false, true);
-                await botReply("Thanks" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll get back to you soon ✨", true, false);
-                completeChat();
+                await botReply("Thanks! I’ll submit your details now.", true, false);
+                await completeChat();
             }
             chatState.isProcessing = false;
             return;
@@ -435,8 +416,8 @@ const handleMessage = async (text) => {
             await botReply("Got a WhatsApp number too? 📱 (Type 'skip' if email is fine)", true, false);
         } else {
             await botReply("Great, got everything! 📧", false, true);
-            await botReply("I'll be in touch soon ✨", true, false);
-            completeChat();
+            await botReply("I’ll submit your details now.", true, false);
+            await completeChat();
         }
         chatState.isProcessing = false;
         return;
@@ -518,7 +499,7 @@ const handleMessage = async (text) => {
             await botReply("That's cool! Always nice to meet people 😊", false, true);
             await botReply("Feel free to look around. If you ever want to chat about UX, product design, or anything else - just hit me up!", false, false);
             await botReply("You can also find me on X or email below 👇", true, false);
-            completeChat();
+            await completeChat();
             chatState.isProcessing = false;
             return;
         }
@@ -548,7 +529,7 @@ const handleMessage = async (text) => {
             chatState.currentStep = 'declined';
             await botReply("No worries! 👋", false, true);
             await botReply("Feel free to come back anytime. See you around! ✨", true, false);
-            completeChat();
+            await completeChat();
             chatState.isProcessing = false;
             return;
         } else if (isYes) {
@@ -563,6 +544,8 @@ const handleMessage = async (text) => {
         const isWorkKeyword = /^(work|project|hire|hiring|collab|collaboration|mentor|mentorship|freelance|opportunity|job|career|gig|design|ux|ui|product|review|feedback|consultation|help|position|role|opening|offer)$/i.test(lowerText);
 
         if (isWorkKeyword || hasWorkIntent(userText)) {
+            chatState.userData.topic = userText;
+            chatState.userData.title = extractTitle(userText);
             chatState.currentStep = 'ask_name';
             await botReply("Awesome, thanks for reaching out! 🙌", false, true);
             await botReply("Before we dive in - what's your name?", true, false);
@@ -570,18 +553,12 @@ const handleMessage = async (text) => {
             return;
         }
 
-        // Name-like input (not a greeting, not a phrase, not "asith", not a keyword)
-        const nameLike = /^[a-z\s]{2,50}$/i.test(userText);
-        const wordCount = userText.split(/\s+/).length;
-        const isCommonPhrase = /^(just saying|saying|i want|i need|looking for|work together|lets work|help me)/i.test(userText);
-        const mentionsOwner = /\basith\b/i.test(userText);
-        const startsWithGreeting = /^(hi|hello|hey|hiya|hola|yo|heya|sup|how|what|who|where|when|why)/i.test(userText);
-
-        if (nameLike && wordCount >= 1 && wordCount <= 4 && !isCommonPhrase && !mentionsOwner && !startsWithGreeting && userText.length >= 2) {
-            chatState.userData.name = userText;
+        const name = extractName(userText);
+        if (name) {
+            chatState.userData.name = name;
             chatState.currentStep = 'ask_topic';
-            await botReply("Nice to meet you, " + userText + "! 👋", false, true);
-            await botReply("What brings you here today? Looking for UX/product design help, mentorship, or something else?", true, false);
+            await botReply("Nice to meet you, " + name + "! 👋", false, true);
+            await botReply("What would you like to discuss?", true, false);
             chatState.isProcessing = false;
             return;
         }
@@ -611,11 +588,22 @@ const handleMessage = async (text) => {
     // ASK_NAME STATE
     // ============================================================
     if (chatState.currentStep === 'ask_name') {
-        chatState.userData.name = userText;
+        const name = extractName(userText);
+        if (!name) {
+            if (hasWorkIntent(userText)) {
+                chatState.userData.topic = userText;
+                await botReply("Got the project details. What name should I use for you?", true, false);
+            } else {
+                await botReply("What name should I use for you? A first name is fine — for example, ‘My name is Alex’.", true, false);
+            }
+            chatState.isProcessing = false;
+            return;
+        }
+        chatState.userData.name = name;
         const nextStep = advanceToNextStep();
         chatState.currentStep = nextStep;
 
-        const greeting = "Nice to meet you, " + userText + "! 👋";
+        const greeting = "Nice to meet you, " + name + "! 👋";
 
         if (nextStep === 'ask_topic') {
             await botReply(greeting, false, true);
@@ -628,8 +616,8 @@ const handleMessage = async (text) => {
             await botReply("Got a WhatsApp number? Makes it easier to chat 📱 (Type 'skip' if email is fine)", true, false);
         } else {
             await botReply(greeting, false, true);
-            await botReply("Thanks for reaching out! I'll get back to you soon ✨", true, false);
-            completeChat();
+            await botReply("Thanks! I’ll submit your details now.", true, false);
+            await completeChat();
         }
         chatState.isProcessing = false;
         return;
@@ -639,6 +627,11 @@ const handleMessage = async (text) => {
     // ASK_TOPIC STATE - smart contextual responses
     // ============================================================
     if (chatState.currentStep === 'ask_topic') {
+        if (isGibberish(userText) || /^(hi|hello|hey|yes|no|ok|okay)$/i.test(lowerText)) {
+            await botReply('Could you tell me a little about your inquiry? For example, a website project, a job opportunity, or a portfolio review.', true, false);
+            chatState.isProcessing = false;
+            return;
+        }
         chatState.userData.topic = userText;
         const category = categorizeTopic(userText);
         const extractedTitle = extractTitle(userText);
@@ -660,8 +653,8 @@ const handleMessage = async (text) => {
             await botReply("Got a WhatsApp number too? 📱 (Type 'skip' if email is fine)", true, false);
         } else {
             await botReply(topicResponse, false, true);
-            await botReply("Thanks" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll get back to you soon ✨", true, false);
-            completeChat();
+            await botReply("Thanks! I’ll submit your details now.", true, false);
+            await completeChat();
         }
         chatState.isProcessing = false;
         return;
@@ -688,8 +681,8 @@ const handleMessage = async (text) => {
         if (lowerText.includes('skip') || isNo) {
             chatState.currentStep = 'complete';
             await botReply("No problem! Email works perfectly 👍", false, true);
-            await botReply("Thanks for reaching out" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll get back to you soon ✨", true, false);
-            completeChat();
+            await botReply("Thanks! I’ll submit your details now.", true, false);
+            await completeChat();
         } else {
             // Try to extract a phone number from what they typed
             const phone = extractPhone(userText);
@@ -697,8 +690,8 @@ const handleMessage = async (text) => {
                 chatState.userData.whatsapp = phone;
                 chatState.currentStep = 'complete';
                 await botReply("Got it! 📱", false, true);
-                await botReply("Thanks" + (chatState.userData.name ? ", " + chatState.userData.name : "") + "! I'll be in touch very soon ✨", true, false);
-                completeChat();
+                await botReply("Thanks! I’ll submit your details now.", true, false);
+                await completeChat();
             } else {
                 await botReply("That number doesn't look quite right 🤔 Try something like +94771234567 or just 10 digits. Or type 'skip'.");
             }
@@ -710,7 +703,7 @@ const handleMessage = async (text) => {
     // ============================================================
     // TERMINAL STATES
     // ============================================================
-    if (chatState.currentStep === 'complete') {
+    if (chatState.currentStep === 'complete' || chatState.currentStep === 'sent') {
         await botReply("I've already got your details! I'll be in touch soon 😊");
     } else if (chatState.currentStep === 'declined') {
         await botReply("Changed your mind? Just refresh the page and we can start over! 😊");
@@ -725,7 +718,8 @@ const formRateLimit = {
     submissionCount: 0,
     cooldownMs: 60000, // 1 minute between submissions
     maxSubmissions: 3,  // Max 3 submissions per session
-    windowMs: 600000    // 10 minute window for max submissions
+    windowMs: 600000,   // 10 minute window for max submissions
+    windowStart: 0
 };
 
 // Google Sheets API URL (update this with your deployed script URL)
@@ -734,8 +728,14 @@ const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbySW5Irauskch
 // Send data to Google Sheets and trigger email notifications
 const sendToGoogleSheets = async (data) => {
     try {
-        // Rate limit check
+        if (!navigator.onLine) return false;
         const now = Date.now();
+        if (now - formRateLimit.windowStart >= formRateLimit.windowMs) {
+            formRateLimit.windowStart = now;
+            formRateLimit.submissionCount = 0;
+            formRateLimit.lastSubmission = 0;
+        }
+        // Only acknowledged submissions consume the local rate limit.
         if (now - formRateLimit.lastSubmission < formRateLimit.cooldownMs) {
             console.warn('Rate limit: Too many submissions, please wait.');
             return false;
@@ -744,9 +744,6 @@ const sendToGoogleSheets = async (data) => {
             console.warn('Rate limit: Maximum submissions reached for this session.');
             return false;
         }
-        formRateLimit.lastSubmission = now;
-        formRateLimit.submissionCount++;
-
         const conversationEnd = new Date();
         const startTime = data.conversationStartTime ? new Date(data.conversationStartTime) : conversationEnd;
         
@@ -774,44 +771,97 @@ const sendToGoogleSheets = async (data) => {
             emailRecipients: ['asithwijenayake@gmail.com']
         };
 
-        const response = await fetch(GOOGLE_SHEETS_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(secureData)
-        });
-        console.log('Data sent to Google Sheets and email notifications triggered');
-        return true;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
+        try {
+            const response = await fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'cors',
+                // A simple cross-origin request avoids an OPTIONS preflight.
+                // Apps Script still receives the JSON body in e.postData.contents.
+                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                body: JSON.stringify(secureData),
+                signal: controller.signal
+            });
+            if (!response.ok) return false;
+            const result = await response.json();
+            if (!result || result.success === false || result.error ||
+                result.status === 'error' || result.result === 'error') return false;
+            const accepted = result.success === true ||
+                result.status === 'success' || result.result === 'success';
+            if (!accepted) return false;
+            formRateLimit.lastSubmission = Date.now();
+            formRateLimit.submissionCount++;
+            return true;
+        } finally {
+            clearTimeout(timeout);
+        }
     } catch (error) {
-        console.error('Failed to send to Google Sheets:', error);
+        // A network, CORS, timeout or invalid response cannot confirm delivery.
+        console.warn('Contact delivery could not be confirmed.');
         return false;
     }
 };
 
-// Complete chat
+const updateEmailFallback = () => {
+    const link = document.getElementById('contactEmailFallback');
+    if (!link) return;
+    const data = chatState.userData;
+    const body = [
+        `Name: ${data.name || ''}`,
+        `Email: ${data.email || ''}`,
+        `WhatsApp: ${data.whatsapp || ''}`,
+        '',
+        `Inquiry: ${data.topic || ''}`,
+        data.title ? `Details: ${data.title}` : ''
+    ].filter(Boolean).join('\n');
+    link.href = 'mailto:asithwijenayake@gmail.com?subject=' +
+        encodeURIComponent('Website inquiry' + (data.name ? ' from ' + data.name : '')) +
+        '&body=' + encodeURIComponent(body);
+};
+
+// Completion is shown only after the delivery service acknowledges acceptance.
 const completeChat = async () => {
+    if (chatState.submissionInFlight || chatState.currentStep === 'sent') return;
     const input = document.getElementById('messageInput');
     const sendBtn = document.getElementById('sendButton');
+    const status = document.getElementById('contactDeliveryStatus');
+    const retry = document.getElementById('contactRetry');
+    const fallback = document.getElementById('contactDeliveryActions');
 
-    // Send data to Google Sheets
-    await sendToGoogleSheets(chatState.userData);
-    console.log('Contact submitted:', chatState.userData);
+    // A farewell is not a contact inquiry and should not submit empty data.
+    if (chatState.currentStep === 'declined' ||
+        (!chatState.userData.email && !chatState.userData.whatsapp)) {
+        chatState.currentStep = 'declined';
+        if (status) status.textContent = 'Thanks for visiting. You can also reach me by email below.';
+        return;
+    }
 
-    setTimeout(() => {
-        if (input) {
-            input.placeholder = 'Message sent! ✅';
-            input.disabled = true;
-            input.style.opacity = '0.6';
-        }
-        if (sendBtn) {
-            sendBtn.classList.remove('active');
-            sendBtn.classList.add('complete');
-            sendBtn.innerHTML = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#34C759"/><path d="M13 20.17l-3.17-3.17-1.42 1.41L13 23l9-9-1.41-1.41L13 20.17z" fill="white"/></svg>';
-            sendBtn.disabled = true;
-        }
-    }, 2000);
+    chatState.submissionInFlight = true;
+    chatState.currentStep = 'submitting';
+    updateEmailFallback();
+    if (input) { input.disabled = true; input.placeholder = 'Sending your details…'; }
+    if (sendBtn) sendBtn.disabled = true;
+    if (retry) retry.disabled = true;
+    if (status) status.textContent = 'Sending your details…';
+    if (fallback) fallback.hidden = true;
+
+    const accepted = await sendToGoogleSheets(chatState.userData);
+    chatState.submissionInFlight = false;
+    if (accepted) {
+        chatState.currentStep = 'sent';
+        if (status) status.textContent = 'Your inquiry was received. Thanks for reaching out!';
+        if (input) input.placeholder = 'Inquiry received ✓';
+        if (sendBtn) sendBtn.classList.add('complete');
+        addMessage('Your inquiry was received. I’ll get back to you soon.', 'received');
+    } else {
+        chatState.currentStep = 'delivery_failed';
+        if (status) status.textContent = 'We couldn’t confirm delivery. Your details are still here. Retry or send them by email.';
+        if (input) { input.disabled = false; input.placeholder = 'Type retry to try again'; }
+        if (sendBtn) sendBtn.disabled = false;
+        if (retry) retry.disabled = false;
+        if (fallback) fallback.hidden = false;
+    }
 };
 
 // Initialize chat
@@ -845,6 +895,7 @@ const initContactChat = () => {
     };
 
     sendBtn.addEventListener('click', handleSend);
+    document.getElementById('contactRetry')?.addEventListener('click', () => completeChat());
 
     // Toggle send button active state based on input
     input.addEventListener('input', () => {
