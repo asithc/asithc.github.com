@@ -1,0 +1,31 @@
+/* Contact page layout and delivery feedback. */
+.contact-widgets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contact-widget { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+    .contact-widgets { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Contact delivery feedback stays visible without shrinking the chat input. */
+.contact-delivery { padding: 0 24px; flex: 0 0 auto; }
+.contact-delivery p { margin: 0; font-size: 13px; line-height: 1.5; color: #444; }
+.contact-delivery p:not(:empty) { padding-top: 12px; }
+.contact-delivery-actions { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 10px; }
+.contact-delivery-actions[hidden] { display: none; }
+.contact-delivery-actions button,
+.contact-delivery-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid #c5c5ca;
+    border-radius: 22px;
+    background: #fff;
+    color: #0059bd;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.contact-delivery-actions :focus-visible { outline: 3px solid #007aff; outline-offset: 3px; }
+.contact-delivery-actions button:disabled { opacity: 0.6; cursor: wait; }
