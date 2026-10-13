@@ -29,7 +29,7 @@
     <meta name="theme-color" content="#0f0f10">
 
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com https://script.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
@@ -118,6 +118,7 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="stylesheet" href="css/style.css?v=5.23">
+    <link rel="stylesheet" href="css/contact.css?v=20261014">
     
     </head>
 <body>
@@ -163,6 +164,14 @@
                         <!-- Messages will be dynamically added here -->
                     </div>
 
+                    <div class="contact-delivery" role="group" aria-label="Inquiry delivery">
+                        <p id="contactDeliveryStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+                        <div id="contactDeliveryActions" class="contact-delivery-actions" hidden>
+                            <button id="contactRetry" type="button">Retry</button>
+                            <a id="contactEmailFallback" href="mailto:asithwijenayake@gmail.com">Send by email</a>
+                        </div>
+                    </div>
+
                     <div class="imessage-footer-new">
                         <div class="input-container-new">
                             <input type="text" id="messageInput" placeholder="imessage" autocomplete="off" aria-label="Type your message" />
@@ -204,6 +213,6 @@
 
     <script src="js/script.js?v=20260415"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/contact.js?v=20261014-delivery"></script>
 </body>
 </html>
