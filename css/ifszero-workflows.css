@@ -1,0 +1,128 @@
+/* Responsive workflow illustrations for the IFSZero case study. */
+.ifs-workflow {
+    --workflow-accent: #6330a5;
+    --workflow-soft: #eee6f7;
+    margin: 0;
+    padding: clamp(24px, 4vw, 40px);
+    border: 1px solid #e7deef;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #faf7fd, #f2edf8);
+    color: #261735;
+    font-family: var(--font-primary);
+}
+.ifs-workflow--reporting {
+    --workflow-accent: #17624f;
+    --workflow-soft: #def1e8;
+    border-color: #d4e7df;
+    background: linear-gradient(145deg, #f6fbf8, #eaf4ef);
+    color: #183b30;
+}
+.ifs-workflow-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--workflow-accent);
+}
+.ifs-workflow-heading h5 {
+    margin: 14px 0 10px;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+.ifs-workflow-heading p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #55525e;
+}
+.ifs-workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    list-style: none;
+    margin: 32px 0 24px;
+    padding: 0;
+}
+.ifs-workflow-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 20px 16px;
+    border: 1px solid rgba(50, 30, 65, 0.09);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(40, 25, 55, 0.035);
+}
+.ifs-workflow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -21px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--workflow-accent);
+    font-size: 20px;
+}
+.ifs-workflow-number {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--workflow-soft);
+    color: var(--workflow-accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+.ifs-workflow-step h5 {
+    margin: 20px 0 10px;
+    font-size: 16px;
+    line-height: 1.35;
+}
+.ifs-workflow-step p {
+    margin: 0 0 22px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #55525e;
+}
+.ifs-workflow-tag {
+    margin-top: auto;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--workflow-accent);
+}
+.ifs-workflow-connection {
+    display: flex;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--workflow-soft);
+    color: var(--workflow-accent);
+    font-size: 13px;
+    line-height: 1.7;
+}
+.ifs-workflow-connection > span { font-size: 22px; line-height: 1; }
+.ifs-workflow figcaption {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(50, 30, 65, 0.1);
+    font-size: 12px;
+    line-height: 1.6;
+    color: #55525e;
+}
+@media (max-width: 1000px) {
+    .ifs-workflow-steps { grid-template-columns: 1fr; gap: 28px; }
+    .ifs-workflow-step { padding: 20px; }
+    .ifs-workflow-step h5 { margin-top: 14px; font-size: 18px; }
+    .ifs-workflow-step p { font-size: 14px; margin-bottom: 14px; }
+    .ifs-workflow-step:not(:last-child)::after {
+        content: '↓';
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -25px;
+        transform: translateX(-50%);
+    }
+}
