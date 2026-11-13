@@ -13760,3 +13760,114 @@ html {
     .mp-flow-wizard { grid-template-columns: 1fr; }
     .mp-flow-end { flex-wrap: wrap; }
 }
+
+/* Liquid Glass navigation — a floating control layer shared across the site. */
+:root {
+    --glass-surface: linear-gradient(145deg, rgba(255, 255, 255, .88), rgba(245, 247, 250, .64) 48%, rgba(255, 255, 255, .76));
+    --glass-edge: rgba(255, 255, 255, .86);
+    --glass-shadow: 0 8px 28px rgba(26, 35, 50, .12), 0 1px 4px rgba(26, 35, 50, .06), inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 -1px 0 rgba(39, 52, 74, .08);
+}
+
+.nav,
+.photo-navigator,
+.back-button,
+.project-nav-btn,
+.project-lightbox-nav {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-edge);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+}
+
+.nav {
+    height: 62px;
+    padding: 6px;
+    gap: 4px;
+    border-radius: 999px;
+    isolation: isolate;
+}
+
+.nav::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 1px 0 1px rgba(255, 255, 255, .9), inset -1px 0 1px rgba(255, 255, 255, .5);
+    z-index: 3;
+}
+
+.nav::before {
+    top: 6px;
+    height: calc(100% - 12px);
+    background: linear-gradient(155deg, rgba(255, 255, 255, .98), rgba(223, 229, 237, .56));
+    border: 1px solid rgba(255, 255, 255, .95);
+    box-shadow: 0 2px 7px rgba(27, 39, 57, .1), inset 0 1px 1px #fff;
+    transition-property: left, width, opacity;
+    transition-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+
+.nav-link {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 28px;
+    color: #454b55;
+    font-weight: 550;
+    transition: color .2s ease, background .2s ease;
+}
+
+.nav-link:hover { color: #101722; background: rgba(255, 255, 255, .3); }
+.nav-link.active { color: #111722; background: rgba(255, 255, 255, .65); font-weight: 650; }
+.nav.has-active .nav-link.active { background: transparent; }
+.nav-work-pulse { box-shadow: 0 0 0 3px rgba(34, 197, 94, .1); }
+.nav-work-pulse::before { animation: none; background: transparent; }
+
+.photo-navigator { border-radius: 999px; padding: 6px 12px; }
+.nav-icon { min-height: 44px; color: #454b55; }
+.nav-icon.active { background: rgba(255, 255, 255, .76); box-shadow: 0 2px 6px rgba(27, 39, 57, .12), inset 0 1px 0 #fff; }
+.photo-card:focus-within .photo-navigator { transform: translateX(-50%) translateY(0); opacity: 1; }
+.back-button { min-height: 44px; border-radius: 999px; color: #454b55; }
+.back-button:hover,
+.project-nav-btn:hover { background: rgba(240, 244, 249, .94); }
+.project-nav-btn { border-radius: 28px; }
+.project-lightbox-nav { color: #111722; }
+
+.professional-action {
+    min-height: 44px;
+    border-radius: 999px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .17), rgba(255, 255, 255, .07));
+    border-color: rgba(255, 255, 255, .27);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 3px 10px rgba(0, 0, 0, .1);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px) saturate(150%);
+}
+.professional-action-primary { background: var(--glass-surface); color: #0b0b0d; }
+
+:is(.nav-link, .nav-icon, .back-button, .project-nav-btn, .project-lightbox-nav):focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .nav { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: calc(100% - 24px); max-width: 420px; gap: 2px; }
+    .nav-link { min-width: 0; padding: 10px 12px; flex: 1 1 0; font-size: 14px; }
+}
+@media (hover: none) {
+    .photo-navigator, .photo-navigator.hiding { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .nav, .photo-navigator, .back-button, .project-nav-btn, .project-lightbox-nav { background: #f2f4f7; }
+    .professional-action { background: #30343a; }
+    .professional-action-primary { background: #f2f4f7; }
+}
+@media (prefers-reduced-transparency: reduce) {
+    .nav, .photo-navigator, .back-button, .project-nav-btn, .project-lightbox-nav { background: #f2f4f7; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .professional-action { background: #30343a; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .professional-action-primary { background: #f2f4f7; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav::before, .nav-link, .photo-navigator, .nav-icon, .back-button, .project-nav-btn { transition: none; }
+}

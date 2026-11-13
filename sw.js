@@ -14,14 +14,14 @@
  *   - A version tag in CACHE_NAME lets us wipe the old cache wholesale
  *     whenever we change SW strategy.
  */
-const CACHE_NAME = 'asith-v5-2026-04';
+const CACHE_NAME = 'asith-v6-2026-11-12';
 
 // Small, hand-picked list of assets that carry most of the repeat-visit cost.
 // We don't pre-cache every image; stale-while-revalidate will populate the
 // cache organically as the user browses.
 const PRECACHE_URLS = [
-    '/css/style.css?v=5.26',
-    '/js/script.js?v=20260415',
+    '/css/style.css?v=20261112-glass',
+    '/js/script.js?v=20261112-glass',
     '/js/anim-pause.js?v=1.0',
     '/fonts/libre-baskerville-400.woff2',
     '/fonts/libre-baskerville-400-italic.woff2',

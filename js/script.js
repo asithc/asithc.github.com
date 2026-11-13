@@ -73,7 +73,7 @@ const initNavSounds = () => {
         const navRect = nav.getBoundingClientRect();
         
         // Calculate position accounting for nav padding
-        const left = linkRect.left - navRect.left;
+        const left = linkRect.left - navRect.left - nav.clientLeft;
         const width = linkRect.width;
         
         // If instant (initial load), disable transition temporarily
@@ -1379,13 +1379,13 @@ const initSmoothScroll = () => {
 // Navigation active state
 const updateActiveNav = () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const isProject = window.location.pathname.includes('/projects/');
     document.querySelectorAll('.nav-link').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+        const destination = new URL(link.href).pathname.split('/').pop();
+        const active = isProject ? destination === 'work.html' : destination === currentPage;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', isProject ? 'location' : 'page');
+        else link.removeAttribute('aria-current');
     });
 };
 

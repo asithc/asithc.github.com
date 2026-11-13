@@ -2,6 +2,10 @@
 
 A personal portfolio website showcasing Asith Wijenayake's work, skills, and journey as a UX designer, UI/UX designer, and product designer. Features smooth animations, interactive elements, and a clean, modern design. Built with pure HTML, CSS, and JavaScript - no frameworks required!
 
+## Current resume
+
+Use `files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf` as the current resume. The Home professional link, About resume widget, preview source, and download action all point to this file. When replacing it, update all four references in `index.html` and `about.html`.
+
 ## ✨ Features
 
 - **About Me**: Learn about Asith's background, career journey, and what drives his work
