@@ -61,73 +61,6 @@ if (document.readyState === 'loading') {
     initClickSound();
 }
 
-// Add click sound to navigation links and elastic slide animation
-const initNavSounds = () => {
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    const updateActiveIndicator = (activeLink, instant = false) => {
-        if (!activeLink || !nav) return;
-        
-        const linkRect = activeLink.getBoundingClientRect();
-        const navRect = nav.getBoundingClientRect();
-        
-        // Calculate position accounting for nav padding
-        const left = linkRect.left - navRect.left - nav.clientLeft;
-        const width = linkRect.width;
-        
-        // If instant (initial load), disable transition temporarily
-        if (instant) {
-            nav.style.setProperty('--transition-duration', '0s');
-        } else {
-            nav.style.setProperty('--transition-duration', '0.4s');
-        }
-        
-        nav.style.setProperty('--active-left', `${left}px`);
-        nav.style.setProperty('--active-width', `${width}px`);
-        
-        if (!nav.classList.contains('has-active')) {
-            nav.classList.add('has-active');
-        }
-        
-        // Re-enable transition after instant set
-        if (instant) {
-            requestAnimationFrame(() => {
-                nav.style.setProperty('--transition-duration', '0.4s');
-            });
-        }
-    };
-    
-    navLinks.forEach((link, index) => {
-        link.addEventListener('click', (e) => {
-            playClickSound();
-            
-            // Update active state
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            
-            // Update indicator position with elastic animation (not instant)
-            updateActiveIndicator(link, false);
-        });
-    });
-    
-    // Initialize on page load (instant, no animation)
-    const activeLink = document.querySelector('.nav-link.active');
-    if (activeLink) {
-        setTimeout(() => updateActiveIndicator(activeLink, true), 100);
-    }
-    
-    // Update on window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            const currentActive = document.querySelector('.nav-link.active');
-            if (currentActive) updateActiveIndicator(currentActive, true);
-        }, 250);
-    });
-};
-
 // Intersection Observer for fade-in animations
 const observeElements = () => {
     const options = {
@@ -248,7 +181,7 @@ const initProjectScreenshotLightbox = () => {
     const screenshotImages = Array.from(document.querySelectorAll('main img')).filter((img) => {
         if (!img.src) return false;
         if (img.classList.contains('wizpos-hero-symbol') || img.classList.contains('wizpos-wordmark')) return false;
-        if (img.classList.contains('dgl-main-logo') || img.classList.contains('hopon-map-base-image')) return false;
+        if (img.classList.contains('dgl-main-logo') || img.classList.contains('hopon-static-route-map')) return false;
         if (img.closest('.project-collage') || img.closest('.project-image-placeholder')) return false;
 
         const src = (img.currentSrc || img.src || '').toLowerCase();
@@ -889,96 +822,6 @@ const initWizposVideoPlayers = () => {
     });
 };
 
-// Interactive Sri Lanka corridor map for HopOn case study
-const initHopOnRouteMap = () => {
-    const mapWidgets = document.querySelectorAll('.hopon-map-widget');
-    if (mapWidgets.length === 0) return;
-
-    mapWidgets.forEach((widget) => {
-        const routeButtons = Array.from(widget.querySelectorAll('.hopon-destination-btn'));
-        const layerButtons = Array.from(widget.querySelectorAll('.hopon-layer-btn'));
-        const markers = Array.from(widget.querySelectorAll('.hopon-marker[data-destination]'));
-        const routes = Array.from(widget.querySelectorAll('.hopon-route'));
-        const mapLayers = Array.from(widget.querySelectorAll('.hopon-map-base-image[data-layer]'));
-
-        const detailName = widget.querySelector('[data-map-detail="name"]');
-        const detailFamous = widget.querySelector('[data-map-detail="famous"]');
-        const detailDistance = widget.querySelector('[data-map-detail="distance"]');
-        const detailTime = widget.querySelector('[data-map-detail="time"]');
-        const detailCorridors = widget.querySelector('[data-map-detail="corridors"]');
-
-        if (routeButtons.length === 0 || routes.length === 0) return;
-
-        const updateDetailPanel = (button) => {
-            if (!button) return;
-
-            if (detailName) detailName.textContent = button.dataset.name || '';
-            if (detailFamous) detailFamous.textContent = button.dataset.famous || '';
-            if (detailDistance) detailDistance.textContent = button.dataset.distance || '';
-            if (detailTime) detailTime.textContent = button.dataset.time || '';
-            if (detailCorridors) detailCorridors.textContent = button.dataset.corridors || '';
-        };
-
-        const setActiveDestination = (destinationId) => {
-            const activeButton = routeButtons.find((button) => button.dataset.destination === destinationId);
-            if (!activeButton) return;
-
-            routeButtons.forEach((button) => {
-                button.classList.toggle('is-active', button.dataset.destination === destinationId);
-            });
-
-            markers.forEach((marker) => {
-                marker.classList.toggle('is-active', marker.dataset.destination === destinationId);
-            });
-
-            routes.forEach((route) => {
-                route.classList.toggle('is-active', route.dataset.route === destinationId);
-            });
-
-            updateDetailPanel(activeButton);
-        };
-
-        const setActiveMapLayer = (layerId) => {
-            if (!layerId) return;
-
-            layerButtons.forEach((button) => {
-                button.classList.toggle('is-active', button.dataset.mapLayer === layerId);
-            });
-
-            mapLayers.forEach((layer) => {
-                layer.classList.toggle('is-active', layer.dataset.layer === layerId);
-            });
-        };
-
-        routeButtons.forEach((button) => {
-            const destinationId = button.dataset.destination;
-            button.addEventListener('click', () => setActiveDestination(destinationId));
-        });
-
-        markers.forEach((marker) => {
-            const destinationId = marker.dataset.destination;
-            marker.addEventListener('click', () => setActiveDestination(destinationId));
-            marker.addEventListener('mouseenter', () => setActiveDestination(destinationId));
-            marker.addEventListener('focus', () => setActiveDestination(destinationId));
-        });
-
-        layerButtons.forEach((button) => {
-            const layerId = button.dataset.mapLayer;
-            button.addEventListener('click', () => setActiveMapLayer(layerId));
-        });
-
-        const defaultDestination =
-            routeButtons.find((button) => button.classList.contains('is-active'))?.dataset.destination ||
-            routeButtons[0].dataset.destination;
-        setActiveDestination(defaultDestination);
-
-        const defaultLayer =
-            layerButtons.find((button) => button.classList.contains('is-active'))?.dataset.mapLayer ||
-            mapLayers[0]?.dataset.layer;
-        setActiveMapLayer(defaultLayer);
-    });
-};
-
 // Hover sound for WhatsApp widgets
 const initWhatsAppHoverTone = () => {
     const widgets = document.querySelectorAll('.whatsapp-card, .whatsapp-single-widget');
@@ -1378,15 +1221,7 @@ const initSmoothScroll = () => {
 
 // Navigation active state
 const updateActiveNav = () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const isProject = window.location.pathname.includes('/projects/');
-    document.querySelectorAll('.nav-link').forEach(link => {
-        const destination = new URL(link.href).pathname.split('/').pop();
-        const active = isProject ? destination === 'work.html' : destination === currentPage;
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', isProject ? 'location' : 'page');
-        else link.removeAttribute('aria-current');
-    });
+    document.querySelector('site-navigation')?.update();
 };
 
 // Parallax effect for scroll indicator
@@ -2224,7 +2059,6 @@ const init = () => {
     initNotionWidget();
     initWidgetHovers();
     initScrollProgress();
-    initNavSounds();
     initPhotoCarousel();
     initAudiblePhone();
     initSpotifyPlayer();
@@ -2234,7 +2068,6 @@ const init = () => {
     initProjectImageLazyLoad();
     initProjectScreenshotLightbox();
     initWizposVideoPlayers();
-    initHopOnRouteMap();
     initWhatsAppHoverTone();
     initPlaystationHoverSound();
     initWhatsAppMentions();

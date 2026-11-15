@@ -1,0 +1,123 @@
+/* Shared navigation. All items and the selected pill occupy the same 48px row. */
+site-navigation { display: block; }
+.site-nav {
+    position: fixed;
+    z-index: 1000;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    max-width: calc(100% - 24px);
+    height: 64px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    align-items: stretch;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(247, 249, 252, .86);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+    box-shadow: 0 8px 28px rgba(28, 39, 55, .12), 0 1px 4px rgba(28, 39, 55, .04);
+    isolation: isolate;
+    view-transition-name: site-navigation;
+}
+.site-nav-selection {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 48px;
+    border: 0;
+    border-radius: 999px;
+    background: #cbd3df;
+    box-shadow: 0 2px 8px rgba(34, 48, 67, .08);
+    pointer-events: none;
+    transition: transform 320ms cubic-bezier(.22, 1, .36, 1), width 320ms cubic-bezier(.22, 1, .36, 1);
+    view-transition-name: nav-selection;
+}
+.site-nav-link {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    color: #4b515d;
+    font-family: var(--font-primary, system-ui);
+    font-size: 15px;
+    font-weight: 550;
+    line-height: 1;
+    text-decoration: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+.site-nav-link > .site-nav-label { position: relative; z-index: 1; }
+.site-nav-link:hover { color: #111b29; }
+.site-nav-link.is-active { color: #111b29; font-weight: 700; }
+.site-nav-link:focus-visible { outline: 2px solid #536ba6; outline-offset: 2px; }
+/* The search-field effect: a broad, diffuse colour beam sweeps left to right
+   along the lower edge. No outline, orbit, or permanent border. */
+.site-nav-work { isolation: isolate; }
+.site-nav-link .site-nav-beam {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+.site-nav-beam > i {
+    position: absolute;
+    left: -85%;
+    bottom: 0;
+    width: 85%;
+    background: linear-gradient(90deg, transparent, #62b9e9 18%, #7bd7b1 36%, #eb8bbe 55%, #b296e8 70%, #edbf83 84%, transparent);
+    animation: site-nav-colour-sweep 3.1s linear infinite;
+    pointer-events: none;
+    will-change: transform;
+}
+.site-nav-beam .site-nav-beam-glow {
+    height: 36px;
+    bottom: -16px;
+    filter: blur(7px) saturate(1.35);
+    opacity: .85;
+    mask-image: linear-gradient(to top, #000 25%, transparent);
+    -webkit-mask-image: linear-gradient(to top, #000 25%, transparent);
+}
+.site-nav-beam .site-nav-beam-core {
+    height: 3px;
+    bottom: 0;
+    filter: blur(1.2px);
+    opacity: .85;
+}
+.site-nav-link.is-active .site-nav-beam { display: none; }
+@keyframes site-nav-colour-sweep {
+    0% { transform: translateX(0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateX(218%); opacity: 0; }
+}
+@media (max-width: 768px) {
+    .site-nav { top: auto; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 420px; }
+    .site-nav-link { font-size: 14px; }
+}
+@view-transition { navigation: auto; }
+::view-transition-group(site-navigation) { animation: none; }
+::view-transition-old(site-navigation) { animation: none; opacity: 0; }
+::view-transition-new(site-navigation) { animation: none; }
+::view-transition-group(nav-selection) { animation-duration: 320ms; animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+::view-transition-old(nav-selection), ::view-transition-new(nav-selection) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 140ms; }
+@media (prefers-reduced-motion: reduce) {
+    @view-transition { navigation: none; }
+    .site-nav-selection { transition: none; }
+    .site-nav-beam > i { animation: none; left: 8%; opacity: .55; transform: none; }
+}

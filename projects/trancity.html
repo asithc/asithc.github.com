@@ -100,19 +100,13 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="preload" as="image" href="../images/Projects/HopOn/HopOn-feature.webp" fetchpriority="high">
-    <link rel="stylesheet" href="../css/style.css?v=20261112-glass">
+    <link rel="stylesheet" href="../css/style.css?v=20261115-nav-beam">
     
-    </head>
+        <link rel="stylesheet" href="../css/site-navigation.css?v=3">
+    <script src="../js/site-navigation.js?v=3" blocking="render"></script>
+</head>
 <body class="project-detail-page">
-    <nav class="nav" aria-label="Main navigation">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="../about.html" class="nav-link">About</a>
-        <a href="../work.html" class="nav-link nav-link-work active" aria-label="Work case studies">
-            <span class="nav-work-pulse" aria-hidden="true"></span>
-            <span class="nav-work-label">Work</span>
-        </a>
-        <a href="../contact.html" class="nav-link">Contact</a>
-    </nav>
+    <site-navigation></site-navigation>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -325,113 +319,11 @@
 
                 <div class="case-study-images">
                     <div class="case-study-image fade-in">
-                        <section class="hopon-map-widget" aria-label="Interactive map of Sri Lankan intercity travel corridors">
-                            <div class="hopon-map-stage">
-                                <div class="hopon-map-base">
-                                    <img width="1000" height="1399" class="hopon-map-base-image is-active" data-layer="distances" src="../images/Projects/HopOn/map-sri-lanka-distances-1000.jpg" alt="Sri Lanka distances map reference" loading="lazy" decoding="async">
-                                    <img width="1000" height="1399" class="hopon-map-base-image" data-layer="regions" src="../images/Projects/HopOn/map-sri-lanka-regions-1000.jpg" alt="Sri Lanka regions map reference" loading="lazy" decoding="async">
-                                    <span class="hopon-map-brand-wash" aria-hidden="true"></span>
-                                </div>
-
-                                <svg class="hopon-map-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                                    <g class="hopon-routes">
-                                        <path class="hopon-route" data-route="galle" d="M30 60Q31 71 36 82"/>
-                                        <path class="hopon-route" data-route="kandy" d="M30 60Q39 56 48 54"/>
-                                        <path class="hopon-route" data-route="ella" d="M30 60Q41 63 50 68"/>
-                                        <path class="hopon-route" data-route="sigiriya" d="M30 60Q33 50 42 40"/>
-                                        <path class="hopon-route" data-route="trincomalee" d="M30 60Q42 44 58 31"/>
-                                        <path class="hopon-route" data-route="jaffna" d="M30 60Q27 39 31 16"/>
-                                        <path class="hopon-route" data-route="arugam-bay" d="M30 60Q44 66 56 77"/>
-                                    </g>
-                                </svg>
-
-                                <div class="hopon-marker hopon-marker-hub" style="--x: 30%; --y: 60%;" aria-hidden="true">
-                                    <span>Colombo</span>
-                                </div>
-                                <button type="button" class="hopon-marker" data-destination="galle" aria-label="Galle, approx 127 kilometers from Colombo" style="--x: 36%; --y: 82%;">
-                                    <span>Galle</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="kandy" aria-label="Kandy, approx 115 kilometers from Colombo" style="--x: 48%; --y: 54%;">
-                                    <span>Kandy</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="ella" aria-label="Ella, approx 208 kilometers from Colombo" style="--x: 50%; --y: 68%;">
-                                    <span>Ella</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="sigiriya" aria-label="Sigiriya, approx 170 kilometers from Colombo" style="--x: 42%; --y: 40%;">
-                                    <span>Sigiriya</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="trincomalee" aria-label="Trincomalee, approx 257 kilometers from Colombo" style="--x: 58%; --y: 31%;">
-                                    <span>Trincomalee</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="jaffna" aria-label="Jaffna, approx 398 kilometers from Colombo" style="--x: 31%; --y: 16%;">
-                                    <span>Jaffna</span>
-                                </button>
-                                <button type="button" class="hopon-marker" data-destination="arugam-bay" aria-label="Arugam Bay, approx 415 kilometers from Colombo" style="--x: 56%; --y: 77%;">
-                                    <span>Arugam Bay</span>
-                                </button>
-                            </div>
-
-                            <div class="hopon-map-sidebar">
-                                <p class="hopon-map-kicker">Popular Tourist Corridors</p>
-                                <h5 class="hopon-map-heading">Intercity demand around Sri Lanka</h5>
-                                <p class="hopon-map-note">Select a destination to see distance, travel context, and why riders choose that route.</p>
-                                <div class="hopon-map-layer-switch" role="group" aria-label="Map layer">
-                                    <button type="button" class="hopon-layer-btn is-active" data-map-layer="distances">Distance Map</button>
-                                    <button type="button" class="hopon-layer-btn" data-map-layer="regions">Regions Map</button>
-                                </div>
-
-                                <div class="hopon-destination-list" aria-label="Destination route options">
-                                    <button type="button" class="hopon-destination-btn is-active" data-destination="kandy" data-name="Kandy" data-distance="~115 km from Colombo" data-time="Approx 3 to 3.5 hours by road" data-famous="Temple of the Tooth, hill-country climate, and cultural festivals." data-corridors="Kandy to Ella: ~138 km • Kandy to Trincomalee: ~180 km">
-                                        <span class="hopon-destination-name">Kandy</span>
-                                        <span class="hopon-destination-distance">~115 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="galle" data-name="Galle" data-distance="~127 km from Colombo" data-time="Approx 2.5 to 3 hours by road" data-famous="UNESCO fort city, southern beaches, and boutique tourism." data-corridors="Galle to Ella: ~205 km • Galle to Arugam Bay: ~270 km">
-                                        <span class="hopon-destination-name">Galle</span>
-                                        <span class="hopon-destination-distance">~127 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="ella" data-name="Ella" data-distance="~208 km from Colombo" data-time="Approx 5.5 to 6.5 hours by road" data-famous="Tea-country viewpoints, Nine Arches Bridge, and train tourism." data-corridors="Ella to Arugam Bay: ~135 km • Ella to Kandy: ~138 km">
-                                        <span class="hopon-destination-name">Ella</span>
-                                        <span class="hopon-destination-distance">~208 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="sigiriya" data-name="Sigiriya" data-distance="~170 km from Colombo" data-time="Approx 4 to 4.5 hours by road" data-famous="Sigiriya Rock Fortress, Dambulla caves, and Cultural Triangle tours." data-corridors="Sigiriya to Trincomalee: ~98 km • Sigiriya to Kandy: ~92 km">
-                                        <span class="hopon-destination-name">Sigiriya</span>
-                                        <span class="hopon-destination-distance">~170 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="trincomalee" data-name="Trincomalee" data-distance="~257 km from Colombo" data-time="Approx 5.5 to 6.5 hours by road" data-famous="Nilaveli beaches, whale watching, and east-coast bay access." data-corridors="Trincomalee to Arugam Bay: ~232 km • Trincomalee to Jaffna: ~238 km">
-                                        <span class="hopon-destination-name">Trincomalee</span>
-                                        <span class="hopon-destination-distance">~257 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="jaffna" data-name="Jaffna" data-distance="~398 km from Colombo" data-time="Approx 7 to 8.5 hours by road" data-famous="Northern heritage sites, local cuisine, and peninsula culture." data-corridors="Jaffna to Anuradhapura: ~197 km • Jaffna to Trincomalee: ~238 km">
-                                        <span class="hopon-destination-name">Jaffna</span>
-                                        <span class="hopon-destination-distance">~398 km</span>
-                                    </button>
-                                    <button type="button" class="hopon-destination-btn" data-destination="arugam-bay" data-name="Arugam Bay" data-distance="~415 km from Colombo" data-time="Approx 8 to 9 hours by road" data-famous="World-class surf breaks, east coast beaches, and seasonal tourism." data-corridors="Arugam Bay to Ella: ~135 km • Arugam Bay to Galle: ~270 km">
-                                        <span class="hopon-destination-name">Arugam Bay</span>
-                                        <span class="hopon-destination-distance">~415 km</span>
-                                    </button>
-                                </div>
-
-                                <article class="hopon-destination-detail" aria-live="polite">
-                                    <p class="hopon-detail-label">Selected destination</p>
-                                    <h6 class="hopon-detail-title" data-map-detail="name">Kandy</h6>
-                                    <p class="hopon-detail-copy" data-map-detail="famous">Temple of the Tooth, hill-country climate, and cultural festivals.</p>
-                                    <div class="hopon-detail-grid">
-                                        <div class="hopon-detail-cell">
-                                            <span class="hopon-detail-key">Distance</span>
-                                            <strong data-map-detail="distance">~115 km from Colombo</strong>
-                                        </div>
-                                        <div class="hopon-detail-cell">
-                                            <span class="hopon-detail-key">Road time</span>
-                                            <strong data-map-detail="time">Approx 3 to 3.5 hours by road</strong>
-                                        </div>
-                                    </div>
-                                    <p class="hopon-detail-corridors" data-map-detail="corridors">Kandy to Ella: ~138 km • Kandy to Trincomalee: ~180 km</p>
-                                </article>
-
-                                <p class="hopon-map-footnote">Distance values are approximate road estimates and can vary by traffic, route choice, and pickup stop count.</p>
-                            </div>
-                        </section>
-                        <p class="image-caption">Custom map composition using Sri Lanka distance and region references, overlaid with HopOn route interactions.</p>
+                        <figure class="hopon-route-illustration">
+                            <header><p>Sri Lanka / Intercity connections</p><h5>From the airport, across the island.</h5></header>
+                            <img class="hopon-static-route-map" src="../images/Projects/HopOn/sri-lanka-routes.svg" width="600" height="640" alt="Sri Lanka map with curved dotted connections from Bandaranaike International Airport to Jaffna, Trincomalee, Sigiriya, Kandy, Ella, Arugam Bay and Galle." loading="lazy" decoding="async">
+                            <figcaption>Bandaranaike International Airport (BIA) to key destinations. Connections are schematic, not road routes.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -1847,7 +1739,7 @@
         </div>
     </main>
 
-    <script src="../js/script.js?v=20261112-glass"></script>
+    <script src="../js/script.js?v=20261115-shared-nav"></script>
     <script src="../js/anim-pause.js?v=1.0"></script>
     <script src="../js/pin-protect.js?v=20260320"></script>
     <script src="../js/thanos-snap.js"></script>

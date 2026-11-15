@@ -6,6 +6,10 @@ A personal portfolio website showcasing Asith Wijenayake's work, skills, and jou
 
 Use `files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf` as the current resume. The Home professional link, About resume widget, preview source, and download action all point to this file. When replacing it, update all four references in `index.html` and `about.html`.
 
+## Shared main navigation
+
+Every portfolio page mounts `<site-navigation>`. Edit links and selection behavior in `js/site-navigation.js`, and styling in `css/site-navigation.css`. Keep navigation markup out of individual pages. The component loads before first paint; native cross-document view transitions preserve visual continuity between the HTML pages, with a directional indicator fallback when a transition is skipped. The Work link uses a broad, diffused colour beam sweeping left to right along its lower edge, hidden while Work is active.
+
 ## ✨ Features
 
 - **About Me**: Learn about Asith's background, career journey, and what drives his work

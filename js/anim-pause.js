@@ -49,6 +49,8 @@
 
         var target = anim.effect.target;
         if (!(target instanceof Element)) return;
+        // These illustrations manage visibility, pause controls, and reduced motion themselves.
+        if (target.closest('[data-managed-motion]')) return;
 
         if (!targetMap.has(target)) targetMap.set(target, new Set());
         targetMap.get(target).add(anim);
@@ -93,6 +95,7 @@
         var hide = document.hidden;
         anims.forEach(function (a) {
             if (!a.effect) return;
+            if (a.effect.target instanceof Element && a.effect.target.closest('[data-managed-motion]')) return;
             var iters;
             try { iters = a.effect.getComputedTiming().iterations; }
             catch (e) { return; }

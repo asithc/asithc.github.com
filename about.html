@@ -38,7 +38,7 @@
     <title>About Asith Wijenayake | Lead Product Designer &amp; Product Strategist</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Asith Wijenayake is a Lead Product Designer and Product Strategist with 9+ years in B2B SaaS and enterprise software. A UX Engineer with a BSc (Hons) in Computer Science, he works across AI, GTM strategy, ESG, and sustainability.">
+    <meta name="description" content="Asith Wijenayake is a Lead Product Designer and Product Strategist with 10+ years in B2B SaaS and enterprise software. A UX Engineer with a BSc (Hons) in Computer Science, he works across AI, GTM strategy, ESG, and sustainability.">
     <meta name="author" content="Asith Wijenayake">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://asith.cc/about.html">
@@ -89,7 +89,7 @@
             "name": "Asith Wijenayake",
             "url": "https://asith.cc",
             "jobTitle": "Lead Product Designer and Product Strategist",
-            "description": "Lead Product Designer and Product Strategist with 9+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
+            "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
             "knowsAbout": ["Product Design", "Product Leadership", "UX Engineering", "B2B SaaS", "Enterprise Software", "AI Product Strategy", "Go-to-Market Strategy", "ESG", "Sustainability", "Design Systems"],
             "hasOccupation": {
                 "@type": "Occupation",
@@ -113,9 +113,11 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="preload" as="font" type="font/woff2" href="fonts/libre-baskerville-400-italic.woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=20261112-glass">
+    <link rel="stylesheet" href="css/style.css?v=20261115-nav-beam">
     
-    </head>
+        <link rel="stylesheet" href="css/site-navigation.css?v=3">
+    <script src="js/site-navigation.js?v=3" blocking="render"></script>
+</head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54FZQ2X"
@@ -123,15 +125,7 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <!-- Navigation -->
-    <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="work.html" class="nav-link nav-link-work" aria-label="Work case studies">
-            <span class="nav-work-pulse" aria-hidden="true"></span>
-            <span class="nav-work-label">Work</span>
-        </a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+    <site-navigation></site-navigation>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -674,7 +668,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=20261112-glass"></script>
+    <script src="js/script.js?v=20261115-shared-nav"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
 </body>
 </html>

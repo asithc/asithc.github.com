@@ -95,7 +95,7 @@
             "jobTitle": "Lead Product Designer and Product Strategist"
         },
         "hasPart": [
-            {"@type": "CreativeWork", "name": "IFSZero - Sustainability Platform", "url": "https://asith.cc/projects/IFSzero.html"},
+            {"@type": "CreativeWork", "name": "IFS Zero: Agentic, AI Native Emissions Operating System", "url": "https://asith.cc/projects/IFSzero.html"},
             {"@type": "CreativeWork", "name": "WizPos 2.0 AI-First POS Case Study", "url": "https://asith.cc/projects/wizpos.html"},
             {"@type": "CreativeWork", "name": "Dialog Marketplace B2B Platform Case Study", "url": "https://asith.cc/projects/marketplace.html"},
             {"@type": "CreativeWork", "name": "DGL Gaming Platform Case Study", "url": "https://asith.cc/projects/dgl.html"},
@@ -121,9 +121,11 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="stylesheet" href="css/style.css?v=20261112-glass">
+    <link rel="stylesheet" href="css/style.css?v=20261115-nav-beam">
     
-    </head>
+        <link rel="stylesheet" href="css/site-navigation.css?v=3">
+    <script src="js/site-navigation.js?v=3" blocking="render"></script>
+</head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54FZQ2X"
@@ -136,15 +138,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="nav" aria-label="Main navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="work.html" class="nav-link nav-link-work active" aria-label="Work case studies">
-            <span class="nav-work-pulse" aria-hidden="true"></span>
-            <span class="nav-work-label">Work</span>
-        </a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+    <site-navigation></site-navigation>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -159,12 +153,12 @@
             <a href="projects/IFSzero.html" class="work-card">
                 <div class="work-card-header">
                     <div class="work-card-info">
-                        <h2 class="work-card-title">IFSZero<span class="tm-mark">TM</span></h2>
-                        <p class="work-card-description">Designing a zero-to-one Sustainability & Emissions platform inside IFS Cloud<span class="tm-mark">TM</span></p>
+                        <h2 class="work-card-title"><span class="ifs-project-name"><img class="ifs-project-icon" src="images/ifs_icons_industry-specific_plane-engine-1-.svg" width="32" height="32" alt="" aria-hidden="true">IFS Zero</span><span class="work-card-title-light">: Agentic, AI Native Emissions Operating System</span></h2>
+                        <p class="work-card-description">Designing the foundation for an agentic emissions operating system inside IFS Cloud<span class="tm-mark">TM</span>.</p>
                         <div class="work-card-tags">
-                            <span class="work-tag">B2B</span>
+                            <span class="work-tag">AI Native</span>
                             <span class="work-tag">Enterprise UX</span>
-                            <span class="work-tag">SaaS</span>
+                            <span class="work-tag">Emissions Reporting</span>
                             <span class="work-tag">IFS</span>
                         </div>
                     </div>
@@ -173,7 +167,7 @@
                 </button>
                 </div>
                 <div class="work-card-preview">
-                    <img width="1194" height="834" src="/images/Projects/IFSZero/IFSZero-feature.webp" alt="IFSZero" loading="lazy" decoding="async">
+                    <img width="1194" height="834" src="/images/Projects/IFSZero/IFSZero-feature.webp" alt="IFS Zero" loading="lazy" decoding="async">
                 </div>
             </a>
 
@@ -375,7 +369,7 @@
         </div>
     </main>
 
-    <script src="js/script.js?v=20261112-glass"></script>
+    <script src="js/script.js?v=20261115-shared-nav"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
 </body>
 </html>
