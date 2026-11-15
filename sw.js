@@ -14,20 +14,25 @@
  *   - A version tag in CACHE_NAME lets us wipe the old cache wholesale
  *     whenever we change SW strategy.
  */
-const CACHE_NAME = 'asith-v8-2026-11-15';
+const CACHE_NAME = 'asith-v10-2026-11-15';
 
 // Small, hand-picked list of assets that carry most of the repeat-visit cost.
 // We don't pre-cache every image; stale-while-revalidate will populate the
 // cache organically as the user browses.
 const PRECACHE_URLS = [
-    '/js/site-navigation.js?v=3',
-    '/css/site-navigation.css?v=3',
-    '/css/style.css?v=20261115-nav-beam',
-    '/js/script.js?v=20261115-shared-nav',
+    '/css/professional-profile.css?v=7',
+    '/css/wizpos-visuals.css?v=1',
+    '/js/wizpos-visuals.js?v=1',
+    '/css/macos-theme.css?v=3',
+    '/css/social-dock.css?v=5',
+    '/js/social-dock.js?v=3',
+    '/js/site-navigation.js?v=5',
+    '/css/site-navigation.css?v=5',
+    '/css/style.css?v=20261115-instrument-cards',
+    '/js/script.js?v=20261115-resume',
     '/js/anim-pause.js?v=1.0',
-    '/fonts/libre-baskerville-400.woff2',
-    '/fonts/libre-baskerville-400-italic.woff2',
-    '/fonts/libre-baskerville-700.woff2',
+    '/fonts/instrument-serif-400.ttf',
+    '/fonts/instrument-serif-400-italic.ttf',
     '/images/asith-logo.svg',
     '/images/asith-avatar.webp'
 ];
@@ -78,7 +83,7 @@ self.addEventListener('fetch', function (event) {
     if (req.mode === 'navigate' || req.destination === 'document') return;
 
     // Don't cache analytics beacons or any /api-like endpoint.
-    if (url.pathname.indexOf('/api/') === 0) return;
+    if (url.pathname.indexOf('/api/') === 0 || /\.pdf$/i.test(url.pathname)) return;
 
     event.respondWith(
         caches.match(req).then(function (cached) {

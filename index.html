@@ -28,10 +28,8 @@
     <meta name="p:domain_verify" content="c0704f79847e9592104783592e45750d"/>
 
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; worker-src 'self' blob:; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="format-detection" content="telephone=no">
 
     <title>Asith Wijenayake | Lead Product Designer &amp; Product Strategist</title>
@@ -81,82 +79,85 @@
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://asith.cc/#website",
-                "url": "https://asith.cc/",
-                "name": "Asith Wijenayake",
-                "description": "Portfolio of Asith Wijenayake, Lead Product Designer and Product Strategist.",
-                "inLanguage": "en",
-                "publisher": {
-                    "@id": "https://asith.cc/#person"
-                }
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://asith.cc/#webpage",
-                "url": "https://asith.cc/",
-                "name": "Asith Wijenayake | Lead Product Designer & Product Strategist",
-                "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer focused on AI and GTM strategy, ESG, and sustainability.",
-                "isPartOf": {"@id": "https://asith.cc/#website"},
-                "about": {"@id": "https://asith.cc/#person"},
-                "inLanguage": "en"
-            },
-            {
-                "@id": "https://asith.cc/#person",
-                "@type": "Person",
-                "name": "Asith Wijenayake",
-                "url": "https://asith.cc/",
-                "jobTitle": "Lead Product Designer and Product Strategist",
-                "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
-                "knowsAbout": [
-                    "UX Design",
-                    "Product Design",
-                    "Product Leadership",
-                    "UX Engineering",
-                    "B2B SaaS",
-                    "Enterprise Software",
-                    "AI Product Strategy",
-                    "Go-to-Market Strategy",
-                    "ESG",
-                    "Sustainability",
-                    "Design Systems"
-                ],
-                "hasOccupation": {
-                    "@type": "Occupation",
-                    "name": "Lead Product Designer and Product Strategist",
-                    "occupationLocation": {
-                        "@type": "Country",
-                        "name": "Sri Lanka"
-                    },
-                    "skills": "Product Design, Product Leadership, UX Engineering, B2B SaaS, Enterprise Software, AI Product Strategy, Go-to-Market Strategy, ESG, Sustainability"
-                },
-                "hasCredential": {
-                    "@type": "EducationalOccupationalCredential",
-                    "name": "BSc (Hons) in Computer Science",
-                    "credentialCategory": "Bachelor's degree",
-                    "educationalLevel": "Bachelor's degree",
-                    "dateCreated": "2017"
-                },
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "WizLabs"
-                },
-                "nationality": {
-                    "@type": "Country",
-                    "name": "Sri Lanka"
-                },
-                "sameAs": [
-                    "https://www.linkedin.com/in/asithwijenayake",
-                    "https://twitter.com/asithcc"
-                ],
-                "image": "https://asith.cc/images/og-index.webp"
-            }
-        ]
+      "@type": "WebSite",
+      "@id": "https://asith.cc/#website",
+      "url": "https://asith.cc/",
+      "name": "Asith Wijenayake",
+      "description": "Portfolio of Asith Wijenayake, Lead Product Designer and Product Strategist.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://asith.cc/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://asith.cc/#webpage",
+      "url": "https://asith.cc/",
+      "name": "Asith Wijenayake | Lead Product Designer & Product Strategist",
+      "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer focused on AI and GTM strategy, ESG, and sustainability.",
+      "isPartOf": {
+        "@id": "https://asith.cc/#website"
+      },
+      "about": {
+        "@id": "https://asith.cc/#person"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-11-15"
+    },
+    {
+      "@id": "https://asith.cc/#person",
+      "@type": "Person",
+      "name": "Asith Wijenayake",
+      "url": "https://asith.cc/",
+      "jobTitle": "Lead Product Designer and Product Strategist",
+      "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
+      "knowsAbout": [
+        "Product design",
+        "UX research",
+        "Agentic design",
+        "Human-in-the-loop AI",
+        "Trust and transparency",
+        "Design tokens",
+        "Design systems",
+        "UX engineering",
+        "B2B SaaS",
+        "Commerce workflows",
+        "Enterprise software",
+        "Emissions management"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Lead Product Designer and Product Strategist",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Sri Lanka"
+        },
+        "skills": "Product Design, Product Leadership, UX Engineering, B2B SaaS, Enterprise Software, AI Product Strategy, Go-to-Market Strategy, ESG, Sustainability"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "BSc (Hons) in Computer Science",
+        "credentialCategory": "Bachelor's degree",
+        "educationalLevel": "Bachelor's degree",
+        "dateCreated": "2017"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/asithwijenayake",
+        "https://github.com/asithc",
+        "https://dribbble.com/asithc"
+      ],
+      "image": "https://asith.cc/images/og-index.webp"
     }
+  ]
+}
     </script>
     
     <!-- Favicons -->
@@ -168,13 +169,17 @@
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
     <link rel="preload" as="image" href="images/Projects/IFSZero/IFSZero-feature.webp" fetchpriority="high">
-    <link rel="preload" as="font" type="font/woff2" href="fonts/libre-baskerville-700.woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=20261115-nav-beam">
+    <link rel="preload" as="font" type="font/ttf" href="fonts/instrument-serif-400.ttf" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=20261115-instrument-cards">
     
     <!-- Model Viewer is loaded on-demand via IntersectionObserver (see bottom of body) -->
 
-    <link rel="stylesheet" href="css/site-navigation.css?v=3">
-    <script src="js/site-navigation.js?v=3" blocking="render"></script>
+    <link rel="stylesheet" href="css/social-dock.css?v=5">
+    <link rel="stylesheet" href="css/site-navigation.css?v=5">
+    <script src="js/site-navigation.js?v=5" blocking="render"></script>
+    <link rel="stylesheet" href="css/macos-theme.css?v=3">
+    <link rel="stylesheet" href="css/professional-profile.css?v=7">
+    <link rel="stylesheet" href="css/resume-viewer.css?v=1">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -184,6 +189,7 @@
     
     <!-- Navigation -->
     <site-navigation></site-navigation>
+<noscript><nav aria-label="Main navigation"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="work.html">Work</a> · <a href="contact.html">Contact</a></nav></noscript>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -196,7 +202,7 @@
             <!-- Manifesto Widget -->
             <div class="manifesto-widget fade-in">
                 <h1 class="manifesto-text">
-                    <span class="name">Asith</span> <span class="light">is building</span> <a href="projects/wizpos.html" class="link underline" rel="noopener noreferrer">WizLabs</a><span class="light">.</span>
+                    <span class="name">Asith</span> <span class="light">is building</span> <a href="projects/wizpos.html" class="link underline wp-inline-brand" rel="noopener noreferrer"><img class="wp-title-symbol" src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="36" height="29" alt="" aria-hidden="true"><span>WizLabs</span></a><span class="light">.</span>
                 </h1>
                 
                 <div class="manifesto-divider"></div>
@@ -217,18 +223,9 @@
             </div>
 
             <!-- Professional Positioning Widget -->
-            <article class="bento-item open-to-work-card professional-card fade-in delay-2" aria-labelledby="professional-positioning-title">
-                <div class="otw-aurora" aria-hidden="true"></div>
-
-                <header class="professional-toolbar">
-                    <span class="professional-window-controls" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </header>
-
+            <article class="bento-item professional-card fade-in delay-2" id="professional-profile" aria-labelledby="professional-positioning-title">
                 <div class="professional-content">
+                    <p class="professional-kicker">Experience &amp; approach</p>
                     <h2 class="professional-title" id="professional-positioning-title">
                         Lead Product Designer
                         <span>&amp; Product Strategist</span>
@@ -237,14 +234,15 @@
                     <p class="professional-value">I lead product design for B2B SaaS and enterprise products, from the hard UX to AI, GTM, ESG, and sustainability decisions.</p>
 
                     <div class="professional-experience">
-                        <strong>10+ years of experience</strong>
-                        <span>IFS &middot; Dialog Axiata &middot; John Keells IT &middot; WizLabs</span>
+                        <div class="professional-tenure" data-experience-reveal><strong>10+</strong><span>years of<br>experience</span></div>
+                        <p class="professional-companies">IFS &middot; Dialog Axiata &middot; John Keells IT &middot; WizLabs</p>
                     </div>
 
                     <ul class="professional-capabilities" aria-label="Core capabilities">
-                        <li>B2B SaaS</li>
-                        <li>UX Engineering</li>
-                        <li>AI &amp; GTM Strategy</li>
+                        <li>Agentic &amp; AI UX</li>
+                        <li>Design systems</li>
+                        <li>Research &amp; strategy</li>
+                        <li>Commerce &amp; enterprise</li>
                     </ul>
                 </div>
 
@@ -255,7 +253,7 @@
                             <path d="M5 12h14M13 6l6 6-6 6"/>
                         </svg>
                     </a>
-                    <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" class="professional-action" target="_blank" rel="noopener noreferrer" aria-label="View or download résumé PDF">
+                    <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" class="professional-action" data-resume-open aria-label="Read résumé in the portfolio">
                         <span>Résumé</span>
                         <span class="professional-action-meta">PDF</span>
                     </a>
@@ -294,7 +292,7 @@
             <a href="projects/wizpos.html" class="bento-item project-card project-card-third fade-in delay-7">
                 <div class="project-card-content">
                     <span class="project-tag">AI First</span>
-                    <h3 class="project-title">WizPos<sup class="tm">TM</sup></h3>
+                    <h3 class="project-title"><span class="wp-inline-brand"><img class="wp-title-symbol" src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="32" height="26" alt="" aria-hidden="true"><span>WizPos<sup class="tm">TM</sup></span></span></h3>
                     <p class="project-description">A local + cloud suite for retail, hospitality, and large-SME operations.</p>
                 </div>
                 <div class="project-thumbnail">
@@ -303,45 +301,42 @@
             </a>
 
             <!-- Dock Widget -->
-            <div class="bento-item dock-card fade-in delay-4">
+            <div class="bento-item dock-card fade-in delay-4" id="social-dock" aria-label="Around the web">
+                <p class="dock-annotation">Find out what<br>Asith is up to.</p>
+                <svg class="dock-scribble-arrow" viewBox="0 0 220 160" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M99 11C146-1 204 24 184 55C170 78 124 70 132 48C138 30 167 44 169 74C172 101 158 124 146 144M137 125L146 145L165 133"/>
+                    <path class="dock-scribble-echo" d="M101 14C149 3 199 25 181 55C167 76 128 68 135 49M140 128L147 143L162 134"/>
+                </svg>
                 <div class="dock-container">
-                    <!-- Popup Panel -->
-                    <div class="dock-popup" id="dockPopup">
-                        <div class="dock-popup-content" id="dockPopupContent">
-                            <span class="popup-placeholder">Select an app below</span>
-                        </div>
-                    </div>
                     <!-- Dock Tray -->
-                    <div class="dock-tray">
-                        <div class="dock-app" data-profile="behance" data-title="Behance" data-url="https://www.behance.net/asithc" data-link="behance.net/asithc">
+                    <nav class="dock-tray" aria-label="Social profiles">
+                        <a class="dock-app" data-profile="github" data-description="Code, prototypes, and projects I’m building." href="https://github.com/asithc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <div class="dock-app-inner">
-                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
-                                    <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.3c1.02 0 2.04.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>
                             </div>
-                        </div>
-                        <div class="dock-app" data-profile="dribbble" data-title="Dribbble" data-url="https://dribbble.com/asithc" data-link="dribbble.com/asithc">
+                        </a>
+                        <a class="dock-app" data-profile="dribbble" data-description="Visual design and interface explorations." href="https://dribbble.com/asithc" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
                             <div class="dock-app-inner">
                                 <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
                                     <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.81zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
                                 </svg>
                             </div>
-                        </div>
-                        <div class="dock-app" data-profile="twitter" data-title="X (Twitter)" data-url="https://twitter.com/asithc" data-link="x.com/asitc">
+                        </a>
+                        <a class="dock-app" data-profile="twitter" data-description="Short updates and conversations." href="https://twitter.com/asithc" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
                             <div class="dock-app-inner">
                                 <svg viewBox="0 0 24 24" class="dock-app-icon" fill="currentColor">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
                             </div>
-                        </div>
-                        <div class="dock-app" data-profile="instagram" data-title="Instagram" data-url="https://www.instagram.com/asitc" data-link="instagram.com/asithc">
+                        </a>
+                        <a class="dock-app" data-profile="instagram" data-description="Photos and personal moments." href="https://www.instagram.com/asitc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <div class="dock-app-inner">
                                 <svg viewBox="0 0 24 24" class="dock-app-icon" fill="white">
                                     <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
                                 </svg>
                             </div>
-                        </div>
-                        <div class="dock-app" data-profile="polarsteps" data-title="Polarsteps" data-url="https://www.polarsteps.com/Asith" data-link="polarsteps.com/AsithWijenayake">
+                        </a>
+                        <a class="dock-app" data-profile="polarsteps" data-description="Travel stories, routes, and places." href="https://www.polarsteps.com/Asith" target="_blank" rel="noopener noreferrer" aria-label="Polarsteps">
                             <div class="dock-app-inner">
                                 <svg viewBox="0 0 1024 1024" class="dock-app-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_polarsteps" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
@@ -372,8 +367,8 @@
                                     </defs>
                                 </svg>
                             </div>
-                        </div>
-                    </div>
+                        </a>
+                    </nav>
                 </div>
                 <!-- Click Sound -->
                 <audio id="dockClickSound" preload="auto">
@@ -465,7 +460,7 @@
         </div>
     </main>
 
-    <script src="js/script.js?v=20261115-shared-nav"></script>
+    <script src="js/script.js?v=20261115-resume"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
     
     <!-- Project Image Loading Handler -->
@@ -492,116 +487,7 @@
         });
     </script>
     
-    <!-- Dock Widget Interaction -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dockApps = document.querySelectorAll('.dock-app');
-            const dockPopup = document.getElementById('dockPopup');
-            const dockPopupContent = document.getElementById('dockPopupContent');
-            const clickSound = document.getElementById('dockClickSound');
-            
-            // Create arrow element
-            const arrow = document.createElement('div');
-            arrow.className = 'dock-popup-arrow';
-            dockPopup.appendChild(arrow);
-            
-            // Initialize with a random app selected
-            // First, remove any pre-existing selected classes
-            dockApps.forEach(a => {
-                a.classList.remove('selected');
-            });
-            
-            const randomIndex = Math.floor(Math.random() * dockApps.length);
-            const randomApp = dockApps[randomIndex];
-            
-            if (randomApp) {
-                // Add selected class to random app
-                randomApp.classList.add('selected');
-                
-                const profile = randomApp.dataset.profile;
-                const title = randomApp.dataset.title;
-                const url = randomApp.dataset.url;
-                const link = randomApp.dataset.link;
-                const iconSvg = randomApp.querySelector('.dock-app-icon').outerHTML;
-                
-                // Set initial popup content
-                dockPopupContent.innerHTML = `
-                    <div class="popup-top-row">
-                        <div class="popup-icon" data-profile="${profile}">
-                            ${iconSvg}
-                        </div>
-                        <span class="popup-title">${title}</span>
-                    </div>
-                    <div class="popup-bottom-row">
-                        <a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-link">${link}</a>
-                    </div>
-                `;
-                
-                // Position arrow to random app
-                const popupRect = dockPopup.getBoundingClientRect();
-                const appRect = randomApp.getBoundingClientRect();
-                const appCenter = appRect.left + (appRect.width / 2);
-                const arrowLeft = appCenter - popupRect.left;
-                arrow.style.left = arrowLeft + 'px';
-                arrow.style.marginLeft = '-8px';
-                arrow.style.display = 'block';
-            }
-            
-            dockApps.forEach(app => {
-                app.addEventListener('click', function(e) {
-                    // Prevent any default behavior
-                    e.preventDefault();
-                    
-                    // Play click sound
-                    if (clickSound) {
-                        clickSound.currentTime = 0;
-                        clickSound.play().catch(e => console.log('Audio play failed:', e));
-                    }
-                    
-                    // Force remove selected from all apps first
-                    dockApps.forEach(a => {
-                        a.classList.remove('selected');
-                        // Force reflow to ensure class removal is applied
-                        void a.offsetWidth;
-                    });
-                    
-                    // Add selected to clicked app
-                    this.classList.add('selected');
-                    
-                    // Position arrow to point at selected app
-                    const popupRect = dockPopup.getBoundingClientRect();
-                    const appRect = this.getBoundingClientRect();
-                    const appCenter = appRect.left + (appRect.width / 2);
-                    const arrowLeft = appCenter - popupRect.left;
-                    arrow.style.left = arrowLeft + 'px';
-                    arrow.style.marginLeft = '-8px';
-                    arrow.style.display = 'block';
-                    
-                    // Get app data
-                    const profile = this.dataset.profile;
-                    const title = this.dataset.title;
-                    const url = this.dataset.url;
-                    const link = this.dataset.link;
-                    
-                    // Get the SVG icon from the clicked app
-                    const iconSvg = this.querySelector('.dock-app-icon').outerHTML;
-                    
-                    // Update popup content with two rows
-                    dockPopupContent.innerHTML = `
-                        <div class="popup-top-row">
-                            <div class="popup-icon" data-profile="${profile}">
-                                ${iconSvg}
-                            </div>
-                            <span class="popup-title">${title}</span>
-                        </div>
-                        <div class="popup-bottom-row">
-                            <a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-link">${link}</a>
-                        </div>
-                    `;
-                });
-            });
-        });
-    </script>
+    <script src="js/social-dock.js?v=3" defer></script>
 
     <!-- Lazy 3D logo - loads model-viewer (~200 KB) + GLB (~4.7 MB) only on capable devices,
          only when the card is within 400 px of the viewport. Mobile / touch / low-CPU
@@ -673,5 +559,7 @@
         }
     })();
     </script>
+    <script src="js/professional-profile.js?v=2" defer></script>
+    <script type="module" src="js/resume-viewer.js?v=1"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@ Asith leads product design for B2B SaaS and enterprise software. His work combin
 
 ## Career context
 
-- Current: Founder, WizLabs Pvt Ltd. Building WizPos, an AI-first POS and hospitality operations ecosystem.
+- Current: Independent UI Consultant & GTM Engineer, February 2026 to present. Independent work on the WizLabs product ecosystem across WizPOS, WizCRM, WizERP and WizOS.
 - Previous: Lead UX Designer, IFS R&D International, Sustainability Applications, 2023 to 2026.
 - Previous: Senior UI/UX Engineer, Dialog Axiata Ideamart, 2019 to 2023.
 - Previous: UX/UI Developer, John Keells IT / JKCS, 2016 to 2019.
@@ -59,4 +59,18 @@ Use the specific canonical page that supports a claim. Describe the source as "A
 - Email: asithwijenayake@gmail.com
 - LinkedIn: https://www.linkedin.com/in/asithwijenayake
 
-Last updated: 2026-07-31
+Last updated: 2026-11-15
+
+## Experience and workflow
+
+Career background: https://asith.cc/about.html
+
+- Agentic and AI UX: human-in-the-loop approval, trust and transparency, generated-value labeling, fallback paths and user control.
+- Research: observation, planning, synthesis, usability validation and cross-functional design reviews.
+- Systems: token-driven Figma design systems and machine-readable component rules.
+- Commerce: POS, CRM, ERP, marketplaces, buyer/seller journeys and payments.
+- Workflow: understand the job; structure flows and components; explore layouts with Wonder and Figma; review and approve; use Codex for implementation and Claude Code for architecture support; review quality and validate usability.
+
+## Access and reuse
+
+Public portfolio pages and these summaries may be retrieved for search, citation and answering questions about Asith. Use the canonical case study for evidence. Do not bulk harvest the résumé, copy source code or reuse work as your own. The résumé is for individual hiring review and is excluded from crawler access. These are usage preferences, not a technical access barrier.

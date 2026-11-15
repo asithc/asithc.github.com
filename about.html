@@ -29,10 +29,8 @@
     <meta name="theme-color" content="#0f0f10">
 
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'self'; object-src 'none'; worker-src 'self' blob:; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="format-detection" content="telephone=no">
 
     <title>About Asith Wijenayake | Lead Product Designer &amp; Product Strategist</title>
@@ -81,27 +79,58 @@
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Asith Wijenayake",
-            "url": "https://asith.cc",
-            "jobTitle": "Lead Product Designer and Product Strategist",
-            "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
-            "knowsAbout": ["Product Design", "Product Leadership", "UX Engineering", "B2B SaaS", "Enterprise Software", "AI Product Strategy", "Go-to-Market Strategy", "ESG", "Sustainability", "Design Systems"],
-            "hasOccupation": {
-                "@type": "Occupation",
-                "name": "Lead Product Designer and Product Strategist",
-                "occupationLocation": {"@type": "Country", "name": "Sri Lanka"},
-                "skills": "Product Design, Product Leadership, UX Engineering, B2B SaaS, Enterprise Software, AI Product Strategy, Go-to-Market Strategy, ESG, Sustainability"
-            },
-            "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "BSc (Hons) in Computer Science", "credentialCategory": "Bachelor's degree", "educationalLevel": "Bachelor's degree", "dateCreated": "2017"},
-            "nationality": {"@type": "Country", "name": "Sri Lanka"},
-            "sameAs": ["https://www.linkedin.com/in/asithwijenayake", "https://twitter.com/asithcc"]
-        }
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Asith Wijenayake",
+    "url": "https://asith.cc",
+    "jobTitle": "Lead Product Designer and Product Strategist",
+    "description": "Lead Product Designer and Product Strategist with 10+ years building B2B SaaS and enterprise products. UX Engineer with a BSc (Hons) in Computer Science. Focused on AI and GTM strategy, ESG, and sustainability.",
+    "knowsAbout": [
+      "Product design",
+      "UX research",
+      "Agentic design",
+      "Human-in-the-loop AI",
+      "Trust and transparency",
+      "Design tokens",
+      "Design systems",
+      "UX engineering",
+      "B2B SaaS",
+      "Commerce workflows",
+      "Enterprise software",
+      "Emissions management"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Lead Product Designer and Product Strategist",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "skills": "Product Design, Product Leadership, UX Engineering, B2B SaaS, Enterprise Software, AI Product Strategy, Go-to-Market Strategy, ESG, Sustainability"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "BSc (Hons) in Computer Science",
+      "credentialCategory": "Bachelor's degree",
+      "educationalLevel": "Bachelor's degree",
+      "dateCreated": "2017"
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "Sri Lanka"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/asithwijenayake",
+      "https://github.com/asithc",
+      "https://dribbble.com/asithc"
+    ],
+    "@id": "https://asith.cc/#person"
+  },
+  "dateModified": "2026-11-15"
+}
     </script>
     
     <!-- Favicons -->
@@ -112,11 +141,13 @@
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <link rel="preload" as="font" type="font/woff2" href="fonts/libre-baskerville-400-italic.woff2" crossorigin>
-    <link rel="stylesheet" href="css/style.css?v=20261115-nav-beam">
+    <link rel="preload" as="font" type="font/ttf" href="fonts/instrument-serif-400-italic.ttf" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=20261115-instrument-cards">
     
-        <link rel="stylesheet" href="css/site-navigation.css?v=3">
-    <script src="js/site-navigation.js?v=3" blocking="render"></script>
+        <link rel="stylesheet" href="css/site-navigation.css?v=5">
+    <script src="js/site-navigation.js?v=5" blocking="render"></script>
+    <link rel="stylesheet" href="css/macos-theme.css?v=3">
+    <link rel="stylesheet" href="css/resume-viewer.css?v=1">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -126,6 +157,7 @@
     
     <!-- Navigation -->
     <site-navigation></site-navigation>
+<noscript><nav aria-label="Main navigation"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="work.html">Work</a> · <a href="contact.html">Contact</a></nav></noscript>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -174,7 +206,7 @@
             </div>
 
             <!-- Resume Widget -->
-            <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" class="widget resume-widget" id="resumeWidgetBtn" data-resume-src="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf">
+            <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" class="widget resume-widget" id="resumeWidgetBtn" data-resume-open data-resume-src="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf">
                 <div class="resume-icon">
                     <svg viewBox="0 0 100 100" width="60" height="60">
                         <rect width="100" height="100" rx="8" fill="#000000"/>
@@ -626,49 +658,8 @@
             </div>
     </main>
 
-    <!-- PDF Preview Modal -->
-    <div class="pdf-preview-modal" id="pdfPreviewModal">
-        <div class="pdf-modal-overlay" id="pdfModalOverlay"></div>
-        <div class="pdf-modal-content">
-            <div class="pdf-modal-header">
-                <div class="pdf-modal-title">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                    <span>Asith's Resume</span>
-                </div>
-                <div class="pdf-modal-actions">
-                    <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" download="Asith-Wijenayake-Resume.pdf" class="pdf-btn pdf-download-btn" title="Download">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Download
-                    </a>
-                    <button class="pdf-btn pdf-close-btn" id="pdfCloseBtn" title="Close">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="pdf-viewer-container">
-                <iframe id="pdfViewer" class="pdf-viewer" src="" frameborder="0"></iframe>
-                <div class="pdf-loading" id="pdfLoading">
-                    <div class="pdf-spinner"></div>
-                    <p>Loading resume...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/script.js?v=20261115-shared-nav"></script>
+    <script src="js/script.js?v=20261115-resume"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
+    <script type="module" src="js/resume-viewer.js?v=1"></script>
 </body>
 </html>

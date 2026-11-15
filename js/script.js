@@ -2089,61 +2089,6 @@ if (document.readyState === 'loading') {
     init();
 }
 
-// PDF Preview Modal
-const initPDFPreview = () => {
-    const resumeBtn = document.getElementById('resumeWidgetBtn');
-    const pdfModal = document.getElementById('pdfPreviewModal');
-    const pdfOverlay = document.getElementById('pdfModalOverlay');
-    const pdfCloseBtn = document.getElementById('pdfCloseBtn');
-    const pdfViewer = document.getElementById('pdfViewer');
-    const pdfLoading = document.getElementById('pdfLoading');
-    
-    if (!resumeBtn || !pdfModal || !pdfOverlay || !pdfCloseBtn || !pdfViewer || !pdfLoading) return;
-    
-    const openPDFPreview = (e) => {
-        e.preventDefault();
-        
-        const resumeSrc = resumeBtn.dataset.resumeSrc || resumeBtn.getAttribute('href');
-        pdfLoading.classList.remove('hidden');
-        pdfViewer.onload = () => {
-            setTimeout(() => {
-                pdfLoading.classList.add('hidden');
-            }, 500);
-        };
-        pdfViewer.src = resumeSrc;
-
-        // Show modal
-        pdfModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    };
-    
-    const closePDFPreview = () => {
-        pdfModal.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        // Reset loading state
-        setTimeout(() => {
-            pdfLoading.classList.remove('hidden');
-            pdfViewer.src = '';
-        }, 300);
-    };
-    
-    // Event listeners
-    resumeBtn.addEventListener('click', openPDFPreview);
-    pdfCloseBtn.addEventListener('click', closePDFPreview);
-    pdfOverlay.addEventListener('click', closePDFPreview);
-    
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
-            closePDFPreview();
-        }
-    });
-};
-
-// Initialize PDF preview
-initPDFPreview();
-
 // Export functions for use in other scripts
 window.portfolioUtils = {
     observeElements,

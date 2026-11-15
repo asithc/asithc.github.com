@@ -28,8 +28,6 @@
     <!-- Security Meta Tags -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com https://analytics.google.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="format-detection" content="telephone=no">
     <title>WizPos 2.0 AI-First POS Case Study | Asith Wijenayake</title>
     <!-- SEO Meta Tags -->
@@ -65,30 +63,62 @@
     <meta name="twitter:image:alt" content="Preview image for Asith Wijenayake portfolio">
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "WizPos 2.0 AI-First POS Case Study",
-        "url": "https://asith.cc/projects/wizpos.html",
-        "description": "Product design case study for WizPos 2.0, an AI-first local and cloud POS ecosystem for retail, hospitality, and multi-site operations.",
-        "image": "https://asith.cc/images/Projects/WIZPos/WizPOS-feature.webp",
-        "author": {
-            "@type": "Person",
-            "name": "Asith Wijenayake",
-            "url": "https://asith.cc/"
-        },
-        "creator": {
-            "@type": "Person",
-            "name": "Asith Wijenayake",
-            "url": "https://asith.cc/"
-        },
-        "inLanguage": "en",
-        "isPartOf": {
-            "@type": "CollectionPage",
-            "name": "Work & Case Studies - Asith Wijenayake",
-            "url": "https://asith.cc/work.html"
-        }
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "WizPos 2.0 AI-First POS Case Study",
+  "url": "https://asith.cc/projects/wizpos.html",
+  "description": "Product design case study for WizPos 2.0, an AI-first local and cloud POS ecosystem for retail, hospitality, and multi-site operations.",
+  "image": "https://asith.cc/images/Projects/WIZPos/WizPOS-feature.webp",
+  "author": {
+    "@type": "Person",
+    "name": "Asith Wijenayake",
+    "url": "https://asith.cc/",
+    "@id": "https://asith.cc/#person",
+    "knowsAbout": [
+      "Product design",
+      "UX research",
+      "Agentic design",
+      "Human-in-the-loop AI",
+      "Trust and transparency",
+      "Design tokens",
+      "Design systems",
+      "UX engineering",
+      "B2B SaaS",
+      "Commerce workflows",
+      "Enterprise software",
+      "Emissions management"
+    ]
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "Asith Wijenayake",
+    "url": "https://asith.cc/",
+    "@id": "https://asith.cc/#person",
+    "knowsAbout": [
+      "Product design",
+      "UX research",
+      "Agentic design",
+      "Human-in-the-loop AI",
+      "Trust and transparency",
+      "Design tokens",
+      "Design systems",
+      "UX engineering",
+      "B2B SaaS",
+      "Commerce workflows",
+      "Enterprise software",
+      "Emissions management"
+    ]
+  },
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "Work & Case Studies - Asith Wijenayake",
+    "url": "https://asith.cc/work.html",
+    "dateModified": "2026-11-15"
+  },
+  "dateModified": "2026-11-15"
+}
     </script>
 
     <!-- Favicons -->
@@ -98,13 +128,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="stylesheet" href="../css/style.css?v=20261115-nav-beam">
+        <link rel="stylesheet" href="../css/style.css?v=20261115-instrument-cards">
     
-        <link rel="stylesheet" href="../css/site-navigation.css?v=3">
-    <script src="../js/site-navigation.js?v=3" blocking="render"></script>
+        <link rel="stylesheet" href="../css/site-navigation.css?v=5">
+    <script src="../js/site-navigation.js?v=5" blocking="render"></script>
+    <link rel="stylesheet" href="../css/macos-theme.css?v=3">
+    <link rel="stylesheet" href="../css/wizpos-visuals.css?v=1">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://asith.cc/"}, {"@type": "ListItem", "position": 2, "name": "Work", "item": "https://asith.cc/work.html"}, {"@type": "ListItem", "position": 3, "name": "WizPos 2.0 AI-First POS Case Study", "item": "https://asith.cc/projects/wizpos.html"}]}</script>
 </head>
 <body class="project-detail-page">
     <site-navigation></site-navigation>
+<noscript><nav aria-label="Main navigation"><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../work.html">Work</a> · <a href="../contact.html">Contact</a></nav></noscript>
 
     <!-- Mobile Logo (portrait only) -->
     <div class="mobile-hero-logo">
@@ -118,7 +152,7 @@
     <main class="project-detail-container">
         <div class="project-header">
             <div class="project-header-content">
-                <h1 class="project-title">WizPos<span class="tm-mark">TM</span> 2.0</h1>
+                <h1 class="project-title wp-inline-brand"><img class="wp-title-symbol" src="../images/Projects/WIZPos/wizpos-symbol-primary.svg" width="44" height="35" alt="" aria-hidden="true"><span>WizPos<span class="tm-mark">TM</span> 2.0</span></h1>
                 <p class="project-subtitle">An AI-first POS and hospitality suite built for operators who move fast.</p>
             </div>
         </div>
@@ -187,79 +221,49 @@
             </div>
         </div>
 
-        <!-- Project Collage Grid -->
-        <div class="project-collage project-collage-wizpos">
-            <div class="project-collage-grid project-collage-grid-wizpos">
-
-                <!-- Every industry: col 1, full height -->
-                <article class="collage-tile wp-industries-tile">
-                    <div>
-                        <p class="wp-kicker">Built For</p>
-                        <h4 class="wp-industries-title">Every counter.</h4>
-                    </div>
-                    <ul class="wp-industry-list">
-                        <li>Retail</li>
-                        <li>Restaurant</li>
-                        <li>Hotel</li>
-                        <li>Pharmacy</li>
-                        <li>Supermarket</li>
-                        <li>Cafe</li>
-                        <li class="wp-pill-more">&amp; more</li>
-                    </ul>
-                </article>
-
-                <!-- Retail: col 2, row 1 -->
-                <article class="collage-tile wp-retail-tile">
-                    <p class="wp-kicker">Retail</p>
-                    <h4 class="wp-sector-title">Large &amp; small.</h4>
-                </article>
-
-                <!-- Restaurant: col 2, row 2 -->
-                <article class="collage-tile wp-restaurant-tile">
-                    <p class="wp-kicker">Restaurant</p>
-                    <h4 class="wp-sector-title">Table to counter.</h4>
-                </article>
-
-                <!-- Hero: col 3, full height -->
-                <article class="collage-tile wizpos-hero-tile">
-                    <div class="wizpos-hero-emblem" aria-hidden="true">
-                        <img width="160" height="128" class="wizpos-hero-symbol" src="../images/Projects/WIZPos/wizpos-symbol-white.svg" alt="" loading="lazy" decoding="async">
-                        <span class="wizpos-sparkles"><i></i><i></i><i></i><i></i></span>
-                    </div>
-                    <img width="532" height="129" class="wizpos-wordmark" src="../images/Projects/WIZPos/wizpos-logo-long.svg" alt="WizPOS wordmark" loading="lazy" decoding="async">
-                    <p class="wp-hero-kicker">POS + Hospitality Suite</p>
-                    <h4 class="wp-hero-title">One suite.<br>Every service point.</h4>
-                    <div class="wp-badge-row">
-                        <span class="wp-chip">Local Running</span>
-                        <span class="wp-chip">Cloud Based</span>
-                        <span class="wp-chip">Secured</span>
-                    </div>
-                </article>
-
-                <!-- Pharmacy: col 4, row 1 -->
-                <article class="collage-tile wp-pharmacy-tile">
-                    <p class="wp-kicker">Pharmacy</p>
-                    <h4 class="wp-sector-title">Dispensary ready.</h4>
-                </article>
-
-                <!-- Cafe & Takeaway: col 4, row 2 -->
-                <article class="collage-tile wp-cafe-tile">
-                    <p class="wp-kicker">Cafe &amp; Takeaway</p>
-                    <h4 class="wp-sector-title">Fast orders.</h4>
-                </article>
-
-                <!-- Quick setup: col 5, full height -->
-                <article class="collage-tile wp-local-tile">
-                    <p class="wp-kicker">Quick Setup</p>
-                    <ol class="wp-setup-list">
-                        <li>Download WizPOS</li>
-                        <li>Pick your industry</li>
-                        <li>Start selling</li>
-                    </ol>
-                </article>
-
+        <section class="wp-experience" id="wizpos-visuals" aria-labelledby="wp-experience-title" data-managed-motion>
+            <header class="wp-experience-heading">
+                <div><p class="wp-eyebrow">WizPos 2.0 / Inside the product</p><h2 id="wp-experience-title">From the counter<br>to the floor.</h2></div>
+                <p>Retail checkout, restaurant operations, and bookings in one local + cloud product direction.</p>
+            </header>
+            <div class="wp-product-stage">
+                <div class="wp-stage-toolbar">
+                    <span class="wp-stage-brand"><img src="../images/Projects/WIZPos/wizpos-symbol-primary.svg" width="32" height="26" alt="" aria-hidden="true">WizPos</span>
+                    <span>Retail &amp; hospitality</span>
+                </div>
+                <div class="wp-product-composition">
+                    <figure class="wp-screen wp-screen-main">
+                        <figcaption><span class="wp-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Retail checkout</span><span class="wp-screen-hint">↗</span></figcaption>
+                        <img class="wp-product-screen" src="../images/Projects/WIZPos/New-screens/wizpos-retail-checkout-grid.png" width="2044" height="1534" alt="WizPos retail checkout with the current bill, product grid, payment actions, and number pad" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="wp-screen wp-screen-floor">
+                        <figcaption><span>Floor planning</span><span class="wp-screen-hint">↗</span></figcaption>
+                        <img class="wp-product-screen" src="../images/Projects/WIZPos/New-screens/wizpos-floor-plan.png" width="2044" height="1534" alt="WizPos floor plan showing free, reserved, and checked-in tables" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="wp-product-note"><span aria-hidden="true">↳</span><p>The same suite.<br>Different service points.</p></div>
+                </div>
+                <div class="wp-capability-strip">
+                    <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Local runtime</span></div>
+                    <i aria-hidden="true"></i>
+                    <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 18a5 5 0 1 1 .8-9.9 6 6 0 0 1 11.4 2.3A4 4 0 0 1 18 18H7Z"/><path d="m9 13 3-3 3 3M12 10v9"/></svg><span>Encrypted backup</span></div>
+                    <i aria-hidden="true"></i>
+                    <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/><rect x="15" y="16" width="7" height="5" rx="1"/><path d="M12 8v5M5.5 16v-3h13v3"/></svg><span>Multi-branch visibility</span></div>
+                </div>
             </div>
-        </div>
+            <div class="wp-product-details">
+                <div class="wp-booking-visual">
+                    <figure class="wp-screen wp-screen-bookings">
+                        <figcaption><span>Booking calendar</span><span class="wp-screen-hint">↗</span></figcaption>
+                        <img class="wp-product-screen" src="../images/Projects/WIZPos/New-screens/wizpos-booking-calendar.png" width="2044" height="1534" alt="WizPos booking calendar with month view, dates, and reservation management" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+                <div class="wp-product-narrative">
+                    <p class="wp-eyebrow">Connected operations</p><h3>More than the sale.</h3>
+                    <p>The product expands from the register into the work around it: table management, bookings, stock awareness, and branch oversight.</p>
+                    <ul><li><span>01</span>Retail and supermarket checkout</li><li><span>02</span>Restaurant and floor workflows</li><li><span>03</span>Bookings and hospitality operations</li></ul>
+                </div>
+            </div>
+        </section>
 
         <!-- Case Study Section -->
         <section id="caseStudySection" class="case-study-section wizpos-case-study revealed">
@@ -1216,8 +1220,9 @@
         </div>
     </main>
 
-    <script src="../js/script.js?v=20261115-shared-nav"></script>
+    <script src="../js/script.js?v=20261115-resume"></script>
     <script src="../js/anim-pause.js?v=1.0"></script>
     <script src="../js/pin-protect.js?v=20260320"></script>
+    <script src="../js/wizpos-visuals.js?v=1" defer></script>
 </body>
 </html>

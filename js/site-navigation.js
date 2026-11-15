@@ -16,9 +16,15 @@
     class SiteNavigation extends HTMLElement {
         connectedCallback() {
             if (this.nav) return;
-            this.innerHTML = `<nav class="site-nav" aria-label="Main navigation"><span class="site-nav-selection" aria-hidden="true"></span>${items.map(([path, label]) => `<a class="site-nav-link${label === 'Work' ? ' site-nav-work' : ''}" href="${new URL(path, base)}">${label === 'Work' ? '<span class="site-nav-beam" aria-hidden="true"><i class="site-nav-beam-glow"></i><i class="site-nav-beam-core"></i></span>' : ''}<span class="site-nav-label">${label}</span></a>`).join('')}</nav>`;
+            // Moving clouds leave their clipped wrapper during every cycle.
+            // The generic intersection-based animation helper must not freeze them.
+            this.setAttribute('data-managed-motion', '');
+            this.innerHTML = `<nav class="site-nav" aria-label="Main navigation"><span class="site-nav-selection" aria-hidden="true"></span>${items.map(([path, label]) => `<a class="site-nav-link${label === 'Work' ? ' site-nav-work' : ''}" href="${new URL(path, base)}">${label === 'Work' ? '<span class="site-nav-beam" aria-hidden="true"><i class="site-nav-cloud site-nav-cloud-blue"></i><i class="site-nav-cloud site-nav-cloud-pink"></i><i class="site-nav-cloud site-nav-cloud-amber"></i></span>' : ''}<span class="site-nav-label">${label}</span></a>`).join('')}</nav>`;
             this.nav = this.querySelector('nav');
             this.links = [...this.querySelectorAll('a')];
+            this.syncVisibility = () => this.nav.classList.toggle('is-background', document.hidden);
+            document.addEventListener('visibilitychange', this.syncVisibility);
+            this.syncVisibility();
             this.pill = this.querySelector('.site-nav-selection');
             this.update();
             if (!('onpagereveal' in window)) this.finishArrival(null);
@@ -81,6 +87,7 @@
         }
         disconnectedCallback() {
             this.resize?.disconnect();
+            document.removeEventListener('visibilitychange', this.syncVisibility);
             window.removeEventListener('pageshow', this.restore);
         }
     }

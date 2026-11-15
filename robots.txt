@@ -1,42 +1,20 @@
-# robots.txt for https://asith.cc/
-
+# Search and answer engines may read public portfolio pages.
+# These directives are voluntary crawler preferences, not access controls.
 User-agent: *
+Disallow: /files/
+Disallow: /api/resume
+Disallow: /cloudflare/
+Disallow: /scripts/
 Allow: /
 
-# AI and search crawler access
+# Training and bulk-harvesting crawlers: opt out site-wide.
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: meta-externalagent
+Disallow: /
 
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# Machine-readable profile files for answer engines
-Allow: /llms.txt
-Allow: /llms-full.txt
-
-Host: asith.cc
 Sitemap: https://asith.cc/sitemap.xml

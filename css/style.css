@@ -7,33 +7,24 @@
  * One More Time... let's make this site Alive! 🤖
  */
 
-/* Self-hosted Libre Baskerville — latin subset only, shaves a network round-trip
-   to fonts.googleapis.com + fonts.gstatic.com and lets the font ride the same
-   HTTP/2 connection as the rest of the site. */
+/* Self-hosted Instrument Serif in its regular and italic styles. */
 @font-face {
-    font-family: 'Libre Baskerville';
+    font-family: 'Instrument Serif';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/libre-baskerville-400.woff2') format('woff2');
+    src: url('../fonts/instrument-serif-400.ttf') format('truetype');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-    font-family: 'Libre Baskerville';
+    font-family: 'Instrument Serif';
     font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/libre-baskerville-400-italic.woff2') format('woff2');
+    src: url('../fonts/instrument-serif-400-italic.ttf') format('truetype');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@font-face {
-    font-family: 'Libre Baskerville';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('../fonts/libre-baskerville-700.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
 
 /* Global img baseline: width/height HTML attrs give the browser an
    aspect-ratio hint for CLS reservation, but without this rule any
@@ -668,243 +659,6 @@ button {
     grid-column: span 2;
 }
 
-/* Dock Widget - macOS Style */
-.dock-card {
-    grid-column: span 1;
-    grid-row: span 1;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
-    padding: 12px 0 0 0;
-    min-height: 240px;
-    gap: 10px;
-    overflow: hidden;
-}
-
-.dock-card:hover {
-    transform: none;
-    box-shadow: none;
-}
-
-.dock-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 0 12px 12px 12px;
-}
-
-/* Popup Panel - Permanent display at top */
-.dock-popup {
-    width: 100%;
-    min-height: 70px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 12px;
-    border: 1px solid rgba(180, 180, 180, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-/* Arrow pointer from popup to selected app */
-.dock-popup-arrow {
-    position: absolute;
-    bottom: -8px;
-    width: 16px;
-    height: 16px;
-    background: rgba(255, 255, 255, 0.95);
-    border-right: 1px solid rgba(180, 180, 180, 0.5);
-    border-bottom: 1px solid rgba(180, 180, 180, 0.5);
-    transform: rotate(45deg);
-    transition: left 0.2s ease;
-    left: 50%;
-    margin-left: -8px;
-}
-
-.dock-popup-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-}
-
-/* Top row - icon and title */
-.popup-top-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
-    width: 100%;
-}
-
-/* Bottom row - link */
-.popup-bottom-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding-top: 2px;
-}
-
-.popup-placeholder {
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.4);
-    font-weight: 500;
-}
-
-.popup-title {
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-}
-
-.popup-link {
-    font-size: 16px;
-    color: #0066cc;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-weight: 500;
-}
-
-.popup-link:hover {
-    text-decoration: underline;
-    color: #0055aa;
-}
-
-.popup-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    padding: 2px;
-    flex-shrink: 0;
-}
-
-.popup-icon[data-profile="behance"] {
-    background: linear-gradient(145deg, #0057ff, #1769ff);
-    color: white;
-}
-
-.popup-icon[data-profile="dribbble"] {
-    background: #FFABE7;
-    color: #BB4F9A;
-}
-
-.popup-icon[data-profile="linkedin"] {
-    background: linear-gradient(145deg, #0077b5, #0088cc);
-    color: white;
-}
-
-.popup-icon[data-profile="twitter"] {
-    background: linear-gradient(145deg, #1a1a1a, #333333);
-    color: white;
-}
-
-.popup-icon[data-profile="instagram"] {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    color: white;
-}
-
-.popup-icon[data-profile="polarsteps"] {
-    /* background: linear-gradient(145deg, #FF0066, #FF3385); */
-    color: white;
-}
-
-/* Dock Tray */
-.dock-tray {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 0;
-    padding: 12px 12px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 22px;
-    border: 1px solid rgba(200, 200, 200, 0.5);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-}
-
-.dock-app {
-    position: relative;
-    width: 20%;
-    aspect-ratio: 1;
-    max-width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
-    transform-origin: center center;
-    padding: 6px;
-    border-radius: 14px;
-    border: 2px solid transparent;
-    background: transparent;
-    box-sizing: border-box;
-}
-
-.dock-app:hover {
-    transform: scale(1.1);
-}
-
-.dock-app:active {
-    transform: scale(0.95);
-}
-
-/* Selected state with border */
-.dock-app.selected {
-    border: 2px solid #000000 !important;
-    padding: 6px;
-    background: rgba(0, 0, 0, 0.15) !important;
-}
-
-.dock-app.selected .dock-app-inner {
-    position: relative;
-    z-index: 2;
-}
-
-.dock-app-inner {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.dock-app-icon {
-    width: 70%;
-    height: 70%;
-    color: white;
-}
-
-/* Full size icons for Instagram and Polarsteps */
-.dock-app[data-profile="instagram"] .dock-app-icon,
-.dock-app[data-profile="polarsteps"] .dock-app-icon {
-    width: 100%;
-    height: 100%;
-}
-
-/* Remove size limitations for popup icons */
-.popup-icon .dock-app-icon {
-    width: 100%;
-    height: 100%;
-}
-
 /* App backgrounds with brand colors */
 .dock-app[data-profile="behance"] .dock-app-inner {
     background: linear-gradient(145deg, #0057ff, #1769ff);
@@ -1270,9 +1024,9 @@ button {
 }
 
 .otw-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 400;
     color: #FFFFFF;
     margin: 0;
     line-height: 1.18;
@@ -1699,9 +1453,9 @@ button {
 }
 
 .project-card .project-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: 'Instrument Serif', Georgia, serif;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text-primary);
     margin: 2px 0 0 0;
     line-height: 1.05;
@@ -1756,7 +1510,7 @@ button {
     /* overflow: hidden; */
     z-index: 1;
     transition: z-index 0s;
-    background: var(--bg-secondary);
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2601,7 +2355,7 @@ button {
     background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
     color: white;
     font-size: 12px;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
     font-weight: 400;
     line-height: 1.4;
@@ -2636,9 +2390,9 @@ button {
 .wa-text-status span {
     font-size: 24px;
     line-height: 1.4;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Instrument Serif', serif;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-primary);
     display: -webkit-box;
     -webkit-line-clamp: 5;
@@ -3369,8 +3123,15 @@ button {
     bottom: 20px;
     left: 20px;
     color: #FFFFFF;
-    font-size: 31px;
-    font-weight: 700;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.resume-text strong,
+.linkedin-text strong {
+    font-weight: inherit;
 }
 
 /* Widget Row for Side-by-Side Layout */
@@ -5481,62 +5242,20 @@ button {
     
     .notion-card,
     .app-icons-card,
-    .dock-card {
-        grid-column: span 1;
-    }
     
-    .dock-card {
-        padding: 10px 0 0 0;
-        gap: 8px;
-    }
     
     .whatsapp-card {
         min-height: unset;
     }
     
-    .dock-container {
-        gap: 8px;
-        padding: 0 10px 10px 10px;
-    }
     
-    .dock-popup {
-        min-height: 60px;
-        padding: 10px 12px;
-        border-radius: 10px;
-    }
     
-    .popup-title {
-        font-size: 14px;
-    }
     
-    .popup-link {
-        font-size: 12px;
-    }
     
-    .popup-icon {
-        width: 20px;
-        height: 20px;
-        padding: 3px;
-    }
     
-    .dock-tray {
-        padding: 10px 0;
-    }
     
-    .dock-app {
-        width: 18%;
-        max-width: 50px;
-        padding: 4px;
-        border-radius: 12px;
-    }
     
-    .dock-app.selected {
-        padding: 4px;
-    }
     
-    .dock-app-inner {
-        border-radius: 10px;
-    }
     
     .phone-card {
         grid-row: span 1;
@@ -10808,380 +10527,6 @@ html {
     }
 }
 
-/* WIZPOS collage variant — multi-industry redesign */
-.project-collage-wizpos {
-    --wp-blue:     #306EE2;
-    --wp-indigo:   #4F00FF;
-    --wp-green:    #16A34A;
-    --wp-orange:   #EA580C;
-    --wp-amber:    #D97706;
-    --wp-charcoal: #0E1118;
-    --wp-dark:     #111827;
-    --wp-white:    #FFFFFF;
-}
-
-.project-collage-grid-wizpos {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr 1.75fr 0.9fr 1.1fr;
-    grid-template-rows: repeat(2, minmax(160px, 1fr));
-    gap: clamp(10px, 1.2vw, 16px);
-}
-
-.project-collage-grid-wizpos .collage-tile {
-    border-radius: 22px;
-    overflow: hidden;
-    position: relative;
-    padding: 20px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* ---- Industries: col 1, full height — WizPOS blue anchor ---- */
-.wp-industries-tile {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    background: var(--wp-blue);
-    justify-content: space-between;
-}
-
-/* ---- Sector tiles: unified dark with accent left border ---- */
-.wp-retail-tile {
-    grid-column: 2;
-    grid-row: 1;
-    background: #0D1117;
-    color: var(--wp-white);
-    border-left: 4px solid var(--wp-blue) !important;
-    justify-content: space-between;
-}
-
-.wp-restaurant-tile {
-    grid-column: 2;
-    grid-row: 2;
-    background: #0D1117;
-    color: var(--wp-white);
-    border-left: 4px solid #F97316 !important;
-    justify-content: space-between;
-}
-
-/* ---- Hero: col 3, full height ---- */
-.wizpos-hero-tile {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    background:
-        radial-gradient(circle at 68% 8%, rgba(48, 110, 226, 0.28), transparent 44%),
-        linear-gradient(150deg, #080d18 0%, #0e1829 55%, #080e1c 100%);
-    border: 1px solid rgba(48, 110, 226, 0.28) !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 14px;
-}
-
-.wp-pharmacy-tile {
-    grid-column: 4;
-    grid-row: 1;
-    background: #0D1117;
-    color: var(--wp-white);
-    border-left: 4px solid #5EC086 !important;
-    justify-content: space-between;
-}
-
-.wp-cafe-tile {
-    grid-column: 4;
-    grid-row: 2;
-    background: #0D1117;
-    color: var(--wp-white);
-    border-left: 4px solid #FDC124 !important;
-    justify-content: space-between;
-}
-
-/* ---- Setup: col 5, full height — WizPOS indigo anchor ---- */
-.wp-local-tile {
-    grid-column: 5;
-    grid-row: 1 / span 2;
-    background: var(--wp-indigo);
-    justify-content: space-between;
-}
-
-/* ======= Kicker ======= */
-
-.wp-kicker {
-    margin: 0;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-}
-
-.wp-industries-tile .wp-kicker,
-.wp-local-tile .wp-kicker { color: rgba(255, 255, 255, 0.65); }
-
-.wp-retail-tile .wp-kicker     { color: #93C5FD; }
-.wp-restaurant-tile .wp-kicker { color: #FDBA74; }
-.wp-pharmacy-tile .wp-kicker   { color: #86EFAC; }
-.wp-cafe-tile .wp-kicker       { color: #FDE68A; }
-
-/* ======= Industries tile ======= */
-
-.wp-industries-title {
-    margin: 0;
-    color: var(--wp-white);
-    font-size: clamp(18px, 1.4vw, 22px);
-    line-height: 1.18;
-    font-weight: 700;
-}
-
-.wp-industry-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.wp-industry-list li {
-    font-size: 12px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
-    padding: 6px 10px;
-    background: rgba(0, 0, 0, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 8px;
-    animation: wpPillSlide 0.45s ease-out both;
-}
-
-.wp-industry-list li:nth-child(1) { animation-delay: 0.10s; }
-.wp-industry-list li:nth-child(2) { animation-delay: 0.22s; }
-.wp-industry-list li:nth-child(3) { animation-delay: 0.34s; }
-.wp-industry-list li:nth-child(4) { animation-delay: 0.46s; }
-.wp-industry-list li:nth-child(5) { animation-delay: 0.58s; }
-
-.wp-pill-more {
-    color: rgba(255, 255, 255, 0.4) !important;
-    animation-delay: 0.70s !important;
-    background: rgba(0, 0, 0, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-}
-
-@keyframes wpPillSlide {
-    from { opacity: 0; transform: translateX(-10px); }
-    to   { opacity: 1; transform: translateX(0); }
-}
-
-/* ======= Sector tile titles ======= */
-
-.wp-sector-title {
-    margin: 0;
-    color: var(--wp-white);
-    font-size: clamp(16px, 1.25vw, 19px);
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-/* ======= Hero: emblem & wordmark ======= */
-
-.wizpos-hero-emblem {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    width: 80px;
-    height: 66px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.wizpos-hero-symbol {
-    width: 80px;
-    height: auto;
-    opacity: 0.2;
-    animation: wizposSymbolFloat 5s ease-in-out infinite;
-}
-
-@keyframes wizposSymbolFloat {
-    0%, 100% { opacity: 0.2;  transform: translateY(0) scale(1); }
-    50%       { opacity: 0.34; transform: translateY(-4px) scale(1.04); }
-}
-
-.wizpos-wordmark {
-    width: min(220px, 50%);
-    height: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-    position: relative;
-    z-index: 2;
-}
-
-/* ======= Hero sparkles ======= */
-
-.wizpos-sparkles {
-    position: absolute;
-    top: 12px;
-    right: 2px;
-    width: 44px;
-    height: 30px;
-    color: var(--wp-blue);
-    z-index: 4;
-}
-
-.wizpos-sparkles i {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    background: currentColor;
-    clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
-    opacity: 0.2;
-    animation: wizposSparkleTwinkle 2.8s ease-in-out infinite;
-}
-
-.wizpos-sparkles i:nth-child(1) { right: 4px;  top: 0;    }
-.wizpos-sparkles i:nth-child(2) { right: 0;    top: 12px; width: 6px; height: 6px; animation-delay: 0.22s; }
-.wizpos-sparkles i:nth-child(3) { right: 18px; top: 6px;  width: 6px; height: 6px; animation-delay: 0.42s; }
-.wizpos-sparkles i:nth-child(4) { right: 14px; top: 18px; width: 5px; height: 5px; animation-delay: 0.70s; }
-
-@keyframes wizposSparkleTwinkle {
-    0%, 100% { opacity: 0.2;  transform: scale(0.86); }
-    50%       { opacity: 0.95; transform: scale(1.22); }
-}
-
-/* ======= Hero typography ======= */
-
-.wp-hero-kicker {
-    margin: 0;
-    color: var(--wp-blue);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-.wp-hero-title {
-    margin: 0;
-    color: var(--wp-white);
-    font-size: clamp(32px, 2.4vw, 46px);
-    line-height: 1.12;
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-/* ======= Hero chips ======= */
-
-.wp-badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    position: relative;
-    z-index: 2;
-}
-
-.wp-chip {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 999px;
-    font-size: 10px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 5px 12px;
-    border: 1px solid rgba(48, 110, 226, 0.4);
-    color: rgba(147, 186, 255, 0.9);
-    background: rgba(48, 110, 226, 0.18);
-}
-
-/* ======= Setup list (right col) ======= */
-
-.wp-setup-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    counter-reset: wp-step;
-    flex: 1;
-    justify-content: center;
-}
-
-.wp-setup-list li {
-    counter-increment: wp-step;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 10px 12px 10px 40px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 13px;
-    line-height: 1.35;
-    font-weight: 600;
-    position: relative;
-    animation: wpStepSlide 2.8s ease-in-out infinite;
-}
-
-.wp-setup-list li::before {
-    content: counter(wp-step);
-    position: absolute;
-    left: 11px;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--wp-indigo);
-    font-size: 10px;
-    font-weight: 700;
-    display: grid;
-    place-items: center;
-    animation: wpStepBadge 2.8s ease-in-out infinite;
-}
-
-.wp-setup-list li:nth-child(2)         { animation-delay: 0.22s; }
-.wp-setup-list li:nth-child(3)         { animation-delay: 0.44s; }
-.wp-setup-list li:nth-child(2)::before { animation-delay: 0.22s; }
-.wp-setup-list li:nth-child(3)::before { animation-delay: 0.44s; }
-
-@keyframes wpStepSlide {
-    0%, 100% { transform: translateX(0);    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.20); }
-    50%       { transform: translateX(6px); background: rgba(255, 255, 255, 0.26); border-color: rgba(255, 255, 255, 0.45); }
-}
-
-@keyframes wpStepBadge {
-    0%, 100% { transform: translateY(-50%) scale(1);    box-shadow: none; }
-    50%       { transform: translateY(-50%) scale(1.12); box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
-}
-
-/* ======= Mobile ======= */
-
-@media (max-width: 768px) {
-    .project-collage-grid-wizpos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: auto;
-    }
-
-    .wp-industries-tile,
-    .wp-retail-tile,
-    .wp-restaurant-tile,
-    .wizpos-hero-tile,
-    .wp-pharmacy-tile,
-    .wp-cafe-tile,
-    .wp-local-tile {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    .wp-industries-tile,
-    .wizpos-hero-tile,
-    .wp-local-tile {
-        grid-column: 1 / span 2;
-        grid-row: auto;
-        min-height: 180px;
-    }
-}
-
 .project-images {
     margin: var(--spacing-2xl) 0;
 }
@@ -12163,7 +11508,7 @@ html {
 
     .resume-text,
     .linkedin-text {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .lakeside-logo {

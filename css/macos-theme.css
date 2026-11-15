@@ -1,0 +1,96 @@
+/* Shared desktop-inspired materials for the portfolio, not its embedded product UI. */
+:root {
+    --desktop-canvas: #f3f4f7;
+    --desktop-sheet: rgba(255, 255, 255, .86);
+    --desktop-panel: rgba(255, 255, 255, .72);
+    --desktop-glass: rgba(246, 248, 252, .79);
+    --desktop-line: rgba(68, 81, 106, .09);
+    --desktop-shadow: 0 12px 32px rgba(38, 48, 72, .045), 0 1px 3px rgba(38, 48, 72, .035);
+    --desktop-float: 0 14px 38px rgba(38, 48, 72, .1), 0 2px 7px rgba(38, 48, 72, .055);
+    --text-primary: #1d2027;
+    --text-secondary: #686e79;
+    --text-tertiary: #737b88;
+    --border-color: #e0e3e9;
+    --bg-secondary: #f5f6f9;
+    --radius-sm: 14px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 28px;
+}
+body, body.project-detail-page {
+    background-color: var(--desktop-canvas);
+    background-image: radial-gradient(ellipse 70vw 650px at 0 0, #e6edf6b3, transparent), radial-gradient(ellipse 65vw 700px at 100% 80%, #eeebf580, transparent);
+    color: var(--text-primary);
+}
+::selection { background: #b9d5ff; color: #102744; }
+button, input, textarea, select { font-family: var(--font-primary); }
+/* Quiet content surfaces preserve contrast and case-study colours. */
+.manifesto-widget, .about-page .about-manifesto, .work-card, .home-container > .project-card,
+.home-container > .logo-3d-card, .home-container > .whatsapp-card {
+    background: var(--desktop-sheet);
+    border: 1px solid var(--desktop-line);
+    box-shadow: var(--desktop-shadow);
+    border-radius: var(--radius-lg);
+}
+.manifesto-divider { background: var(--desktop-line); }
+.manifesto-widget .manifesto-item, .about-item-content { color: #646b77; }
+.work-card-header::after { height: 1px; background: var(--desktop-line); }
+.work-tag { background: #e9edf2; color: #566173; }
+.work-card-preview { background: rgba(238, 241, 247, .65); }
+.project-sidebar { min-width: 0; align-self: start; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.project-meta-section { min-width: 0; }
+.project-meta-section .meta-value, .project-meta-section a { overflow-wrap: anywhere; }
+.project-content { min-width: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.case-study-content { border: 0; border-radius: 0; background: transparent; }
+.wp-inline-brand { display: inline-flex; align-items: center; gap: .3em; vertical-align: middle; }
+.wp-title-symbol { width: 1.15em; height: .93em; object-fit: contain; flex: 0 0 auto; }
+.project-header .project-title { letter-spacing: -.035em; line-height: 1.2; }
+.project-header .project-subtitle { margin-top: 12px; color: var(--text-secondary); line-height: 1.6; }
+.project-nav-btn { background: var(--desktop-panel); border: 1px solid var(--desktop-line); box-shadow: var(--desktop-shadow); }
+/* Interactive elements float above the content layer. */
+.site-nav, .back-button, .photo-navigator, .project-lightbox-nav, .pdf-modal-header {
+    background: var(--desktop-glass);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+}
+.site-nav { box-shadow: var(--desktop-float); }
+.site-nav-selection { background: #c8d2df; border: 0; }
+.back-button { min-height: 44px; border: 1px solid var(--desktop-line); color: #48556a; box-shadow: 0 3px 12px #2630480a; }
+.case-study-link:not(.disabled) {
+    min-height: 44px; border: 0; background: linear-gradient(#1689ff, #0070e8);
+    color: #fff; box-shadow: 0 3px 10px #0070e82b, inset 0 1px 0 #ffffff26;
+}
+.case-study-link:not(.disabled):hover { background: #006bdf; color: #fff; }
+.case-study-link.disabled { border: 0; background: #e8ebf0; color: #868e9b; }
+.ex-link-btn { background: #edf1f7; color: #4f5f75; box-shadow: 0 1px 4px #2630480a; border: 0; }
+.pin-modal, .pdf-modal-content { border: 1px solid var(--desktop-line); box-shadow: 0 28px 90px #14203430; }
+.pin-modal-header, .pdf-modal-header { border-bottom: 1px solid var(--desktop-line); }
+.pin-input { border-radius: 12px; border-color: #dce2ec; background: #f8f9fc; }
+.pin-input:focus { border-color: #2685ed; box-shadow: 0 0 0 3px #007aff20; }
+/* The contact screen keeps its iMessage interaction inside a desktop window. */
+.imessage-container-new { background: rgba(255, 255, 255, .94); border: 1px solid var(--desktop-line); box-shadow: var(--desktop-float); border-radius: 24px; }
+.imessage-header-new, .imessage-footer-new { background: var(--desktop-glass); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+.imessage-header-new { border-bottom: 1px solid var(--desktop-line); }
+.imessage-footer-new { border-top: 1px solid var(--desktop-line); }
+.input-container-new { background: #fff; border-color: #d6dde8; }
+.contact-widget { border: 1px solid var(--desktop-line); box-shadow: var(--desktop-shadow); }
+.resume-widget { border: 1px solid var(--desktop-line); box-shadow: var(--desktop-shadow); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline-color: #287bea; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .work-card:hover, .home-container > .project-card:hover { transform: translateY(-3px); box-shadow: var(--desktop-float); }
+    .project-nav-btn:hover { background: #fff; box-shadow: var(--desktop-float); }
+}
+@media (max-width: 768px) {
+    .project-sidebar { padding: 0; border-radius: 0; }
+    .project-content { padding: 0; border-radius: 0; }
+    .case-study-content { border-radius: 0; }
+    .imessage-container-new { border-radius: 22px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+    :root { --desktop-sheet: #fff; --desktop-panel: #f9fafc; --desktop-glass: #eef1f6; }
+    .site-nav, .back-button, .photo-navigator, .project-lightbox-nav, .pdf-modal-header, .imessage-header-new, .imessage-footer-new { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+    :root { --desktop-line: #9ba6b8; --text-secondary: #485264; }
+    .site-nav-selection { background: #b5c2d5; }
+}

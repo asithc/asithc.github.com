@@ -1,0 +1,7 @@
+{
+  "name": "asith-resume-traffic",
+  "main": "resume-headers-worker.js",
+  "compatibility_date": "2026-11-15",
+  "workers_dev": false,
+  "routes": [{ "pattern": "asith.cc/files/*", "zone_name": "asith.cc" }]
+}

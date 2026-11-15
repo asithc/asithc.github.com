@@ -4,11 +4,25 @@ A personal portfolio website showcasing Asith Wijenayake's work, skills, and jou
 
 ## Current resume
 
-Use `files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf` as the current resume. The Home professional link, About resume widget, preview source, and download action all point to this file. When replacing it, update all four references in `index.html` and `about.html`.
+Use `files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf` as the current resume. The Home and About links open the shared in-app PDF.js reader. Its single source in `js/resume-viewer.js` points to this file; the ordinary link remains a no-JavaScript fallback. When replacing it, update all four references in `index.html` and `about.html`.
 
 ## Shared main navigation
 
 Every portfolio page mounts `<site-navigation>`. Edit links and selection behavior in `js/site-navigation.js`, and styling in `css/site-navigation.css`. Keep navigation markup out of individual pages. The component loads before first paint; native cross-document view transitions preserve visual continuity between the HTML pages, with a directional indicator fallback when a transition is skipped. The Work link uses a broad, diffused colour beam sweeping left to right along its lower edge, hidden while Work is active.
+
+## Shared macOS-inspired theme
+
+`css/macos-theme.css` is loaded after page styles on every portfolio page. It owns the shared canvas, content surfaces, floating controls, focus treatment, and accessibility variants. Product screenshots and branded illustrations keep their own colours. The social Dock styles and handwritten SVG annotation live in `css/social-dock.css` and `index.html`.
+
+## Experience, discoverability and résumé reader
+
+The homepage profile capabilities were checked against the supplied 12 November 2026 résumé. The 10+ reveal is progressive enhancement and respects reduced motion. `css/professional-profile.css` owns the coloured frosted profile. The expanded experience and workflow section was removed from Home at the user’s request.
+
+`js/resume-viewer.js` and `css/resume-viewer.css` provide the same native-dialog reader on Home and About: on-demand locally bundled PDF.js, selectable accessible text, page controls, fit/zoom, explicit download, focus restoration and an error/retry state. The source PDF is unchanged. The service worker bypasses PDFs, avoiding persistent offline résumé caching. This viewer is not access control.
+
+Run `python3 scripts/check-seo.py` to check all 18 canonical pages for metadata, social images, structured JSON, sitemap membership, local resources and crawler policy. `llms.txt` and `llms-full.txt` provide factual public summaries without the full résumé. robots.txt permits search/answer discovery while excluding résumé files and opting out of named training crawlers; compliance is voluntary.
+
+Cloudflare traffic rules and a PDF response-header Worker are prepared in `cloudflare/`. They are **not deployed**. See [deployment prerequisites and public-origin limitations](cloudflare/README.md). The domain was observed on registrar nameservers with direct GitHub Pages IPs on 15 November 2026. Private résumé storage plus a verified server-side access flow would be needed to protect the document from direct origin access; browser source remains public by design.
 
 ## ✨ Features
 
@@ -71,8 +85,15 @@ The carousel has 4 categories with 4 images each (16 total):
 ### Local Development
 
 1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. That's it! No build process required.
+2. Start the local HTTP server from the repository root:
+
+   ```bash
+   python3 scripts/serve.py
+   ```
+
+3. Open [http://127.0.0.1:8765](http://127.0.0.1:8765) in your browser. Stop the server with `Ctrl+C`.
+
+No build process is required. The local server supports video seeking and lets the shared résumé reader load its JavaScript modules and PDF.
 
 ### File Structure
 
