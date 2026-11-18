@@ -28,7 +28,7 @@ class Page(HTMLParser):
         if self.in_title: self.title += data
         if self.in_schema: self.schemas[-1] += data
 
-pages = [ROOT / p for p in ['index.html', 'about.html', 'work.html', 'contact.html']] + sorted((ROOT/'projects').glob('*.html'))
+pages = [ROOT / p for p in ['index.html', 'about.html', 'work.html', 'contact.html', 'what-if.html']] + sorted((ROOT/'projects').glob('*.html'))
 sitemap = {e.text for e in ET.parse(ROOT/'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
 errors = []; titles = set(); descriptions = set()
 for path in pages:

@@ -1,5 +1,5 @@
 /*!
- * anim-pause.js — pauses infinite CSS/WAAPI animations that the user cannot currently see.
+ * anim-pause.js - pauses infinite CSS/WAAPI animations that the user cannot currently see.
  *
  * Zero visual difference when the animated element is on screen; when it scrolls
  * out of view (or the tab is backgrounded), the animation pauses so the browser
@@ -8,7 +8,7 @@
  * Rules:
  *   - Only animations whose iteration count is Infinity are touched.
  *   - Finite reveal animations (.fade-in, one-shot transitions) are never paused.
- *   - Respects prefers-reduced-motion (bails out entirely — the page is mostly
+ *   - Respects prefers-reduced-motion (bails out entirely - the page is mostly
  *     static in that mode anyway).
  *   - Re-scans periodically to catch dynamically-inserted animated elements
  *     (model-viewer, WhatsApp status viewer swaps, etc.).
@@ -68,7 +68,7 @@
         all.forEach(registerAnimation);
     }
 
-    // Initial scan — wait two rAFs so CSS animations on the first paint have been registered.
+    // Initial scan - wait two rAFs so CSS animations on the first paint have been registered.
     function initialScan() {
         requestAnimationFrame(function () {
             requestAnimationFrame(scan);
@@ -87,7 +87,7 @@
     setTimeout(scan, 6000);
 
     // Pause all infinite animations when the tab is hidden. Modern browsers throttle
-    // rAF but don't necessarily pause CSS animations — this guarantees it.
+    // rAF but don't necessarily pause CSS animations - this guarantees it.
     document.addEventListener('visibilitychange', function () {
         var anims;
         try { anims = document.getAnimations(); }

@@ -74,3 +74,11 @@ Career background: https://asith.cc/about.html
 ## Access and reuse
 
 Public portfolio pages and these summaries may be retrieved for search, citation and answering questions about Asith. Use the canonical case study for evidence. Do not bulk harvest the résumé, copy source code or reuse work as your own. The résumé is for individual hiring review and is excluded from crawler access. These are usage preferences, not a technical access barrier.
+
+## What If: independent product explorations
+
+What If is Asith Wijenayake's series of independently redesigned existing products: https://asith.cc/what-if.html
+
+The first exploration rethinks LMT Go, the Lanka Metro Transit app, around the journey, with original app reference screens, an illustrated commute storyboard, redesigned mobile screens, and an interactive prototype: https://asith.cc/projects/what-if-metro-v2.html
+
+This is an independent concept and prototype, not commissioned Metro client work or evidence of released operator features. Prototype timings, bus positions, and payment flows are illustrative.

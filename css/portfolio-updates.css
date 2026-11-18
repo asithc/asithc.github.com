@@ -1,0 +1,23 @@
+/* Project metadata and the Libraries.dev MetalBadge enhancement. */
+.project-card-eyebrow { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:25px; }
+.project-dates { font-family:var(--font-primary); font-size:10px; line-height:1.5; color:#85909e; margin:3px 0 0; font-variant-numeric:tabular-nums; }
+.case-new-badge { display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; width:45px; height:25px; vertical-align:middle; overflow:visible; isolation:isolate; font-family:var(--font-primary); }
+.case-new-fallback { display:flex; align-items:center; justify-content:center; width:45px; height:25px; border:1px solid #c7ced8; border-radius:100px; color:#425066; font:600 11px/1 var(--font-primary); background:linear-gradient(135deg,#fdfdff 8%,#d8dde6 29%,#fff 47%,#e5e1ef 63%,#c6d3e0 78%,#fff 95%); box-shadow:inset 0 1px 1px #fff,0 1px 3px #34415814; }
+.case-new-badge .metal-fx-root { flex-shrink:0; }
+.case-new-badge span[aria-label="New"] { font-family:var(--font-primary) !important; font-variation-settings:"opsz" 28; }
+.work-card-tags .case-new-badge { margin-right:3px; }
+.home-container > .project-card-metro { grid-column:3; grid-row:3; }
+.home-container > .project-card { min-height:322px; }
+.home-container .project-card-content { padding:18px 20px 14px; gap:5px; flex:0 0 auto; }
+.home-container .project-thumbnail { position:relative; left:auto; right:auto; bottom:auto; width:100%; height:auto; min-height:0; flex:1 1 0; }
+.home-container .project-thumbnail img { object-position:top center; }
+.project-card-metro .project-title { font-size:26px; }
+@media(max-width:1024px) {
+ .home-container > .project-card-metro { grid-column:1/-1; grid-row:auto; }
+ .home-container > .project-card { min-height:360px; }
+}
+@media(max-width:768px) {
+ .home-container > .project-card { min-height:390px; }
+ .project-dates { font-size:11px; }
+}
+@media(prefers-contrast:more) { .project-dates { color:#536176; } }

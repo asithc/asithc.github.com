@@ -26,3 +26,6 @@ temp/
 # To change the PIN or edit the deck: edit demo-src/payload.html then run
 #   node demo-src/build.js <PIN>
 demo-src/
+
+# Optional local build dependencies
+node_modules/

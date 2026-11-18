@@ -594,7 +594,7 @@ const handleMessage = async (text) => {
                 chatState.userData.topic = userText;
                 await botReply("Got the project details. What name should I use for you?", true, false);
             } else {
-                await botReply("What name should I use for you? A first name is fine — for example, ‘My name is Alex’.", true, false);
+                await botReply("What name should I use for you? A first name is fine - for example, ‘My name is Alex’.", true, false);
             }
             chatState.isProcessing = false;
             return;
@@ -765,7 +765,7 @@ const sendToGoogleSheets = async (data) => {
                 timeStyle: 'medium'
             }),
             origin: window.location.origin,
-            website: '', // Honeypot field — should always be empty
+            website: '', // Honeypot field - should always be empty
             timestamp: Date.now(),
             sendEmail: true,
             emailRecipients: ['asithwijenayake@gmail.com']

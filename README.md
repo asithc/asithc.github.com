@@ -24,6 +24,12 @@ Run `python3 scripts/check-seo.py` to check all 18 canonical pages for metadata,
 
 Cloudflare traffic rules and a PDF response-header Worker are prepared in `cloudflare/`. They are **not deployed**. See [deployment prerequisites and public-origin limitations](cloudflare/README.md). The domain was observed on registrar nameservers with direct GitHub Pages IPs on 15 November 2026. Private résumé storage plus a verified server-side access flow would be needed to protect the document from direct origin access; browser source remains public by design.
 
+## What If: independent concepts
+
+`what-if.html` is the collection entry point, linked from Work. The first exploration redesigns LMT Go, the Lanka Metro Transit app. The current case study is `projects/what-if-metro-v2.html`, with a minimisable floating contents menu that appears at the case-study introduction, annotated phone walkthroughs, and research context from the Metro Transit Facebook community. The first layout is preserved at `projects/what-if-metro.html`. It combines the supplied original app screenshots, arranged captures of the redesigned app, and a pencil storyboard informed by the supplied Metro bus photographs.
+
+The mobile simulator loads the existing LMT Go prototype from `prototypes/metro/`. Its source snapshot and existing data attributions are preserved; the portfolio adds same-origin flow shortcuts, reset, and fullscreen framing. Operational data and payment flows remain illustrative. Artwork provenance and prompts are recorded in `images/Projects/WhatIf/ARTWORK.md`.
+
 ## ✨ Features
 
 - **About Me**: Learn about Asith's background, career journey, and what drives his work
@@ -313,3 +319,11 @@ Interested in collaborating or learning more about Asith's work? Feel free to re
 **Asith Wijenayake — Senior UX Designer, UI/UX Designer & Product Designer**
 
 Building thoughtful digital experiences. 🚀
+
+## Fonts and new case-study badges
+
+Sans-serif UI uses SF Pro Display through locally available system fonts, with system fallbacks on other platforms. Display optical sizing is fixed at 28; the self-hosted Instrument Serif headings are preserved. Apple font files are not redistributed.
+
+Home features four product showcases, including the LMT Go concept in the former WhatsApp widget position. Project dates are drawn from the case-study timelines: IFS 2023–January 2026, DGL 2018–2023, WizPos 2021–2022 and 2026–present, and LMT Go 2026.
+
+The New chips use the actual `MetalBadge` component from [Libraries.dev Metal](https://libraries.dev/metal), bundled with React as a local enhancement. Their text remains available before JavaScript or without WebGL. Reduced motion uses a static metallic chip; the shader pauses in hidden tabs. To rebuild: run `npm ci` and `npm run build` in `scripts/metal-badges/`. Pinned source and dependency versions are kept there; licenses and notices are alongside the compiled bundle in `js/vendor/metal-badges/`.

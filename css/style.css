@@ -7,6 +7,22 @@
  * One More Time... let's make this site Alive! 🤖
  */
 
+/* Prefer the device's SF Pro Display; system fonts remain the platform fallback. */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: local('SF Pro Display'), local('SFProDisplay-Regular'), local('.SFNS-Regular');
+    font-style: normal;
+    font-weight: 100 1000;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: local('SF Pro Display Italic'), local('SFProDisplay-RegularItalic'), local('.SFNS-RegularItalic');
+    font-style: italic;
+    font-weight: 100 1000;
+    font-display: swap;
+}
+
 /* Self-hosted Instrument Serif in its regular and italic styles. */
 @font-face {
     font-family: 'Instrument Serif';
@@ -56,7 +72,7 @@ img {
     --warning-border: #FFEEBA;
     
     /* Typography */
-    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-primary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -94,6 +110,8 @@ html {
 
 body {
     font-family: var(--font-primary);
+    font-optical-sizing: none;
+    font-variation-settings: "opsz" 28;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -281,7 +299,7 @@ button {
     50% { opacity: 0.6; }
 }
 
-/* Work nav link — make it impossible to miss */
+/* Work nav link - make it impossible to miss */
 .nav-link-work {
     display: inline-flex;
     align-items: center;
@@ -290,7 +308,7 @@ button {
     isolation: isolate;
 }
 
-/* Shimmer sweep — a thin light band drifts across the pill every few seconds */
+/* Shimmer sweep - a thin light band drifts across the pill every few seconds */
 .nav-link-work > * {
     position: relative;
     z-index: 1;
@@ -433,7 +451,7 @@ button {
     inset: 0;
 }
 
-/* Static fallback logo — shown until (and unless) model-viewer swaps in */
+/* Static fallback logo - shown until (and unless) model-viewer swaps in */
 .logo-3d-card .logo-3d-fallback {
     width: 55%;
     height: 55%;
@@ -694,7 +712,7 @@ button {
     /* box-shadow: 0 3px 10px rgba(255, 0, 102, 0.4); */
 }
 
-/* Open to Work Widget — Right Column Hero (spans 2 rows) */
+/* Open to Work Widget - Right Column Hero (spans 2 rows) */
 .open-to-work-card {
     grid-column: 4;
     grid-row: 1 / span 2;
@@ -728,7 +746,7 @@ button {
     animation-delay: 0.2s, 0s;
 }
 
-/* Ambient magenta/purple glow — slowest blob, farthest back */
+/* Ambient magenta/purple glow - slowest blob, farthest back */
 .open-to-work-card::before {
     content: '';
     position: absolute;
@@ -749,7 +767,7 @@ button {
     animation: otw-blob-purple 20s ease-in-out infinite;
 }
 
-/* Starfield speckle — static, for depth */
+/* Starfield speckle - static, for depth */
 .open-to-work-card::after {
     content: '';
     position: absolute;
@@ -776,7 +794,7 @@ button {
     box-shadow: none;
 }
 
-/* Aurora container — two blobs (green + blue) via ::before/::after, each on its own orbit */
+/* Aurora container - two blobs (green + blue) via ::before/::after, each on its own orbit */
 .otw-aurora {
     position: absolute;
     inset: 0;
@@ -785,7 +803,7 @@ button {
     pointer-events: none;
 }
 
-/* Emerald/green blob — primary attention color, largest, medium speed */
+/* Emerald/green blob - primary attention color, largest, medium speed */
 .otw-aurora::before {
     content: '';
     position: absolute;
@@ -803,7 +821,7 @@ button {
     animation: otw-blob-green 15s ease-in-out infinite;
 }
 
-/* Electric blue blob — secondary, smaller, slower, offset orbit */
+/* Electric blue blob - secondary, smaller, slower, offset orbit */
 .otw-aurora::after {
     content: '';
     position: absolute;
@@ -821,7 +839,7 @@ button {
     animation: otw-blob-blue 17s ease-in-out infinite;
 }
 
-/* Each blob drifts on its own looping orbit — no two cycles align, so the card
+/* Each blob drifts on its own looping orbit - no two cycles align, so the card
    never looks the same twice. Transforms only (GPU-accelerated). */
 @keyframes otw-liquid-base {
     0%, 100% {
@@ -5174,7 +5192,7 @@ button {
         margin: 0 auto 4px;
     }
 
-    /* Work nav on mobile — keep flex row, just shrink shimmer */
+    /* Work nav on mobile - keep flex row, just shrink shimmer */
     .nav-link-work {
         gap: 6px;
     }
@@ -7737,7 +7755,7 @@ html {
 }
 
 /* ================================
-   CASE STUDY WIDGETS — Optimized
+   CASE STUDY WIDGETS - Optimized
    ================================ */
 
 /* Accent system via data attributes */
@@ -12262,7 +12280,7 @@ html {
     .mp-flow-end { flex-wrap: wrap; }
 }
 
-/* Liquid Glass navigation — a floating control layer shared across the site. */
+/* Liquid Glass navigation - a floating control layer shared across the site. */
 :root {
     --glass-surface: linear-gradient(145deg, rgba(255, 255, 255, .88), rgba(245, 247, 250, .64) 48%, rgba(255, 255, 255, .76));
     --glass-edge: rgba(255, 255, 255, .86);

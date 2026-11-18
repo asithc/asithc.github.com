@@ -37,14 +37,14 @@
         }
         update() {
             const page = location.pathname.split('/').pop() || 'index.html';
-            const project = location.pathname.includes('/projects/');
+            const project = location.pathname.includes('/projects/') || page === 'what-if.html';
             this.select(project ? 'work.html' : page);
         }
         select(page, animate = false) {
             this.links.forEach(link => {
                 const active = new URL(link.href).pathname.split('/').pop() === page;
                 link.classList.toggle('is-active', active);
-                if (active) link.setAttribute('aria-current', location.pathname.includes('/projects/') ? 'location' : 'page');
+                if (active) link.setAttribute('aria-current', (location.pathname.includes('/projects/') || location.pathname.endsWith('/what-if.html')) ? 'location' : 'page');
                 else link.removeAttribute('aria-current');
             });
             this.align(animate);

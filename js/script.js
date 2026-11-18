@@ -2101,13 +2101,22 @@ window.portfolioUtils = {
 // competes with first paint. The SW itself caches static assets only
 // (no HTML) so a bad deploy can never "stick" a stale page.
 // ---------------------------------------------------------------------------
-if ('serviceWorker' in navigator) {
+var isLocalPreview = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+if ('serviceWorker' in navigator && isLocalPreview) {
+    // Local development should show edits immediately, without an offline cache.
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        return Promise.all(registrations
+            .filter(function (registration) { return registration.scope === window.location.origin + '/'; })
+            .map(function (registration) { return registration.unregister(); }));
+    }).catch(function () {});
+}
+if ('serviceWorker' in navigator && !isLocalPreview) {
     window.addEventListener('load', function () {
         // Small idle delay keeps the main thread free during the critical
         // post-load window when analytics and widgets are initialising.
         var register = function () {
             navigator.serviceWorker.register('/sw.js').catch(function () {
-                // Registration failing is non-fatal — the site works fine
+                // Registration failing is non-fatal - the site works fine
                 // without a SW. Don't log to console in production.
             });
         };

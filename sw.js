@@ -1,5 +1,5 @@
 /*!
- * sw.js — cache the static pieces of asith.cc that almost never change
+ * sw.js - cache the static pieces of asith.cc that almost never change
  * so repeat visits don't re-download them.
  *
  * Design choices:
@@ -10,25 +10,25 @@
  *     immediately, fetch a fresh copy in the background so tomorrow's load
  *     is already up to date.
  *   - The cache key includes ?v=N query strings, so bumping a version
- *     automatically produces a cache miss and refetch — no manual busting.
+ *     automatically produces a cache miss and refetch - no manual busting.
  *   - A version tag in CACHE_NAME lets us wipe the old cache wholesale
  *     whenever we change SW strategy.
  */
-const CACHE_NAME = 'asith-v10-2026-11-15';
+const CACHE_NAME = 'asith-v12-2026-11-17-lmt-fit';
 
 // Small, hand-picked list of assets that carry most of the repeat-visit cost.
 // We don't pre-cache every image; stale-while-revalidate will populate the
 // cache organically as the user browses.
 const PRECACHE_URLS = [
     '/css/professional-profile.css?v=7',
-    '/css/wizpos-visuals.css?v=1',
-    '/js/wizpos-visuals.js?v=1',
+    '/css/wizpos-visuals.css?v=2',
+    '/js/wizpos-visuals.js?v=2',
     '/css/macos-theme.css?v=3',
     '/css/social-dock.css?v=5',
     '/js/social-dock.js?v=3',
-    '/js/site-navigation.js?v=5',
+    '/js/site-navigation.js?v=6',
     '/css/site-navigation.css?v=5',
-    '/css/style.css?v=20261115-instrument-cards',
+    '/css/style.css?v=20261117-sf-pro',
     '/js/script.js?v=20261115-resume',
     '/js/anim-pause.js?v=1.0',
     '/fonts/instrument-serif-400.ttf',
@@ -42,12 +42,12 @@ self.addEventListener('install', function (event) {
         caches.open(CACHE_NAME)
             .then(function (cache) {
                 // addAll is atomic: if any asset 404s, the whole install fails
-                // and the old SW stays active — which is what we want.
+                // and the old SW stays active - which is what we want.
                 return cache.addAll(PRECACHE_URLS);
             })
             .then(function () { return self.skipWaiting(); })
             .catch(function () {
-                // Precache failed — don't block install; the SW still works
+                // Precache failed - don't block install; the SW still works
                 // for runtime caching even without precached assets.
                 return self.skipWaiting();
             })
@@ -75,7 +75,7 @@ self.addEventListener('fetch', function (event) {
     catch (e) { return; }
 
     // Cross-origin (GTM, GA, Google Fonts if anything slips through,
-    // unpkg / CDNs) — don't cache. Let the browser + upstream handle it.
+    // unpkg / CDNs) - don't cache. Let the browser + upstream handle it.
     if (url.origin !== self.location.origin) return;
 
     // Don't cache HTML navigations. Always network-fresh so content edits
@@ -99,7 +99,7 @@ self.addEventListener('fetch', function (event) {
             }).catch(function () {
                 // Network failed (offline / flaky). Cached copy is better than
                 // nothing; if we have none, the promise rejects and the browser
-                // shows its normal offline error — same as without a SW.
+                // shows its normal offline error - same as without a SW.
                 return cached;
             });
 

@@ -19,6 +19,7 @@ class PortfolioHandler(SimpleHTTPRequestHandler):
             super().do_HEAD()
 
     def end_headers(self):
+        self.send_header('Cache-Control', 'no-store')
         if Path(self.translate_path(self.path)).suffix.lower() == '.mp4':
             self.send_header('Accept-Ranges', 'bytes')
         super().end_headers()
