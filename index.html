@@ -161,12 +161,12 @@
     </script>
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png?v=signature-a-2" sizes="96x96" />
+    <link data-signature-icon sizes="any" rel="icon" type="image/svg+xml" href="/favicon/favicon.svg?v=signature-a-2" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=signature-a-2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=signature-a-2" />
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest?v=signature-a-2" />
     
     <link rel="preload" as="image" href="images/Projects/IFSZero/IFSZero-feature.webp" fetchpriority="high">
     <link rel="preload" as="font" type="font/ttf" href="fonts/instrument-serif-400.ttf" crossorigin>
@@ -175,13 +175,18 @@
     <!-- Model Viewer is loaded on-demand via IntersectionObserver (see bottom of body) -->
 
     <link rel="stylesheet" href="css/social-dock.css?v=5">
-    <link rel="stylesheet" href="css/site-navigation.css?v=5">
+    <link rel="stylesheet" href="css/site-navigation.css?v=6">
     <script src="js/site-navigation.js?v=6" blocking="render"></script>
-    <link rel="stylesheet" href="css/macos-theme.css?v=3">
+    <link rel="stylesheet" href="css/macos-theme.css?v=4">
     <link rel="stylesheet" href="css/professional-profile.css?v=7">
     <link rel="stylesheet" href="css/resume-viewer.css?v=1">
 <link rel="stylesheet" href="css/portfolio-updates.css?v=1">
 <link rel="stylesheet" href="css/lmt-device.css?v=20261117-fill3">
+    <link rel="stylesheet" href="css/home-intro.css?v=20261119-filled-grid">
+<link rel="stylesheet" href="css/home-skills.css?v=20261119-square">
+<link rel="stylesheet" href="css/case-study-tip.css?v=2">
+<script src="js/case-study-tip.js?v=2" defer></script>
+<script src="js/signature-favicon.js?v=2" defer></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -201,109 +206,37 @@
     <!-- Hero Section -->
     <main class="hero-section">
         <div class="home-container">
-            <!-- Manifesto Widget -->
-            <div class="manifesto-widget fade-in">
-                <h1 class="manifesto-text">
-                    <span class="name">Asith</span> <span class="light">is building</span> <a href="projects/wizpos.html" class="link underline wp-inline-brand" rel="noopener noreferrer"><img class="wp-title-symbol" src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="36" height="29" alt="" aria-hidden="true"><span>WizLabs</span></a><span class="light">.</span>
-                </h1>
-                
-                <div class="manifesto-divider"></div>
-                
+            <!-- A concise introduction. -->
+            <article class="bento-item professional-card intro-card fade-in" id="professional-profile" aria-labelledby="home-intro-title">
+                <div class="intro-main">
+                    <div class="intro-lead">
+                        <h1 class="intro-title" id="home-intro-title">Hey, I’m <a class="intro-name" href="about.html" title="About Asith"><strong>Asith.</strong><img class="intro-portrait" src="images/asith-avatar.webp" width="48" height="48" alt="" aria-hidden="true" decoding="async" fetchpriority="high"></a> I’m building <a href="projects/wizpos.html" class="intro-company"><span class="intro-company-icon" aria-hidden="true"><img src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="32" height="32" alt=""></span><span>WizLabs</span></a> as an <strong>Independent Lead Product Designer, Product Strategist &amp; <span class="intro-specialty">Go-to-Market</span> Engineer.</strong></h1>
+                    </div>
+                </div>
+            <section class="manifesto-widget fade-in" id="manifesto" aria-label="Design manifesto">
                 <div class="manifesto-list">
-                    <h2 class="manifesto-item">i design things.</h2>
-                    <h2 class="manifesto-item">i design with ai, but for people.</h2>
-                    <h2 class="manifesto-item">i think design can change things, including through the things we choose not to make.</h2>
-                    <h2 class="manifesto-item">i think ai should handle what people don’t enjoy, leaving more space for what they do.</h2>
-                    <h2 class="manifesto-item">i think ai can generate endless possibilities. design decides which deserve to exist.</h2>
-                    <h2 class="manifesto-item">i think there are already too many things. there should be fewer, but better things<span class="red-asterisk">*</span>.</h2>
-                    <h2 class="manifesto-item">the best things. an optimal amount.</h2>
-                    
+                    <p class="manifesto-item">i design things.</p>
+                    <p class="manifesto-item">i design with ai, but for people.</p>
+                    <p class="manifesto-item">i think design can change things, including through the things we choose not to make.</p>
+                    <p class="manifesto-item">i think ai should handle what people don’t enjoy, leaving more space for what they do.</p>
+                    <p class="manifesto-item">i think ai can generate endless possibilities. design decides which deserve to exist.</p>
+                    <p class="manifesto-item">i think there are already too many things. there should be fewer, but better things<span class="red-asterisk">*</span>.</p>
+                    <p class="manifesto-item">the best things. an optimal amount.</p>
+
                     <p class="footnote">
                         <a href="https://www.youtube.com/watch?v=QkhrGUSf2ok" target="_blank" rel="noopener noreferrer" class="link"><span class="red-asterisk">*</span> less, but better.</a>
                     </p>
                 </div>
-            </div>
+            </section>
 
-            <!-- Professional Positioning Widget -->
-            <article class="bento-item professional-card fade-in delay-2" id="professional-profile" aria-labelledby="professional-positioning-title">
-                <div class="professional-content">
-                    <p class="professional-kicker">Experience &amp; approach</p>
-                    <h2 class="professional-title" id="professional-positioning-title">
-                        Lead Product Designer
-                        <span>&amp; Product Strategist</span>
-                    </h2>
-
-                    <p class="professional-value">I lead product design for B2B SaaS and enterprise products, from the hard UX to AI, GTM, ESG, and sustainability decisions.</p>
-
-                    <div class="professional-experience">
-                        <div class="professional-tenure" data-experience-reveal><strong>10+</strong><span>years of<br>experience</span></div>
-                        <p class="professional-companies">IFS &middot; Dialog Axiata &middot; John Keells IT &middot; WizLabs</p>
-                    </div>
-
-                    <ul class="professional-capabilities" aria-label="Core capabilities">
-                        <li>Agentic &amp; AI UX</li>
-                        <li>Design systems</li>
-                        <li>Research &amp; strategy</li>
-                        <li>Commerce &amp; enterprise</li>
-                    </ul>
-                </div>
-
-                <nav class="professional-actions" aria-label="Professional links">
-                    <a href="work.html" class="professional-action professional-action-primary">
-                        <span>View selected work</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M5 12h14M13 6l6 6-6 6"/>
-                        </svg>
-                    </a>
-                    <a href="files/Resume-Asith-Wijenayake-Lead-Product-Designer-International-12-Nov-2026.pdf" class="professional-action" data-resume-open aria-label="Read résumé in the portfolio">
-                        <span>Résumé</span>
-                        <span class="professional-action-meta">PDF</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/asithwijenayake" class="professional-action" target="_blank" rel="noopener noreferrer">
-                        <span>LinkedIn</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M7 17 17 7M8 7h9v9"/>
-                        </svg>
-                    </a>
-                </nav>
             </article>
 
-            <!-- Featured Projects -->
-            <a href="projects/IFSzero.html" class="bento-item project-card fade-in delay-5">
-                <div class="project-card-content">
-                    <div class="project-card-eyebrow"><span class="project-tag">AI Native</span><div class="case-new-badge" data-metal-badge role="img" aria-label="New case study"><span class="case-new-fallback" aria-hidden="true">New</span></div></div>
-                    <h3 class="project-title"><span class="ifs-project-name"><img class="ifs-project-icon" src="images/ifs_icons_industry-specific_plane-engine-1-.svg" width="32" height="32" alt="" aria-hidden="true">IFS Zero<sup class="tm">TM</sup></span></h3>
-                    <p class="project-description">Agentic, AI Native Emissions Operating System</p>
-                    <p class="project-dates" aria-label="Project dates: 2023 – Jan 2026">2023 – Jan 2026</p>
+                <!-- 3D Logo Card (lazy 3D - loads model-viewer + GLB only when scrolled into view on capable devices) -->
+                <div class="bento-item logo-3d-card fade-in delay-3"
+                     data-model-src="images/logo_dark.glb"
+                     data-model-fallback="images/asith-logo.svg">
+                    <img width="96" height="64" class="logo-3d-fallback" src="images/asith-logo.svg" alt="Asith 3D logo" decoding="async" />
                 </div>
-                <div class="project-thumbnail">
-                    <img width="1194" height="834" src="images/Projects/IFSZero/IFSZero-feature.webp" alt="IFS Zero" loading="eager" decoding="async" fetchpriority="high">
-                </div>
-            </a>
-
-            <a href="projects/dgl.html" class="bento-item project-card fade-in delay-6">
-                <div class="project-card-content">
-                    <span class="project-tag">Enterprise</span>
-                    <h3 class="project-title">DGL<sup class="tm">TM</sup></h3>
-                    <p class="project-description">National Gaming &amp; Esports Platform</p>
-                    <p class="project-dates" aria-label="Project dates: 2018 – 2023">2018 – 2023</p>
-                </div>
-                <div class="project-thumbnail">
-                    <img width="1194" height="834" src="images/Projects/DGL/DGL-feature.webp" alt="DGL" loading="lazy" decoding="async">
-                </div>
-            </a>
-
-            <a href="projects/wizpos.html" class="bento-item project-card project-card-third fade-in delay-7">
-                <div class="project-card-content">
-                    <div class="project-card-eyebrow"><span class="project-tag">AI First</span><div class="case-new-badge" data-metal-badge role="img" aria-label="New case study"><span class="case-new-fallback" aria-hidden="true">New</span></div></div>
-                    <h3 class="project-title"><span class="wp-inline-brand"><img class="wp-title-symbol" src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="32" height="26" alt="" aria-hidden="true"><span>WizPos<sup class="tm">TM</sup></span></span></h3>
-                    <p class="project-description">A local + cloud suite for retail, hospitality, and large-SME operations.</p>
-                    <p class="project-dates" aria-label="Project dates: 2021 – 2022 · 2026 – present">2021 – 2022 · 2026 – present</p>
-                </div>
-                <div class="project-thumbnail">
-                    <img width="1194" height="834" src="images/Projects/WIZPos/WizPOS-feature.webp" alt="WizPos" loading="lazy" decoding="async">
-                </div>
-            </a>
 
             <!-- Dock Widget -->
             <div class="bento-item dock-card fade-in delay-4" id="social-dock" aria-label="Around the web">
@@ -381,23 +314,79 @@
                 </audio>
             </div>
 
-            <!-- Metro replaces the former WhatsApp status widget. -->
+
+            <section class="bento-item skills-card intro-skills fade-in" aria-label="Skills and capabilities" data-skill-lanes="3">
+                <ul class="professional-capabilities" aria-label="Skills and capabilities">
+                    <li>User research</li>
+                    <li>Design systems</li>
+                    <li>Product strategy</li>
+                    <li>Prototyping</li>
+                    <li>AI &amp; agentic UX</li>
+                    <li>Enterprise UX</li>
+                    <li>Go-to-market</li>
+                    <li>Collaboration</li>
+                    <li>Product discovery</li>
+                    <li>Information architecture</li>
+                    <li>Interaction design</li>
+                    <li>Usability testing</li>
+                    <li>User flows</li>
+                    <li>Wireframing</li>
+                    <li>Accessibility</li>
+                    <li>UX writing</li>
+                    <li>Design leadership</li>
+                    <li>Coded prototypes</li>
+                    <li>Workshop facilitation</li>
+                    <li>Journey mapping</li>
+                    <li>B2B SaaS</li>
+                    <li>Sustainability UX</li>
+                    <li>Service design</li>
+                    <li>Experience strategy</li>
+                </ul>
+            </section>
+
+            <!-- Project cards -->
+            <a href="projects/IFSzero.html" class="bento-item project-card fade-in delay-5">
+                <div class="project-card-content">
+                    <div class="project-card-eyebrow"><span class="project-tag">AI Native</span><div class="case-new-badge" data-metal-badge role="img" aria-label="New case study"><span class="case-new-fallback" aria-hidden="true">New</span></div></div>
+                    <h3 class="project-title"><span class="ifs-project-name"><img class="ifs-project-icon" src="images/ifs_icons_industry-specific_plane-engine-1-.svg" width="32" height="32" alt="" aria-hidden="true">IFS Zero<sup class="tm">TM</sup></span></h3>
+                    <p class="project-dates" aria-label="Project dates: 2023 – Jan 2026">2023 – Jan 2026</p>
+                </div>
+                <div class="project-thumbnail">
+                    <img width="1194" height="834" src="images/Projects/IFSZero/IFSZero-feature.webp" alt="IFS Zero" loading="eager" decoding="async" fetchpriority="high">
+                </div>
+            </a>
+
+            <a href="projects/marketplace.html" class="bento-item project-card fade-in delay-6">
+                <div class="project-card-content">
+                    <span class="project-tag">Enterprise</span>
+                    <h3 class="project-title">Marketplace<sup class="tm">TM</sup></h3>
+                    <p class="project-dates" aria-label="Project dates: 2021 – 2023">2021 – 2023</p>
+                </div>
+                <div class="project-thumbnail">
+                    <img width="1194" height="834" src="images/Projects/Marketplace/MarketPlace-feature.webp" alt="Marketplace by Dialog Enterprise" loading="lazy" decoding="async">
+                </div>
+            </a>
+
             <a href="projects/what-if-metro-v2.html" class="bento-item project-card project-card-metro fade-in delay-8">
                 <div class="project-card-content">
                     <div class="project-card-eyebrow"><span class="project-tag">Concept</span><div class="case-new-badge" data-metal-badge role="img" aria-label="New case study"><span class="case-new-fallback" aria-hidden="true">New</span></div></div>
                     <h3 class="project-title lmt-project-title"><img class="lmt-title-logo" src="images/Projects/WhatIf/metro-logo.png" width="607" height="190" alt="Lanka Metro Transit"><span>LMT Go</span></h3>
-                    <p class="project-description">A journey-first redesign of the everyday Metro commute.</p>
                     <p class="project-dates" aria-label="Project dates: 2026">2026</p>
                 </div>
                 <div class="project-thumbnail"><img src="images/Projects/WhatIf/metro-cover.png" width="1194" height="834" alt="LMT Go redesign with the Lanka Metro Transit logo, app screens, and a commuter walking to a bus" loading="lazy" decoding="async"></div>
             </a>
 
-                <!-- 3D Logo Card (lazy 3D - loads model-viewer + GLB only when scrolled into view on capable devices) -->
-                <div class="bento-item logo-3d-card fade-in delay-3"
-                     data-model-src="images/logo_dark.glb"
-                     data-model-fallback="images/asith-logo.svg">
-                    <img width="96" height="64" class="logo-3d-fallback" src="images/asith-logo.svg" alt="Asith 3D logo" decoding="async" />
+            <a href="projects/wizpos.html" class="bento-item project-card project-card-wizpos fade-in">
+                <div class="project-card-content">
+                    <div class="project-card-eyebrow"><span class="project-tag">AI First</span><div class="case-new-badge" data-metal-badge role="img" aria-label="New case study"><span class="case-new-fallback" aria-hidden="true">New</span></div></div>
+                    <h3 class="project-title"><span class="wp-inline-brand"><img class="wp-title-symbol" src="images/Projects/WIZPos/wizpos-symbol-primary.svg" width="32" height="26" alt="" aria-hidden="true"><span>WizPos<sup class="tm">TM</sup></span></span></h3>
+                    <p class="project-dates" aria-label="Project dates: 2021 – 2022 · 2026 – present">2021 – 2022 · 2026 – present</p>
                 </div>
+                <div class="project-thumbnail">
+                    <img width="1194" height="834" src="images/Projects/WIZPos/WizPOS-feature.webp" alt="WizPos retail checkout" loading="lazy" decoding="async">
+                </div>
+            </a>
+
         </div>
     </main>
 
@@ -500,7 +489,7 @@
         }
     })();
     </script>
-    <script src="js/professional-profile.js?v=2" defer></script>
+    <script src="js/professional-profile.js?v=3" defer></script>
     <script type="module" src="js/resume-viewer.js?v=1"></script>
 <script src="js/vendor/metal-badges/metal-badges.min.js?v=1" defer></script>
 </body>

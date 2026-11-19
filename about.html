@@ -134,20 +134,24 @@
     </script>
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png?v=signature-a-2" sizes="96x96" />
+    <link data-signature-icon sizes="any" rel="icon" type="image/svg+xml" href="/favicon/favicon.svg?v=signature-a-2" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=signature-a-2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=signature-a-2" />
     <meta name="apple-mobile-web-app-title" content="Design by Asith" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest?v=signature-a-2" />
     
     <link rel="preload" as="font" type="font/ttf" href="fonts/instrument-serif-400-italic.ttf" crossorigin>
     <link rel="stylesheet" href="css/style.css?v=20261117-sf-pro">
     
-        <link rel="stylesheet" href="css/site-navigation.css?v=5">
+        <link rel="stylesheet" href="css/site-navigation.css?v=6">
     <script src="js/site-navigation.js?v=6" blocking="render"></script>
-    <link rel="stylesheet" href="css/macos-theme.css?v=3">
+    <link rel="stylesheet" href="css/macos-theme.css?v=4">
     <link rel="stylesheet" href="css/resume-viewer.css?v=1">
+    <link rel="stylesheet" href="css/psn-widget.css?v=2">
+<script src="js/signature-favicon.js?v=2" defer></script>
+    <script src="js/game-activity.js?v=1" defer></script>
+    <script src="js/psn-widget.js?v=2" defer></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -176,30 +180,32 @@
                 <div class="manifesto-list">
                     <div class="about-item">
                         <h3 class="about-item-title">WHERE I'M FROM</h3>
-                        <p class="about-item-content">From a small town called Rambukkana. Born in Kandy, moved to Colombo at 19 for university, but Rambukkana is still home.</p>
+                        <p class="about-item-content">I was born in Kandy and grew up in Rambukkana. I moved to Colombo at 19 for university, but Rambukkana is still home.</p>
                     </div>
                     <div class="about-item">
-                        <h3 class="about-item-title">WHAT I USED TO DO</h3>
-                        <p class="about-item-content">At 5, my uncle gave me a computer. I learned by breaking things and putting them back together. At 15, I imported used tablets from a sketchy Korean site and resold them to incoming uni students, mostly because I needed money to keep upgrading my computer. In my second year, I walked hotel-to-hotel in slippers, selling websites and booking portals as a service. </p>
-                        <p class="about-item-content">I graduated in 2017 with a BSc (Hons) in Computer Science. Studying and building software made it clear that I cared less about code for its own sake and more about whether a product was useful, usable, and ready to ship.</p>
+                        <h3 class="about-item-title">MY FIRST COMPUTER</h3>
+                        <p class="about-item-content">My uncle gave me a computer when I was five. I learned by breaking things and putting them back together. Keeping that computer upgraded became a hobby I needed to find money for.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3 class="about-item-title">FUNDING THE UPGRADES</h3>
+                        <p class="about-item-content">At 15, I imported used tablets from a Korean website and sold them to students starting university. Mostly, I wanted money for computer upgrades.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3 class="about-item-title">WEBSITES IN SLIPPERS</h3>
+                        <p class="about-item-content">In my second year at university, I went from hotel to hotel in slippers, offering to build websites and booking portals. I graduated in 2017 with a BSc (Hons) in Computer Science.</p>
                     </div>
                     <div class="about-item">
                         <h3 class="about-item-title">WHAT I DO NOW</h3>
                         <p class="about-item-content">I started at <a href="https://www.johnkeellsit.com/" target="_blank" rel="noopener noreferrer" class="link">John Keells IT ↗</a>, spent several years at <a href="https://www.dialog.lk/" target="_blank" rel="noopener noreferrer" class="link">Dialog Axiata ↗</a>, then led UX for Sustainability and Emissions inside <a href="https://www.ifs.com/" target="_blank" rel="noopener noreferrer" class="link">IFS Cloud ↗</a>. Today I lead product design and product strategy while building <a href="projects/wizpos.html" rel="noopener noreferrer" class="link">WizLabs ↗</a>, an AI-first B2B product suite. Most of my work is taking complex systems and making them practical.</p>
-
                     </div>
                     <div class="about-item">
-                        <h3 class="about-item-title">WHERE I'M AT</h3>
-                        <p class="about-item-content">Based in Sri Lanka, working on products used globally. Outside work, I spend a lot of time in the Himalayas, Nepal or North India. That’s where I slow down and think clearly.</p>
-
+                        <h3 class="about-item-title">AWAY FROM THE COMPUTER</h3>
+                        <p class="about-item-content">I’m based in Sri Lanka. Outside work, I spend time in Nepal and North India, especially the Himalayas. I like having time there to slow down.</p>
                     </div>
                     <div class="about-item">
                         <h3 class="about-item-title">WHAT I'M LOOKING FOR</h3>
                         <p class="about-item-content">Work that feels meaningful. Teams that value clarity. Products that respect the people using them.</p>
                         <p class="about-item-content">Things can be simpler, calmer, and more honest if we choose to design them that way.</p>
-
-
-
                     </div>
                 </div>
 
@@ -482,60 +488,96 @@
                 </div>
             </div>
 
-            <!-- PlayStation Widget -->
-            <div class="widget playstation-widget fade-in delay-3" id="playstationWidget">
+            <!-- Compact PlayStation activity; GTA VI holds longer in the automatic slideshow. -->
+            <section class="widget playstation-widget psn-library fade-in delay-3" id="playstationWidget" tabindex="0" aria-label="Asith’s PlayStation activity">
+                <div class="ps-logo" aria-hidden="true"><img width="200" height="155" src="images/PlayStation_logo.svg" alt="" loading="lazy" decoding="async"></div>
                 <div class="ps-header">
                     <div class="ps-profile">
-                        <img width="1024" height="1024" src="images/Mara.webp" alt="PlayStation profile" class="ps-avatar" loading="lazy" decoding="async" />
+                        <img width="1024" height="1024" src="images/Mara.webp" alt="" class="ps-avatar" loading="lazy" decoding="async">
                         <div class="ps-profile-text">
                             <div class="ps-name">Asith</div>
                             <div class="ps-id">PSN: @Wasawarti</div>
                         </div>
                     </div>
-                    <div class="ps-logo" aria-hidden="true">
-                        <img width="200" height="155" src="images/PlayStation_logo.svg" alt="PlayStation" loading="lazy" decoding="async" />
-                    </div>
-                  
+                    <div class="ps-library-pagination" aria-hidden="true"></div>
                 </div>
-                <div class="ps-subtitle">Currently playing</div>
-                <div class="games-stack ps-games-stack" data-interval="3000">
-                    <article class="game-card is-active">
-                        <img width="1024" height="1024" src="images/games/game-f125.avif" alt="F1 25" class="game-cover" loading="lazy" decoding="async" />
-                        <div class="game-card-info">
-                            <div class="game-title">F1 25</div>
-                            <div class="game-meta">34 hours · Last played: 2 days ago</div>
+                <div class="ps-library-heading"><span class="ps-library-label">Currently playing</span><span class="ps-library-count" aria-hidden="true">01 / 06</span></div>
+                <!-- Historical dates come from the original 27 Jan 2026 activity snapshot. -->
+                <div class="ps-library-stage" id="ps-library-stage" role="group" aria-roledescription="carousel" aria-label="Games">
+                    <article class="ps-library-game is-active" role="group" aria-roledescription="slide" aria-label="1 of 6: GTA VI">
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="1024" height="576" src="images/games/game-gta-vi-palms.jpg" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">GTA VI</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>First session</dt><dd><span data-game-started="2026-11-19T06:25:20Z">Just started playing</span></dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2026-11-19T06:25:20Z">19 November 2026</time></dd></div>
+                            </dl>
                         </div>
                     </article>
-                    <article class="game-card">
-                        <img width="1024" height="1024" src="images/games/game-farcry6.jpg" alt="Far Cry 6" class="game-cover" loading="lazy" decoding="async" />
-                        <div class="game-card-info">
-                            <div class="game-title">Far Cry 6</div>
-                            <div class="game-meta">18 hours · Last played: 1 week ago</div>
+                    <article class="ps-library-game" role="group" aria-roledescription="slide" aria-label="2 of 6: F1 25" hidden>
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="1024" height="1024" src="images/games/game-f125.avif" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">F1 25</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>Play time</dt><dd>34 hours</dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2026-01-25T02:55:28Z">25 January 2026</time></dd></div>
+                            </dl>
                         </div>
                     </article>
-                    <article class="game-card">
-                        <img width="280" height="357" src="images/games/game-forza5.jpg" alt="Forza Horizon 5" class="game-cover" loading="lazy" decoding="async" />
-                        <div class="game-card-info">
-                            <div class="game-title">Forza Horizon 5</div>
-                            <div class="game-meta">22 hours · Last played: 3 days ago</div>
+                    <article class="ps-library-game" role="group" aria-roledescription="slide" aria-label="3 of 6: Far Cry 6" hidden>
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="1024" height="1024" src="images/games/game-farcry6.jpg" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">Far Cry 6</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>Play time</dt><dd>18 hours</dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2026-01-20T02:55:28Z">20 January 2026</time></dd></div>
+                            </dl>
                         </div>
                     </article>
-                    <article class="game-card">
-                        <img width="1200" height="1600" src="images/games/game-grb.webp" alt="Ghost Recon Breakpoint" class="game-cover" loading="lazy" decoding="async" />
-                        <div class="game-card-info">
-                            <div class="game-title">Ghost Recon Breakpoint</div>
-                            <div class="game-meta">12 hours · Last played: 5 days ago</div>
+                    <article class="ps-library-game" role="group" aria-roledescription="slide" aria-label="4 of 6: Forza Horizon 5" hidden>
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="280" height="357" src="images/games/game-forza5.jpg" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">Forza Horizon 5</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>Play time</dt><dd>22 hours</dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2026-01-24T02:55:28Z">24 January 2026</time></dd></div>
+                            </dl>
                         </div>
                     </article>
-                    <article class="game-card">
-                        <img width="564" height="564" src="images/games/game-rdr2.jpg" alt="Red Dead Redemption 2" class="game-cover" loading="lazy" decoding="async" />
-                        <div class="game-card-info">
-                            <div class="game-title">Red Dead Redemption 2</div>
-                            <div class="game-meta">41 hours · Last played: 4 weeks ago</div>
+                    <article class="ps-library-game" role="group" aria-roledescription="slide" aria-label="5 of 6: Ghost Recon Breakpoint" hidden>
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="1200" height="1600" src="images/games/game-grb.webp" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">Ghost Recon Breakpoint</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>Play time</dt><dd>12 hours</dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2026-01-22T02:55:28Z">22 January 2026</time></dd></div>
+                            </dl>
+                        </div>
+                    </article>
+                    <article class="ps-library-game" role="group" aria-roledescription="slide" aria-label="6 of 6: Red Dead Redemption 2" hidden>
+                        <div class="ps-artwork" aria-hidden="true">
+                            <div class="ps-cover-plane"><img width="564" height="564" src="images/games/game-rdr2.jpg" alt="" class="ps-library-cover" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="ps-game-details">
+                            <h2 class="ps-library-title">Red Dead Redemption 2</h2>
+                            <dl class="ps-session-stats">
+                                <div><dt>Play time</dt><dd>41 hours</dd></div>
+                                <div><dt>Last played</dt><dd><time data-game-last-played datetime="2025-12-30T02:55:28Z">30 December 2025</time></dd></div>
+                            </dl>
                         </div>
                     </article>
                 </div>
-            </div>
+            </section>
 
             <!-- Audible Audiobook Widget - HIDDEN (Uncomment to restore) -->
             
@@ -658,7 +700,7 @@
             </div>
     </main>
 
-    <script src="js/script.js?v=20261115-resume"></script>
+    <script src="js/script.js?v=20261119-psn-library"></script>
     <script src="js/anim-pause.js?v=1.0"></script>
     <script type="module" src="js/resume-viewer.js?v=1"></script>
 </body>

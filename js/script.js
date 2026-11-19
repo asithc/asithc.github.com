@@ -1280,7 +1280,7 @@ const initNotionWidget = () => {
 
 // Widget hover effects with transform
 const initWidgetHovers = () => {
-    document.querySelectorAll('.widget').forEach(widget => {
+    document.querySelectorAll('.widget:not(.psn-library)').forEach(widget => {
         widget.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-4px)';
         });

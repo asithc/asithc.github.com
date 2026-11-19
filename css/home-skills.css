@@ -1,0 +1,147 @@
+/* Typographic skill capsules, with room for their gently tilted edges. */
+.skills-card {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.skills-card .skill-lanes {
+    gap: 0;
+    mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+}
+
+.skills-card .skill-lane {
+    padding-block: 9px;
+}
+
+.skills-card .skill-group {
+    gap: 12px;
+    padding-right: 12px;
+}
+
+.skills-card .skill-track {
+    animation-duration: 55s;
+}
+
+.skills-card .skill-lane:nth-child(2) .skill-track {
+    animation-duration: 65s;
+    animation-delay: -18s;
+}
+
+.skills-card .skill-pill,
+.skills-card .professional-capabilities li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 18px;
+    border: 1.5px solid #29303a;
+    border-radius: 999px;
+    background: #fafbfc;
+    color: #252a32;
+    font-family: var(--font-primary);
+    font-size: 17px;
+    font-weight: 550;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="0"] {
+    border-color: #242830;
+    background: #242830;
+    color: #fff;
+    font-weight: 650;
+    transform: rotate(-2deg);
+}
+
+.skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="1"] {
+    background: #fafbfc;
+    color: #252a32;
+    font-size: 18px;
+    font-weight: 500;
+    transform: rotate(2deg);
+}
+
+.skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="2"] {
+    background: #fbfaf6;
+    color: #252a32;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    transform: rotate(.5deg);
+}
+
+.skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="3"] {
+    background: #fafbfc;
+    color: #252a32;
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -.055em;
+    transform: rotate(-1.5deg);
+}
+
+.skills-card .skill-lane:nth-child(3) .skill-track {
+    animation-duration: 75s;
+    animation-delay: -32s;
+}
+
+.skills-card:hover .skill-track,
+.skills-card:focus-within .skill-track { animation-play-state: paused; }
+
+/* The real list is the static fallback, including reduced-motion mode. */
+.skills-card .professional-capabilities {
+    gap: 14px 12px;
+}
+
+.skills-card:not(.has-skill-lanes) .professional-capabilities {
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 9px 4px;
+}
+
+@media (max-width: 768px) {
+    .skills-card .skill-group {
+        gap: 10px;
+        padding-right: 10px;
+    }
+
+    .skills-card .skill-pill,
+    .skills-card .professional-capabilities li {
+        min-height: 36px;
+        padding: 8px 14px;
+        font-size: 15px;
+    }
+
+    .skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="1"] { font-size: 16px; }
+    .skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="2"] { font-size: 21px; }
+    .skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone="3"] { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-card .professional-capabilities {
+        min-height: 0;
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 9px 4px;
+    }
+
+    .skills-card .professional-capabilities li {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+}
+
+@media (forced-colors: active) {
+    .skills-card :is(.skill-pill, .professional-capabilities li)[data-skill-tone] {
+        border-color: CanvasText;
+        background: Canvas;
+        color: CanvasText;
+    }
+}

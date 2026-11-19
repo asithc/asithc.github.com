@@ -20,6 +20,8 @@ const CACHE_NAME = 'asith-v12-2026-11-17-lmt-fit';
 // We don't pre-cache every image; stale-while-revalidate will populate the
 // cache organically as the user browses.
 const PRECACHE_URLS = [
+    '/favicon/favicon.svg?v=signature-a-2',
+    '/js/signature-favicon.js?v=2',
     '/css/professional-profile.css?v=7',
     '/css/wizpos-visuals.css?v=2',
     '/js/wizpos-visuals.js?v=2',

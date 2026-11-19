@@ -13,6 +13,9 @@
 (() => {
     const list = document.querySelector('.professional-capabilities');
     if (!list) return;
+    const host = list.closest('.intro-skills') || list.closest('.professional-card');
+    if (!host) return;
+    const laneCount = Math.min(3, Math.max(2, Number(host.dataset.skillLanes) || 2));
     const skills = [...list.children];
     skills.forEach((skill, index) => { skill.dataset.skillTone = String(index % 4); });
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -22,7 +25,7 @@
     list.after(lanes);
     function build() {
         lanes.replaceChildren();
-        [skills.filter((_, i) => i % 2 === 0), skills.filter((_, i) => i % 2 === 1)].forEach(row => {
+        Array.from({ length: laneCount }, (_, laneIndex) => skills.filter((_, i) => i % laneCount === laneIndex)).forEach(row => {
             const lane = document.createElement('div');
             lane.className = 'skill-lane';
             const track = document.createElement('div');
@@ -44,7 +47,7 @@
         });
     }
     build();
-    list.closest('.professional-card').classList.add('has-skill-lanes');
+    host.classList.add('has-skill-lanes');
     let resizeTimer;
     if ('ResizeObserver' in window) {
         let previousWidth = lanes.clientWidth;

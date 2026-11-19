@@ -1,0 +1,29 @@
+.case-study-tip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    max-width: calc(100vw - 24px);
+    padding: 9px 15px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 999px;
+    background: linear-gradient(145deg, #344154d9, #161e2ad6);
+    color: #fff;
+    box-shadow: inset 0 1px 0 #ffffff1f, 0 6px 20px #10182726;
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    backdrop-filter: blur(18px) saturate(150%);
+    font: 500 12px/1.4 var(--font-primary);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .12s ease, visibility .12s;
+}
+.case-study-tip.is-visible { opacity: 1; visibility: visible; }
+@media (hover: none), (pointer: coarse) { .case-study-tip { display: none; } }
+@media (prefers-reduced-motion: reduce) { .case-study-tip { transition: none; } }
+@media (prefers-reduced-transparency: reduce) {
+    .case-study-tip { background: #202b3b; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
